@@ -1,2 +1,2 @@
 # Web
-Web Development.
+Web Development - Univeristy project
