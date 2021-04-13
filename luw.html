@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang ="en">
     <head>
-        <title>Life below water</title>
+       
         <meta charset =="utf 8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<meta name="description" content="This page is about life below water and how to protect it from human behavior">
+		<meta name="keywords" content="">
+		<meta name="author" content="">
+		
         <!--Line below dont work yet it is for favicon -->
 		<link rel="icon" type="image/png" href="/imgs/test.png"/>
-        <link rel="stylesheet" type="text/css" href="./styles.css" />
+        
+		 <title>Life below water</title>
+		 
+		 <link rel="stylesheet" type="text/css" href="./styles.css" />
+		 <script src="index.js"> </script>
     </head>
     <body>
-        <script src="index.js"> </script>
-
-		<div>
-			<h1>Life Under Water</h1>
-		</div>
+        
 		<div class="navbar">
 			<a href="#" class="active">Home</a>
 			<a href="#">Causes</a>
@@ -24,30 +27,55 @@
 			<a href="#">Contact us</a>
 			<a href="#">Login/Register</a>
 		</div>
-		<h1>SEArch the truth.</h1>
-		<h2 id="aboutUs"> About Us</h2>
 		
-		<article>
-			<section>
-				<h1>About Us</h1>
-				<p>Marine life is in danger and the threats it's facing are growing every second.
-				Every year billions of harmful chemicals, trash and other pollutants enter the ocean. Marine pollution
-				is a growing ongoing problem in today's world and it impacts not only the environment and marine life
-				but also modern economies.
-				Driven by a growing world demand for fish and seafood illegal, unreported and unregulated fishing(IUU)
-				is augmenting and it is one of the greatest threats to marine ecosystems. It can lead to the disturbance of 
-				marine biodiversity and put marine species in danger of extinction.
-				We are a group of university students hoping to motivate you to take action. We are providing you with a bunch
-				of useful articles, documentaries and links to research the matter yourself. Upon signing in you can choose a marine endangered
-				species. This will be your virtual pet and you will be able to see specific articles about it.
-				We should not sit back and watch our planet get destroyed.
-				We must protect it.</p>
-				
-			</section>
-		</article>
 		
-		<div class="footer">
-			<h2>Footer</h2>
+		<!--The line below is obviously not gonna stay like that -->
+		<div style="background-image: url('data:image/jpeg;base64,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')">
+			<h1>SEArch the truth</h1>
+			<h2 id="aboutUs"> About Us</h2>
 		</div>
+		
+		<section id="aboutUs">
+			<article>
+				<section>
+							<h4>About Sea Life</h4>
+								<p style="text-align: justify;">Marine life is in danger and the threats it's facing are growing every second.
+								Every year billions of harmful chemicals, trash and other pollutants enter the ocean. Marine pollution
+								is a growing ongoing problem in today's world and it impacts not only the environment and marine life
+								but also modern economies.
+								Driven by a growing world demand for fish and seafood illegal, unreported and unregulated fishing(IUU)
+								is augmenting and it is one of the greatest threats to marine ecosystems. It can lead to the disturbance of 
+								marine biodiversity and put marine species in danger of extinction.</p>
+								
+				</section>
+			</article>
+		</section>
+		
+		<!--footer-->
+		<footer style="">
+			<div class="container">
+			
+				<div class="widget row">
+				<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 text-center pull-none margin-auto">
+					<h4 class="title text-center" style="text-transform:none;">About Hogwarts is Here</h4>
+					<p>We are a group of university students hoping to motivate you to take action. We are providing you with a bunch of useful articles, documentaries and links to research the matter yourself. Upon signing in you can choose a marine endangered
+						species. This will be your virtual pet and you will be able to see specific articles about it. We should not sit back and watch our planet get destroyed.We must protect it.
+                    </p>
+				</div>
+				</div>
+			</div>
+			
+			<div class="footer-bottom">
+			<div class="container">	
+				<ul class="list-inline">
+					<li><a href="http://www.fb.com" target="_blank" class="btn btn-circle btn-social-icon" data-toggle="tooltip" title="Like us on Facebook"><i class="fa fa-facebook"></i></a></li>
+					<li><a href="http://www.twitter.com" target="_blank" class="btn btn-circle btn-social-icon" data-toggle="tooltip" title="Follow us on Twitter"><i class="fa fa-twitter"></i></a></li>
+					<li><a href="http://instagram.com" target="_blank" class="btn btn-circle btn-social-icon" data-toggle="tooltip" title="Follow us on Instagram"><i class="fa fa-tumblr"></i></a></li>
+				</ul>
+				Life Under Water &copy; 2021<BR>
+			</div>
+		</div>
+		</footer>
+		<!-- /.footer -->
     </body>
 </html>
