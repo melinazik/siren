@@ -61,7 +61,6 @@ ul{
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #2F6468;
 }
 li{
 	float:left;
@@ -75,8 +74,8 @@ li a{
   text-decoration: none;
 }
 
-.footer {
+footer {
   padding: 20px; /* Some padding */
   text-align: center; /* Center text*/
-  background: #ddd; /* Grey background */
+  background: #2F6468; /* Grey background */
 }
