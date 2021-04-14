@@ -35,6 +35,8 @@ body {
   text-align: center; /* Center the text */
   padding: 14px 20px; /* Add some padding */
   text-decoration: none; /* Remove underline */
+  font-size: 1.2em;
+  overflow: hidden;
 }
 
 /* Right-aligned link */
@@ -47,6 +49,41 @@ body {
   background-color: #ddd; /* Grey background color */
   color: black; /* Black text color */
 }
+
+/* responsive/collapsible nav bar */
+
+.navbar a.active {
+  font-weight: bold;
+  color: white;
+}
+
+.navbar .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar a:not(:first-child) {display: none;}
+  .navbar a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar.responsive {position: relative;}
+  .navbar.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .navbar.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+/* -------------- NAV BAR DONE ------------ */
 
 /* ART */
 #home-view {
@@ -77,7 +114,6 @@ body {
   color: black;
   font-size: 2em;
   align-self: center;
-  background-color-: rgb(164, 197, 207);
   background-color: rgb(199, 169, 190);
   margin-top: 140px;
   padding: 10px 20px;
@@ -98,27 +134,34 @@ body {
 
 .article-info {
   position: relative;
-  padding: 20px;
+  padding: 50px;
   margin: 0 10%;
   background-color: rgba(255, 255, 255, 0.5);
-  font-size: larger;
-  border-radius: 30px
+  font-size: 1.5em;
+  border-radius: 20px
 }
 
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+.article-info h4 {
+  font-size: xx-large;
+  padding-bottom: 15px;
+}
+
+
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other
 @media screen and (max-width: 700px) {
   .row {
     flex-direction: column;
   }
 }
 
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other 
 @media screen and (max-width: 400px) {
   .navbar a {
     float: none;
     width: 100%;
   }
-}
+} */
 
 section::after {
   content: "";
