@@ -51,10 +51,19 @@ body {
 
 .siren-icon {
   position: relative;
-  height: 20px;
-  width: 20px;
-  background-image: url("/imgs/oceana.jpg");
+  height: 25px;
+  width: 25px;
+  background: url("../imgs/logo2.png");
   background-size: cover;
+  margin: 0 5px;
+}
+.menu-icon {
+  position: relative;
+  height: 25px;
+  width: 25px;
+  background: url("../imgs/menu.png");
+  background-size: cover;
+  margin: 0 5px;
 }
 .nav-bar-siren {
   margin-left: 5vw;
