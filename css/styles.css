@@ -33,7 +33,7 @@ body {
   justify-content-: center;
   overflow: hidden; /* Hide overflow */
   margin-left: auto;  
-  margin-right: 5vw;
+  margin-right: 4vw;
 
 }
 
@@ -66,7 +66,7 @@ body {
   margin: 0 5px;
 }
 .nav-bar-siren {
-  margin-left: 5vw;
+  margin-left: 4vw;
   padding: 14px 20px; /* Add some padding */
   top: 50%;
   left: 50%;
