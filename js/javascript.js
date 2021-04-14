@@ -24,9 +24,9 @@ window.smoothScroll = function(target) {
 
 function myFunction() {
     var x = document.getElementById("navbarID");
-    if (x.className === "navbar") {
+    if (x.className === "right-navbar") {
       x.className += " responsive";
     } else {
-      x.className = "navbar";
+      x.className = "right-navbar";
     }
   }

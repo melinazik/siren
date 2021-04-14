@@ -12,7 +12,7 @@ body {
   margin: 0;
 }
 
-.page-header{
+.page-header {
 	padding: 112px;
 	text-align: center;
 	color: black;
@@ -21,14 +21,24 @@ body {
 .navbar {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   overflow: hidden; /* Hide overflow */
-  background-color:#2c5153/*#0E828A/* #333; /* Dark background color */
-  
+  background-color:#2c5153;/*#0E828A/* #333; /* Dark background color */
+
+}
+
+.right-navbar {
+  align-self:flex-end;
+  display-: flex;
+  flex-wrap-: wrap;
+  justify-content-: center;
+  overflow: hidden; /* Hide overflow */
+  margin-left: auto;  
+  margin-right: 5vw;
+
 }
 
 /* Style the navigation bar links */
-.navbar a {
+.right-navbar a {
   float: left; /* Make sure that the links stay side-by-side */
   display: block; /* Change the display to block, for responsive reasons (see below) */
   color: white; /* White text color */
@@ -39,44 +49,49 @@ body {
   overflow: hidden;
 }
 
+.nav-bar-siren {
+  font-weight: 400;
+  font-size: 1.3em;
+  color: white; /* White text color */
+  padding: 14px 20px; /* Add some padding */
+  margin-left: 5vw;
+  text-decoration: none; /* Remove underline */
+}
+
 /* Right-aligned link */
-.navbar a.right {
+.right-navbar a.right {
   float: right; /* Float a link to the right */
 }
 
 /* Change color on hover/mouse-over */
-.navbar a:hover {
+.right-navbar a:hover {
   background-color: #ddd; /* Grey background color */
   color: black; /* Black text color */
 }
 
 /* responsive/collapsible nav bar */
 
-.navbar a.active {
-  font-weight: bold;
-  color: white;
-}
 
-.navbar .icon {
+.right-navbar .icon {
   display: none;
 }
 
 @media screen and (max-width: 600px) {
-  .navbar a:not(:first-child) {display: none;}
-  .navbar a.icon {
+  .right-navbar a {display: none;}
+  .right-navbar a.icon {
     float: right;
     display: block;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .navbar.responsive {position: relative;}
-  .navbar.responsive .icon {
+  .right-navbar.responsive {position: relative;}
+  .right-navbar.responsive .icon {
     position: absolute;
     right: 0;
     top: 0;
   }
-  .navbar.responsive a {
+  .right-navbar.responsive a {
     float: none;
     display: block;
     text-align: left;
@@ -130,6 +145,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  overflow-y: scroll;
 }
 
 .article-info {
@@ -157,7 +173,7 @@ body {
 
 Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other 
 @media screen and (max-width: 400px) {
-  .navbar a {
+  .right-navbar a {
     float: none;
     width: 100%;
   }
