@@ -1,7 +1,3 @@
-function dive() {
-    //document.getElementById("demo").style.color = "red";
-}
-
 // function to "dive" from home page to articles
 window.smoothScroll = function(target) {
     var scrollContainer = target;
