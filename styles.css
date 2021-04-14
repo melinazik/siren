@@ -75,13 +75,21 @@ body {
   color: black;
   font-size: 2em;
   align-self: center;
-  background-color: #ddd;
+  background-color-: rgb(164, 197, 207);
+  background-color: rgb(199, 169, 190);
   margin-top: 140px;
   padding: 10px 20px;
   border-radius: 30px
   
 }
 
+#aboutSeaLife {
+  position: relative;
+  width: 100%;
+  height: 200vh;
+  background-image: url("imgs/sea-bot.jpg");
+  background-size: cover;
+}
 
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
