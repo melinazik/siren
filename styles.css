@@ -1,5 +1,10 @@
 /* font  */
-body {font-family: Arial, Helvetica, sans-serif;}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -17,7 +22,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
   flex-wrap: wrap;
   justify-content: center;
   overflow: hidden; /* Hide overflow */
-  background-color:#2F6468/*#0E828A/* #333; /* Dark background color */
+  background-color:#2c5153/*#0E828A/* #333; /* Dark background color */
   
 }
 
@@ -44,9 +49,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 /* ART */
 #home-view {
-  position: absolute;
+  position: relative;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-image: url("imgs/sea-top.jpg");
   background-size: cover;
   display: flex;
@@ -72,10 +77,11 @@ body {font-family: Arial, Helvetica, sans-serif;}
   align-self: center;
   background-color: #ddd;
   margin-top: 140px;
-  padding: 10px;
+  padding: 10px 20px;
   border-radius: 30px
   
 }
+
 
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
@@ -125,8 +131,10 @@ li a{
 footer {
   padding: 20px; /* Some padding */
   text-align: center; /* Center text*/
-  background: #2F6468; /* Grey background */
+  background: #2c5153; /* Grey background */
+  color: white;
 }
+
 
 /* LOGIN FORM STYLESHEET */
 
