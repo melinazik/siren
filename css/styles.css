@@ -50,11 +50,16 @@ body {
 }
 
 .nav-bar-siren {
-  font-weight: 400;
-  font-size: 1.3em;
-  color: white; /* White text color */
-  padding: 14px 20px; /* Add some padding */
+  background-color: rgb(75, 75, 75);
   margin-left: 5vw;
+  padding: 14px 20px; /* Add some padding */
+  top: 50%;
+  left: 50%;
+}
+.nav-bar-siren a{
+  font-weight: 400;
+  font-size: 1.4em;
+  color: white; /* White text color */
   text-decoration: none; /* Remove underline */
 }
 
@@ -76,7 +81,7 @@ body {
   display: none;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   .right-navbar a {display: none;}
   .right-navbar a.icon {
     float: right;
@@ -84,7 +89,7 @@ body {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   .right-navbar.responsive {position: relative;}
   .right-navbar.responsive .icon {
     position: absolute;
