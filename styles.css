@@ -156,12 +156,14 @@ form {
   width: 50%;
   height: 70%;
   display: grid;
-  margin: auto;
+  margin: 20px auto 20px auto;
   background-color: white;
   border-radius: 7px;
   box-shadow: 0px 0px 5px 2px #2F6468;
   padding-left: 60px;
   padding-bottom: 10px;
+  padding-top: 10px;
+
 
 }
 
@@ -169,6 +171,7 @@ form {
   display: grid;
   border: 1px ;
   width: 80%;
+  
 }
 
 
@@ -209,10 +212,11 @@ button {
   border-radius: 5px;
   color: white;
   font-weight: bold;
-  background-color: #3a3a3a;
+  background-color: #123094d8;
   cursor: pointer;
   outline: none;
   margin-bottom: 40px;
+  margin-top: 10px;
 
 }
 
@@ -230,7 +234,7 @@ button {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: #2f6468de;
+  background-color: #12309498;
   padding-top: 50px;
   justify-items: center;
 
