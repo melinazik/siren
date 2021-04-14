@@ -49,12 +49,20 @@ body {
   overflow: hidden;
 }
 
+.siren-icon {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  background-image: url("/imgs/oceana.jpg");
+  background-size: cover;
+}
 .nav-bar-siren {
-  background-color: rgb(75, 75, 75);
   margin-left: 5vw;
   padding: 14px 20px; /* Add some padding */
   top: 50%;
   left: 50%;
+  display: flex;
+  flex-direction: row;
 }
 .nav-bar-siren a{
   font-weight: 400;
