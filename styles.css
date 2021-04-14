@@ -1,17 +1,24 @@
 /* font  */
 body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 
 .page-header{
 	padding: 112px;
 	text-align: center;
-	backround: blue;
 	color: black;
 }
 
 .navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   overflow: hidden; /* Hide overflow */
   background-color:#2F6468/*#0E828A/* #333; /* Dark background color */
+  
 }
 
 /* Style the navigation bar links */
@@ -35,9 +42,39 @@ body {font-family: Arial, Helvetica, sans-serif;}
   color: black; /* Black text color */
 }
 
-/* Ensure proper sizing */
-* {
-  box-sizing: border-box;
+/* ART */
+#home-view {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("imgs/sea-top.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#home-view-title {
+  color: white;
+  font-weight: bold;
+  font-size: 9em;
+  align-self: center;
+}
+#home-view-title2 {
+  color: white;
+  font-weight: bold;
+  font-size: 3em;
+  align-self: center;
+}
+#home-view-button {
+  color: black;
+  font-size: 2em;
+  align-self: center;
+  background-color: #ddd;
+  margin-top: 140px;
+  padding: 10px;
+  border-radius: 30px
+  
 }
 
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
