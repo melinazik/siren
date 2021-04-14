@@ -35,7 +35,7 @@
   
   <!-- login form  -->
   <form id="login-form">
-    <input type="text" placeholder="Username" name="username" required>
+    <input type="text" placeholder="Username / Email" name="username" required>
     <input type="password" placeholder="Password" name="psw" required>
     
     <label>
@@ -43,18 +43,19 @@
     </label>
 
     <button type="submit" class="signupbtn"  style="width:150px;">Login</button>
-  </form>
+</form>
+  
 
+  <p>If you don't have an account yet, click the button below to Sign up.</p>
   <!-- signup form - appears when you click signup button -->
   <button onclick="document.getElementById('id01').style.display='block'" style="width:150px;">Sign Up</button>
 
   <div id="id01" class="modal">
     <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-  <form class="modal-content" action="/action_page.php">
+  <form class="modal-content">
     <div class="container">
       <h1>Sign Up</h1>
       <p>Fill in this form to create an account.</p>
-      <hr>
       <label for="email"><b>Email</b></label>
       <input type="text" placeholder="Email" name="email" required>
 
@@ -76,9 +77,28 @@
 
       <button type="submit" class="signupbtn"  style="width:150px;">Sign Up</button>
     </div>
+  
   </form>
 
+  
+</div>
 
+
+  <p>If you forgot your password, click the button below.</p>
+  <!-- signup form - appears when you click signup button -->
+  <button onclick="document.getElementById('id02').style.display='block'" style="width:150px;">Reset Password</button>
+
+  <div id="id02" class="modal">
+    <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content" >
+    <div class="container">
+      <h1>Forgot my password</h1>
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Email" name="email" required>
+      <button type="submit" class="signupbtn"  style="width:150px;">Submit</button>
+
+    </div>
+  </form>
 
 </main>
 	</body>
