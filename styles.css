@@ -7,11 +7,12 @@
 
 .header h1{
 	font-size: 40px;
+	color: white;
 }
 
 .navbar {
   overflow: hidden; /* Hide overflow */
-  background-color: #333; /* Dark background color */
+  background-color:#2F6468/*#0E828A/* #333; /* Dark background color */
 }
 
 /* Style the navigation bar links */
@@ -53,6 +54,25 @@
     float: none;
     width: 100%;
   }
+}
+
+ul{
+	list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #2F6468;
+}
+li{
+	float:left;
+}
+
+li a{
+	display:block;
+	color:white;
+	text-align: center;
+	padding: 8px;
+  text-decoration: none;
 }
 
 .footer {
