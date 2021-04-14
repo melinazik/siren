@@ -73,6 +73,7 @@ body {
   align-self: center;
 }
 #home-view-button {
+  width: 400px;
   color: black;
   font-size: 2em;
   align-self: center;
