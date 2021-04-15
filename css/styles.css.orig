@@ -32,8 +32,13 @@ body {
   flex-wrap-: wrap;
   justify-content-: center;
   overflow: hidden; /* Hide overflow */
+<<<<<<< HEAD
   margin-left: auto;  
   margin-right: 4vw;
+=======
+  margin-left: auto;
+  margin-right: 5vw;
+>>>>>>> bdbad71f6af614c26b8067b3ddd1307b7da28572
 
 }
 
@@ -66,7 +71,7 @@ body {
   margin: 0 5px;
 }
 .nav-bar-siren {
-  margin-left: 5vw;
+  margin-left: 4vw;
   padding: 14px 20px; /* Add some padding */
   top: 50%;
   left: 50%;
@@ -163,12 +168,11 @@ body {
   color: black;
   font-size: 2em;
   align-self: center;
-  background-color-: rgba(255, 255, 255, 0.6);
   background-color: rgb(199, 169, 190);
   margin-top: 140px;
   padding: 10px 20px;
   border-radius: 30px
-  
+
 }
 
 #aboutSeaLife {
@@ -196,78 +200,6 @@ body {
   font-size: xx-large;
   padding-bottom: 15px;
 }
-
-.flex-images {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content-: space-around;
-  align-items: center;
-}
-
-/* Responsive layout - makes a one column layout instead of a two-column layout */
-@media (max-width: 800px) {
-  .flex-images {
-    flex-direction: column;
-    justify-content: space-around;
-  }
-}
-
-.home-images {
-  margin: 2em ;
-  position: relative;
-   width-: 350px;
-   height-: 350px;
-   max-width: 400px ;
-   width: 200vw;
-   max-height: 400px ;
-   height: 200vw;
-   border: white solid 0.2em;
-}
-
-#img1 {
-  background-image: url(../imgs/endangered-whale-shark.jpeg);
-  background-size: cover;
-}
-
-#img2 {
-  background-image: url(../imgs/endangered-turtle.jpg);
-  background-size: cover;
-}
-
-#img3 {
-  background-image: url(../imgs/endangered-sea-lion.jpg);
-  background-size: cover;
-}
-
-.home-images:hover .overlay {
-  opacity: 1;
-}
-
-.text {
-  color: black;
-  font-size: 2em;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: rgba(255,255,255,0.7);
-}
-/*---------IMAGES IN HOME PAGE DONE------------ */
 
 .image_img{
   display: block;
