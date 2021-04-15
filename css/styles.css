@@ -174,7 +174,7 @@ body {
 #aboutSeaLife {
   position: relative;
   width: 100%;
-  height: 200vh;
+  height: auto;
   background-image: url("../imgs/sea-bot.jpg");
   background-size: cover;
   display: flex;
