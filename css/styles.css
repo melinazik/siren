@@ -360,3 +360,17 @@ button {
   clear: both;
   display: table;
 }
+
+
+/* loading icon */
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+  z-index: 1000;
+  /* TODO change loading icon */
+	background: url(https://smallenvelop.com/wp-content/uploads/2014/08/Preloader_11.gif) center no-repeat #fff;
+}
+
