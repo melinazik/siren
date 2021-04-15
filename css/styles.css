@@ -180,7 +180,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  overflow-y: scroll;
+  overflow-y: hidden;
 }
 
 .article-info {
@@ -320,7 +320,7 @@ body {
 .stats-text {
   position: relative;
   margin: 0 2.8em;
-  padding: 0.2em;
+  padding: 0.4em;
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 0 20px 20px 0;
   border-left: white solid 0.1em;
