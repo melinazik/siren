@@ -134,6 +134,18 @@ body {
   justify-content: center;
 }
 
+#page-view {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  /* TODO better way to place picture than crop it */
+  background-image: url("../imgs/sea-top-cropped.png");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 #home-view-title {
   color: white;
   font-weight: bold;
