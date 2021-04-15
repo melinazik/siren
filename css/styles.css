@@ -179,6 +179,7 @@ body {
   background-size: cover;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   overflow-y: scroll;
 }
 
@@ -244,7 +245,7 @@ body {
   opacity: 1;
 }
 
-.text {
+.text-animal {
   color: black;
   font-size: 1.5em;
   position: absolute;
@@ -279,7 +280,52 @@ body {
   background-color: rgba(255,255,255,0.7);
 }
 /*---------IMAGES IN HOME PAGE DONE------------ */
+.home-page-stats-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 2em 4vw;
 
+}
+.home-page-stats {
+  position: relative;
+  
+  display: flex;
+  flex-direction: row;
+  font-size: 2em;
+  margin: 2vw;
+}
+#home-page-stat1 {
+  position: relative;
+  justify-self: right;
+}
+#home-page-stat2 {
+  position: relative;
+}
+#home-page-stat3 {
+  position: relative;
+  left: 0;
+}
+
+
+.stats-icon {
+  position: absolute;
+  height: 2em;
+  width: 2em;
+  background: url("../imgs/logo2.png");
+  background-size: cover;
+  margin: 0 0.5em;
+}
+
+.stats-text {
+  position: relative;
+  margin: 0 2.8em;
+  padding: 0.2em;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 0 20px 20px 0;
+  border-left: white solid 0.1em;
+}
+/* --------------STATS IN HOME PAGE DONE----------*/
 .image_img{
   display: block;
   width: 40%;
