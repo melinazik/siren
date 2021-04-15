@@ -179,17 +179,17 @@ body {
   background-size: cover;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   overflow-y: scroll;
 }
 
 .article-info {
   position: relative;
   padding: 50px;
-  margin: 0 10%;
+  margin: 2em 10%;
   background-color: rgba(255, 255, 255, 0.5);
   font-size: 1.5em;
-  border-radius: 20px
+  border-radius: 0 20px 0 20px;
+  border-left: rgba(255, 255, 255, 0.6) solid 0.2em;
 }
 
 .article-info h4 {
@@ -201,7 +201,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content-: space-around;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -222,7 +222,7 @@ body {
    width: 200vw;
    max-height: 400px ;
    height: 200vw;
-   border: white solid 0.2em;
+   border: rgba(255,255,255,0.5) solid 0.1em;
 }
 
 #img1 {
