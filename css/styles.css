@@ -22,7 +22,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   overflow: hidden; /* Hide overflow */
-  background-color:#2c5153;/*#0E828A/* #333; /* Dark background color */
+  background-color:#192d47;/*#0E828A/* #333; /* Dark background color */
 
 }
 
@@ -228,7 +228,7 @@ li a{
 footer {
   padding: 20px; /* Some padding */
   text-align: center; /* Center text*/
-  background: #2c5153; /* Grey background */
+  background: #192d47; /* Grey background */
   color: white;
 }
 
@@ -248,7 +248,7 @@ form {
   margin: 20px auto 20px auto;
   background-color: white;
   border-radius: 7px;
-  box-shadow: 0px 0px 5px 2px #2F6468;
+  box-shadow: 0px 0px 5px 2px #192d47;
   padding-left: 60px;
   padding-bottom: 10px;
   padding-top: 10px;
@@ -301,7 +301,7 @@ button {
   border-radius: 5px;
   color: white;
   font-weight: bold;
-  background-color: #123094d8;
+  background-color: #4366b39d;
   cursor: pointer;
   outline: none;
   margin-bottom: 40px;
@@ -323,7 +323,7 @@ button {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: #12309498;
+  background-color: #192d47be;
   padding-top: 50px;
   justify-items: center;
 
