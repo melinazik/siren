@@ -32,7 +32,7 @@ body {
   flex-wrap-: wrap;
   justify-content-: center;
   overflow: hidden; /* Hide overflow */
-  margin-left: auto;  
+  margin-left: auto;
   margin-right: 5vw;
 
 }
@@ -167,7 +167,7 @@ body {
   margin-top: 140px;
   padding: 10px 20px;
   border-radius: 30px
-  
+
 }
 
 #aboutSeaLife {
@@ -196,7 +196,24 @@ body {
   padding-bottom: 15px;
 }
 
+.image_img{
+  display: block;
+  width: 40%;
+}
 
+.img_overlay{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.6);
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /*color:#ffffff;*/
+}
 
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other
 @media screen and (max-width: 700px) {
@@ -205,7 +222,7 @@ body {
   }
 }
 
-Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other 
+Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other
 @media screen and (max-width: 400px) {
   .right-navbar a {
     float: none;
@@ -272,9 +289,60 @@ form {
   display: grid;
   border: 1px ;
   width: 80%;
-  
+
 }
 
+/* Contact form */
+.contact-section{
+  padding: 40px 0;
+}
+
+.border{
+  width:100px;
+  height: 10px;
+  background:#192d47;
+  margin: 40px auto;
+}
+
+.contact-form{
+  max-width: 600px;
+  margin: auto;
+  padding: 0 10px;
+  overflow: hidden;
+}
+
+.contact-form-text{
+  display:block;
+  width:100%;
+  box-sizing:border-box;
+  margin:16px 0;
+  border:0;
+  background: #111;
+  padding: 20px 40px;
+  outline:none;
+  color: #ddd;
+  transition:0.5s;
+}
+
+.contact-form-text:focus{
+  box-shadow: 0 0 10px 4px #34495e;
+}
+
+textarea.contact-form-text{
+  resize:none;
+  height: 120px;
+}
+
+.contact-form-btn{
+  float:right;
+  border:0;
+  background:#192d47;
+  color: #fff;
+  padding: 12px 50px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition:0.5s;
+}
 
 /* Add a background color when the inputs get focus */
 input[type=text]:focus, input[type=password]:focus {
@@ -349,7 +417,7 @@ button {
   width: 50%; /* Could be more or less, depending on screen size */
 }
 
- 
+
 /* The Close Button (x) */
 .close {
   position: absolute;
@@ -385,4 +453,3 @@ button {
   /* TODO change loading icon */
 	background: url(https://smallenvelop.com/wp-content/uploads/2014/08/Preloader_11.gif) center no-repeat #fff;
 }
-
