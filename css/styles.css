@@ -22,7 +22,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   overflow: hidden; /* Hide overflow */
-  background-color:#2c5153;/*#0E828A/* #333; /* Dark background color */
+  background-color:#192d47;/*#0E828A/* #333; /* Dark background color */
 
 }
 
@@ -66,7 +66,7 @@ body {
   margin: 0 5px;
 }
 .nav-bar-siren {
-  margin-left: 4vw;
+  margin-left: 5vw;
   padding: 14px 20px; /* Add some padding */
   top: 50%;
   left: 50%;
@@ -134,6 +134,18 @@ body {
   justify-content: center;
 }
 
+#page-view {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  /* TODO better way to place picture than crop it */
+  background-image: url("../imgs/sea-top-cropped.png");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 #home-view-title {
   color: white;
   font-weight: bold;
@@ -184,7 +196,24 @@ body {
   padding-bottom: 15px;
 }
 
+.image_img{
+  display: block;
+  width: 40%;
+}
 
+.img_overlay{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.6);
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /*color:#ffffff;*/
+}
 
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other
 @media screen and (max-width: 700px) {
@@ -193,7 +222,7 @@ body {
   }
 }
 
-Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other 
+Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other
 @media screen and (max-width: 400px) {
   .right-navbar a {
     float: none;
@@ -228,7 +257,7 @@ li a{
 footer {
   padding: 20px; /* Some padding */
   text-align: center; /* Center text*/
-  background: #2c5153; /* Grey background */
+  background: #192d47; /* Grey background */
   color: white;
 }
 
@@ -248,7 +277,7 @@ form {
   margin: 20px auto 20px auto;
   background-color: white;
   border-radius: 7px;
-  box-shadow: 0px 0px 5px 2px #2F6468;
+  box-shadow: 0px 0px 5px 2px #192d47;
   padding-left: 60px;
   padding-bottom: 10px;
   padding-top: 10px;
@@ -260,9 +289,60 @@ form {
   display: grid;
   border: 1px ;
   width: 80%;
-  
+
 }
 
+/* Contact form */
+.contact-section{
+  padding: 40px 0;
+}
+
+.border{
+  width:100px;
+  height: 10px;
+  background:#192d47;
+  margin: 40px auto;
+}
+
+.contact-form{
+  max-width: 600px;
+  margin: auto;
+  padding: 0 10px;
+  overflow: hidden;
+}
+
+.contact-form-text{
+  display:block;
+  width:100%;
+  box-sizing:border-box;
+  margin:16px 0;
+  border:0;
+  background: #111;
+  padding: 20px 40px;
+  outline:none;
+  color: #ddd;
+  transition:0.5s;
+}
+
+.contact-form-text:focus{
+  box-shadow: 0 0 10px 4px #34495e;
+}
+
+textarea.contact-form-text{
+  resize:none;
+  height: 120px;
+}
+
+.contact-form-btn{
+  float:right;
+  border:0;
+  background:#192d47;
+  color: #fff;
+  padding: 12px 50px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition:0.5s;
+}
 
 /* Add a background color when the inputs get focus */
 input[type=text]:focus, input[type=password]:focus {
@@ -301,7 +381,7 @@ button {
   border-radius: 5px;
   color: white;
   font-weight: bold;
-  background-color: #123094d8;
+  background-color: #4366b39d;
   cursor: pointer;
   outline: none;
   margin-bottom: 40px;
@@ -323,7 +403,7 @@ button {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: #12309498;
+  background-color: #192d47be;
   padding-top: 50px;
   justify-items: center;
 
@@ -337,7 +417,7 @@ button {
   width: 50%; /* Could be more or less, depending on screen size */
 }
 
- 
+
 /* The Close Button (x) */
 .close {
   position: absolute;
@@ -359,4 +439,17 @@ button {
   content: "";
   clear: both;
   display: table;
+}
+
+
+/* loading icon */
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+  z-index: 1000;
+  /* TODO change loading icon */
+	background: url(https://smallenvelop.com/wp-content/uploads/2014/08/Preloader_11.gif) center no-repeat #fff;
 }

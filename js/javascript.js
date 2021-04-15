@@ -30,3 +30,8 @@ function myFunction() {
       x.className = "right-navbar";
     }
   }
+  
+  // loading icon
+  $(window).on("load", function(){
+    $(".loader").fadeOut("slow");
+  });
