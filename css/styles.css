@@ -733,3 +733,41 @@ button {
   /* TODO change loading icon */
 	background: url(https://smallenvelop.com/wp-content/uploads/2014/08/Preloader_11.gif) center no-repeat #fff;
 }
+
+/*LEARN MORE SECTION */
+.features-grid-container{
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 20px 40px 40px;
+  flex-direction: row;
+  position:relative;
+
+}
+
+.features-grid-row-img{
+  width:250px;
+  margin:30px 30px 30px 0;
+  float: left;
+  position: relative;
+}
+
+
+#first-row .features-grid-row-text{
+  display:inline;
+  text-align:left;
+  margin: 2em;
+}
+
+
+/* responsive */
+@media screen and (max-width: 768px){
+  .features-grid-row .w-50{
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .features-grid-row .d-flex-r{
+    flex-direction: column;
+  }
+}
