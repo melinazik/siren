@@ -556,7 +556,7 @@ form {
   height: auto;
   display: grid;
   margin: 20px auto 20px auto;
-   box-shadow: 0px 0px 5px 2px #192d47;
+  box-shadow: 0 0 10px 4px #34495e;
   background-color:white;
   border-radius: 7px;
   padding-left: 60px;
@@ -593,50 +593,7 @@ form {
   box-shadow: 0 0 10px 4px #34495e;
 }
 
-/* Contact form */
-.contact-section{
-  padding: 40px 0;
-}
 
-.contact-form{
-  max-width: 600px;
-  margin: auto;
-  padding: 0 10px;
-  overflow: hidden;
-}
-
-.contact-form-text{
-  display:block;
-  width:100%;
-  box-sizing:border-box;
-  margin:16px 0;
-  border:0;
-  background: #f1f1f1;
-  padding: 20px 40px;
-  outline:none;
-  color: black;
-  transition:0.5s;
-}
-
-.contact-form-text:focus{
-  box-shadow: 0 0 10px 4px #34495e;
-}
-
-textarea.contact-form-text{
-  resize:none;
-  height: 120px;
-}
-
-.contact-form-btn{
-  float:right;
-  border:0;
-  background:#192d47;
-  color: #fff;
-  padding: 12px 50px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition:0.5s;
-}
 
 /* Add a background color when the inputs get focus */
 input[type=text]:focus, input[type=password]:focus {
@@ -656,6 +613,7 @@ input[type=text], input[type=password] {
 
 /* Add a background color when the inputs get focus */
 input[type=text]:focus, input[type=password]:focus {
+  box-shadow: 0 0 10px 4px #34495e;
   background-color: #ddd;
   outline: none;
 }
@@ -700,7 +658,6 @@ button {
   background-color: #192d47be;
   padding-top: 50px;
   justify-items: center;
-
 }
 
 /* Modal Content/Box */
@@ -748,6 +705,50 @@ button {
 	background: url(https://smallenvelop.com/wp-content/uploads/2014/08/Preloader_11.gif) center no-repeat #fff;
 }
 
+/* Contact form */
+.contact-section{
+  padding: 40px 0;
+}
+
+.contact-form{
+  max-width: 600px;
+  margin: auto;
+  padding: 0 10px;
+  overflow: hidden;
+}
+
+.contact-form-text{
+  display:block;
+  width:100%;
+  box-sizing:border-box;
+  margin:16px 0;
+  border:0;
+  background: #f1f1f1;
+  padding: 20px 40px;
+  outline:none;
+  color: black;
+  transition:0.5s;
+}
+
+.contact-form-text:focus{
+  box-shadow: 0 0 10px 4px #34495e;
+}
+
+textarea.contact-form-text{
+  resize:none;
+  height: 120px;
+}
+
+.contact-form-btn{
+  float:right;
+  border:0;
+  background:#192d47;
+  color: #fff;
+  padding: 12px 50px;
+  cursor: pointer;
+  transition:0.5s;
+}
+
 /*LEARN MORE SECTION */
 .features-grid-container{
   max-width: 800px;
@@ -785,3 +786,31 @@ button {
     flex-direction: column;
   }
 }
+
+
+/* CAUSES SECTION */
+
+.causes{
+  width:80%;
+  margin:auto;
+  padding-top: 80px;
+  padding-bottom: 50px;
+}
+
+.causes-col{
+  flex-basis:48%;
+  padding:30px 2px;
+}
+
+.causes-col .img{
+  width:80%;
+}
+
+.causes-col h1{
+  padding-top:0;
+}
+
+.causes-col p{
+  padding: 15px 0 25px;
+}
+/* END CAUSES SECTION */
