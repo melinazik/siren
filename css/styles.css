@@ -11,7 +11,7 @@ html,body {
   padding:0px;
   margin:0px;
 
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Georgia, serif;
   overflow-y: scroll;
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -39,9 +39,13 @@ html,body {
 
 .right-navbar {
   align-self:flex-end;
+  display-: flex;
+  flex-wrap-: wrap;
+  justify-content-: center;
   overflow: hidden; /* Hide overflow */
   margin-left: auto;
   margin-right: 4vw;
+
 }
 
 /* Style the navigation bar links */
@@ -54,33 +58,6 @@ html,body {
   text-decoration: none; /* Remove underline */
   font-size: 1.2em;
   overflow: hidden;
-}
-
-#nav {
-  display: flex;
-  flex-direction: row;
-  list-style: none inside;
-  margin: 0;
-  padding: 0;
-}
-
-#nav li {
-  display: block;
-  position: relative;
-}
-
-#nav li li a {
-  font-size: 90%;
-}
-
-#nav ul {
-  position: relative;
-  padding: 0;
-  display: none;
-}
-
-#nav li:hover ul {
-  display: block;
 }
 
 .siren-icon {
@@ -114,6 +91,11 @@ html,body {
   text-decoration: none; /* Remove underline */
 }
 
+/* Right-aligned link */
+.right-navbar a.right {
+  float: right; /* Float a link to the right */
+}
+
 /* Change color on hover/mouse-over */
 .right-navbar a:hover {
   background-color: #ddd; /* Grey background color */
@@ -121,13 +103,14 @@ html,body {
 }
 
 /* responsive/collapsible nav bar */
+
+
 .right-navbar .icon {
   display: none;
 }
 
 @media screen and (max-width: 900px) {
   .right-navbar a {display: none;}
-  
   .right-navbar a.icon {
     float: right;
     display: block;
@@ -135,20 +118,16 @@ html,body {
 }
 
 @media screen and (max-width: 900px) {
-  .right-navbar.responsive {
-    position: relative;
-  }
+  .right-navbar.responsive {position: relative;}
   .right-navbar.responsive .icon {
     position: absolute;
     right: 0;
     top: 0;
-    margin-bottom: 2em;
-  }
-  #nav {
-    flex-direction: column;
   }
   .right-navbar.responsive a {
+    float: none;
     display: block;
+    text-align: left;
   }
 }
 
@@ -418,7 +397,6 @@ html,body {
     flex-direction: column;
   }
 }
-
 Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other
 @media screen and (max-width: 400px) {
   .right-navbar a {
@@ -770,68 +748,41 @@ textarea.contact-form-text{
   transition:0.5s;
 }
 
-/*LEARN MORE SECTION */
-.features-grid-container{
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 20px 40px 40px;
-  flex-direction: row;
-  position:relative;
-
-}
-
-.features-grid-row-img{
-  width:250px;
-  margin:30px 30px 30px 0;
-  float: left;
-  position: relative;
-}
-
-
-#first-row .features-grid-row-text{
-  display:inline;
-  text-align:left;
-  margin: 2em;
-}
-
-
-/* responsive */
-@media screen and (max-width: 768px){
-  .features-grid-row .w-50{
-    width:80%;
-    margin-left:auto;
-    margin-right:auto;
-  }
-  .features-grid-row .d-flex-r{
-    flex-direction: column;
-  }
-}
-
 
 /* CAUSES SECTION */
-
-.causes{
-  width:80%;
-  margin:auto;
-  padding-top: 80px;
-  padding-bottom: 50px;
+.description-container{
+  max-width: 800px;
+  margin:40px auto 20px;
 }
 
-.causes-col{
-  flex-basis:48%;
-  padding:30px 2px;
+.description-container p{
+  text-align:justify;
 }
 
-.causes-col .img{
-  width:80%;
+.description-container-text{
+  margin-top:10px;
 }
 
-.causes-col h1{
-  padding-top:0;
+.description-container .floating-image{
+  max-width: 400px;
 }
 
-.causes-col p{
-  padding: 15px 0 25px;
+.description-container .floating-image.right{
+  float:right;
+  margin-left: 30px;
+  margin-bottom:10px;
+  margin-top:10px;
 }
+
+.description-container .floating-image.left{
+  float:left;
+  margin-right: 30px;
+  margin-bottom:10px;
+  margin-top:10px;
+}
+
+.container-title{
+  margin-bottom: 5px;
+}
+
 /* END CAUSES SECTION */
