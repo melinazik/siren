@@ -39,13 +39,9 @@ html,body {
 
 .right-navbar {
   align-self:flex-end;
-  display-: flex;
-  flex-wrap-: wrap;
-  justify-content-: center;
   overflow: hidden; /* Hide overflow */
   margin-left: auto;
   margin-right: 4vw;
-
 }
 
 /* Style the navigation bar links */
@@ -58,6 +54,33 @@ html,body {
   text-decoration: none; /* Remove underline */
   font-size: 1.2em;
   overflow: hidden;
+}
+
+#nav {
+  display: flex;
+  flex-direction: row;
+  list-style: none inside;
+  margin: 0;
+  padding: 0;
+}
+
+#nav li {
+  display: block;
+  position: relative;
+}
+
+#nav li li a {
+  font-size: 90%;
+}
+
+#nav ul {
+  position: relative;
+  padding: 0;
+  display: none;
+}
+
+#nav li:hover ul {
+  display: block;
 }
 
 .siren-icon {
@@ -91,11 +114,6 @@ html,body {
   text-decoration: none; /* Remove underline */
 }
 
-/* Right-aligned link */
-.right-navbar a.right {
-  float: right; /* Float a link to the right */
-}
-
 /* Change color on hover/mouse-over */
 .right-navbar a:hover {
   background-color: #ddd; /* Grey background color */
@@ -103,14 +121,13 @@ html,body {
 }
 
 /* responsive/collapsible nav bar */
-
-
 .right-navbar .icon {
   display: none;
 }
 
 @media screen and (max-width: 900px) {
   .right-navbar a {display: none;}
+  
   .right-navbar a.icon {
     float: right;
     display: block;
@@ -118,16 +135,20 @@ html,body {
 }
 
 @media screen and (max-width: 900px) {
-  .right-navbar.responsive {position: relative;}
+  .right-navbar.responsive {
+    position: relative;
+  }
   .right-navbar.responsive .icon {
     position: absolute;
     right: 0;
     top: 0;
+    margin-bottom: 2em;
+  }
+  #nav {
+    flex-direction: column;
   }
   .right-navbar.responsive a {
-    float: none;
     display: block;
-    text-align: left;
   }
 }
 
