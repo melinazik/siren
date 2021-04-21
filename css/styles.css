@@ -197,7 +197,7 @@ html,body {
   font-size: 2em;
   align-self: center;
   background-color-: rgba(255, 255, 255, 0.6);
-  background-color: rgb(199, 169, 190);
+  background-color:  #A7BDBC /*#738A89 /*rgb(199, 169, 190);*/
   margin-top: 140px;
   padding: 10px 20px;
   border-radius: 30px;
@@ -245,19 +245,13 @@ html,body {
   overflow-y: hidden;
 }
 
-.article-info {
-  position: relative;
-  padding: 50px;
-  margin: 2em 10%;
-  background-color: rgba(255, 255, 255, 0.5);
-  font-size: 1.5em;
-  border-radius: 0 20px 0 20px;
-  border-left: rgba(255, 255, 255, 0.6) solid 0.2em;
+.about-title{
+  color: #738A89;
 }
 
-.article-info h4 {
-  font-size: xx-large;
-  padding-bottom: 15px;
+.about-p{
+  color: #A7BDBC;
+  font-size: 16px;
 }
 
 .flex-images {
@@ -285,7 +279,7 @@ html,body {
    width: 200vw;
    max-height: 400px ;
    height: 200vw;
-   border: rgba(255,255,255,0.5) solid 0.1em;
+   border-radius: 7px;
 }
 
 #img1 {
@@ -391,6 +385,7 @@ html,body {
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 0 20px 20px 0;
   border-left: white solid 0.1em;
+  font-size: 25px;
 }
 /* --------------STATS IN HOME PAGE DONE----------*/
 .image_img{
@@ -578,7 +573,7 @@ form {
   margin: 20px auto 20px auto;
   box-shadow: 0 0 10px 4px #34495e;
   background-color:white;
-  border-radius: 7px;
+
   padding-left: 60px;
   padding-bottom: 10px;
   padding-top: 10px;
@@ -793,6 +788,7 @@ textarea.contact-form-text{
   margin-left: 30px;
   margin-bottom:10px;
   margin-top:10px;
+  border-radius: 7px;
 }
 
 .description-container .floating-image.left{
@@ -800,33 +796,12 @@ textarea.contact-form-text{
   margin-right: 30px;
   margin-bottom:10px;
   margin-top:10px;
+  border-radius: 7px;
 }
 
-.container-title{
+.container-title {
   margin-bottom: 5px;
 }
 
+
 /* END CAUSES SECTION */
-
-/* ----------CAROUSEL-------------*/
-.carousel-wrapper {
-  border: 1px solid red;
-  
-}
-
-.carousel-post-wrapper {
-  border: 1px dashed red;
-  display-: flex;
-  flex-direction-: row;
-  justify-content-: space-around;
-  width: 84%;
-  height: 15em;
-  margin: 0px auto;
-}
-
-.carousel-post-wrapper .post{
-  display: inline-block;
-  background-color: cyan;
-}
-
-/* -------END CAROUSEL------------*/
