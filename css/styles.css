@@ -807,3 +807,26 @@ textarea.contact-form-text{
 }
 
 /* END CAUSES SECTION */
+
+/* ----------CAROUSEL-------------*/
+.carousel-wrapper {
+  border: 1px solid red;
+  
+}
+
+.carousel-post-wrapper {
+  border: 1px dashed red;
+  display-: flex;
+  flex-direction-: row;
+  justify-content-: space-around;
+  width: 84%;
+  height: 15em;
+  margin: 0px auto;
+}
+
+.carousel-post-wrapper .post{
+  display: inline-block;
+  background-color: cyan;
+}
+
+/* -------END CAROUSEL------------*/
