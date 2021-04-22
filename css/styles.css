@@ -805,3 +805,37 @@ textarea.contact-form-text{
 
 
 /* END CAUSES SECTION */
+
+/* HELP Section */
+@media (max-width: 240px) {
+  
+
+.logo{
+  width:240px;
+  height:200px;
+  border-radius: 240px;
+}
+}
+
+.help-title{
+  font-size: larger;
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.hotline-title{
+  text-align: left;
+  font-size: large;
+  font-weight: bold;
+}
+
+.rescue-link{
+  font-size: larger;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #24262b;
+  text-align: center;
+}
+
+/* END HELP SECTION */
