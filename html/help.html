@@ -25,22 +25,31 @@
 	<!-- Loading icon -->
 	<div class="loader"></div>
 
-	<div class="navbar" >
+  <div class="navbar">
 		<div class="nav-bar-siren">
 			<div class="siren-icon"></div>
-			<a href="home.html"  class="active">SIREN</a>
+			<a href="home.html" class="active">SIREN</a>
 		</div>
 
-
 		<div class="right-navbar" id="navbarID">
-			<a href="home.html">Home</a>
-			<a href="learnmore.html">Learn More</a>
-			<a href="help.html">How to help</a> <!-- tropoi na boithisei kapoios me to thema + link gia NGOs klp -->
-			<a href="contact.html">Contact us</a>
-			<a href="login.html">Login/Register</a>
+			<ul id="nav">
+				<li><a href="home.html">Home</a></li>
+				<li><a id="sub-menu-hover">Learn More</a>
+					<ul id="sub-menu">
+						<li><a href="causes.html">Causes</a> </li>
+						<li><a href="effects.html">Effects</a></li>
+						<li><a href="resources.html">Resources</a></li>
+					</ul>
+				</li>
+				<li><a href="help.html">How to help</a></li>
+				<li><a href="contact.html">Contact us</a></li>
+				<li><a href="login.html">Login/Register</a></li>
+
+			</ul>
 			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
 				<div class="menu-icon"></div>
 			</a>
+
 		</div>
 	</div>
 
@@ -52,70 +61,75 @@
 	Want to help? You can find ways on how to do it below. <br><br>
 </div>
 
+ <!-- <div class = "help-title">
+    International Marine Life related NGOs <br>
+  </div>
+
+    <div class="list-ngo">
+      <li><a href="http://www.greenpeace.org"> <img class="logo" src="../imgs/greenpeace.png"></a></li>
+      <li><a href="http://bahamasplasticmovement.org"> <img  class="logo" src="../imgs/bpm.png"></a></li>
+      <li><a href="http://oceana.org"> <img  class="logo" src="../imgs/oceana.jpg"></a></li>
+  </div>
+
+  <div class = "help-title">
+    Greek Marine Life related NGOs </div>
+
+
+    <div class="list-ngo">
+      <div class="img-container">
+        <li><a href="https://archipelago.gr"> <img src="../imgs/archipelago.png" ></a></li>
+        </div>
+        <div class="img-container">
+        <li><a href="https://archelon.gr"> <img src="../imgs/archelon.jpg" ></a></li>
+        </div>
+      </div> -->
+
       <div class = "help-title">
         International Marine Life related NGOs <br>
       </div>
 
       <div class="img-row">
         <div class="img-column">
-          <a href ="https://oceana.org"><img class="resp-img image-resize" src="../imgs/oceana.jpg"> </a>
+          <a href ="https://oceana.org"><img class = "logo" src="../imgs/oceana.jpg"> </a>
         </div>
         <div class="img-column">
-          <a href ="https://greenpeace.org"><img class="resp-img image-resize" src="../imgs/greenpeace.png">  </a>
+          <a href ="https://greenpeace.org"><img class="logo" src="../imgs/greenpeace.png">  </a>
         </div>
         <div class="img-column">
-          <a href ="https://bahamasplasticmovement.org"><img class="resp-img image-resize" src="../imgs/bpm.png">  </a>
+          <a href ="https://bahamasplasticmovement.org"><img class = "logo" src="../imgs/bpm.png">  </a>
         </div>
       </div>
 
-      <div class="img-row">
-        <div class="img-column">
-          <a href ="https://www.noaa.gov/"><img class="resp-img image-resize"  src="../imgs/noaa.jpg"> </a>
-        </div>
-        <div class="img-column">
-          <a href ="https://www.barrierreef.org/"><img class="resp-img image-resize"  src="../imgs/barrierreef.jpg"> </a>
-        </div>
-        <div class="img-column">
-          <a href ="https://oceanconservacy.org"><img class="resp-img image-resize" src="../imgs/oceanconservacy.jpg">  </a>
-        </div>
-        </div>
-
-    
       <div class = "help-title"> <br>
         Greek Marine Life related NGOs </div>
 
         <div class="img-row">
           <div class="img-column">
-            <div class="img-container"><a href="https://archipelago.gr"><img  class="resp-img image-resize" src="../imgs/archipelago.png"> </a></div>
+            <a href ="https://archelon.gr"><img src="../imgs/archelon.jpg"> </a>
           </div>
           <div class="img-column">
-            <div><a href="https://medasset.gr"><img  class="resp-img image-resize" src="../imgs/medasset.jpg"> </a> </div>
-          </div>
-          <div class="img-column">
-            <div class="img-container"><a href="https://archelon.gr"><img class="resp-img image-resize" src="../imgs/archelon.jpg" > </a> </div>
+            <a href ="https://archipelago.gr"><img src="../imgs/archipelago.png">  </a>
           </div>
         </div>
 
-        <br>
-    
       <a class="rescue-link" href = "https://nmlc.org/rehabilitation/what-you-can-do-for-a-stranded-marine-animal/#:~:text=9.,Guard%20on%20VHF%20Channel%2016.">
       See how you can help if you come across an endagered marine animal <br></a>
     <div class = "hotline-title">
        <br>Useful Hotlines <br>
     </div>
 
-      
+
       <div class="hotline-title"><br> Greece (+30)</div>
       <p class="hotline-par"><br>Hellenic Coast Guard: 108</p>
         <p class="hotline-par">Greenpeace Greece: 210 3840774<br></p>
-        
+
         <div class="hotline-title"><br>EU </div>
         <p class="hotline-par"></pclass> <br>European Emergency Number: 112 <br> </p>
-        
+
         <div class="hotline-title"><br>USA </div>
         <p class="hotline-par">NOAA Marine Animal Entanglement: 1-800-900-3622 </p>
         <p class="hotline-par">New England Aquarium: (617) 973-5247  <br> </p>
-     
+
       </body>
     </div>
 
