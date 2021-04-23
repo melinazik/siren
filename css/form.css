@@ -64,35 +64,26 @@ input{
     border: none;
     background: #f1f1f1;
   }
-  
-  /* Add a background color when the inputs get focus */
-  input[type=text]:focus, input[type=password]:focus {
-    box-shadow: 0 0 10px 4px #34495e;
-    background-color: #ddd;
-    outline: none;
-  }
-  
+    
   
   button:hover {
     opacity:1;
   }
   
-  /* Extra styles for the cancel button */
   
-  /* style for all buttons*/
+  /* style buttons*/
   button {
-    width: 100%;
-    padding: 7px;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
-    background-color: #4366b39d;
+       float:right;
+    border:0;
+    background:#192d47;
+    color: #fff;
+    padding: 12px 50px;
     cursor: pointer;
-    outline: none;
+    transition:0.5s;
+    font-family: Georgia, serif;
+    border-radius: 5px;
     margin-bottom: 40px;
     margin-top: 10px;
-  
   }
   
   /* Add padding to container elements */
@@ -193,14 +184,4 @@ input{
     height: 120px;
   }
   
-  .contact-form-btn{
-    float:right;
-    border:0;
-    background:#192d47;
-    color: #fff;
-    padding: 12px 50px;
-    cursor: pointer;
-    transition:0.5s;
-    font-family: Georgia, serif;
-  }
-  
+
