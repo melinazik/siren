@@ -67,13 +67,12 @@ input{
     
   
   button:hover {
-    opacity:1;
+    opacity:0.7;
   }
   
   
   /* style buttons*/
   button {
-       float:right;
     border:0;
     background:#192d47;
     color: #fff;
@@ -82,14 +81,10 @@ input{
     transition:0.5s;
     font-family: Georgia, serif;
     border-radius: 5px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     margin-top: 10px;
   }
   
-  /* Add padding to container elements */
-  .container {
-    padding: 16px;
-  }
   
   /* The Modal (background) */
   .modal {
@@ -140,6 +135,16 @@ input{
   /* Contact form */
   .contact-section{
     padding: 40px 0 0 60px;
+  }
+  
+  /* Contact form */
+  .login-section{
+    padding: 20px;
+  }
+
+  /* Add padding to container elements */
+  .container {
+    padding: 16px;
   }
   
   .contact-form{

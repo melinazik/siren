@@ -62,67 +62,70 @@
 <!-- login form  -->
 <main class="main-holder">
 
+	<div class="login-section">
 
-  <!-- login form  -->
-  <form class="login-form" method="post">
-    <input type="text" class="login-form-text" placeholder="Username / Email" required>
-    <input type="password" class="login-form-text" placeholder="Password" required>
-
-    <label>
-      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-    </label>
-
-    <button type="submit" style="width:150px;">Login</button>
-</form>
-
-
-  <p>If you don't have an account yet, click the button below to create your account.</p>
-  <!-- signup form - appears when you click signup button -->
-  <button onclick="document.getElementById('id01').style.display='block'" style="width:150px;">Sign Up</button>
-
-  <div id="id01" class="modal">
-    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-  <form class="modal-content">
-    <div class="container">
-      <h1>Sign Up</h1>
-      <input type="text" placeholder="Email" name="email" required>
-
-      <input type="text" placeholder="Username" name="username" required>
-
-      <input type="password" placeholder="Password" name="psw" required>
-
-      <input type="password" placeholder="Password" name="psw-repeat" required>
+    <!-- login form  -->
+    <form class="login-form" action="login.html"  method="post">
+      <input type="text" class="login-form-text" placeholder="Username / Email" required>
+      <input type="password" class="login-form-text" placeholder="Password" required>
 
       <label>
         <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
       </label>
 
-      <!-- TODO privacy policy -->
-      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+      <button type="submit" style="width:150px;">Login</button>
+    </form>
 
-      <button type="submit" style="width:150px;">Sign Up</button>
+  </div>
+
+  <div class="login-section">
+    <p>
+      Click the button below to create an account.
+    </p>
+    <!-- signup form - appears when you click signup button -->
+    <button onclick="document.getElementById('id01').style.display='block'" style="width:150px;">Sign Up</button>
+
+    <div id="id01" class="modal">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <form class="modal-content">
+        <h1>Sign Up</h1>
+        <input type="text" placeholder="Email" name="email" required>
+        <input type="text" placeholder="Username" name="username" required>
+        <input type="password" placeholder="Password" name="psw" required>
+        <input type="password" placeholder="Password" name="psw-repeat" required>
+
+        <label>
+          <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+        </label>
+
+        <!-- TODO privacy policy -->
+        <p>
+          By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.
+        </p>
+        <button type="submit" style="width:150px;">Sign Up</button>
+
+      </form>
+
     </div>
+  </div>
 
-  </form>
+  <div class="login-section">
+    <p>Click the button below if you forgot your password.</p>
+    <!-- signup form - appears when you click signup button -->
+    <button onclick="document.getElementById('id02').style.display='block'" style="width:200px;">Reset Password</button>
 
+    <div id="id02" class="modal">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <form class="modal-content" >
+          <h1>Forgot my password</h1>
+          <input type="text" placeholder="Email" name="email" required>
+          <button type="submit" style="width:150px;">Submit</button>
 
-</div>
-
-
-  <p>If you forgot your password, click the button below.</p>
-  <!-- signup form - appears when you click signup button -->
-  <button onclick="document.getElementById('id02').style.display='block'" style="width:150px;">Reset Password</button>
-
-  <div id="id02" class="modal">
-    <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-  <form class="modal-content" >
-    <div class="container">
-      <h1>Forgot my password</h1>
-      <input type="text" placeholder="Email" name="email" required>
-      <button type="submit" style="width:150px;">Submit</button>
+      </form>
 
     </div>
-  </form>
+    
+  </div>
 
 </main>
 
