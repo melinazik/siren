@@ -6,7 +6,7 @@
   overflow-x: hidden;
 }*/
 
-html,body {
+html,body, textarea {
   height:100%;
   padding:0px;
   margin:0px;
@@ -17,6 +17,17 @@ html,body {
   overflow-x: hidden;
 }
 
+textarea{
+  font-family: Georgia, serif;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+input{
+  font-family: Georgia, serif;
+
+}
 * {
   box-sizing: border-box;
   padding: 0;
@@ -762,6 +773,8 @@ textarea.contact-form-text{
   padding: 12px 50px;
   cursor: pointer;
   transition:0.5s;
+  font-family: Georgia, serif;
+
 }
 
 
