@@ -6,7 +6,7 @@
   overflow-x: hidden;
 }*/
 
-html,body, textarea {
+html,body{
   height:100%;
   padding:0px;
   margin:0px;
@@ -15,23 +15,6 @@ html,body, textarea {
   overflow-y: scroll;
   scroll-behavior: smooth;
   overflow-x: hidden;
-}
-
-textarea{
-  font-family: Georgia, serif;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-
-input{
-  font-family: Georgia, serif;
-
-}
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
 }
 
 .page-header {
@@ -570,212 +553,9 @@ ul{
 
 /* LOGIN FORM STYLESHEET */
 
-form {
-  border: 3px solid #f1f1f1;
 
-}
 
 /* login box */
-
-#main-holder {
-  width: 50%;
-  height: auto;
-  display: grid;
-  margin: 20px auto 20px auto;
-  box-shadow: 0 0 10px 4px #34495e;
-  background-color:white;
-
-  padding-left: 60px;
-  padding-bottom: 10px;
-  padding-top: 10px;
-}
-.border{
-  width:100px;
-  height: 10px;
-  background:#192d47;
-  margin: 40px auto;
-}
-
-#login-form {
-  display: grid;
-  border: 1px ;
-  width: 80%;
-
-}
-
-.login-form-text{
- width:100%;
- box-sizing:border-box;
- margin:16px 0;
- border:0;
- background: #ddd;
- padding: 20px 40px;
- outline:none;
- color: black;
- transition:0.5s;
-}
-
-.login-form-text:focus{
-  box-shadow: 0 0 10px 4px #34495e;
-}
-
-
-
-/* Add a background color when the inputs get focus */
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-/* Full-width input fields */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-}
-
-/* Add a background color when the inputs get focus */
-input[type=text]:focus, input[type=password]:focus {
-  box-shadow: 0 0 10px 4px #34495e;
-  background-color: #ddd;
-  outline: none;
-}
-
-
-button:hover {
-  opacity:1;
-}
-
-/* Extra styles for the cancel button */
-
-/* style for all buttons*/
-button {
-  width: 100%;
-  padding: 7px;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  font-weight: bold;
-  background-color: #4366b39d;
-  cursor: pointer;
-  outline: none;
-  margin-bottom: 40px;
-  margin-top: 10px;
-
-}
-
-/* Add padding to container elements */
-.container {
-  padding: 16px;
-}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: #192d47be;
-  padding-top: 50px;
-  justify-items: center;
-}
-
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
-  width: 50%; /* Could be more or less, depending on screen size */
-}
-
-
-/* The Close Button (x) */
-.close {
-  position: absolute;
-  right: 35px;
-  top: 15px;
-  font-size: 40px;
-  font-weight: bold;
-  color: #f1f1f1;
-}
-
-.close:hover,
-.close:focus {
-  color: #f44336;
-  cursor: pointer;
-}
-
-/* Clear floats */
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-
-/* loading icon */
-.loader {
-	position: fixed;
-	left: 0px;
-	top: 0px;
-	width: 100%;
-	height: 100%;
-  z-index: 1000;
-  /* TODO change loading icon */
-	background: url(https://smallenvelop.com/wp-content/uploads/2014/08/Preloader_11.gif) center no-repeat #fff;
-}
-
-/* Contact form */
-.contact-section{
-  padding: 40px 0;
-}
-
-.contact-form{
-  max-width: 600px;
-  margin: auto;
-  padding: 0 10px;
-  overflow: hidden;
-}
-
-.contact-form-text{
-  display:block;
-  width:100%;
-  box-sizing:border-box;
-  margin:16px 0;
-  border:0;
-  background: #f1f1f1;
-  padding: 20px 40px;
-  outline:none;
-  color: black;
-  transition:0.5s;
-}
-
-.contact-form-text:focus{
-  box-shadow: 0 0 10px 4px #34495e;
-}
-
-textarea.contact-form-text{
-  resize:none;
-  height: 120px;
-}
-
-.contact-form-btn{
-  float:right;
-  border:0;
-  background:#192d47;
-  color: #fff;
-  padding: 12px 50px;
-  cursor: pointer;
-  transition:0.5s;
-  font-family: Georgia, serif;
-
-}
 
 
 /* CAUSES SECTION */
