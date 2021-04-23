@@ -11,7 +11,7 @@ input{
     
 }
 
-#main-holder {
+.main-holder {
     width: 700px;
     height: auto;
     display: grid;
@@ -24,23 +24,14 @@ input{
     padding-top: 10px;
   }
 
-  .border{
-    width:100px;
-    height: 10px;
-    background:#192d47;
-    margin: 40px auto;
-  }
   
-  #login-form {
+.login-form {
     display: grid;
     border: 1px ;
     width: 80%;
-  
   }
-
-  
-  
-  .login-form-text{
+ 
+.login-form-text{
    width:100%;
    box-sizing:border-box;
    margin:16px 0;
@@ -56,10 +47,10 @@ input{
     box-shadow: 0 0 10px 4px #34495e;
   }
   
-  
-  
   /* Add a background color when the inputs get focus */
-  input[type=text]:focus, input[type=password]:focus {
+  input[type=text]:focus, input[type=password]:focus, 
+  input[type=name]:focus, input[type=email]:focus, 
+  textarea[type=text]:focus{
     background-color: #ddd;
     outline: none;
   }
@@ -178,8 +169,6 @@ input{
     border: 1px ;
     width: 80%;
   }
-
-  
   
   .contact-form-text{
     display:block;
