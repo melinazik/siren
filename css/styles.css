@@ -854,4 +854,19 @@ textarea.contact-form-text{
   text-align: left;
 }
 
+
+.img-column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+
+.img-row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
 /* END HELP SECTION */
