@@ -807,16 +807,18 @@ textarea.contact-form-text{
 /* END CAUSES SECTION */
 
 /* HELP Section */
-@media (max-width: 240px) {
+/* @media(max-width:240px) {
   
 
-.logo{
-  width:240px;
-  height:200px;
+.logo img{
+  width:100%;
+  max-width: 240px;
+  height: auto;
   border-radius: 240px;
   display: block;
+  object-fit: cover;
 }
-}
+}*/
 
 .help-title{
   font-size: larger;
@@ -839,17 +841,6 @@ textarea.contact-form-text{
   text-align: center;
 }
 
-.list-ngo{
-  margin: auto;
-  width: 50%;
-  padding: 10px;
-
-}
-
-.imgContainer{
-  float:left;
-}
-
 .hotline-par{
   text-align: left;
 }
@@ -868,5 +859,23 @@ textarea.contact-form-text{
   display: table;
 }
 
+.resp-img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  /*max-height: 240px;*/
+  object-fit: contain;
+  object-position: top;
+}
+
+.img-container{
+  max-width: 300px;
+  padding: 3rem;
+  margin:20px 20px 20px;
+}
+
+.image-resize {
+  height: 300px;
+}
 
 /* END HELP SECTION */
