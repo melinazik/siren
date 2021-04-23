@@ -24,22 +24,31 @@
 	<!-- Loading icon -->
 	<div class="loader"></div>
 
-	<div class="navbar" >
+  <div class="navbar">
 		<div class="nav-bar-siren">
 			<div class="siren-icon"></div>
-			<a href="home.html"  class="active">SIREN</a>
+			<a href="home.html" class="active">SIREN</a>
 		</div>
 
-
 		<div class="right-navbar" id="navbarID">
-			<a href="home.html">Home</a>
-			<a href="learnmore.html">Learn More</a>
-			<a href="help.html">How to help</a> <!-- tropoi na boithisei kapoios me to thema + link gia NGOs klp -->
-			<a href="contact.html">Contact us</a>
-			<a href="login.html">Login/Register</a>
+			<ul id="nav">
+				<li><a href="home.html">Home</a></li>
+				<li><a id="sub-menu-hover">Learn More</a>
+					<ul id="sub-menu">
+						<li><a href="causes.html">Causes</a> </li>
+						<li><a href="effects.html">Effects</a></li>
+						<li><a href="resources.html">Resources</a></li>
+					</ul>
+				</li>
+				<li><a href="help.html">How to help</a></li>
+				<li><a href="contact.html">Contact us</a></li>
+				<li><a href="login.html">Login/Register</a></li>
+
+			</ul>
 			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
 				<div class="menu-icon"></div>
 			</a>
+
 		</div>
 	</div>
 
@@ -92,7 +101,7 @@
     <p>Decades of destructive fishing has resulted in the precipitous decline of key fish stocks such as bluefin tuna and Grand Banks cod, as well as collateral impacts
       to other marine life. Hundreds of thousands of marine mammals, seabirds, and sea turtles are captured each year, alongside tens of millions of sharks. Many of these
        species are endangered and protected, while some such as the vaquita, Eastern Pacific leatherback turtle, and Maui dolphin are on the brink of extinction.
-     </p><br><hr><hr>
+     </p><br>
   </div>
 
   </div>
