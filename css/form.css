@@ -86,8 +86,8 @@ input{
   }
   
   
-  /* The Modal (background) */
-  .modal {
+  /* The popup (background) */
+  .popup {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     left: 0;
@@ -96,18 +96,21 @@ input{
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: #192d47be;
-    padding-top: 50px;
+    padding-top: 10px;
+    
+    
     justify-items: center;
   }
   
-  /* Modal Content/Box */
-  .modal-content {
+  /* popup Content/Box */
+  .popup-content {
     background-color: #fefefe;
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
-    width: 50%; /* Could be more or less, depending on screen size */
+    width: 750px; 
+    padding-right: 20px;
+    padding-left: 20px;
   }
-  
   
   /* The Close Button (x) */
   .close {

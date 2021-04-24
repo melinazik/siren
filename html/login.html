@@ -85,14 +85,14 @@
     <!-- signup form - appears when you click signup button -->
     <button onclick="document.getElementById('id01').style.display='block'" style="width:150px;">Sign Up</button>
 
-    <div id="id01" class="modal">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <form class="modal-content">
+    <div id="id01" class="popup">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close popup">&times;</span>
+      <form class="popup-content">
         <h1>Sign Up</h1>
-        <input type="text" placeholder="Email" name="email" required>
-        <input type="text" placeholder="Username" name="username" required>
-        <input type="password" placeholder="Password" name="psw" required>
-        <input type="password" placeholder="Password" name="psw-repeat" required>
+        <input class="login-form-text" type="text" placeholder="Email" name="email" required>
+        <input class="login-form-text" type="text" placeholder="Username" name="username" required>
+        <input class="login-form-text" type="password" placeholder="Password" name="psw" required>
+        <input class="login-form-text" type="password" placeholder="Repeat Password" name="psw-repeat" required>
 
         <label>
           <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
@@ -114,11 +114,11 @@
     <!-- signup form - appears when you click signup button -->
     <button onclick="document.getElementById('id02').style.display='block'" style="width:200px;">Reset Password</button>
 
-    <div id="id02" class="modal">
-      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <form class="modal-content" >
-          <h1>Forgot my password</h1>
-          <input type="text" placeholder="Email" name="email" required>
+    <div id="id02" class="popup">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close popup">&times;</span>
+      <form class="popup-content" >
+          <h1>Reset password</h1>
+          <input  class="login-form-text" type="text" placeholder="Email" name="email" required>
           <button type="submit" style="width:150px;">Submit</button>
 
       </form>
