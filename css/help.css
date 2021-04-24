@@ -1,0 +1,72 @@
+/* HELP Section */
+/* @media(max-width:240px) {
+  
+
+.logo img{
+  width:100%;
+  max-width: 240px;
+  height: auto;
+  border-radius: 240px;
+  display: block;
+  object-fit: cover;
+}
+}*/
+
+.help-title{
+    font-size: larger;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+  }
+  
+  .hotline-title{
+    text-align: left;
+    font-size: large;
+    font-weight: bold;
+  }
+  
+  .rescue-link{
+    font-size: larger;
+    font-weight: bold;
+    text-decoration: underline;
+    color: #24262b;
+    text-align: center;
+  }
+  
+  .hotline-par{
+    text-align: left;
+  }
+  
+  
+  .img-column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+  
+  
+  .img-row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .resp-img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    /*max-height: 240px;*/
+    object-fit: contain;
+    object-position: top;
+  }
+  
+  .img-container{
+    max-width: 300px;
+    padding: 3rem;
+    margin:20px 20px 20px;
+  }
+  
+  .image-resize {
+    height: 300px;
+  }
+  
