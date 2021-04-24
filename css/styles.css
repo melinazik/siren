@@ -822,21 +822,8 @@ input{
   /* END RESOURCES */
 
 
-      /* HELP Section */
-      /* @media(max-width:240px) {
-
-
-      .logo img{
-        width:100%;
-        max-width: 240px;
-        height: auto;
-        border-radius: 240px;
-        display: block;
-        object-fit: cover;
-      }
-      }*/
-
-      .help-title{
+  /* HELP Section */
+  .help-title{
           font-size: larger;
           text-align: center;
           font-weight: bold;
@@ -893,3 +880,5 @@ input{
         .image-resize {
           height: 300px;
         }
+
+        /* END HELP SECTION */
