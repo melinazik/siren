@@ -822,24 +822,28 @@ input{
   }
 
   .video-descr{
+    display: inline-block;
+    border-radius: 5px;
     margin-right: 50px;
     margin-left: 50px;
     margin-bottom: 10px;
     font-weight: 400;
     font-size: 24px;
-    background-color:rgba(95, 169, 183, .3);
+    background-color:rgba(95, 169, 183, .2);
     color:white;
   }
 
   .iframe-container{
+    margin-left: 50px;
+    margin-right: 50px;
     position: relative;
     width:100%;
-    margin-left: 50px;
-    margin-right:50px;
+    height: auto;
     padding-bottom: 25px;
   }
 
   .iframe-container iframe{
+
     position: relative;
     width:46%;
   }
