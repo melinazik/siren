@@ -869,7 +869,7 @@ input{
         }
 
         .rescue-link{
-          font-size: larger;
+          font-size: 100%;
           font-weight: bold;
           text-decoration: underline;
           color: #24262b;
@@ -904,6 +904,7 @@ input{
           object-position: top;
         }
 
+
         .img-container{
           max-width: 300px;
           padding: 3rem;
@@ -919,6 +920,32 @@ input{
 
         }
 
+        .help-button-container{
+          margin: auto;
+          width: 50%;
+          padding: 10px;
+        }
+
+        .help-button {
+          padding: 15px 25px;
+          font-size: 24px;
+          text-align: center;
+          cursor: pointer;
+          outline: none;
+          color: #ffffff;
+          background-color: #ffffff;
+          border: none;
+          border-radius: 15px;
+          box-shadow: 0 9px #999;
+        }
+        
+        .help-button:hover {background-color: #c9c9c9}
+        
+        .help-button:active {
+          background-color: #cecccc;
+          box-shadow: 0 5px rgba(218, 216, 216, 0.438);
+          transform: translateY(4px);
+        }
         
 
         /* END HELP SECTION */
