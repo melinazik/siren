@@ -813,7 +813,38 @@ input{
       }
 
 
-      /* END CAUSES-EFFECTS SECTION */
+  /* END CAUSES-EFFECTS SECTION */
+
+  /* RESOURCES */
+
+  .resources-section{
+    background-color: #050C0D;
+  }
+
+  .video-descr{
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 24px;
+    background-color:rgba(95, 169, 183, .3);
+    color:white;
+  }
+
+  .iframe-container{
+    position: relative;
+    width:100%;
+    margin-left: 50px;
+    margin-right:50px;
+    padding-bottom: 25px;
+  }
+
+  .iframe-container iframe{
+    position: relative;
+    width:46%;
+  }
+
+  /* END RESOURCES */
 
 
       /* HELP Section */
@@ -887,4 +918,3 @@ input{
         .image-resize {
           height: 300px;
         }
-        
