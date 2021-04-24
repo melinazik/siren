@@ -674,14 +674,22 @@ ul{
 /* END HELP SECTION */
 
 
-/* loading icon */
- .loader {
+ /* loading icon */
+  /* .loader {
+      position: fixed;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      
+    /* background: url("../imgs/logo2.png") center no-repeat #fff;
+  } */ 
+
+  .loader {
   position: fixed;
-  left: 0px;
-  top: 0px;
   width: 100%;
   height: 100%;
-z-index: 1000;
-/* TODO change loading icon */
-  background: url(https://smallenvelop.com/wp-content/uploads/2014/08/Preloader_11.gif) center no-repeat #fff;
-}
+  background: url("../imgs/logo2.png") center no-repeat #fff;
+  z-index: 1000;
+  
+  }
