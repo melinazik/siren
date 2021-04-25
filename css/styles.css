@@ -853,6 +853,11 @@ input{
     color:white;
   }
 
+  .video-logo{
+    width:30px;
+    height:30px;
+  }
+
   .iframe-container{
     margin-left: 50px;
     margin-right: 50px;
@@ -1030,3 +1035,5 @@ input{
     transform: rotate(359deg);
   }
 }
+
+
