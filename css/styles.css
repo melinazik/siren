@@ -196,8 +196,8 @@ html,body{
   color: rgba(254, 254, 254,.6);
   font-size: 2em;
   align-self: center;
-  background-color-: rgba(255, 255, 255, 0.6);
-  background-color:  #A7BDBC /*#738A89 /*rgb(199, 169, 190);*/
+  background-color: rgba(255, 255, 255, 0.6);
+  background-color:  #A7BDBC; /*#738A89 /*rgb(199, 169, 190);*/
   margin-top: 140px;
   padding: 10px 20px;
   border-radius: 30px;
@@ -218,8 +218,8 @@ html,body{
 }
 
 #home-view-button:hover:after {
-  background-color-: rgb(218, 191, 209);
-  transform-: scale(1.05);
+  background-color: rgb(218, 191, 209);
+  transform: scale(1.05);
   width: 120%;
   border-radius: 40px;
   background-color: rgba(255,255,255,0);
@@ -274,8 +274,8 @@ html,body{
 .home-images {
   margin: 2em ;
   position: relative;
-   width-: 350px;
-   height-: 350px;
+   width: 350px;
+   height: 350px;
    max-width: 400px ;
    width: 200vw;
    max-height: 400px ;
