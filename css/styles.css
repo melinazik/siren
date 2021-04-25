@@ -579,7 +579,7 @@ input{
 
 }
 
-.main-holder {
+.login-holder {
     width: 700px;
     height: auto;
     display: grid;
@@ -592,6 +592,7 @@ input{
     padding-top: 10px;
   }
 
+ 
 
 .login-form {
     display: grid;
@@ -705,7 +706,20 @@ input{
 
   /* Contact form */
   .contact-section{
-    padding: 40px 0 0 60px;
+    padding: 20px 0 0 40px;
+  }
+
+  .contact-holder {
+    width: 600px;
+    height: auto;
+    display: grid;
+    margin: 20px auto 20px auto;
+    box-shadow: 0 0 10px 4px #34495e;
+    background-color:white;
+
+    padding-left: 60px;
+    padding-bottom: 10px;
+    padding-top: 10px;
   }
 
   /* Contact form */
@@ -956,7 +970,6 @@ input{
   transform: translateY(4px);
 }
 
-
 /* END HELP SECTION */
 
 /* ----------CAROUSEL-------------*/
@@ -997,3 +1010,14 @@ input{
 }
 
 /* -------END CAROUSEL------------*/
+
+/* loading icon */
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+  z-index: 1000;
+  background: url("../imgs/logo2.png") center no-repeat #fff;
+}
