@@ -1009,3 +1009,14 @@ input{
 }
 
 /* -------END CAROUSEL------------*/
+
+/* loading icon */
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+  z-index: 1000;
+  background: url("../imgs/logo2.png") center no-repeat #fff;
+}
