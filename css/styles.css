@@ -579,7 +579,7 @@ input{
 
 }
 
-.login-holder {
+.main-holder {
     width: 700px;
     height: auto;
     display: grid;
@@ -592,7 +592,6 @@ input{
     padding-top: 10px;
   }
 
- 
 
 .login-form {
     display: grid;
@@ -706,20 +705,7 @@ input{
 
   /* Contact form */
   .contact-section{
-    padding: 20px 0 0 40px;
-  }
-
-  .contact-holder {
-    width: 600px;
-    height: auto;
-    display: grid;
-    margin: 20px auto 20px auto;
-    box-shadow: 0 0 10px 4px #34495e;
-    background-color:white;
-
-    padding-left: 60px;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    padding: 40px 0 0 60px;
   }
 
   /* Contact form */
@@ -763,12 +749,15 @@ input{
   /* CAUSES- EFFECTS SECTION */
   .description-container{
       max-width: 800px;
-      padding: 0 0 3em 0;
-      margin: 0 2em;
+      margin:40px auto 20px;
     }
 
     .description-container p{
       text-align:justify;
+    }
+
+    .description-container .floating-image{
+      max-width: 400px;
     }
 
     .description-container-text{
@@ -789,10 +778,19 @@ input{
       margin-bottom:10px;
       margin-top:10px;
       border-radius: 7px;
-      height: 20em;
-      width: 20em;
+      
     }
 
+    .siren {
+      height: 20em;
+      width: 20em;
+      float: left;
+      margin-right: 30px;
+    }
+
+    #siren-container {
+      padding-bottom: 3em;
+    }
     .container-title {
       margin-bottom: 5px;
     }
@@ -970,6 +968,7 @@ input{
   transform: translateY(4px);
 }
 
+
 /* END HELP SECTION */
 
 /* ----------CAROUSEL-------------*/
@@ -1010,14 +1009,3 @@ input{
 }
 
 /* -------END CAROUSEL------------*/
-
-/* loading icon */
-.loader {
-	position: fixed;
-	left: 0px;
-	top: 0px;
-	width: 100%;
-	height: 100%;
-  z-index: 1000;
-  background: url("../imgs/logo2.png") center no-repeat #fff;
-}
