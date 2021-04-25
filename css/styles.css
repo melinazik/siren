@@ -376,8 +376,8 @@ html,body{
 
 .stats-icon {
   position: absolute;
-  height: 2em;
-  width: 2em;
+  height: 1.7em;
+  width: 1.7em;
   background: url("../imgs/logo2.png");
   background-size: cover;
   margin: 0 0.5em;
@@ -390,11 +390,10 @@ html,body{
 
 .stats-text {
   position: relative;
-  margin: 0 2.8em;
+  margin: 0 4em;
   padding: 0.4em;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(216, 221, 240, 0.6);
   border-radius: 0 20px 20px 0;
-  border-left: white solid 0.1em;
   font-size: 25px;
 }
 /* --------------STATS IN HOME PAGE DONE----------*/

@@ -36,7 +36,4 @@ function myFunction() {
     $(".loader").fadeOut("slow");
   });
 
-  new Splide( '#splide', {
-    perPage: 3,
-    rewind : true,
-  } ).mount();
+  
