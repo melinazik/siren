@@ -878,12 +878,20 @@ input{
 
 /* HELP Section */
 
+.logos-container{
+  background-image: url(../imgs/ocean.jpg);
+  background-size: cover;
+  width: 100%;
+  height: auto;
+}
 
 .help-title{
-  font-size: larger;
+  
   text-align: center;
   font-weight: bold;
   font-size: 150%;
+  color: black;
+  /*comment*/
 }
 
 .hotline-title{
@@ -891,7 +899,15 @@ input{
   font-weight: bold;
   font-size: 120%;
   margin-left: 10px;
+  color: black;
+}
 
+.help-header{
+  font-size: larger;
+  text-align: center;
+  font-weight: bold;
+  font-size: 200%;
+  color: black;
 }
 
 .rescue-link{
@@ -905,7 +921,11 @@ input{
 
 .hotline-par{
   text-align: center;
-  margin-left: 10px;
+  color: black;
+}
+
+.help-par{
+  text-align: center;
 }
 
 
@@ -920,7 +940,7 @@ input{
   content: "";
   clear: both;
   display: table;
-
+  background-color: lightblue;
 }
 
 .resp-img {
@@ -1012,6 +1032,8 @@ input{
 .carousel-cell::before {
   display: block;
 }
+
+
 
 /* -------END CAROUSEL------------*/
 
