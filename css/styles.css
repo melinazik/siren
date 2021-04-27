@@ -879,7 +879,7 @@ input{
 /* HELP Section */
 
 .logos-container{
-  background-image: url(../imgs/ocean.jpg);
+  background-image: url(../imgs/sea-bot.jpg);
   background-size: cover;
   width: 100%;
   height: auto;
@@ -890,7 +890,7 @@ input{
   text-align: center;
   font-weight: bold;
   font-size: 150%;
-  color: black;
+  color: white;
   /*comment*/
 }
 
@@ -899,7 +899,7 @@ input{
   font-weight: bold;
   font-size: 120%;
   margin-left: 10px;
-  color: black;
+  color: white;
 }
 
 .help-header{
@@ -921,7 +921,7 @@ input{
 
 .hotline-par{
   text-align: center;
-  color: black;
+  color: white;
 }
 
 .help-par{
@@ -970,6 +970,8 @@ input{
   margin: auto;
   width: 50%;
   padding: 10px;
+  /*display: flex;
+  justify-content: center;*/
 }
 
 .help-button {
@@ -978,7 +980,7 @@ input{
   text-align: center;
   cursor: pointer;
   outline: none;
-  color: #ffffff;
+  color: black;
   background-color: #ffffff;
   border: none;
   border-radius: 15px;
