@@ -6,7 +6,7 @@
   overflow-x: hidden;
 }*/
 
-html,body{
+html, body{
   height:100%;
   padding:0px;
   margin:0px;
@@ -23,7 +23,8 @@ html,body{
   margin: 0;
 }
 
-/* NAVBAR */
+/* -------------- NAVBAR ------------ */
+
 .navbar {
   display: flex;
   flex-wrap: wrap;
@@ -87,6 +88,7 @@ html,body{
   background-size: cover;
   margin: 0 5px;
 }
+
 .menu-icon {
   position: relative;
   height: 25px;
@@ -95,6 +97,7 @@ html,body{
   background-size: cover;
   margin: 0 5px;
 }
+
 .nav-bar-siren {
   margin-left: 5vw;
   padding: 14px 20px; /* Add some padding */
@@ -103,6 +106,7 @@ html,body{
   display: flex;
   flex-direction: row;
 }
+
 .nav-bar-siren a{
   font-weight: 400;
   font-size: 1.4em;
@@ -117,8 +121,6 @@ html,body{
 }
 
 /* responsive/collapsible nav bar */
-
-
 .right-navbar .icon {
   display: none;
 }
@@ -139,6 +141,7 @@ html,body{
     top: 0;
     margin-bottom: 2em;
   }
+
   #nav {
     flex-direction: column;
   }
@@ -149,6 +152,8 @@ html,body{
 
 /* -------------- NAVBAR END------------ */
 
+
+/* -------------- HOME ------------ */
 .page-header {
 	padding: 112px;
 	text-align: center;
@@ -166,6 +171,7 @@ html,body{
   justify-content: center;
 }
 
+/* header picture - not home page */
 #page-view {
   position: relative;
   width: 100%;
@@ -184,12 +190,14 @@ html,body{
   font-size: 9em;
   align-self: center;
 }
+
 #home-view-title2 {
   color: white;
   font-weight: bold;
   font-size: 3em;
   align-self: center;
 }
+
 #home-view-button {
   position: relative;
   width: 400px;
@@ -255,6 +263,7 @@ html,body{
   font-size: 16px;
 }
 
+/*---------IMAGES - HOME PAGE ------------ */
 .flex-images {
   display: flex;
   flex-wrap: wrap;
@@ -323,6 +332,7 @@ html,body{
   transform: translate(-50%, -50%);
   text-align: center;
 }
+
 .animal-label {
   color: rgb(255, 0, 0);
   font-size: 2.5em;
@@ -334,6 +344,7 @@ html,body{
   transform: translate(-50%, -50%);
   text-align: center;
 }
+
 .overlay {
   position: absolute;
   top: 0;
@@ -346,14 +357,63 @@ html,body{
   transition: .5s ease;
   background-color: rgba(255,255,255,0.7);
 }
-/*---------IMAGES IN HOME PAGE DONE------------ */
+
+.description-container{
+  max-width: 800px;
+  margin:40px auto 20px;
+}
+
+.description-container p{
+  text-align:justify;
+}
+
+.description-container .floating-image{
+  max-width: 400px;
+}
+
+.description-container-text{
+  margin-top:10px;
+}
+
+.description-container .floating-image.right{
+  float:right;
+  margin-left: 30px;
+  margin-bottom:10px;
+  margin-top:10px;
+  border-radius: 7px;
+}
+
+.description-container .floating-image.left{
+  float:left;
+  margin-right: 30px;
+  margin-bottom:10px;
+  margin-top:10px;
+  border-radius: 7px;
+}
+
+.siren {
+  height: 20em;
+  width: 20em;
+  float: left;
+  margin-right: 30px;
+}
+
+#siren-container {
+  padding-bottom: 3em;
+}
+.container-title {
+  margin-bottom: 5px;
+}
+/*---------IMAGES - HOME PAGE END------------ */
+
+/* --------------STATS - HOME PAGE ----------*/
 .home-page-stats-container {
   position: relative;
   display: flex;
   flex-direction: column;
   margin: 2em 4vw;
-
 }
+
 .home-page-stats {
   position: relative;
 
@@ -362,18 +422,20 @@ html,body{
   font-size: 2em;
   margin: 2vw;
 }
+
 #home-page-stat1 {
   position: relative;
   justify-self: right;
 }
+
 #home-page-stat2 {
   position: relative;
 }
+
 #home-page-stat3 {
   position: relative;
   left: 0;
 }
-
 
 .stats-icon {
   position: absolute;
@@ -397,7 +459,8 @@ html,body{
   border-radius: 0 20px 20px 0;
   font-size: 25px;
 }
-/* --------------STATS IN HOME PAGE DONE----------*/
+/* --------------STATS - HOME PAGE END----------*/
+
 .image_img{
   display: block;
   width: 40%;
@@ -436,6 +499,8 @@ section::after {
   display: table;
   clear: both;
 }
+
+/* ----------- HOME - END --------*/
 
 /* ------------FOOTER-------------*/
 footer {
@@ -566,6 +631,8 @@ ul{
 
 /*---------FOOTER END------------*/
 
+/*--------- FORMS ------------*/
+
 textarea{
     font-family: Georgia, serif;
     overflow-y: scroll;
@@ -576,7 +643,6 @@ textarea{
 input{
     font-family: Georgia, serif;
     justify-items: center;
-
 }
 
 .main-holder {
@@ -591,7 +657,6 @@ input{
     padding-bottom: 10px;
     padding-top: 10px;
   }
-
 
 .login-form {
     display: grid;
@@ -611,273 +676,218 @@ input{
    transition:0.5s;
   }
 
-  .login-form-text:focus{
-    box-shadow: 0 0 10px 4px #34495e;
-  }
+.login-form-text:focus{
+  box-shadow: 0 0 10px 4px #34495e;
+}
 
-  /* Add a background color when the inputs get focus */
-  input[type=text]:focus, input[type=password]:focus,
-  input[type=name]:focus, input[type=email]:focus,
-  textarea[type=text]:focus{
-    background-color: #ddd;
-    outline: none;
-  }
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus,
+input[type=name]:focus, input[type=email]:focus,
+textarea[type=text]:focus{
+  background-color: #ddd;
+  outline: none;
+}
 
-  /* Full-width input fields */
-  input[type=text], input[type=password] {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    display: inline-block;
-    border: none;
-    background: #f1f1f1;
-  }
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
 
+button:hover {
+  opacity:0.7;
+}
 
-  button:hover {
-    opacity:0.7;
-  }
+/* style buttons*/
+button {
+  border:0;
+  background:#192d47;
+  color: #fff;
+  padding: 12px 50px;
+  cursor: pointer;
+  transition:0.5s;
+  font-family: Georgia, serif;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
 
+/* The popup (background) */
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #192d47be;
+  padding-top: 10px;
+  justify-items: center;
+}
 
-  /* style buttons*/
-  button {
-    border:0;
-    background:#192d47;
-    color: #fff;
-    padding: 12px 50px;
-    cursor: pointer;
-    transition:0.5s;
-    font-family: Georgia, serif;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    margin-top: 10px;
-  }
+/* popup Content/Box */
+.popup-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 750px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
 
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
 
-  /* The popup (background) */
-  .popup {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: #192d47be;
-    padding-top: 10px;
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
 
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 
-    justify-items: center;
-  }
+/* Contact form */
+.contact-section{
+  padding: 40px 0 0 60px;
+}
 
-  /* popup Content/Box */
-  .popup-content {
-    background-color: #fefefe;
-    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-    border: 1px solid #888;
-    width: 750px;
-    padding-right: 20px;
-    padding-left: 20px;
-  }
+/* login section */
+.login-section{
+  padding: 20px;
+}
 
-  /* The Close Button (x) */
-  .close {
-    position: absolute;
-    right: 35px;
-    top: 15px;
-    font-size: 40px;
-    font-weight: bold;
-    color: #f1f1f1;
-  }
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
 
-  .close:hover,
-  .close:focus {
-    color: #f44336;
-    cursor: pointer;
-  }
+.contact-form{
+  display: grid;
+  border: 1px ;
+  width: 80%;
+}
 
-  /* Clear floats */
-  .clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
+.contact-form-text{
+  display:block;
+  width:100%;
+  box-sizing:border-box;
+  margin:16px 0;
+  border:0;
+  background: #f1f1f1;
+  padding: 20px 40px;
+  outline:none;
+  color: black;
+  transition:0.5s;
+}
 
-  /* Contact form */
-  .contact-section{
-    padding: 40px 0 0 60px;
-  }
+.contact-form-text:focus{
+  box-shadow: 0 0 10px 4px #34495e;
+}
 
-  /* Contact form */
-  .login-section{
-    padding: 20px;
-  }
+textarea.contact-form-text{
+  resize:none;
+  height: 120px;
+}
 
-  /* Add padding to container elements */
-  .container {
-    padding: 16px;
-  }
+/* ------ FORMS - END ------ */
 
-  .contact-form{
-    display: grid;
-    border: 1px ;
-    width: 80%;
-  }
+/* ------ CAUSES - EFFECTS SECTION ------ */
 
-  .contact-form-text{
-    display:block;
-    width:100%;
-    box-sizing:border-box;
-    margin:16px 0;
-    border:0;
-    background: #f1f1f1;
-    padding: 20px 40px;
-    outline:none;
-    color: black;
-    transition:0.5s;
-  }
+.description-container{
+  max-width: 800px;
+  margin:40px auto 20px;
+}
 
-  .contact-form-text:focus{
-    box-shadow: 0 0 10px 4px #34495e;
-  }
+.description-container p{
+  text-align:justify;
+}
 
-  textarea.contact-form-text{
-    resize:none;
-    height: 120px;
-  }
+.description-container-text{
+  margin-top:10px;
+}
 
-  /* CAUSES- EFFECTS SECTION */
-  .description-container{
-      max-width: 800px;
-      margin:40px auto 20px;
-    }
+.description-container .floating-image{
+  max-width: 400px;
+}
 
-    .description-container p{
-      text-align:justify;
-    }
+.description-container .floating-image.right{
+  float:right;
+  margin-left: 30px;
+  margin-bottom:10px;
+  margin-top:10px;
+  border-radius: 7px;
+}
 
-    .description-container .floating-image{
-      max-width: 400px;
-    }
+.description-container .floating-image.left{
+  float:left;
+  margin-right: 30px;
+  margin-bottom:10px;
+  margin-top:10px;
+  border-radius: 7px;
+}
 
-    .description-container-text{
-      margin-top:10px;
-    }
+.container-title {
+  margin-bottom: 5px;
+}
 
-    .description-container .floating-image.right{
-      float:right;
-      margin-left: 30px;
-      margin-bottom:10px;
-      margin-top:10px;
-      border-radius: 7px;
-    }
-
-    .description-container .floating-image.left{
-      float:left;
-      margin-right: 30px;
-      margin-bottom:10px;
-      margin-top:10px;
-      border-radius: 7px;
-      
-    }
-
-    .siren {
-      height: 20em;
-      width: 20em;
-      float: left;
-      margin-right: 30px;
-    }
-
-    #siren-container {
-      padding-bottom: 3em;
-    }
-    .container-title {
-      margin-bottom: 5px;
-    }
-
-    /* CAUSES- EFFECTS SECTION */
-    .description-container{
-        max-width: 800px;
-        margin:40px auto 20px;
-      }
-
-      .description-container p{
-        text-align:justify;
-      }
-
-      .description-container-text{
-        margin-top:10px;
-      }
-
-      .description-container .floating-image{
-        max-width: 400px;
-      }
-
-      .description-container .floating-image.right{
-        float:right;
-        margin-left: 30px;
-        margin-bottom:10px;
-        margin-top:10px;
-        border-radius: 7px;
-      }
-
-      .description-container .floating-image.left{
-        float:left;
-        margin-right: 30px;
-        margin-bottom:10px;
-        margin-top:10px;
-        border-radius: 7px;
-      }
-
-      .container-title {
-        margin-bottom: 5px;
-      }
+/* ------ CAUSES - EFFECTS SECTION END ------ */
 
 
-  /* END CAUSES-EFFECTS SECTION */
+/* ------- RESOURCES  ------- */
+.resources-section{
+  background-color: #050C0D;
+}
 
-  /* RESOURCES */
+.video-descr{
+  display: inline-block;
+  border-radius: 5px;
+  margin-left: 75px;
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-size: 24px;
+  background-color:rgba(95, 169, 183, .2);
+  color:white;
+}
 
-  .resources-section{
-    background-color: #050C0D;
-  }
+.video-logo{
+  width:30px;
+  height:30px;
+}
 
-  .video-descr{
-    display: inline-block;
-    border-radius: 5px;
-    margin-left: 75px;
-    margin-bottom: 10px;
-    font-weight: 400;
-    font-size: 24px;
-    background-color:rgba(95, 169, 183, .2);
-    color:white;
-  }
+.iframe-container{
+  margin-left: 50px;
+  margin-right: 50px;
+  position: relative;
+  width:100%;
+  height: auto;
+  padding-bottom: 25px;
+}
 
-  .video-logo{
-    width:30px;
-    height:30px;
-  }
+.iframe-container iframe{
+  margin-left:25px;
+  position: relative;
+  width:46%;
+}
+/* ------- RESOURCES END ------- */
 
-  .iframe-container{
-    margin-left: 50px;
-    margin-right: 50px;
-    position: relative;
-    width:100%;
-    height: auto;
-    padding-bottom: 25px;
-  }
-
-  .iframe-container iframe{
-    margin-left:25px;
-    position: relative;
-    width:46%;
-  }
-
-  /* END RESOURCES */
-
-
-/* HELP Section */
-
+/* ------- HELP  ------- */
 .logos-container{
   background-image: url(../imgs/sea-bot.jpg);
   background-size: cover;
@@ -886,12 +896,10 @@ input{
 }
 
 .help-title{
-  
   text-align: center;
   font-weight: bold;
   font-size: 150%;
   color: white;
-  /*comment*/
 }
 
 .hotline-title{
@@ -928,13 +936,11 @@ input{
   text-align: center;
 }
 
-
 .img-column {
   float: left;
   width: 33.33%;
   padding: 1px;
 }
-
 
 .img-row::after {
   content: "";
@@ -950,7 +956,6 @@ input{
   object-position: top;
 }
 
-
 .img-container{
   max-width: 300px;
   padding: 3rem;
@@ -963,7 +968,6 @@ input{
 
 .conainer-help-text{
   text-align: center;
-
 }
 
 .help-button-container{
@@ -994,15 +998,13 @@ input{
   box-shadow: 0 5px rgba(218, 216, 216, 0.438);
   transform: translateY(4px);
 }
+/* ------- HELP - END  ------- */
 
-
-/* END HELP SECTION */
 
 /* ----------CAROUSEL-------------*/
 .carousel-wrap {
   height: auto;
   margin: 4em 2em;
-
 }
 
 .carousel-wrap h1 {
@@ -1035,11 +1037,9 @@ input{
   display: block;
 }
 
-
-
 /* -------END CAROUSEL------------*/
 
-/* loading icon */
+/* LOADING ICON */
 .loader {
 	position: fixed;
 	width: 100%;
@@ -1048,7 +1048,6 @@ input{
   /* background-color:  cover #fff; */
   background: url("../imgs/logo_white.png") center no-repeat #fff;
   /* animation: rotation 1s infinite linear; */
-
 }
 
 @keyframes rotation {
@@ -1059,5 +1058,3 @@ input{
     transform: rotate(359deg);
   }
 }
-
-
