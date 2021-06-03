@@ -60,8 +60,8 @@
 
         <!-- login form  -->
         <form class="login-form" action="login.html"  method="post">
-          <input type="text" class="login-form-text" placeholder="Username / Email" required>
-          <input type="password" class="login-form-text" placeholder="Password" required>
+          <input type="text" class="login-form-text" placeholder="Username / Email" required >
+          <input type="password" class="login-form-text" placeholder="Password" required >
 
           <label>
             <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
@@ -80,12 +80,12 @@
 
         <div id="id01" class="popup">
           <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close popup">&times;</span>
-          <form class="popup-content">
+          <form class="popup-content" action="connect.php" method="post">
             <h1>Sign Up</h1>
-            <input class="login-form-text" type="text" placeholder="Email" name="email" required>
-            <input class="login-form-text" type="text" placeholder="Username" name="username" required>
-            <input class="login-form-text" type="password" placeholder="Password" name="psw" required>
-            <input class="login-form-text" type="password" placeholder="Repeat Password" name="psw-repeat" required>
+            <input class="login-form-text" type="text" placeholder="Email" name="email" required id="email" >
+            <input class="login-form-text" type="text" placeholder="Username" name="username" required id="username">
+            <input class="login-form-text" type="password" placeholder="Password" name="password" required id="password">
+            <input class="login-form-text" type="password" placeholder="Repeat Password" name="password_repeat" required id="password_repeat">
 
             <label>
               <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
