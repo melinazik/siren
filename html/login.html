@@ -59,9 +59,9 @@
       <div class="login-section">
 
         <!-- login form  -->
-        <form class="login-form" action="login.html"  method="post">
-          <input type="text" class="login-form-text" placeholder="Username / Email" required >
-          <input type="password" class="login-form-text" placeholder="Password" required >
+        <form class="login-form" action="login.php"  method="post">
+          <input type="text" class="login-form-text" placeholder="Username" required name="username" id="username"> <!-- login is done with username only, not email-->
+          <input type="password" class="login-form-text" placeholder="Password" required name="pwd" id="pwd" >
 
           <label>
             <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
