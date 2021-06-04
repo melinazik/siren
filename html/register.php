@@ -9,7 +9,7 @@
 
     //connecting to db
 
-    $db = mysqli_connect('localhost', 'root', '1234','webtest') or die("could not connect to db");
+    $db = mysqli_connect('localhost', 'root', '','webtest') or die("could not connect to db");
 
     //registering user
 
@@ -27,7 +27,7 @@
     //form validation and insertion
     $user_check_query = "SELECT * FROM registration WHERE username = '$username' or email='$email' LIMIT 1";
     $results = mysqli_query($db, $user_check_query);
-    $user = mysqli_fetch_assoc($result);
+    $user = mysqli_fetch_assoc($results);
     if($user){
         if($user['username']===$username){array_push($errors, "Username already exists");}
         if($user['email']===$email){array_push($errors, "email already exists");}
@@ -41,7 +41,7 @@
         mysqli_query($db, $query);
         $_SESSION['username'] = $username;
         $_SESSION['success'] = "You are now registered";
-        echo "SUCCESS!!!!"
+        echo "SUCCESS!!!!";
         header('location: home.html');
     }
 
