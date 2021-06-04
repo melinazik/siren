@@ -33,6 +33,7 @@
         if($user['email']===$email){array_push($errors, "email already exists");}
         }
 
+    //register user if no errors appeared
     if(count($errors) == 0){
 
         $pwd_encrypted = md5($pwd); //password encrypted
@@ -41,5 +42,9 @@
         $_SESSION['username'] = $username;
         $_SESSION['success'] = "You are now registered";
         echo "SUCCESS!!!!"
+        header('location: home.html');
     }
+
+    
+    //TODO: work everywhere and not only via localhost/*filepath*
 ?>
