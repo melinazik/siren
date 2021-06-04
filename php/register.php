@@ -8,16 +8,13 @@
     $errors = array();
 
     //connecting to db
-
     $db = mysqli_connect('localhost', 'root', '','webtest') or die("could not connect to db");
 
     //registering user
-
     $username = mysqli_real_escape_string($db, $_POST['username']);
     $email = mysqli_real_escape_string($db, $_POST['email']);
     $pwd = mysqli_real_escape_string($db, $_POST['pwd']);
     $password_repeat = mysqli_real_escape_string($db, $_POST['password_repeat']);
-
 
     if(empty($username)){array_push($errors, "Username required");}
     if(empty($email)){array_push($errors, "email required");}
@@ -45,6 +42,5 @@
         header('location: home.html');
     }
 
-    
     //TODO: work everywhere and not only via localhost/*filepath*
 ?>
