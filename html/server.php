@@ -9,7 +9,7 @@
     $errors = array();
 
     //connecting to db
-    $db = mysqli_connect('localhost', 'root', '','webtest') or die("could not connect to db");
+    $db = mysqli_connect('localhost', 'root', '','sirendb') or die("could not connect to db");
 
     //registering user
     if(isset($_POST['register'])){
@@ -24,7 +24,7 @@
     if($pwd != $password_repeat){array_push($errors,"Passwords don't match");}
 
     //form validation and insertion
-    $user_check_query = "SELECT * FROM registration WHERE username = '$username' or email='$email' LIMIT 1";
+    $user_check_query = "SELECT * FROM user WHERE username = '$username' or email='$email' LIMIT 1";
     $results = mysqli_query($db, $user_check_query);
     $user = mysqli_fetch_assoc($results);
     if($user){
@@ -36,7 +36,7 @@
     if(count($errors) == 0){
 
         $pwd_encrypted = md5($pwd); //password encrypted
-        $query = "INSERT INTO registration (email, username, pwd) VALUES ('$email','$username', '$pwd_encrypted')";
+        $query = "INSERT INTO user (email, username, pwd) VALUES ('$email','$username', '$pwd_encrypted')";
         mysqli_query($db, $query);
         $_SESSION['username'] = $username;
         $_SESSION['success'] = "You are now registered";
@@ -62,7 +62,7 @@
 
         if(count($errors)==0){
             $pwd = md5($pwd);
-            $query = "SELECT * FROM registration WHERE username='$username' AND pwd='$pwd'";
+            $query = "SELECT * FROM user WHERE username='$username' AND pwd='$pwd'";
             $results = mysqli_query($db, $query);
 
             if(mysqli_num_rows($results)){
