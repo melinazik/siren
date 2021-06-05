@@ -69,9 +69,9 @@ if (isset($_GET['logout'])) {
         <li><a href="help.html">How to help</a></li>
         <li><a href="contact.html">Contact us</a></li>
         <li><a href="login.php">Login/Register</a></li>
-        <?php  if (isset($_SESSION['username'])) : ?>
-          <li><div><?php echo $_SESSION['username'];?></div></li>
-          <?php endif ?>
+        <?php if (isset($_SESSION['username'])) : ?>
+        <li><a href="login.php"><?php echo $_SESSION['username'];?></a></li>
+        <?php endif ?>
 
       </ul>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -84,6 +84,8 @@ if (isset($_GET['logout'])) {
         <div id="home-view-title2">Login / Signup</div>
      </div>
 
+     <?php if(isset($_SESSION['username'])&&($_SESSION['username']!='Guest')) : ?> <!-- Checks if user is logged in, if yes then only shows logout button IMPORTANT!!! to properly work
+    it has to be =='Guest' --> 
     <!-- login form  -->
     <main class="login-holder">
 
@@ -150,7 +152,14 @@ if (isset($_GET['logout'])) {
         </div>
 
       </div>
+      
+      <?php //else: ?>
 
+      <!--<a href="login.php?logout='1'" style="color: red;"> Logs out the user 
+                    Click here to Logout
+                </a> -->
+
+      <?php endif ?>
     </main>
 
     <!--footer-->
