@@ -61,7 +61,7 @@
       <div class="login-section">
 
         <!-- login form  -->
-        <form class="login-form" action="login.php"  method="post">
+        <form class="login-form" action="server.php"  method="post">
           <input type="text" class="login-form-text" placeholder="Username" required name="username" id="username"> <!-- login is done with username only, not email-->
           <input type="password" class="login-form-text" placeholder="Password" required name="pwd" id="pwd" >
 
@@ -69,7 +69,7 @@
             <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
           </label>
 
-          <button type="submit" style="width:150px;" name="submit" id="submit">Login </button>
+          <button type="submit" style="width:150px;" name="login" id="login">Login </button>
         </form>
       </div>
 
@@ -82,7 +82,7 @@
 
         <div id="id01" class="popup">
           <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close popup">&times;</span>
-          <form class="popup-content" action="register.php" method="post">
+          <form class="popup-content" action="server.php" method="post">
             <h1>Sign Up</h1>
             <input class="login-form-text" type="text" placeholder="Email" name="email" required id="email" >
             <input class="login-form-text" type="text" placeholder="Username" name="username" required id="username">
@@ -97,7 +97,7 @@
             <p>
               By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.
             </p>
-            <button type="submit" style="width:150px;">Sign Up</button>
+            <button type="submit" style="width:150px;" name="register" id="register">Sign Up</button>
 
           </form>
 

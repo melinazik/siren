@@ -4,6 +4,7 @@
     $email = "";
     $pwd = "";
     $password_repeat="";
+    $_SESSION['success'] = '';
 
     $errors = array();
 
@@ -11,6 +12,7 @@
     $db = mysqli_connect('localhost', 'root', '','webtest') or die("could not connect to db");
 
     //registering user
+    if(isset($_POST['register'])){
     $username = mysqli_real_escape_string($db, $_POST['username']);
     $email = mysqli_real_escape_string($db, $_POST['email']);
     $pwd = mysqli_real_escape_string($db, $_POST['pwd']);
@@ -38,9 +40,40 @@
         mysqli_query($db, $query);
         $_SESSION['username'] = $username;
         $_SESSION['success'] = "You are now registered";
-        echo "SUCCESS!!!!";
         header('location: home.html');
     }
+    }
 
-    //TODO: work everywhere and not only via localhost/*filepath*
+
+    // Login
+    if(isset($_POST['login'])){
+        $username = mysqli_real_escape_string($db, $_POST['username']);
+        $pwd = mysqli_real_escape_string($db, $_POST['pwd']);
+
+        if(empty($username)){
+            array_push($errors, "Username is required");
+        
+        }
+
+        if(empty($pwd)){
+            array_push($errors, "Password is required");
+        
+        }
+
+        if(count($errors)==0){
+            $pwd = md5($pwd);
+            $query = "SELECT * FROM registration WHERE username='$username' AND pwd='$pwd'";
+            $results = mysqli_query($db, $query);
+
+            if(mysqli_num_rows($results)){
+                $_SESSION['username'] = $username;
+                $_SESSION['success'] = "You are now logged in!";
+                header('location: home.html');
+            } else{
+                array_push($errors, "Wrong password or username, please try again.");
+                header('location: help.html');
+            }
+
+        }
+    }
 ?>
