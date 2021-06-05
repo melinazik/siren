@@ -17,11 +17,11 @@ if (!isset($_SESSION['username'])) {
 // will unset the session variables
 // User will be headed to 'login.php'
 // after loggin out
-if (isset($_GET['logout'])) {
+/*if (isset($_GET['logout'])) {
     session_destroy();
     unset($_SESSION['username']);
     header("location: login.php");
-}
+}*/
 ?>
 
 <!DOCTYPE html>
@@ -53,12 +53,12 @@ if (isset($_GET['logout'])) {
     <div class="navbar">
       <div class="nav-bar-siren">
         <div class="siren-icon"></div>
-        <a href="home.html" class="active">SIREN</a>
+        <a href="home.php" class="active">SIREN</a>
     </div>
 
     <div class="right-navbar" id="navbarID">
       <ul id="nav">
-        <li><a href="home.html">Home</a></li>
+        <li><a href="home.php">Home</a></li>
         <li><a id="sub-menu-hover">Learn More</a>
           <ul id="sub-menu">
             <li><a href="causes.html">Causes</a> </li>
@@ -84,8 +84,7 @@ if (isset($_GET['logout'])) {
         <div id="home-view-title2">Login / Signup</div>
      </div>
 
-     <?php if(isset($_SESSION['username'])&&($_SESSION['username']!='Guest')) : ?> <!-- Checks if user is logged in, if yes then only shows logout button IMPORTANT!!! to properly work
-    it has to be =='Guest' --> 
+     <?php if(isset($_SESSION['username'])&&($_SESSION['username']!='Guest')) : ?> <!-- Checks if user is logged in, if yes then only shows logout button --> 
     <!-- login form  -->
     <main class="login-holder">
 
@@ -155,9 +154,9 @@ if (isset($_GET['logout'])) {
       
       <?php //else: ?>
 
-      <!--<a href="login.php?logout='1'" style="color: red;"> Logs out the user 
+      <!--<a href="home.php?logout='1'" style="color: red;"> Logs out the user 
                     Click here to Logout
-                </a> -->
+                </a> --> <!-- logout button, doesn't work yet, need to fix-->
 
       <?php endif ?>
     </main>

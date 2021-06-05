@@ -1,3 +1,4 @@
+<?php include('server.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,12 +28,12 @@
 		<div class="navbar">
 			<div class="nav-bar-siren">
 				<div class="siren-icon"></div>
-				<a href="home.html" class="active">SIREN</a>
+				<a href="home.php" class="active">SIREN</a>
 			</div>
 
 			<div class="right-navbar" id="navbarID">
 				<ul id="nav">
-					<li><a href="home.html">Home</a></li>
+					<li><a href="home.php">Home</a></li>
 					<li><a id="sub-menu-hover">Learn More</a>
 						<ul id="sub-menu">
 							<li><a href="causes.html">Causes</a> </li>
