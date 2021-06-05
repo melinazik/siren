@@ -361,6 +361,12 @@ html, body{
   text-align: center;
 }
 
+.heart {
+  width: 20%;
+  height: 20%;
+}
+
+
 .overlay {
   position: absolute;
   top: 0;
