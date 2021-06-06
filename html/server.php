@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    $username = "";
+    $username = "Guest";
     $email = "";
     $pwd = "";
     $password_repeat="";

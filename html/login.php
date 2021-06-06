@@ -2,16 +2,16 @@
  
 // Starting the session, to use and
 // store data in session variable
-session_start();
+//session_start();
   
 // If the session variable is empty, this
 // means the user is yet to login
 // User will be sent to 'login.php' page
 // to allow the user to login
-if (!isset($_SESSION['username'])) {
-    $_SESSION['msg'] = "You have to log in first";
-    header('location: login.php');
-}
+//if (!isset($_SESSION['username'])) {
+   // $_SESSION['msg'] = "You have to log in first";
+   // header('location: login.php');
+//}
   
 // Logout button will destroy the session, and
 // will unset the session variables
@@ -22,6 +22,7 @@ if (!isset($_SESSION['username'])) {
     unset($_SESSION['username']);
     header("location: login.php");
 }*/
+include('server.php');
 ?>
 
 <!DOCTYPE html>
@@ -84,7 +85,7 @@ if (!isset($_SESSION['username'])) {
         <div id="home-view-title2">Login / Signup</div>
      </div>
 
-     <?php if(isset($_SESSION['username'])&&($_SESSION['username']!='Guest')) : ?> <!-- Checks if user is logged in, if yes then only shows logout button --> 
+     <?php //if(isset($_SESSION['username'])&&($_SESSION['username']=='Guest')) : ?> <!-- Checks if user is logged in, if yes then only shows logout button --> 
     <!-- login form  -->
     <main class="login-holder">
 
@@ -154,11 +155,11 @@ if (!isset($_SESSION['username'])) {
       
       <?php //else: ?>
 
-      <!--<a href="home.php?logout='1'" style="color: red;"> Logs out the user 
+      <a href="home.php?logout='1'" style="color: red;"> Logs out the user 
                     Click here to Logout
-                </a> --> <!-- logout button, doesn't work yet, need to fix-->
+                </a> <!-- logout button, doesn't work yet, need to fix-->
 
-      <?php endif ?>
+      <?php //endif ?>
     </main>
 
     <!--footer-->
