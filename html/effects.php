@@ -135,10 +135,10 @@
 					<h1>Related Articles</h1>
 					<div class="carousel" data-flickity='{"wrapAround": true, "autoPlay": true }'>
 						<div class="carousel-cell">
-							<div class="carousel-image-container">
+							<div class="carousel-image-container" onclick="addFavorites()">
 								<div class="overlay">
 									<div class="add-favorites">
-										<img class="heart" src="../imgs/heart-empty.png">
+										<img class="heart" id="test-heart" src="../imgs/heart-empty.png">
 										<p id="favorites-add-text">add to favorites</p>
 									</div>
                             	</div>
