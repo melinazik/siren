@@ -5,6 +5,9 @@
     $pwd = "";
     $password_repeat="";
     $_SESSION['success'] = '';
+    $contactName="";
+    $contactEmail="";
+    $contactText="";
 
     $errors = array();
 
@@ -83,4 +86,15 @@
         unset($_SESSION['username']);
         header('location: home.php');
     }
+
+    //contact part
+    if(isset($_POST['send'])){
+        $contactName = mysqli_real_escape_string($db, $_POST['contactName']);
+        $contactEmail = mysqli_real_escape_string($db, $_POST['contactEmail']);
+        $contactText = mysqli_real_escape_string($db, $_POST['contactText']);
+        $query = "INSERT INTO messages (contactName, contactEmail, contactText) VALUES ('$contactName','$contactEmail', '$contactText')";
+        mysqli_query($db, $query);
+        header('location: contact.php');
+    }
+
 ?>

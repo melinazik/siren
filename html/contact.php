@@ -1,3 +1,4 @@
+<?php include('server.php')?>
 <!DOCTYPE html>
 <html lang ="en">
 
@@ -56,11 +57,11 @@
 
 		<main class="contact-holder">
 			<div class="contact-section">
-				<form class="contact-form" action="contact.php" method="post">
-				<input type="name" class="contact-form-text" placeholder="Your name" required>
-				<input type="email" class="contact-form-text" placeholder="Your email" required>
-				<textarea type="text" class="contact-form-text" placeholder="Your message"></textarea>
-				<button type="submit" style="width:150px;">Send</button>
+				<form class="contact-form" action="server.php" method="post">
+				<input type="name" class="contact-form-text" placeholder="Your name" required name="contactName" id="contactName">
+				<input type="email" class="contact-form-text" placeholder="Your email" required name="contactEmail" id="contactEmail">
+				<textarea type="text" class="contact-form-text" placeholder="Your message" required name="contactText" id="contactText"></textarea>
+				<button type="submit" style="width:150px;" name="send" id="send">Send</button>
 			</div>
 		</main>
 
