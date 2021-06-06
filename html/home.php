@@ -36,13 +36,13 @@
 					<li><a href="home.php">Home</a></li>
 					<li><a id="sub-menu-hover">Learn More</a>
 						<ul id="sub-menu">
-							<li><a href="causes.html">Causes</a> </li>
-							<li><a href="effects.html">Effects</a></li>
-							<li><a href="resources.html">Resources</a></li>
+							<li><a href="causes.php">Causes</a> </li>
+							<li><a href="effects.php">Effects</a></li>
+							<li><a href="resources.php">Resources</a></li>
 						</ul>
 					</li>
-					<li><a href="help.html">How to help</a></li>
-					<li><a href="contact.html">Contact us</a></li>
+					<li><a href="help.php">How to help</a></li>
+					<li><a href="contact.php">Contact us</a></li>
 					<li><a href="login.php">Login/Register</a></li>
 
 				</ul>
