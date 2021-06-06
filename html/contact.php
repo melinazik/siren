@@ -56,7 +56,7 @@
 
   	<main class="main-holder">
   	<div class="contact-section">
-      <form class="contact-form" action="contact.html" method="post">
+      <form class="contact-form" action="contact.php" method="post">
         <input type="name" class="contact-form-text" placeholder="Your name" required>
         <input type="email" class="contact-form-text" placeholder="Your email" required>
         <textarea type="text" class="contact-form-text" placeholder="Your message"></textarea>
