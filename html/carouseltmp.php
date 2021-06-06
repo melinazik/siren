@@ -29,22 +29,22 @@
         <div class="navbar">
             <div class="nav-bar-siren">
                 <div class="siren-icon"></div>
-                <a href="home.html" class="active">SIREN</a>
+                <a href="home.php" class="active">SIREN</a>
             </div>
 
             <div class="right-navbar" id="navbarID">
                 <ul id="nav">
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="learnmore.html" id="sub-menu-hover">Learn More</a>
+                    <li><a href="home.php">Home</a></li>
+                    <li><a href="learnmore.php" id="sub-menu-hover">Learn More</a>
                         <ul id="sub-menu">
-                            <li><a href="help.html">Causes</a> </li>
-                            <li><a href="contact.html">Effects</a></li>
-                            <li><a href="login.html">something</a></li>
+                            <li><a href="help.php">Causes</a> </li>
+                            <li><a href="contact.php">Effects</a></li>
+                            <li><a href="login.php">something</a></li>
                         </ul>
                     </li>
-                    <li><a href="help.html">How to help</a></li>
-                    <li><a href="contact.html">Contact us</a></li>
-                    <li><a href="login.html">Login/Register</a></li>
+                    <li><a href="help.php">How to help</a></li>
+                    <li><a href="contact.php">Contact us</a></li>
+                    <li><a href="login.php">Login/Register</a></li>
 
                 </ul>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
