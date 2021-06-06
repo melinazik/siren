@@ -97,4 +97,23 @@
         header('location: contact.php');
     }
 
+    //reset password
+    if(isset($_POST['reset'])){
+        $username = mysqli_real_escape_string($db, $_POST['username']);
+        $pwd = mysqli_real_escape_string($db, $_POST['pwd']);
+        $pwd = md5($pwd);
+        $user_check_query = "SELECT * FROM user WHERE username = '$username' LIMIT 1";
+        $results = mysqli_query($db, $user_check_query);
+        $user = mysqli_fetch_assoc($results);
+        if(mysqli_num_rows($results)){
+            $query = "UPDATE user SET pwd='$pwd' WHERE username='$username'";
+            mysqli_query($db, $query);
+            header('location: home.php');
+        } else{
+            array_push($errors, "Wrong username, please try again.");
+            header('location: login.php');
+        }
+
+    }
+
 ?>

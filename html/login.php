@@ -94,15 +94,16 @@
       <button onclick="document.getElementById('id02').style.display='block'" style="width:200px;">Reset Password</button>
       <div id="id02" class="popup">
         <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close popup">&times;</span>
-        <form class="popup-content" >
+        <form class="popup-content" action="server.php" method="post">
             <h1>Reset password</h1>
-            <input  class="login-form-text" type="text" placeholder="Email" name="email" required>
-            <button type="submit" style="width:150px;">Submit</button>
+            <input  class="login-form-text" type="text" placeholder="Username" name="username" required id="username">
+            <input  class="login-form-text" type="text" placeholder="New password" name="pwd" required id="pwd">
+            <button type="submit" style="width:150px;" name="reset" id="reset">Submit</button>
         </form>
       </div>
     </div>
     
-    <a href="home.php?logout='1'" style="color: red;"> Logs out the user 
+    <a href="home.php?logout='1'" style="color: red;"> 
                     Click here to Logout
                 </a> <!-- logout button, doesn't work yet, need to fix-->
   </main>
