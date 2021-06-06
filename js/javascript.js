@@ -37,12 +37,14 @@ $(window).on("load", function () {
 });
 
 // favorites
-function addFavorites() {
-  var src = document.getElementById("test-heart").getAttribute("src");
+function addFavorites(element) {
+  // element is the carousel-image-container element that called 
+  // addFavorites with onclick
+
+  var src = element.childNodes[1].childNodes[1].childNodes[1].getAttribute("src");
   if (src == "../imgs/heart-empty.png") {
-    document.getElementById("test-heart").src = '../imgs/heart-full.png';
+    element.childNodes[1].childNodes[1].childNodes[1].src = '../imgs/heart-full.png';
   } else {
-    document.getElementById("test-heart").src = '../imgs/heart-empty.png';
+    element.childNodes[1].childNodes[1].childNodes[1].src = '../imgs/heart-empty.png';
   }
-  
 }
