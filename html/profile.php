@@ -74,8 +74,19 @@
           <input type="text" name="" placeholder="User Name">
           <input type="text" name="" placeholder="Age">
           <input type="text" name="" placeholder="Gender">
+          
           <button class="profile-button" style="float:left; margin:10px 0 0 18.2%">DONE</button>
-          <button class="profile-button" style="float:right; margin:10px 18.2% 0 0">LOG OUT</button>
+          
+          <!--<form class="login-form" action="server.php" method="post">
+            <button class="profile-button" style="float:right; margin:10px 18.2% 0 0"> <a href="home.php?logout='1'">LOG OUT </a></button>
+          </form>-->
+          
+          <div class="login-section">
+            <form class="login-form" action="server.php" method="post">
+                  <button type="submit" style="width:150px;" name="logout" id="logout">Logout</button>     <!-- LOGOUT BUTTON -->
+            </form>
+          </div>
+          
         </center>
         </div>
       </div>

@@ -56,9 +56,10 @@
           <input type="text" class="login-form-text" placeholder="Username" required name="username" id="username"> <!-- login is done with username only, not email-->
           <input type="password" class="login-form-text" placeholder="Password" required name="pwd" id="pwd" >
 
+            <!--
           <label>
             <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-          </label>
+          </label>-->
 
           <button type="submit" style="width:150px;" name="login" id="login">Login </button>
         </form>
@@ -78,9 +79,9 @@
             <input class="login-form-text" type="password" placeholder="Password" name="pwd" required id="pwd">
             <input class="login-form-text" type="password" placeholder="Repeat Password" name="password_repeat" required id="password_repeat">
 
-            <label>
+            <!--<label>
               <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-            </label>
+            </label>-->
           <!-- TODO privacy policy -->
           <p>
             By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.
@@ -103,10 +104,8 @@
         </form>
       </div>
     </div>
+
     
-    <a href="home.php?logout='1'" style="color: red;"> 
-                    Click here to Logout
-                </a> <!-- logout button, doesn't work yet, need to fix-->
   </main>
   <!--footer-->
   <footer>
