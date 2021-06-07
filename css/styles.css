@@ -763,7 +763,7 @@ button {
   display: table;
 }
 
-/* Contact form */
+/* -----Contact form----- */
 .contact-section{
   padding: 40px 0 0 60px;
 }
@@ -1057,4 +1057,108 @@ textarea.contact-form-text{
   to {
     transform: rotate(359deg);
   }
+}
+
+/* ----PROFILE---- */
+
+.info-column{
+  margin-left: 40px;
+}
+
+.box{
+  box-sizing: border-box;
+  width: 360px;
+  height: 500px;
+  border: 2px solid #3498db;
+  box-shadow: -3px -3px 7px #34495e,
+              3px 3px 5px rgba(94,104,121,0.288);
+  border-radius: 5px;
+  background-color: white;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  overflow:hidden;
+}
+
+#photo-prof{
+  box-sizing: border-box;
+  width: 149px;
+  height: 149px;
+  border-radius: 50%;
+  margin: 0;
+  border: 5px solid #34495e;
+  padding: 3px;
+  background-color: white;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+#file{
+  display: none;
+}
+
+#upload-btn{
+  height:30px;
+  width: 100px;
+}
+
+.box input[type="text"]{
+  display: block;
+  box-sizing: border-box;
+  background: none;
+  color: #34495e;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 4px;
+  width: 220px;
+  height: 32px;
+  border:none;
+  border-bottom: 1px solid #0082e6;
+  font-weight: 400;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+.box input[type="text"]:focus{
+  border-bottom: 2px solid #34495e;
+  border-bottom-right-radius: 20px;
+  color: #34495e;
+  transition: 0.2 ease;
+}
+
+.profile-button {
+  text-align: center;
+  border:1px solid #34495e;
+  background-color: #34495e;
+  color:white;
+  height:30px;
+  width: 100px;
+  border-radius: 5px;
+  margin: 0px;
+  transition: all 0.3s;
+}
+
+.profile-button:hover{
+  transform: scale(1.1);
+  background-color:  #34495e;
+  color: black;
+}
+
+input[type="file"]{
+  display: none;
+}
+
+label{
+  box-sizing: border-box;
+  font-size: 20px;
+  background-color: #34495e;
+  color: white;
+  border: 1px solid #34495e;
+  padding: 2px 15px;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+label:hover{
+  background-color: #34495e;
+  color: black;
 }
