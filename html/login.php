@@ -65,9 +65,9 @@
         <input type="text" class="login-form-text" placeholder="Username / Email" required>
         <input type="password" class="login-form-text" placeholder="Password" required>
 
-        <label>
+        <!--<label>
           <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-        </label>
+        </label>-->
 
         <button type="submit" style="width:150px;">Login</button>
       </form>
@@ -90,9 +90,9 @@
           <input class="login-form-text" type="password" placeholder="Password" name="psw" required>
           <input class="login-form-text" type="password" placeholder="Repeat Password" name="psw-repeat" required>
 
-          <label>
+          <!--<label>
             <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-          </label>
+          </label>-->
 
           <!-- TODO privacy policy -->
           <p>
