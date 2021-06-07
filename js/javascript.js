@@ -67,3 +67,5 @@ function myFunction() {
     element.childNodes[1].childNodes[1].childNodes[3].innerHTML = "add to favorites";
 
   }
+
+}
