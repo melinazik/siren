@@ -65,10 +65,13 @@
           <center>
           <div class="profile-img">
             <img id="photo-prof" src="../imgs/siren.png"></image>
-            <input type="file" name="" id="file" accept="image/*">
-            <div>
-               <label for="file" id="upload-btn">EDIT PIC</label>
-            </div>
+            <form action="server.php" method="post" enctype="multipart/form-data">
+              <input type="file" name="image" id="image" accept="image/*">
+              <input type="submit" value="Upload Image" name="upload" value="Upload">
+              <!--<div>
+                <label for="file" id="upload-btn">EDIT PIC</label>
+              </div>-->
+            </form>
           </div>
 
           <input type="text" name="" placeholder="User Name">
