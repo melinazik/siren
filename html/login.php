@@ -36,7 +36,7 @@
   				<li><a href="contact.php">Contact us</a></li>
   				<li><a href="login.php">Login/Register</a></li>
           <?php if (isset($_SESSION['username'])) : ?>
-        <li><a href="login.php"><?php echo $_SESSION['username'];?></a></li>
+        <li><a href="profile.php"><?php echo $_SESSION['username'];?></a></li>
         <?php endif ?>
   			</ul>
   			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
