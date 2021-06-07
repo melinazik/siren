@@ -30,10 +30,42 @@ function myFunction() {
       x.className = "right-navbar";
     }
   }
-  
+
   // loading icon
   $(window).on("load", function(){
     $(".loader").fadeOut("slow");
   });
 
-  
+  const imgDiv = document.querySelector('.profile-img');
+  const img = document.querySelector('#photo-prof');
+  const file = document.querySelector('#file');
+  const uploadBtn = document.querySelector('#upload-btn');
+
+  file.addEventListener('change', function(){
+    const chosenFile = this.files[0];
+
+    if(chosenFile){
+      const reader = new FileReader();
+
+      reader.addEventListener('load',function(){
+        img.setAttribute('src', reader.result);
+      });
+
+      reader.readAsDataURL(chosenFile);
+    }
+  });
+
+  function addFavorites(element) {
+  // element is the carousel-image-container element that called
+  // addFavorites with onclick
+  var src = element.childNodes[1].childNodes[1].childNodes[1].getAttribute("src");
+  if (src == "../imgs/heart-empty.png") {
+    element.childNodes[1].childNodes[1].childNodes[1].src = '../imgs/heart-full.png';
+    element.childNodes[1].childNodes[1].childNodes[3].innerHTML = "remove from favorites";
+  } else {
+    element.childNodes[1].childNodes[1].childNodes[1].src = '../imgs/heart-empty.png';
+    element.childNodes[1].childNodes[1].childNodes[3].innerHTML = "add to favorites";
+
+  }
+
+}

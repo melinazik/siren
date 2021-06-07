@@ -1,8 +1,11 @@
+
 <?php include('server.php')?>
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- TODO: when user logs in, their name appears on the top right instead of "login/register"-->
+<!DOCTYPE html>
+<html lang="en">
+
 	<head>
 		<meta charset="utf 8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -43,6 +46,7 @@
 					</li>
 					<li><a href="help.php">How to help</a></li>
 					<li><a href="contact.php">Contact us</a></li>
+
 					<?php if(!isset($_SESSION['username'])):?>
 					<li><a href="login.php">Login/Register</a></li>
 					<?php else: ?>

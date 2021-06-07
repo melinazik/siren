@@ -1,4 +1,6 @@
+
 <?php include('server.php')?>
+
 <!DOCTYPE html>
 <html lang ="en">
 
@@ -41,11 +43,13 @@
   				</li>
   				<li><a href="help.php">How to help</a></li>
   				<li><a href="contact.php">Contact us</a></li>
+
   				<?php if(!isset($_SESSION['username'])):?>
 					<li><a href="login.php">Login/Register</a></li>
 					<?php else: ?>
 					<li><a href="profile.php"><?php echo $_SESSION['username'];?></a></li>
         			<?php endif ?>
+
 
   			</ul>
   			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -61,11 +65,13 @@
 
   	<main class="main-holder">
   	<div class="contact-section">
+
       <form class="contact-form" action="server.php" method="post">
 			<input type="name" class="contact-form-text" placeholder="Your name" required name="contactName" id="contactName">
 			<input type="email" class="contact-form-text" placeholder="Your email" required name="contactEmail" id="contactEmail">
 			<textarea type="text" class="contact-form-text" placeholder="Your message" required name="contactText" id="contactText"></textarea>
 			<button type="submit" style="width:150px;" name="send" id="send">Send</button>
+
     </div>
   </main>
     <!--footer-->

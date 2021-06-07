@@ -1,4 +1,5 @@
 <?php include('server.php')?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,11 +44,13 @@
 					</li>
 					<li><a href="help.php">How to help</a></li>
 					<li><a href="contact.php">Contact us</a></li>
+
 					<?php if(!isset($_SESSION['username'])):?>
 					<li><a href="login.php">Login/Register</a></li>
 					<?php else: ?>
 					<li><a href="profile.php"><?php echo $_SESSION['username'];?></a></li>
         			<?php endif ?>
+
 
 				</ul>
 				<a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -140,28 +143,89 @@
 					<h1>Related Articles</h1>
 					<div class="carousel" data-flickity='{"wrapAround": true, "autoPlay": true }'>
 						<div class="carousel-cell">
-							<a href="https://www.nationalgeographic.com/environment/article/plastic-pollution" target="_blank"><img class="carousel-image" src="../imgs/plastic_waste_natgeo.PNG"></a>
-							<div class="carousel-article-title">The world's plastic pollution crisis explained</div>
+
+							<div class="carousel-image-container" onclick="addFavorites(this)">
+								<div class="overlay">
+									<div class="add-favorites">
+										<img class="heart" src="../imgs/heart-empty.png">
+										<p id="favorites-add-text">add to favorites</p>
+									</div>
+                            	</div>
+								<img class="carousel-image" src="../imgs/plastic_waste_natgeo.PNG">
+							</div>                            
+                            <a href="https://www.nationalgeographic.com/environment/article/plastic-pollution" target="_blank">
+                                <div class="carousel-article-title">The world's plastic pollution crisis explained</div>
+                            </a>
+                        </div>
+						<div class="carousel-cell">
+							<div class="carousel-image-container" onclick="addFavorites(this)">
+								<div class="overlay">
+									<div class="add-favorites">
+										<img class="heart" src="../imgs/heart-empty.png">
+										<p id="favorites-add-text">add to favorites</p>
+									</div>
+                            	</div>
+								<img class="carousel-image" src="../imgs/coral-reef.jpg">
+							</div>   
+							<a href="https://ocean.si.edu/ocean-life/invertebrates/ocean-acidification" target="_blank">
+                                <div class="carousel-article-title">Ocean Acidification</div>
+                            </a>
 						</div>
 						<div class="carousel-cell">
-							<a href="https://ocean.si.edu/ocean-life/invertebrates/ocean-acidification" target="_blank"><img class="carousel-image" src="../imgs/coral-reef.jpg"></a>
-							<div class="carousel-article-title">Ocean Acidification</div>
+							<div class="carousel-image-container" onclick="addFavorites(this)">
+								<div class="overlay">
+									<div class="add-favorites">
+										<img class="heart" src="../imgs/heart-empty.png">
+										<p id="favorites-add-text">add to favorites</p>
+									</div>
+                            	</div>
+								<img class="carousel-image" src="../imgs/marine_polution.PNG">
+							</div>   
+							<a href="https://www.nationalgeographic.com/environment/article/critical-issues-marine-pollution" target="_blank">
+                                <div class="carousel-article-title">Marine pollution, explained</div>
+                            </a>
 						</div>
 						<div class="carousel-cell">
-							<a href="https://www.nationalgeographic.com/environment/article/critical-issues-marine-pollution" target="_blank"><img class="carousel-image" src="../imgs/marine_polution.PNG"></a>
-							<div class="carousel-article-title">Marine pollution, explained</div>
+							<div class="carousel-image-container" onclick="addFavorites(this)">
+								<div class="overlay">
+									<div class="add-favorites">
+										<img class="heart" src="../imgs/heart-empty.png">
+										<p id="favorites-add-text">add to favorites</p>
+									</div>
+                            	</div>
+								<img class="carousel-image" src="../imgs/coral_reef.PNG">
+							</div>   
+							<a href="https://www.nationalgeographic.com/environment/article/great-barrier-reef-restoration-transplanting-corals" target="_blank">
+                                <div class="carousel-article-title">Can new science save dying coral reefs?</div>
+                            </a>
 						</div>
 						<div class="carousel-cell">
-							<a href="https://www.nationalgeographic.com/environment/article/great-barrier-reef-restoration-transplanting-corals" target="_blank"><img class="carousel-image" src="../imgs/coral_reef.PNG"></a>
-							<div class="carousel-article-title">Can new science save dying coral reefs?</div>
+							<div class="carousel-image-container" onclick="addFavorites(this)">
+								<div class="overlay">
+									<div class="add-favorites">
+										<img class="heart" src="../imgs/heart-empty.png">
+										<p id="favorites-add-text">add to favorites</p>
+									</div>
+                            	</div>
+								<img class="carousel-image" src="../imgs/overfishing_natgeo.PNG">
+							</div>   
+							<a href="https://www.nationalgeographic.com/environment/article/critical-issues-overfishing" target="_blank">
+                                <div class="carousel-article-title">Plenty of Fish in the Sea? Not Always.</div>
+                            </a>
 						</div>
 						<div class="carousel-cell">
-							<a href="https://www.nationalgeographic.com/environment/article/critical-issues-overfishing" target="_blank"><img class="carousel-image" src="../imgs/overfishing_natgeo.PNG"></a>
-							<div class="carousel-article-title">Plenty of Fish in the Sea? Not Always.</div>
-						</div>
-						<div class="carousel-cell">
-							<a href="https://www.noaa.gov/education/resource-collections/ocean-coasts/oil-spills" target="_blank"><img class="carousel-image" src="../imgs/oil_spills.PNG"></a>
-							<div class="carousel-article-title">Oil spills</div>
+							<div class="carousel-image-container" onclick="addFavorites(this)">
+								<div class="overlay">
+									<div class="add-favorites">
+										<img class="heart" src="../imgs/heart-empty.png">
+										<p id="favorites-add-text">add to favorites</p>
+									</div>
+                            	</div>
+								<img class="carousel-image" src="../imgs/oil_spills.PNG">
+							</div>   
+							<a href="https://www.noaa.gov/education/resource-collections/ocean-coasts/oil-spills" target="_blank">
+                                <div class="carousel-article-title">Oil spills</div>
+                            </a>
 						</div>
 						
 						
@@ -214,4 +278,6 @@
 
 	</body>
 
+
 </html>
+

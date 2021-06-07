@@ -1,4 +1,6 @@
+
 <?php include('server.php')?>
+
 <!DOCTYPE html>
 <html lang ="en">
   <head>
@@ -7,6 +9,7 @@
     <meta name="description" content="This page is about life below water and how to protect it from human behavior">
     <meta name="keywords" content="sealife, marine, water">
     <meta name="author" content="C. Christidis, A. Georgopoulou, C. Pozrikidou, M. Zikou">
+
     <title>Siren</title>
     <link rel="icon" type="image/png" href="../imgs/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
@@ -17,11 +20,13 @@
   <body>
     <!-- Loading icon -->
   	<div class="loader"></div>
+
     <div class="navbar">
   		<div class="nav-bar-siren">
   			<div class="siren-icon"></div>
   			<a href="home.php" class="active">SIREN</a>
   		</div>
+      
   		<div class="right-navbar" id="navbarID">
   			<ul id="nav">
   				<li><a href="home.php">Home</a></li>
@@ -34,20 +39,24 @@
   				</li>
   				<li><a href="help.php">How to help</a></li>
   				<li><a href="contact.php">Contact us</a></li>
+
   				<?php if (!isset($_SESSION['username'])) : ?>
           <li><a href="login.php">Login/Register</a></li>
           <?php else: ?>
         <li><a href="profile.php"><?php echo $_SESSION['username'];?></a></li>
         <?php endif ?>
+
   			</ul>
   			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
   				<div class="menu-icon"></div>
   			</a>
+
   		</div>
   	</div>
     <div id="page-view">
   		<div id="home-view-title2">Login / Signup</div>
   	</div>
+
   <!-- login form  -->
   <main class="main-holder">
   	<div class="login-section">
@@ -64,12 +73,14 @@
           <button type="submit" style="width:150px;" name="login" id="login">Login </button>
         </form>
       </div>
+
     <div class="login-section">
       <p>
         Click the button below to create an account.
       </p>
       <!-- signup form - appears when you click signup button -->
       <button onclick="document.getElementById('id01').style.display='block'" style="width:150px;">Sign Up</button>
+
       <div id="id01" class="popup">
         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close popup">&times;</span>
         <form class="popup-content" action="server.php" method="post">
@@ -82,10 +93,12 @@
             <!--<label>
               <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
             </label>-->
+
           <!-- TODO privacy policy -->
           <p>
             By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.
           </p>
+
           <button type="submit" style="width:150px;" name="register" id="register">Sign Up</button>
         </form>
       </div>
@@ -94,6 +107,7 @@
       <p>Click the button below if you forgot your password.</p>
       <!-- signup form - appears when you click signup button -->
       <button onclick="document.getElementById('id02').style.display='block'" style="width:200px;">Reset Password</button>
+
       <div id="id02" class="popup">
         <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close popup">&times;</span>
         <form class="popup-content" action="server.php" method="post">
@@ -107,6 +121,7 @@
 
     
   </main>
+
   <!--footer-->
   <footer>
     <div class="footer-content">
@@ -118,6 +133,7 @@
           <br> We should not sit back and watch our planet get destroyed.<br>We must protect it.
         </p>
       </div>
+
       <div class="col contact-info">
         <h4 class="contact-footer">Contact Us</h4>
         <ul>
@@ -126,6 +142,7 @@
           <li><span><i class="fas fa-envelope"></i>&nbsp; info@sirenauth.com</span></li>
         </ul>
       </div>
+
       <div class="col follow-us">
         <h4 class="follow-footer">Follow us</h4>
         <div class="social-links">
@@ -143,4 +160,5 @@
   </footer>
   <!-- /.footer -->
   	</body>
+
   </html>
