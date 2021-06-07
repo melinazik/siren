@@ -136,29 +136,90 @@
 					<h1>Related Articles</h1>
 					<div class="carousel" data-flickity='{"wrapAround": true, "autoPlay": true }'>
 						<div class="carousel-cell">
-							<a href="https://www.nrdc.org/stories/global-climate-change-what-you-need-know" target="_blank"><img class="carousel-image" src="../imgs/bear_iceberg.PNG"></a>
-							<div class="carousel-article-title">Global Climate Change: What You Need to Know.</div>
+
+							
+						<div class="carousel-image-container" onclick="addFavorites(this)">
+								<div class="overlay">
+									<div class="add-favorites">
+										<img class="heart" src="../imgs/heart-empty.png">
+										<p id="favorites-add-text">add to favorites</p>
+									</div>
+                            	</div>
+								<img class="carousel-image" src="../imgs/ocean_sunset.PNG">
+							</div>                            
+                            <a href="https://www.worldwildlife.org/stories/how-climate-change-relates-to-oceans" target="_blank">
+                                <div class="carousel-article-title">How climate change relates to oceans.</div>
+                            </a>
+                        </div>
+						<div class="carousel-cell">
+							<div class="carousel-image-container" onclick="addFavorites(this)">
+								<div class="overlay">
+									<div class="add-favorites">
+										<img class="heart" src="../imgs/heart-empty.png">
+										<p id="favorites-add-text">add to favorites</p>
+									</div>
+                            	</div>
+								<img class="carousel-image" src="../imgs/sea_otter.PNG">
+							</div>   
+							<a href="https://www.wayfairertravel.com/inspiration/worlds-most-endangered-marine-species/" target="_blank">
+                                <div class="carousel-article-title">10 of the World's Most Endangered Marine Species.</div>
+                            </a>
 						</div>
 						<div class="carousel-cell">
-							<a href="https://www.conserve-energy-future.com/causes-effects-solutions-depleting-marine-life.php" target="_blank"><img class="carousel-image" src="../imgs/fish_ocean.PNG"></a>
-							<div class="carousel-article-title">What is Marine Life?</div>
+							<div class="carousel-image-container" onclick="addFavorites(this)">
+								<div class="overlay">
+									<div class="add-favorites">
+										<img class="heart" src="../imgs/heart-empty.png">
+										<p id="favorites-add-text">add to favorites</p>
+									</div>
+                            	</div>
+								<img class="carousel-image" src="../imgs/turtle_plastic.PNG">
+							</div>   
+							<a href="https://www.wwf.org.au/news/blogs/what-do-sea-turtles-eat-unfortunately-plastic-bags#gs.z3r46c" target="_blank">
+                                <div class="carousel-article-title">What do sea turtles eat? Unfortunately, plastic bags.</div>
+                            </a>
 						</div>
 						<div class="carousel-cell">
-							<a href="https://www.nationalgeographic.com/magazine/article/plastic-planet-health-pollution-waste-microplastics" target="_blank"><img class="carousel-image" src="../imgs/plastic_bottle.PNG"></a>
-							<div class="carousel-article-title">We Know Plastic Is Harming Marine Life. What About Us?</div>
+							<div class="carousel-image-container" onclick="addFavorites(this)">
+								<div class="overlay">
+									<div class="add-favorites">
+										<img class="heart" src="../imgs/heart-empty.png">
+										<p id="favorites-add-text">add to favorites</p>
+									</div>
+                            	</div>
+								<img class="carousel-image" src="../imgs/plastic_bottle.PNG">
+							</div>   
+							<a href="https://www.nationalgeographic.com/magazine/article/plastic-planet-health-pollution-waste-microplastics" target="_blank">
+                                <div class="carousel-article-title">We Know Plastic Is Harming Marine Life. What About Us?</div>
+                            </a>
 						</div>
 						<div class="carousel-cell">
-							<a href="https://www.wwf.org.au/news/blogs/what-do-sea-turtles-eat-unfortunately-plastic-bags#gs.z3r46c" target="_blank"><img class="carousel-image" src="../imgs/turtle_plastic.PNG"></a>
-							<div class="carousel-article-title">What do sea turtles eat? Unfortunately, plastic bags.</div>
+							<div class="carousel-image-container" onclick="addFavorites(this)">
+								<div class="overlay">
+									<div class="add-favorites">
+										<img class="heart" src="../imgs/heart-empty.png">
+										<p id="favorites-add-text">add to favorites</p>
+									</div>
+                            	</div>
+								<img class="carousel-image" src="../imgs/fish_ocean.PNG">
+							</div>   
+							<a href="https://www.conserve-energy-future.com/causes-effects-solutions-depleting-marine-life.php" target="_blank">
+                                <div class="carousel-article-title">What is Marine Life?</div>
+                            </a>
 						</div>
 						<div class="carousel-cell">
-							<a href="https://www.wayfairertravel.com/inspiration/worlds-most-endangered-marine-species/" target="_blank"><img class="carousel-image" src="../imgs/sea_otter.PNG"></a>
-							<div class="carousel-article-title">10 of the World's Most Endangered Marine Species.</div>
-						</div>
-						
-						<div class="carousel-cell">
-							<a href="https://www.worldwildlife.org/stories/how-climate-change-relates-to-oceans" target="_blank"><img class="carousel-image" src="../imgs/ocean_sunset.PNG"></a>
-							<div class="carousel-article-title">How climate change relates to oceans.</div>
+							<div class="carousel-image-container" onclick="addFavorites(this)">
+								<div class="overlay">
+									<div class="add-favorites">
+										<img class="heart" src="../imgs/heart-empty.png">
+										<p id="favorites-add-text">add to favorites</p>
+									</div>
+                            	</div>
+								<img class="carousel-image" src="../imgs/bear_iceberg.PNG">
+							</div>   
+							<a href="https://www.nrdc.org/stories/global-climate-change-what-you-need-know" target="_blank">
+                                <div class="carousel-article-title">Global Climate Change: What You Need to Know.</div>
+                            </a>
 						</div>
 					</div>
 				</div>
