@@ -55,12 +55,10 @@
 
         if(empty($username)){
             array_push($errors, "Username is required");
-        
         }
 
         if(empty($pwd)){
             array_push($errors, "Password is required");
-        
         }
 
         if(count($errors)==0){
@@ -113,7 +111,5 @@
             array_push($errors, "Wrong username, please try again.");
             header('location: login.php');
         }
-
     }
-
 ?>
