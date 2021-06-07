@@ -54,3 +54,16 @@ function myFunction() {
       reader.readAsDataURL(chosenFile);
     }
   });
+
+  function addFavorites(element) {
+  // element is the carousel-image-container element that called
+  // addFavorites with onclick
+  var src = element.childNodes[1].childNodes[1].childNodes[1].getAttribute("src");
+  if (src == "../imgs/heart-empty.png") {
+    element.childNodes[1].childNodes[1].childNodes[1].src = '../imgs/heart-full.png';
+    element.childNodes[1].childNodes[1].childNodes[3].innerHTML = "remove from favorites";
+  } else {
+    element.childNodes[1].childNodes[1].childNodes[1].src = '../imgs/heart-empty.png';
+    element.childNodes[1].childNodes[1].childNodes[3].innerHTML = "add to favorites";
+
+  }
