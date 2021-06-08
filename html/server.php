@@ -43,7 +43,7 @@
         mysqli_query($db, $query);
         $_SESSION['username'] = $username;
         $_SESSION['success'] = "You are now registered";
-        header('location: home.php');
+        header('location: home.php?signup=success');
         }
     else{
             header('location: login.php?signup=failed');
@@ -72,7 +72,7 @@
             if(mysqli_num_rows($results)){
                 $_SESSION['username'] = $username;
                 $_SESSION['success'] = "You are now logged in!";
-                header('location: home.php');
+                header('location: home.php?login=success');
             } else{
                 array_push($errors, "Wrong password or username, please try again.");
                 header('location: login.php?login=failed');
@@ -109,10 +109,11 @@
         if(mysqli_num_rows($results)){
             $query = "UPDATE user SET pwd='$pwd' WHERE username='$username'";
             mysqli_query($db, $query);
-            header('location: home.php');
+            header('location: home.php?reset=success');
         } else{
             array_push($errors, "Wrong username, please try again.");
             header('location: login.php?reset=failed');
         }
     }
+      
 ?>

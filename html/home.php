@@ -61,6 +61,18 @@
 
 			</div>
 		</div>
+		
+		
+		<div> <!-- success messages section -->
+			<?php 
+				
+			$url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+			if(strpos($url, "login=success")==true){
+				echo "<script type='text/javascript'>alert('Logged in successfully!')</script>";
+			}
+			?>	 
+    	</div> 
+
 
 		<!--ART-->
 		<div id="home-view">
