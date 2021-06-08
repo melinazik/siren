@@ -56,9 +56,29 @@
   		<div id="home-view-title2">Login / Signup</div>
   	</div>
 
+    <div> <!-- error messages section -->
+      <?php 
+            
+        $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+        if(strpos($url, "signup=failed")==true){
+          echo "Signup failed, please try again";
+        }
+
+        if(strpos($url, "login=failed")==true){
+          echo "Wrong username or password";
+        }
+
+        if(strpos($url, "reset=failed")==true){
+            echo "Wrong username, try again";
+        }
+            
+      ?>
+    </div> 
+    
   <!-- login form  -->
   <main class="main-holder">
-  	<div class="login-section">
+    
+    <div class="login-section">
       <!-- login form  -->
       <form class="login-form" action="server.php"  method="post">
           <input type="text" class="login-form-text" placeholder="Username" required name="username" id="username"> <!-- login is done with username only, not email-->

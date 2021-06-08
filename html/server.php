@@ -44,7 +44,10 @@
         $_SESSION['username'] = $username;
         $_SESSION['success'] = "You are now registered";
         header('location: home.php');
-    }
+        }
+    else{
+            header('location: login.php?signup=failed');
+        }
     }
 
 
@@ -69,10 +72,10 @@
             if(mysqli_num_rows($results)){
                 $_SESSION['username'] = $username;
                 $_SESSION['success'] = "You are now logged in!";
-                header('location: login.php');
+                header('location: home.php');
             } else{
                 array_push($errors, "Wrong password or username, please try again.");
-                header('location: login.php');
+                header('location: login.php?login=failed');
             }
 
         }
@@ -109,7 +112,7 @@
             header('location: home.php');
         } else{
             array_push($errors, "Wrong username, please try again.");
-            header('location: login.php');
+            header('location: login.php?reset=failed');
         }
     }
 ?>
