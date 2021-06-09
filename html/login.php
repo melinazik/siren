@@ -56,10 +56,9 @@
   		<div id="home-view-title2">Login / Signup</div>
   	</div>
 
-    <div class="alert warning"> <!-- error messages section -->
+    <div class="alert"> <!-- error messages section -->
     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-      <?php 
-            
+      <?php   
         $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         if(strpos($url, "signup=failed")==true){
           echo "Signup failed, please try again";

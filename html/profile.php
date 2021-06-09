@@ -60,6 +60,7 @@
       <div id="home-view-title2">Profile</div>
     </div>
 
+    <?php if($_SESSION['username']!='admin'): ?>
     <div class="profile">
       <div class="info-column">
         <div class="box">
@@ -99,7 +100,17 @@
 
     </div>
 
+    <?php else: ?> <!-- ADD ADMIN FRONT END CODE HERE inside the php section-->
+      <div>
+        THIS IS ADMIN PAGE </div> 
+        <div class="login-section">
+            <form class="login-form" action="server.php" method="post">
+                  <button type="submit" style="width:150px;" name="logout" id="logout">Logout</button>     <!-- LOGOUT BUTTON -->
+            </form>
+      <?php endif ?>
+
     <script src="../js/javascript.js"> </script>
+    
 
     <!--footer-->
     <footer>
