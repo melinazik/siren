@@ -42,11 +42,13 @@
         </li>
         <li><a href="help.php">How to help</a></li>
         <li><a href="contact.php">Contact us</a></li>
-        <?php if (!isset($_SESSION['username'])) : ?>
-          <li><a href="login.php">Login/Register</a></li>
-        <?php else : ?>
-          <li><a href="profile.php"><?php echo $_SESSION['username']; ?></a></li>
-        <?php endif ?>
+        <?php if(!isset($_SESSION['username'])):?>
+					<li><a href="login.php">Login/Register</a></li> <?php endif?>
+					<?php if($_SESSION['username']=='admin'): ?>
+					<li><a href="admin.php"><?php echo $_SESSION['username'];?></a></li>
+					<?php else: ?>
+					<li><a href="profile.php"><?php echo $_SESSION['username'];?></a></li>
+        			<?php endif ?>
 
       </ul>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
