@@ -56,24 +56,30 @@
   		<div id="home-view-title2">Login / Signup</div>
   	</div>
 
-    <div class="alert"> <!-- error messages section -->
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+
+    
       <?php   
-        $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-        if(strpos($url, "signup=failed")==true){
-          echo "Signup failed, please try again";
-        }
+        $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
+        <?php if(strpos($url, "signup=failed")==true): ?>
+          <div class="alert"> <!-- error messages section -->
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+              <?php echo "Signup failed, please try again"; ?>
+          </div> <?php endif ?>
+        
+        <?php if(strpos($url, "login=failed")==true): ?>
+          <div class="alert"> <!-- error messages section -->
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+              <?php echo "Wrong username or password"; ?>
+          </div> <?php endif ?>
+        
 
-        if(strpos($url, "login=failed")==true){
-          echo "Wrong username or password";
-        }
-
-        if(strpos($url, "reset=failed")==true){
-            echo "Wrong username, try again";
-        }
-            
-      ?>
-    </div> 
+        <?php if(strpos($url, "reset=failed")==true): ?>
+          <div class="alert"> <!-- error messages section -->
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+              <?php echo "Wrong username, try again"; ?>
+          </div> <?php endif ?>
+        
+     
     
   <!-- login form  -->
   <main class="main-holder">
