@@ -150,9 +150,7 @@
         </div>
       </button>
   </div><br> <br>
-  <!--<div class="help-button-container">
-  <a href="https://nmlc.org/rehabilitation/what-you-can-do-for-a-stranded-marine-animal/#:~:text=9.,Guard%20on%20VHF%20Channel%2016.">
-    <span class="help-button">See how you can help if you come across an endangered marine animal </span></a></div>-->
+ 
   
     <div class = "hotline-title">
       Useful Hotlines <br>
