@@ -42,13 +42,13 @@
         </li>
         <li><a href="help.php">How to help</a></li>
         <li><a href="contact.php">Contact us</a></li>
-        <?php if(!isset($_SESSION['username'])):?>
-					<li><a href="login.php">Login/Register</a></li> <?php endif?>
-					<?php if($_SESSION['username']=='admin'): ?>
-					<li><a href="admin.php"><?php echo $_SESSION['username'];?></a></li>
-					<?php else: ?>
-					<li><a href="profile.php"><?php echo $_SESSION['username'];?></a></li>
-        			<?php endif ?>
+        <?php if(isset($_SESSION['username'])&&($_SESSION['username']=='admin')):?>
+					<li><a href="admin.php"><?php echo $_SESSION['username'];?></a></li> <?php endif?>
+					<?php if(isset($_SESSION['username'])&&($_SESSION['username']!='admin')): ?>
+					<li><a href="profile.php"><?php echo $_SESSION['username'];?></a></li> <?php endif?>
+					<?php if(!isset($_SESSION['username'])): ?>
+					<li><a href="login.php">Login/Register</a></li> <?php endif ?>
+        			
 
       </ul>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -63,6 +63,14 @@
   </div>
 
   <div id="admin-container">
+
+  <div class="login-section">
+            <form class="login-form" action="server.php" method="post">
+                  <button type="submit" style="width:150px;" name="logout" id="logout">Logout</button>     <!-- TEMPORARY LOGOUT BUTTON -->
+            </form>
+          </div>
+
+
     <p id="admin-actions">Actions you can take...</p>
     <div id="admin-actions-container">
 
@@ -80,6 +88,8 @@
     </div>
   </div>
 
+  
+
 
   <div class="box" id="add-article" class="popup">
     <center>
@@ -88,9 +98,6 @@
         <form action="server.php" method="post" enctype="multipart/form-data">
           <input type="file" name="image" id="image" accept="image/*">
           <input type="submit" value="Upload Image" name="upload" value="Upload">
-          <!--<div>
-            <label for="file" id="upload-btn">EDIT PIC</label>
-          </div>-->
         </form>
       </div>
 
@@ -99,10 +106,6 @@
       <input type="text" name="" placeholder="Gender">
 
       <button class="profile-button" style="float:left; margin:10px 0 0 18.2%">DONE</button>
-
-      <!--<form class="login-form" action="server.php" method="post">
-        <button class="profile-button" style="float:right; margin:10px 18.2% 0 0"> <a href="home.php?logout='1'">LOG OUT </a></button>
-      </form>-->
 
       <div class="login-section">
         <form class="login-form" action="server.php" method="post">
