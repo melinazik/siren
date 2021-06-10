@@ -1352,7 +1352,6 @@ label:hover {
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
-    background-color: pink;
 }
 
 #admin-actions {
@@ -1370,6 +1369,7 @@ label:hover {
     display: block;
     height: 20em;
     width: 18em;
+    box-shadow: #050C0D;
 }
 
 .admin-action-panel p {
@@ -1393,11 +1393,13 @@ label:hover {
 }
 
 #action-image1 {
-    background-color: #04AA6D;
+    background-image: url(../imgs/article.jpg);
+    background-size: cover;
 }
 
 #action-image2 {
-    background-color: #12aa04;
+    background-image: url(../imgs/messages.jpg);
+    background-size: cover;
 }
 
 @media (max-width: 550px) {

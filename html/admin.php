@@ -64,7 +64,7 @@
     <p id="admin-actions">Actions you can take...</p>
     <div id="admin-actions-container">
 
-      <div class="admin-action-panel">
+      <div class="admin-action-panel" >
         <p>Add a new Article</p>
         <div class="admin-action-image" id="action-image1"></div>
       </div>
