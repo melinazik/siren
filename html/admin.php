@@ -48,7 +48,7 @@
 					<li><a href="profile.php"><?php echo $_SESSION['username'];?></a></li> <?php endif?>
 					<?php if(!isset($_SESSION['username'])): ?>
 					<li><a href="login.php">Login/Register</a></li> <?php endif ?>
-        			
+
 
       </ul>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -78,17 +78,88 @@
         <p>Add a new Article</p>
         <div class="admin-action-image" id="action-image1"></div>
       </div>
-      <div class="admin-action-panel" onclick="callSeeMessages()">
-        <p>See your messages</p>
-        <div class="admin-action-image" id="action-image2"></div>
-      </div>
+     <div class="admin-action-panel" onclick="callSeeMessages()">
+        <p>See user messages</p>
+        <div class="admin-action-image" id="action-image2"></div> 
+
+        <div class="popup" id="id02">
+          <div class="overlay"></div>
+          <div class="content-pop2">
+            <div class="close-btn" onClick="callSeeMessages()">&times;</div>
+
+            <div class = "contact-inbox">
+              <ul>
+                <li>
+                  <div class="messages">
+                    <div class="list-left">
+                      <div class="name-display"> Chrysa Pozrikidou </div>
+                    </div>
+                    <div class="list-right">
+                      <div class="message">
+                        <div class="mail-display">xrysa123@gmail.com</div>
+                        <div class="msg-display">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+                          molestiae quas vel sint commodi repudiandae consequuntur.</div>
+                      </div>
+                      <div class="time-status">
+                        <div class="time">10H</div>
+                        <div class="status"></div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="messages">
+                    <div class="list-left">
+                      <div class="name-display"> Reina Papav </div>
+                    </div>
+                    <div class="list-right">
+                      <div class="message">
+                        <div class="mail-display">reinayoyo3@gmail.com</div>
+                        <div class="msg-display">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+                          molestiae quas vel sint commodi repudiandae consequuntur.</div>
+                      </div>
+                      <div class="time-status">
+                        <div class="time">10H</div>
+                        <div class="status"></div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="messages">
+                    <div class="list-left">
+                      <div class="name-display"> Johnathan Smiths </div>
+                    </div>
+                    <div class="list-right">
+                      <div class="message">
+                        <div class="mail-display">yourstruly@gmail.com</div>
+                        <div class="msg-display">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+                          molestiae quas vel sint commodi repudiandae consequuntur.</div>
+                      </div>
+                      <div class="time-status">
+                        <div class="time">10H</div>
+                        <div class="status"></div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+
+          </div>
+
+          </div>
+        <!--</div>-->
 
       <button class="admin-action-button" onclick="callAddArticle()">Add Article</button>
       <button class="admin-action-button" onclick="callSeeMessages()">See Messages</button>
     </div>
   </div>
 
-  
+
 
 
   <div class="box" id="add-article" class="popup">
