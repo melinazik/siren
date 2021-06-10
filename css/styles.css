@@ -1424,3 +1424,107 @@ label:hover {
 .admin-action-image:hover {
     transform: scale(1.02);
 }
+
+/* message box */
+
+.contact-inbox{
+  width: 500px;
+  overflow: auto;
+  border-radius: 3px;
+  height: 630px;
+  cursor: pointer;
+}
+
+.contact-inbox li{
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #34495e;
+}
+
+.contact-inbox li:last-child {
+  border-bottom: 0;
+}
+
+.contact-inbox li:hover{
+  background: #e4edf5;
+}
+
+.contact-inbox li .list_right{
+  display:flex;
+}
+
+.contact-inbox .list-right{
+  margin: 0 20px;
+}
+
+.contact-inbox .list-left{
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.contact-inbox .list-right .msg-display{
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.contact-inbox .time{
+  color: #ccc;
+  font-size: 12px;
+  text-align: left;
+}
+
+.contact-inbox .mail-display{
+  background: rgba(52, 73, 94, 0.3);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.popup .overlay{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+  z-index: 1;
+  display: none;
+}
+
+.popup .content-popup2{
+  position: absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: #fff;
+  width: 450px;
+  height: 220px;
+  z-index: 2;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.popup .close-btn{
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 30px;
+  height: 30px;
+  background: #34495e;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.popup.active .overlay{
+  display: block;
+}
+
+.popup.active .content-popup2{
+  transition: all 300ms ease-in-out;
+  transform: translate(-50%, -50%) scale(1);
+}
