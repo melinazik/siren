@@ -57,7 +57,7 @@
   	</div>
 
 
-    
+    <!-- error messages, they appear based on occasion--> 
       <?php   
         $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
         <?php if(strpos($url, "signup=failed")==true): ?>
@@ -90,11 +90,6 @@
           <input type="text" class="login-form-text" placeholder="Username" required name="username" id="username"> <!-- login is done with username only, not email-->
           <input type="password" class="login-form-text" placeholder="Password" required name="pwd" id="pwd" >
 
-            <!--
-          <label>
-            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-          </label>-->
-
           <button type="submit" style="width:150px;" name="login" id="login">Login </button>
         </form>
       </div>
@@ -114,10 +109,6 @@
             <input class="login-form-text" type="text" placeholder="Username" name="username" required id="username">
             <input class="login-form-text" type="password" placeholder="Password" name="pwd" required id="pwd">
             <input class="login-form-text" type="password" placeholder="Repeat Password" name="password_repeat" required id="password_repeat">
-
-            <!--<label>
-              <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-            </label>-->
 
           <!-- TODO privacy policy -->
           <p>

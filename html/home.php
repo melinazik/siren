@@ -61,17 +61,28 @@
 
 			</div>
 		</div>
-		
-		
-		<div> <!-- success messages section -->
-			<?php 
-				
-			$url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-			if(strpos($url, "login=success")==true){
-				echo "<script type='text/javascript'>alert('Logged in successfully!')</script>";
-			}
-			?>	 
-    	</div> 
+
+		<!-- success messages, they appear based on occasion--> 
+		<?php   
+        $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
+        <?php if(strpos($url, "signup=success")==true): ?>
+          <div class="alert success"> <!-- error messages section -->
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+              <?php echo "You are now logged in!"; ?>
+          </div> <?php endif ?>
+        
+        <?php if(strpos($url, "login=success")==true): ?>
+          <div class="alert success"> <!-- error messages section -->
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+              <?php echo "You are now logged in!"; ?>
+          </div> <?php endif ?>
+        
+
+        <?php if(strpos($url, "reset=success")==true): ?>
+          <div class="alert success"> <!-- error messages section -->
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+              <?php echo "You've successfully reset your password"; ?>
+          </div> <?php endif ?>
 
 
 		<!--ART-->
