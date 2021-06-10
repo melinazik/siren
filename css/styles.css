@@ -1369,7 +1369,7 @@ label:hover {
     display: block;
     height: 20em;
     width: 18em;
-    box-shadow: #050C0D;
+    box-shadow: 0px 0px 10px 3px rgba(120, 120, 120, 0.59);
 }
 
 .admin-action-panel p {
@@ -1388,7 +1388,8 @@ label:hover {
 }
 
 .admin-action-image {
-    height: 90%;
+    position: relative;
+    height: 86%;
     width: 100%;
 }
 
@@ -1415,4 +1416,11 @@ label:hover {
     .admin-action-image {
         width: 35vw;
     }
+    .admin-action-panel {
+        box-shadow: none;
+    }
+}
+
+.admin-action-image:hover {
+    transform: scale(1.02);
 }
