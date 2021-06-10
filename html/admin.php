@@ -66,17 +66,17 @@
     <p id="admin-actions">Actions you can take...</p>
     <div id="admin-actions-container">
 
-      <div class="admin-action-panel" >
+      <div class="admin-action-panel" onclick="callAddArticle()">
         <p>Add a new Article</p>
         <div class="admin-action-image" id="action-image1"></div>
       </div>
-      <div class="admin-action-panel">
+      <div class="admin-action-panel" onclick="callSeeMessages()">
         <p>See your messages</p>
         <div class="admin-action-image" id="action-image2"></div>
       </div>
 
-      <button class="admin-action-button" onclick="document.getElementById('add-article').style.display='block'" style="width:150px;">Add Article</button>
-      <button class="admin-action-button" onclick="document.getElementById('').style.display='block'" style="width:150px;">See Messages</button>
+      <button class="admin-action-button" onclick="callAddArticle()">Add Article</button>
+      <button class="admin-action-button" onclick="callSeeMessages()">See Messages</button>
     </div>
   </div>
 
