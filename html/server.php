@@ -72,7 +72,11 @@
             if(mysqli_num_rows($results)){
                 $_SESSION['username'] = $username;
                 $_SESSION['success'] = "You are now logged in!";
-                header('location: home.php?login=success');
+                if($_SESSION['username']=='admin'){
+                    header('location: admin.php?login=success');
+                } else {
+                    header('location: home.php?login=success');
+                }
             } else{
                 array_push($errors, "Wrong password or username, please try again.");
                 header('location: login.php?login=failed');
