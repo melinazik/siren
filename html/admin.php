@@ -3,10 +3,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php if(isset($_SESSION['username'])&&$_SESSION['username']!='admin'){ 
-  header('location: home.php?access=denied');
-}?>
-
 <head>
   <meta charset="utf 8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -68,30 +64,25 @@
 
   <div id="admin-container">
 
-  <div class="login-section">
-            <form class="login-form" action="server.php" method="post">
-                  <button type="submit" style="width:150px;" name="logout" id="logout">Logout</button>     <!-- TEMPORARY LOGOUT BUTTON -->
-            </form>
-          </div>
+    <!--<div class="login-section">
+        <form class="login-form" action="server.php" method="post">
+            <button type="submit" style="width:150px;" name="logout" id="logout">Logout</button>
+        </form>
+    </div> -->
 
 
-    <p id="admin-actions">Actions you can take...</p>
+    <p id="admin-actions"></p>
     <div id="admin-actions-container">
 
-      <div class="admin-action-panel" onclick="callAddArticle()">
+      <div class="admin-action-panel"> <!-- onclick="callAddArticle()"-->
         <p>Add a new Article</p>
-        <div class="admin-action-image" id="action-image1"></div>
+        <div class="admin-action-image" id="action-image1" onclick="callAddArticle()"></div>
       </div>
-     <div class="admin-action-panel" onclick="callSeeMessages()">
-        <p>See user messages</p>
-        <div class="admin-action-image" id="action-image2"></div> 
 
-        <div class="popup" id="id02">
-          <div class="overlay"></div>
-          <div class="content-pop2">
-            <div class="close-btn" onClick="callSeeMessages()">&times;</div>
+     <div > <!-- onclick="callSeeMessages()"-->
+        <h3 class="see-msgs-header">User Messages</h3>
 
-            <div class = "contact-inbox">
+        <div class = "contact-inbox">
               <ul>
                 <li>
                   <div class="messages">
@@ -150,49 +141,86 @@
                   </div>
                 </li>
 
+
+
+                <li>
+                  <div class="messages">
+                    <div class="list-left">
+                      <div class="name-display"> Chrysa Pozrikidou </div>
+                    </div>
+                    <div class="list-right">
+                      <div class="message">
+                        <div class="mail-display">xrysa123@gmail.com</div>
+                        <div class="msg-display">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+                          molestiae quas vel sint commodi repudiandae consequuntur.</div>
+                      </div>
+                      <div class="time-status">
+                        <div class="time">10H</div>
+                        <div class="status"></div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="messages">
+                    <div class="list-left">
+                      <div class="name-display"> Reina Papav </div>
+                    </div>
+                    <div class="list-right">
+                      <div class="message">
+                        <div class="mail-display">reinayoyo3@gmail.com</div>
+                        <div class="msg-display">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+                          molestiae quas vel sint commodi repudiandae consequuntur.</div>
+                      </div>
+                      <div class="time-status">
+                        <div class="time">10H</div>
+                        <div class="status"></div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="messages">
+                    <div class="list-left">
+                      <div class="name-display"> Johnathan Smiths </div>
+                    </div>
+                    <div class="list-right">
+                      <div class="message">
+                        <div class="mail-display">yourstruly@gmail.com</div>
+                        <div class="msg-display">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+                          molestiae quas vel sint commodi repudiandae consequuntur.</div>
+                      </div>
+                      <div class="time-status">
+                        <div class="time">10H</div>
+                        <div class="status"></div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+
               </ul>
             </div>
 
-          </div>
-
-          </div>
-        <!--</div>-->
-
-      <button class="admin-action-button" onclick="callAddArticle()">Add Article</button>
-      <button class="admin-action-button" onclick="callSeeMessages()">See Messages</button>
-    </div>
-  </div>
-
-
-
-
-  <div class="box" id="add-article" class="popup">
-    <center>
-      <div class="profile-img">
-        <img id="photo-prof" src="../imgs/siren.png"></image>
-        <form action="server.php" method="post" enctype="multipart/form-data">
-          <input type="file" name="image" id="image" accept="image/*">
-          <input type="submit" value="Upload Image" name="upload" value="Upload">
-        </form>
+        </div>
       </div>
-
-      <input type="text" name="" placeholder="User Name">
-      <input type="text" name="" placeholder="Age">
-      <input type="text" name="" placeholder="Gender">
-
-      <button class="profile-button" style="float:left; margin:10px 0 0 18.2%">DONE</button>
 
       <div class="login-section">
-        <form class="login-form" action="server.php" method="post">
-          <button type="submit" style="width:150px;" name="logout" id="logout">Logout</button> <!-- LOGOUT BUTTON -->
-        </form>
+          <form class="login-form" action="server.php" method="post">
+              <button type="submit" style="width:150px;" name="logout" id="logout">Logout</button>
+          </form>
       </div>
+      <!--<button class="admin-action-button" onclick="callAddArticle()">Add Article</button>-->
+      <!--<button class="admin-action-button" onclick="callSeeMessages()">See Messages</button>-->
 
-    </center>
+     </div>
+    </div>
+
+    <script src="../js/javascript.js"> </script>
+
   </div>
-
-  <script src="../js/javascript.js"> </script>
-
 
   <!--footer-->
   <footer>
@@ -200,7 +228,8 @@
       <div class="row">
         <div class="col about">
           <h4>About Us</h4>
-          <p class="footer-about">We are a group of university students hoping to motivate you to take action. We are providing you
+          <p class="footer-about">We are a group of university students hoping to motivate you to take action.
+            We are providing you
             with a bunch of useful articles, documentaries and links to research the matter yourself.
             <br> We should not sit back and watch our planet get destroyed.<br>We must protect it.
           </p>

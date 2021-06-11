@@ -51,7 +51,7 @@
 					<li><a href="profile.php"><?php echo $_SESSION['username'];?></a></li> <?php endif?>
 					<?php if(!isset($_SESSION['username'])): ?>
 					<li><a href="login.php">Login/Register</a></li> <?php endif ?>
-        			
+
 
 
 				</ul>
@@ -64,6 +64,15 @@
 
 		<div id="page-view">
 			<div id="home-view-title2">Causes</div>
+		</div>
+
+		<div  class="google-search">
+			<form class="search-bar" action="https://www.google.com/search?q= method="GET>
+				<input type="text-search" name="q" placeholder="Google Search">
+				<div class="submit-btn">
+				  <button type="submitbtn"> <i class="fas fa-search"></i> </button>
+			  </div>
+			</form>
 		</div>
 
 		<!--Info section -->
@@ -139,7 +148,7 @@
 					<div class="carousel" data-flickity='{"wrapAround": true, "autoPlay": true }'>
 						<div class="carousel-cell">
 
-							
+
 						<div class="carousel-image-container" onclick="addFavorites(this)">
 								<div class="overlay">
 									<div class="add-favorites">
@@ -148,7 +157,7 @@
 									</div>
                             	</div>
 								<img class="carousel-image" src="../imgs/ocean_sunset.PNG">
-							</div>                            
+							</div>
                             <a href="https://www.worldwildlife.org/stories/how-climate-change-relates-to-oceans" target="_blank">
                                 <div class="carousel-article-title">How climate change relates to oceans.</div>
                             </a>
@@ -162,7 +171,7 @@
 									</div>
                             	</div>
 								<img class="carousel-image" src="../imgs/sea_otter.PNG">
-							</div>   
+							</div>
 							<a href="https://www.wayfairertravel.com/inspiration/worlds-most-endangered-marine-species/" target="_blank">
                                 <div class="carousel-article-title">10 of the World's Most Endangered Marine Species.</div>
                             </a>
@@ -176,7 +185,7 @@
 									</div>
                             	</div>
 								<img class="carousel-image" src="../imgs/turtle_plastic.PNG">
-							</div>   
+							</div>
 							<a href="https://www.wwf.org.au/news/blogs/what-do-sea-turtles-eat-unfortunately-plastic-bags#gs.z3r46c" target="_blank">
                                 <div class="carousel-article-title">What do sea turtles eat? Unfortunately, plastic bags.</div>
                             </a>
@@ -190,7 +199,7 @@
 									</div>
                             	</div>
 								<img class="carousel-image" src="../imgs/plastic_bottle.PNG">
-							</div>   
+							</div>
 							<a href="https://www.nationalgeographic.com/magazine/article/plastic-planet-health-pollution-waste-microplastics" target="_blank">
                                 <div class="carousel-article-title">We Know Plastic Is Harming Marine Life. What About Us?</div>
                             </a>
@@ -204,7 +213,7 @@
 									</div>
                             	</div>
 								<img class="carousel-image" src="../imgs/fish_ocean.PNG">
-							</div>   
+							</div>
 							<a href="https://www.conserve-energy-future.com/causes-effects-solutions-depleting-marine-life.php" target="_blank">
                                 <div class="carousel-article-title">What is Marine Life?</div>
                             </a>
@@ -218,7 +227,7 @@
 									</div>
                             	</div>
 								<img class="carousel-image" src="../imgs/bear_iceberg.PNG">
-							</div>   
+							</div>
 							<a href="https://www.nrdc.org/stories/global-climate-change-what-you-need-know" target="_blank">
                                 <div class="carousel-article-title">Global Climate Change: What You Need to Know.</div>
                             </a>
