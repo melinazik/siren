@@ -146,8 +146,8 @@
 			$size = count($articles);
 			for ($i = 0; $i < $size; $i++) {
 				$articleJSON = json_encode($articles[$i]);
-				//echo '<script type="../js/javascript.js">', 'loadEffectsArticles();', '<script>';
-				print_r($articleJSON);
+				// Needs to be fixed.
+				echo '<script type="../js/javascript.js">', 'loadEffectsArticles();', '</script>';print_r($articleJSON);
 			} ?>
 
 			<!-- CAROUSEL -->
