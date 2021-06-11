@@ -3,7 +3,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+  $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; //getting user data
+  $url_arr = explode("&",$url);
+?>
+
 <head>
+
 	<meta charset="utf 8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="description" content="This page is about life below water and how to protect it from human behavior">
@@ -146,11 +152,11 @@
 			$size = count($articles);
 			for ($i = 0; $i < $size; $i++) {
 				$articleJSON = json_encode($articles[$i]);
-				// Needs to be fixed.
-				echo '<script type="../js/javascript.js">', 'loadEffectsArticles();', '</script>';print_r($articleJSON);
+				echo "<script type='../js/javascript.js'>loadEffectsArticles();</script>"; //doesn't work yet
 			} ?>
 
 			<!-- CAROUSEL -->
+			
 			<div class="carousel-wrap">
 				<h1 onclick="loadEffectsArticles()">Related Articles</h1>
 				<div class="carousel" id="carousel-effects">

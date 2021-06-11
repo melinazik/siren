@@ -3,6 +3,15 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php if(isset($_SESSION['username'])&&($_SESSION['username']!='admin')){
+  header('location: home.php?access=denied');                              //can't access admin page if it's a regular user
+} ?>
+
+<?php if(!isset($_SESSION['username'])){
+  header('location: home.php?access=denied');                              //can't access admin page if not logged in
+} ?>
+
+
 <head>
   <meta charset="utf 8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">

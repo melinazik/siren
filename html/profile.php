@@ -3,6 +3,11 @@
 <!DOCTYPE html>
 <html lang ="en">
 
+<?php
+  $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; //getting user data
+  $url_arr = explode("&",$url);
+?>
+
     <head>
 		<meta charset="utf 8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -47,7 +52,7 @@
 					<?php if($_SESSION['username']=='admin'): ?>
 					<li><a href="admin.php"><?php echo $_SESSION['username'];?></a></li>
 					<?php else: ?>
-					<li><a href="profile.php"><?php echo $_SESSION['username'];?></a></li>
+					<li><a href="<?php echo $url;?>"><?php echo $_SESSION['username'];?></a></li>
         			<?php endif ?>
 
         </ul>
@@ -75,13 +80,6 @@
             </form>
           </div>
 
-
-
-            
-          <?php   
-            $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; 
-            $url_arr = explode("&",$url);
-        ?>
 
 
           <div class="prof-section">
