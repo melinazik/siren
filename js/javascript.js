@@ -60,15 +60,15 @@ function addFavorites(element) {
     // element is the carousel-image-container element that called
     // addFavorites with onclick
     console.log(element.childNodes);
-    // var src = element.childNodes[1].childNodes[1].childNodes[1].getAttribute("src");
-    // if (src == "../imgs/heart-empty.png") {
-    //     element.childNodes[1].childNodes[1].childNodes[1].src = '../imgs/heart-full.png';
-    //     element.childNodes[1].childNodes[1].childNodes[3].innerHTML = "remove from favorites";
-    // } else {
-    //     element.childNodes[1].childNodes[1].childNodes[1].src = '../imgs/heart-empty.png';
-    //     element.childNodes[1].childNodes[1].childNodes[3].innerHTML = "add to favorites";
+    var src = element.childNodes[0].childNodes[0].childNodes[0].getAttribute("src");
+    if (src == "../imgs/heart-empty.png") {
+        element.childNodes[0].childNodes[0].childNodes[0].src = '../imgs/heart-full.png';
+        element.childNodes[0].childNodes[0].childNodes[1].innerHTML = "remove from favorites";
+    } else {
+        element.childNodes[0].childNodes[0].childNodes[0].src = '../imgs/heart-empty.png';
+        element.childNodes[0].childNodes[0].childNodes[1].innerHTML = "add to favorites";
 
-    // }
+    }
 
 }
 
@@ -80,9 +80,15 @@ function callSeeMessages() {
     //document.getElementById('').style.display='block'" style="width:150px;
 }
 
+
 function loadEffectsArticles() {
+    var elem = document.querySelector('#carousel-effects');
+    var flkty = new Flickity(elem, {
+        wrapAround: true,
+        autoPlay: true
+    });
+
     var carousel_container = document.getElementById('carousel-effects');
-    //console.log(carousel_container);
 
     // while more elements in database
     var carousel_cell = document.createElement('div');
@@ -104,7 +110,7 @@ function loadEffectsArticles() {
 
     var favorites_add_text = document.createElement("p");
     favorites_add_text.classList.add("favorites-add-text");
-    favorites_add_text.textContent = "teeest";
+    favorites_add_text.textContent = "add to favorites";
 
     add_favorites.appendChild(heart);
     add_favorites.appendChild(favorites_add_text);
@@ -129,17 +135,12 @@ function loadEffectsArticles() {
     a.appendChild(carousel_article_title);
 
     carousel_cell.appendChild(carousel_image_container);
-    //console.log(carousel_cell.childNodes);
     carousel_cell.appendChild(a);
 
-    carousel_container.appendChild(carousel_cell);
-    //console.log(carousel_container.childNodes);
+
+    flkty.append(carousel_cell);
 }
 
 function loadCausesArticles() {
 
-}
-
-function testFunction(element) {
-    //console.log(element);
 }

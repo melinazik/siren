@@ -1249,26 +1249,26 @@ a {
     transition: 0.2 ease;
 }
 
-.prof-section button{
-  padding: 10px 10px;
-  width:110px;
+.prof-section button {
+    padding: 10px 10px;
+    width: 110px;
 }
 
 input[type="file"] {
     display: none;
 }
 
-.profile-img input[type="submit"]{
-  border: 0;
-  background: #192d47;
-  color: #fff;
-  padding: 6px 15px;
-  cursor: pointer;
-  transition: 0.5s;
-  font-family: Georgia, serif;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  margin-top: 10px;
+.profile-img input[type="submit"] {
+    border: 0;
+    background: #192d47;
+    color: #fff;
+    padding: 6px 15px;
+    cursor: pointer;
+    transition: 0.5s;
+    font-family: Georgia, serif;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
 
 label {
@@ -1295,7 +1295,7 @@ label:hover {
     background-color: #f44336;
     color: white;
     opacity: 1;
-    transition: opacity 0.6s;    
+    transition: opacity 0.6s;
 }
 
 .alert.success {
@@ -1353,6 +1353,7 @@ label:hover {
     width: 100%;
 }
 
+
 /*#admin-actions {
     font-size: 1.5em;
 }*/
@@ -1379,9 +1380,10 @@ label:hover {
 
 .admin-action-button {
     margin: 1em;
-
     /*display: none;*/
 }
+
+
 /*
 #add-article {
     display: none;
@@ -1426,102 +1428,104 @@ label:hover {
     cursor: pointer;
 }
 
+
 /* message box */
 
-.contact-inbox{
-  width: 500px;
-  overflow: auto;
-  height: 630px;
-  cursor: pointer;
+.contact-inbox {
+    width: 500px;
+    overflow: auto;
+    height: 630px;
+    cursor: pointer;
 }
 
-.contact-inbox li{
-  display: flex;
-  align-items: center;
-  padding: 15px 20px;
-  border-bottom: 1px solid #34495e;
+.contact-inbox li {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #34495e;
 }
 
 .contact-inbox li:last-child {
-  border-bottom: 0;
+    border-bottom: 0;
 }
 
-.contact-inbox li:hover{
-  background: #e4edf5;
+.contact-inbox li:hover {
+    background: #e4edf5;
 }
 
-.contact-inbox li .list_right{
-  display:flex;
+.contact-inbox li .list_right {
+    display: flex;
 }
 
-.contact-inbox .list-right{
-  margin: 0 20px;
+.contact-inbox .list-right {
+    margin: 0 20px;
 }
 
-.contact-inbox .list-left{
-  font-weight: bold;
-  margin-bottom: 5px;
+.contact-inbox .list-left {
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
-.contact-inbox .list-right .msg-display{
-  font-size: 12px;
-  line-height: 18px;
+.contact-inbox .list-right .msg-display {
+    font-size: 12px;
+    line-height: 18px;
 }
 
-.contact-inbox .time{
-  color: #ccc;
-  font-size: 12px;
-  text-align: left;
+.contact-inbox .time {
+    color: #ccc;
+    font-size: 12px;
+    text-align: left;
 }
 
-.contact-inbox .mail-display{
-  background: rgba(52, 73, 94, 0.3);
-  border-radius: 10px;
-  text-align: center;
+.contact-inbox .mail-display {
+    background: rgba(52, 73, 94, 0.3);
+    border-radius: 10px;
+    text-align: center;
 }
 
-.see-msgs-header{
-  text-align: center;
-  font-size: 22px;
-  font-weight:400;
-  background-color:#e4edf5;
+.see-msgs-header {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 400;
+    background-color: #e4edf5;
 }
+
 
 /** SEARCH BAR **/
 
-.google-search{
-  margin-bottom: 0px;
-  margin-top: 0px;
-  margin-right: 5px;
-  float: right;
+.google-search {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-right: 5px;
+    float: right;
 }
 
-input[type="text-search"]{
-  display: inline-block;
-  box-sizing: border-box;
-  background: none;
-  color: #34495e;
-  margin-top: 10px;
-  margin-bottom: 30px;
-  padding: 4px;
-  width: 220px;
-  height: 32px;
-  border: none;
-  border-bottom: 1px solid #0082e6;
-  font-weight: 400;
-  font-size: 15px;
-  transition: 0.2s ease;
+input[type="text-search"] {
+    display: inline-block;
+    box-sizing: border-box;
+    background: none;
+    color: #34495e;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding: 4px;
+    width: 220px;
+    height: 32px;
+    border: none;
+    border-bottom: 1px solid #0082e6;
+    font-weight: 400;
+    font-size: 15px;
+    transition: 0.2s ease;
 }
 
-.submit-btn{
- display:inline-block;
+.submit-btn {
+    display: inline-block;
 }
 
-.submit-btn button{
- padding:0.7em 1.2em;
- margin:0 0.3em 0.3em 0;
- border-radius:0.12em;
- box-sizing: border-box;
- text-decoration:none;
- text-align:center;
+.submit-btn button {
+    padding: 0.7em 1.2em;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-align: center;
 }

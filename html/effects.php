@@ -15,10 +15,10 @@
 		<link rel="icon" type="image/png" href="../imgs/favicon.ico" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" />
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-		<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+		<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.css">
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-		<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+		<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.js"></script>
 		<script src="../js/javascript.js"> </script>
 	</head>
 
@@ -139,11 +139,11 @@
 					</div>
 
 				</div>
-
+				
 				<!-- CAROUSEL -->
 				<div class="carousel-wrap">
 					<h1 onclick="loadEffectsArticles()">Related Articles</h1>
-					<div class="carousel" id="carousel-effects" data-flickity='{"wrapAround": true, "autoPlay": true }'>
+					<div class="carousel" id="carousel-effects">
 
 						<div class="carousel-cell">
 							<div class="carousel-image-container" onclick="addFavorites(this)">
