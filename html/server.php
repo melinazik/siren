@@ -9,14 +9,16 @@
     $contactName="";
     $contactEmail="";
     $contactText="";
+    $errors = array();
     $_SESSION['age']="Age";
     $_SESSION['gender']="Gender";
     $_SESSION['lctn']="Location";
 
-    $errors = array();
+
 
     //connecting to db
     $db = mysqli_connect('localhost', 'root', '','sirendb') or die("could not connect to db");
+    
 
     //registering user
     if(isset($_POST['register'])){
@@ -145,7 +147,7 @@
     }
 
     //user's data update
-    if(isset($_POST['done'])){
+    /*if(isset($_POST['done'])){
         $username = $_SESSION['username'];
         $_SESSION['age'] = mysqli_real_escape_string($db, $_POST['age']);
         $_SESSION['gender'] = mysqli_real_escape_string($db, $_POST['gender']);
@@ -156,7 +158,7 @@
         $query = "UPDATE user SET age='$age', gender='$gender', location = '$lctn' WHERE username='$username'";
         $results= mysqli_query($db, $query);
         header('location: profile.php?update=success');
-    }
+    }*/
 
 
       
