@@ -3,6 +3,7 @@
     $username = "Guest";
     $email = "";
     $pwd = "";
+    $newPwd = "";
     $password_repeat="";
     $_SESSION['success'] = '';
     $contactName="";
@@ -104,20 +105,42 @@
 
     //reset password
     if(isset($_POST['reset'])){
-        $username = mysqli_real_escape_string($db, $_POST['username']);
-        $pwd = mysqli_real_escape_string($db, $_POST['pwd']);
+        $pwd = mysqli_real_escape_string($db, $_POST['pwdOld']);
         $pwd = md5($pwd);
-        $user_check_query = "SELECT * FROM user WHERE username = '$username' LIMIT 1";
-        $results = mysqli_query($db, $user_check_query);
-        $user = mysqli_fetch_assoc($results);
-        if(mysqli_num_rows($results)){
-            $query = "UPDATE user SET pwd='$pwd' WHERE username='$username'";
-            mysqli_query($db, $query);
-            header('location: home.php?reset=success');
-        } else{
-            array_push($errors, "Wrong username, please try again.");
-            header('location: login.php?reset=failed');
+        $newPwd = mysqli_real_escape_string($db, $_POST['pwdNew']);
+        $password_repeat = mysqli_real_escape_string($db, $_POST['pwdNewRep']);
+        $username = $_SESSION['username'];
+
+        if(isset($_SESSION['username'])){                   //checking if a user is logged in
+            $query = "SELECT pwd FROM user WHERE username='$username'";
+            $results = mysqli_query($db, $query);
+            if(mysqli_num_rows($results)){                  //checking if the query was successful
+                $row = mysqli_fetch_assoc($results);
+                if(($pwd = $row["pwd"])&&($newPwd == $password_repeat)){                 //checking if passwords match
+                    $newPwd = md5($newPwd);
+                    $query = "UPDATE user SET pwd='$newPwd' WHERE username='$username'";
+                    mysqli_query($db, $query);
+                    header('location: home.php?reset=success');
+                } else {
+                    header('location: profile.php?reset=failed');
+                }
+            } else {
+                header('location: profile.php?reset=failed'); 
+            }
+        } else {
+            header('location: profile.php?reset=failed');
         }
     }
+
+    
+    //reset request
+    if(isset($_POST['reset-request'])){  //if user forgot password, a templated, automatic contact message with subject "password change" is inserted into the DB for future reference.
+        $email = mysqli_real_escape_string($db, $_POST['email']);
+        $query = "INSERT INTO messages (contactName, contactEmail, contactText) VALUES ('user', '$email', 'PWD CHANGE REQUEST')";
+        mysqli_query($db, $query);
+        header('location: login.php?reset=requested');
+    }
+
+
       
 ?>

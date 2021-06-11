@@ -75,10 +75,18 @@
         
 
         <?php if(strpos($url, "reset=failed")==true): ?>
-          <div class="alert"> <!-- error messages section -->
+          <div class="alert">
             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
               <?php echo "Wrong username, try again"; ?>
           </div> <?php endif ?>
+
+          <?php if(strpos($url, "reset=requested")==true): ?>
+          <div class="alert success">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+              <?php echo "Password reset requested successfully!"; ?>
+          </div> <?php endif ?>
+
+
         
      
     
@@ -129,9 +137,8 @@
         <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close popup">&times;</span>
         <form class="popup-content" action="server.php" method="post">
             <h1>Reset password</h1>
-            <input  class="login-form-text" type="text" placeholder="Username" name="username" required id="username">
-            <input  class="login-form-text" type="text" placeholder="New password" name="pwd" required id="pwd">
-            <button type="submit" style="width:150px;" name="reset" id="reset">Submit</button>
+            <input  class="login-form-text" type="text" placeholder="Insert your email" name="email" required id="email">
+            <button type="submit" style="width:150px;" name="reset-request" id="reset-request">Submit</button>
         </form>
       </div>
     </div>
