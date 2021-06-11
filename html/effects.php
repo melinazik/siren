@@ -142,10 +142,10 @@
 
 				<!-- CAROUSEL -->
 				<div class="carousel-wrap">
-					<h1>Related Articles</h1>
-					<div class="carousel" data-flickity='{"wrapAround": true, "autoPlay": true }'>
-						<div class="carousel-cell">
+					<h1 onclick="loadEffectsArticles()">Related Articles</h1>
+					<div class="carousel" id="carousel-effects" data-flickity='{"wrapAround": true, "autoPlay": true }'>
 
+						<div class="carousel-cell">
 							<div class="carousel-image-container" onclick="addFavorites(this)">
 								<div class="overlay">
 									<div class="add-favorites">
@@ -159,6 +159,7 @@
                                 <div class="carousel-article-title">The world's plastic pollution crisis explained</div>
                             </a>
                         </div>
+
 						<div class="carousel-cell">
 							<div class="carousel-image-container" onclick="addFavorites(this)">
 								<div class="overlay">
@@ -173,6 +174,7 @@
                                 <div class="carousel-article-title">Ocean Acidification</div>
                             </a>
 						</div>
+
 						<div class="carousel-cell">
 							<div class="carousel-image-container" onclick="addFavorites(this)">
 								<div class="overlay">

@@ -59,15 +59,16 @@ file.addEventListener('change', function() {
 function addFavorites(element) {
     // element is the carousel-image-container element that called
     // addFavorites with onclick
-    var src = element.childNodes[1].childNodes[1].childNodes[1].getAttribute("src");
-    if (src == "../imgs/heart-empty.png") {
-        element.childNodes[1].childNodes[1].childNodes[1].src = '../imgs/heart-full.png';
-        element.childNodes[1].childNodes[1].childNodes[3].innerHTML = "remove from favorites";
-    } else {
-        element.childNodes[1].childNodes[1].childNodes[1].src = '../imgs/heart-empty.png';
-        element.childNodes[1].childNodes[1].childNodes[3].innerHTML = "add to favorites";
+    console.log(element.childNodes);
+    // var src = element.childNodes[1].childNodes[1].childNodes[1].getAttribute("src");
+    // if (src == "../imgs/heart-empty.png") {
+    //     element.childNodes[1].childNodes[1].childNodes[1].src = '../imgs/heart-full.png';
+    //     element.childNodes[1].childNodes[1].childNodes[3].innerHTML = "remove from favorites";
+    // } else {
+    //     element.childNodes[1].childNodes[1].childNodes[1].src = '../imgs/heart-empty.png';
+    //     element.childNodes[1].childNodes[1].childNodes[3].innerHTML = "add to favorites";
 
-    }
+    // }
 
 }
 
@@ -77,4 +78,68 @@ function callAddArticle() {
 
 function callSeeMessages() {
     //document.getElementById('').style.display='block'" style="width:150px;
+}
+
+function loadEffectsArticles() {
+    var carousel_container = document.getElementById('carousel-effects');
+    //console.log(carousel_container);
+
+    // while more elements in database
+    var carousel_cell = document.createElement('div');
+    carousel_cell.classList.add('carousel-cell');
+
+    var carousel_image_container = document.createElement('div');
+    carousel_image_container.classList.add('carousel-image-container');
+    carousel_image_container.setAttribute("onclick", "addFavorites(this)");
+
+    var overlay = document.createElement('div');
+    overlay.classList.add('overlay');
+
+    var add_favorites = document.createElement("div");
+    add_favorites.classList.add("add-favorites");
+
+    var heart = document.createElement('img');
+    heart.classList.add("heart");
+    heart.src = '../imgs/heart-empty.png';
+
+    var favorites_add_text = document.createElement("p");
+    favorites_add_text.classList.add("favorites-add-text");
+    favorites_add_text.textContent = "teeest";
+
+    add_favorites.appendChild(heart);
+    add_favorites.appendChild(favorites_add_text);
+
+    overlay.appendChild(add_favorites);
+
+    var carousel_image = document.createElement("img");
+    carousel_image.classList.add("carousel-image");
+    //carousel_image.src(...);
+
+    carousel_image_container.appendChild(overlay);
+    carousel_image_container.appendChild(carousel_image);
+
+    var a = document.createElement("a");
+    //a.href(...);
+    a.target = "_blank";
+
+    var carousel_article_title = document.createElement("div");
+    carousel_article_title.classList.add("carousel-article-title");
+    carousel_article_title.textContent = "titleeee";
+
+    a.appendChild(carousel_article_title);
+
+    carousel_cell.appendChild(carousel_image_container);
+    //console.log(carousel_cell.childNodes);
+    carousel_cell.appendChild(a);
+
+    carousel_container.appendChild(carousel_cell);
+    //console.log(carousel_container.childNodes);
+}
+
+function loadCausesArticles() {
+
+}
+
+function testFunction(element) {
+    //console.log(element);
 }
