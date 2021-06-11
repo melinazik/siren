@@ -1249,26 +1249,26 @@ a {
     transition: 0.2 ease;
 }
 
-.profile-button {
-    text-align: center;
-    border: 1px solid #34495e;
-    background-color: #34495e;
-    color: white;
-    height: 30px;
-    width: 100px;
-    border-radius: 5px;
-    margin: 0px;
-    transition: all 0.3s;
-}
-
-.profile-button:hover {
-    transform: scale(1.1);
-    background-color: #34495e;
-    color: black;
+.prof-section button{
+  padding: 10px 10px;
+  width:110px;
 }
 
 input[type="file"] {
     display: none;
+}
+
+.profile-img input[type="submit"]{
+  border: 0;
+  background: #192d47;
+  color: #fff;
+  padding: 6px 15px;
+  cursor: pointer;
+  transition: 0.5s;
+  font-family: Georgia, serif;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 label {
