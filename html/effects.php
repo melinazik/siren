@@ -143,7 +143,10 @@
 				<?php $query = "SELECT * FROM article";
 						$results = mysqli_query($db, $query);
 						$temp_arr=mysqli_fetch_all($results, MYSQLI_ASSOC);
-						print_r($temp_arr); ?>
+						$size = count($temp_arr);
+						for($i=0; $i<$size; $i++){
+							json_encode($temp_arr[$i]);
+					}?>
 				
 				<!-- CAROUSEL -->
 				<div class="carousel-wrap">
