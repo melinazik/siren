@@ -58,15 +58,6 @@
       </div>
     </div>
 
-    <!-- success or error messages, they appear based on occasion--> 
-		<?php   
-        $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
-        <?php if(strpos($url, "reset=failed")==true): ?>
-          <div class="alert">
-            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-              <?php echo "Unable to reset password"; ?>
-          </div> <?php endif ?>
-
     <div id="page-view">
       <div id="home-view-title2">Profile</div>
     </div>
@@ -80,50 +71,32 @@
             <form action="server.php" method="post" enctype="multipart/form-data">
               <input type="file" name="image" id="image" accept="image/*">
               <input type="submit" value="Upload Image" name="upload" value="Upload">
-              
+
             </form>
           </div>
 
           <input type="text" name="" placeholder="User Name">
           <input type="text" name="" placeholder="Age">
           <input type="text" name="" placeholder="Gender">
-          
-          <button class="profile-button" style="float:left; margin:10px 0 0 18.2%">DONE</button>
-          
-         
-          
-          <div class="login-section">
-            <form class="login-form" action="server.php" method="post">
-                  <button type="submit" style="width:150px;" name="logout" id="logout">Logout</button>     <!-- LOGOUT BUTTON -->
+
+
+          <div class="prof-section">
+            <form class="prof-form" action="server.php" method="post">
+              <button type="submit">Done</button>
+              <button type="submit" name="logout" id="logout">Logout</button>     <!-- LOGOUT BUTTON -->
             </form>
           </div>
 
-     
-
-          
         </center>
         </div>
-         <!-- reset password -->  
-      <button onclick="document.getElementById('id02').style.display='block'" style="width:200px;">Reset Password</button>
+      </div>
 
-      <div id="id02" class="popup">
-        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close popup">&times;</span>
-        <form class="popup-content" action="server.php" method="post">
-            <h1>Reset password</h1>
-            <input  class="login-form-text" type="password" placeholder="Old password" name="pwdOld" required id="pwd">
-            <input  class="login-form-text" type="password" placeholder="New password" name="pwdNew" required id="pwd">
-            <input  class="login-form-text" type="password" placeholder="Repeat new password" name="pwdNewRep" required id="pwd">
-            <button type="submit" style="width:150px;" name="reset" id="reset">Submit</button>
-        </form>
-      </div>
-      </div>
-    </div>
 
 
     </div>
 
     <script src="../js/javascript.js"> </script>
-    
+
 
     <!--footer-->
     <footer>
