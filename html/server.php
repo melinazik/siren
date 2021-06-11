@@ -146,17 +146,16 @@
 
     //user's data update
     if(isset($_POST['done'])){
-        if(isset($_SESSION['username'])){
-            $username = $_SESSION['username'];
-            $_SESSION['age'] = mysqli_real_escape_string($db, $_POST['age']);
-            $_SESSION['gender'] = mysqli_real_escape_string($db, $_POST['gender']);
-            $_SESSION['lctn'] = mysqli_real_escape_string($db, $_POST['location']);
-            $query = "INSERT INTO user (age, gender, lctn) VALUES ('$age', '$gender', '$lctn') WHERE username='$username'";
-            mysqli_query($db, $query);
-            header('location: profile.php?update=success');
-        } else{
-            header('location: profile.php?update=failed');
-        }
+        $username = $_SESSION['username'];
+        $_SESSION['age'] = mysqli_real_escape_string($db, $_POST['age']);
+        $_SESSION['gender'] = mysqli_real_escape_string($db, $_POST['gender']);
+        $_SESSION['lctn'] = mysqli_real_escape_string($db, $_POST['location']);
+        $age = $_SESSION['age'];
+        $gender = $_SESSION['gender'];
+        $lctn = $_SESSION['lctn'];
+        $query = "UPDATE user SET age='$age', gender='$gender', location = '$lctn' WHERE username='$username'";
+        $results= mysqli_query($db, $query);
+        header('location: profile.php?update=success');
     }
 
 
