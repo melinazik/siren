@@ -139,6 +139,11 @@
 					</div>
 
 				</div>
+
+				<?php $query = "SELECT * FROM article";
+						$results = mysqli_query($db, $query);
+						$temp_arr=mysqli_fetch_all($results, MYSQLI_ASSOC);
+						print_r($temp_arr); ?>
 				
 				<!-- CAROUSEL -->
 				<div class="carousel-wrap">
