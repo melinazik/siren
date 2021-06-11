@@ -75,14 +75,13 @@
             </form>
           </div>
 
-          <input type="text" name="" placeholder="User Name">
-          <input type="text" name="" placeholder="Age">
-          <input type="text" name="" placeholder="Gender">
-
 
           <div class="prof-section">
-            <form class="prof-form" action="server.php" method="post">
-              <button type="submit">Done</button>
+              <form class="prof-form" action="server.php" method="post">
+              <input type="text" name="location" placeholder="<?php echo $_SESSION['lctn'];?>">
+              <input type="text" name="age" placeholder="<?php echo $_SESSION['age'];?>">
+              <input type="text" name="gender" placeholder="<?php echo $_SESSION['gender'];?>">
+              <button type="submit" name="done" id="done">Done</button>
               <button type="submit" name="logout" id="logout">Logout</button>     <!-- LOGOUT BUTTON -->
             </form>
           </div>

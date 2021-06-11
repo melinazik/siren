@@ -9,6 +9,9 @@
     $contactName="";
     $contactEmail="";
     $contactText="";
+    $_SESSION['age']="Age";
+    $_SESSION['gender']="Gender";
+    $_SESSION['lctn']="Location";
 
     $errors = array();
 
@@ -139,6 +142,21 @@
         $query = "INSERT INTO messages (contactName, contactEmail, contactText) VALUES ('user', '$email', 'PWD CHANGE REQUEST')";
         mysqli_query($db, $query);
         header('location: login.php?reset=requested');
+    }
+
+    //user's data update
+    if(isset($_POST['done'])){
+        if(isset($_SESSION['username'])){
+            $username = $_SESSION['username'];
+            $_SESSION['age'] = mysqli_real_escape_string($db, $_POST['age']);
+            $_SESSION['gender'] = mysqli_real_escape_string($db, $_POST['gender']);
+            $_SESSION['lctn'] = mysqli_real_escape_string($db, $_POST['location']);
+            $query = "INSERT INTO user (age, gender, lctn) VALUES ('$age', '$gender', '$lctn') WHERE username='$username'";
+            mysqli_query($db, $query);
+            header('location: profile.php?update=success');
+        } else{
+            header('location: profile.php?update=failed');
+        }
     }
 
 
