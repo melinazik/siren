@@ -175,6 +175,7 @@
                             </a>
 						</div>
 
+						<!--
 						<div class="carousel-cell">
 							<div class="carousel-image-container" onclick="addFavorites(this)">
 								<div class="overlay">
@@ -230,7 +231,7 @@
 							<a href="https://www.noaa.gov/education/resource-collections/ocean-coasts/oil-spills" target="_blank">
                                 <div class="carousel-article-title">Oil spills</div>
                             </a>
-						</div>
+						</div>-->
 						
 						
 					</div>

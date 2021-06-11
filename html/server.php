@@ -9,14 +9,35 @@
     $contactName="";
     $contactEmail="";
     $contactText="";
+    $errors = array();
     $_SESSION['age']="Age";
     $_SESSION['gender']="Gender";
     $_SESSION['lctn']="Location";
 
-    $errors = array();
+
 
     //connecting to db
     $db = mysqli_connect('localhost', 'root', '','sirendb') or die("could not connect to db");
+
+    //getting user's data
+    /*$username = $_SESSION['username'];
+    $query = "SELECT age FROM user WHERE username='$username'";
+    $_SESSION['age'] = mysqli_query($db, $query);
+    if(is_null($_SESSION['age'])){
+        $_SESSION['age'] = "Age";
+    }
+    $query = "SELECT gender FROM user WHERE username='$username'";
+    $_SESSION['gender'] = mysqli_query($db, $query);
+    if(is_null($_SESSION['gender'])){
+        $_SESSION['gender'] = "Gender";
+    }
+    $query = "SELECT location FROM user WHERE username='$username'";
+    $_SESSION['lctn'] = mysqli_query($db, $query);
+    if(is_null($_SESSION['lctn'])){
+        $_SESSION['lctn'] = "Location";
+    }*/
+    
+    
 
     //registering user
     if(isset($_POST['register'])){
@@ -155,7 +176,10 @@
         $lctn = $_SESSION['lctn'];
         $query = "UPDATE user SET age='$age', gender='$gender', location = '$lctn' WHERE username='$username'";
         $results= mysqli_query($db, $query);
-        header('location: profile.php?update=success');
+        $headerString = "profile.php?&";
+        $headerString = $headerString . $age . "&" . $gender . "&" . $lctn;
+        //echo $headerString;
+        header("location: $headerString");
     }
 
 
