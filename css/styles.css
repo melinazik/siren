@@ -1354,9 +1354,9 @@ label:hover {
     width: 100%;
 }
 
-#admin-actions {
+/*#admin-actions {
     font-size: 1.5em;
-}
+}*/
 
 #admin-actions-container {
     padding: 2em;
@@ -1380,12 +1380,13 @@ label:hover {
 
 .admin-action-button {
     margin: 1em;
-    display: none;
-}
 
+    /*display: none;*/
+}
+/*
 #add-article {
     display: none;
-}
+}*/
 
 .admin-action-image {
     position: relative;
@@ -1423,6 +1424,7 @@ label:hover {
 
 .admin-action-image:hover {
     transform: scale(1.02);
+    cursor: pointer;
 }
 
 /* message box */
@@ -1430,7 +1432,6 @@ label:hover {
 .contact-inbox{
   width: 500px;
   overflow: auto;
-  border-radius: 3px;
   height: 630px;
   cursor: pointer;
 }
@@ -1480,51 +1481,48 @@ label:hover {
   text-align: center;
 }
 
-.popup .overlay{
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0,0,0,0.7);
-  z-index: 1;
-  display: none;
+.see-msgs-header{
+  text-align: center;
+  font-size: 22px;
+  font-weight:400;
+  background-color:#e4edf5;
 }
 
-.popup .content-popup2{
-  position: absolute;
-  top: 50%;
-  left:50%;
-  transform: translate(-50%, -50%) scale(0);
-  background: #fff;
-  width: 450px;
-  height: 220px;
-  z-index: 2;
-  text-align: center;
-  padding: 20px;
+/** SEARCH BAR **/
+
+.google-search{
+  margin-bottom: 0px;
+  margin-top: 0px;
+  margin-right: 5px;
+  float: right;
+}
+
+input[type="text-search"]{
+  display: inline-block;
   box-sizing: border-box;
+  background: none;
+  color: #34495e;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 4px;
+  width: 220px;
+  height: 32px;
+  border: none;
+  border-bottom: 1px solid #0082e6;
+  font-weight: 400;
+  font-size: 15px;
+  transition: 0.2s ease;
 }
 
-.popup .close-btn{
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  width: 30px;
-  height: 30px;
-  background: #34495e;
-  color: #fff;
-  font-size: 25px;
-  font-weight: 600;
-  line-height: 30px;
-  text-align: center;
-  border-radius: 50%;
+.submit-btn{
+ display:inline-block;
 }
 
-.popup.active .overlay{
-  display: block;
-}
-
-.popup.active .content-popup2{
-  transition: all 300ms ease-in-out;
-  transform: translate(-50%, -50%) scale(1);
+.submit-btn button{
+ padding:0.7em 1.2em;
+ margin:0 0.3em 0.3em 0;
+ border-radius:0.12em;
+ box-sizing: border-box;
+ text-decoration:none;
+ text-align:center;
 }
