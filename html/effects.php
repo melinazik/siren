@@ -142,10 +142,11 @@
 
 				<?php $query = "SELECT * FROM article";
 						$results = mysqli_query($db, $query);
-						$temp_arr=mysqli_fetch_all($results, MYSQLI_ASSOC);
-						$size = count($temp_arr);
+						$articles=mysqli_fetch_all($results, MYSQLI_ASSOC);
+						$size = count($articles);
 						for($i=0; $i<$size; $i++){
-							json_encode($temp_arr[$i]);
+							$articleJSON = json_encode($articles[$i]); 
+							//print_r($articleJSON);
 					}?>
 				
 				<!-- CAROUSEL -->
