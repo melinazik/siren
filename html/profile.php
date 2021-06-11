@@ -76,11 +76,19 @@
           </div>
 
 
+
+            
+          <?php   
+            $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; 
+            $url_arr = explode("&",$url);
+        ?>
+
+
           <div class="prof-section">
               <form class="prof-form" action="server.php" method="post">
-              <input type="text" name="location" placeholder="<?php echo $_SESSION['lctn'];?>">
-              <input type="text" name="age" placeholder="<?php echo $_SESSION['age'];?>">
-              <input type="text" name="gender" placeholder="<?php echo $_SESSION['gender'];?>">
+              <input type="text" name="location" placeholder="<?php echo $url_arr[3];?>">
+              <input type="text" name="age" placeholder="<?php echo $url_arr[1];?>">
+              <input type="text" name="gender" placeholder="<?php echo $url_arr[2];?>">
               <button type="submit" name="done" id="done">Done</button>
               <button type="submit" name="logout" id="logout">Logout</button>     <!-- LOGOUT BUTTON -->
             </form>
