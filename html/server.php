@@ -183,5 +183,36 @@
     }
 
 
+    
+    // upload image
+    if (isset($_POST['upload']) && $_POST['upload'] == 'Upload') {
+        if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK){
+    
+        $filename = $_FILES["image"]["name"];
+        $tempname = $_FILES["image"]["tmp_name"]; 
+        $fileSize = $_FILES['image']['size'];
+        $fileType = $_FILES['image']['type'];  
+        
+            $folder = "image/".$filename;
+            
+        $db = mysqli_connect("localhost", "root", "", "sirendb");
+    
+            // Get all the submitted data from the form
+            $sql = "INSERT INTO image (filename) VALUES ('$filename')";
+    
+            // Execute query
+            mysqli_query($db, $sql);
+            
+            // Now let's move the uploaded image into the folder: image
+            if (move_uploaded_file($tempname, $folder))  {
+                $msg = "Image uploaded successfully";
+            }else{
+                $msg = "Failed to upload image";
+        }
+        }
+    }
+    $result = mysqli_query($db, "SELECT * FROM image");
+    while($data = mysqli_fetch_array($result))
+
       
 ?>
