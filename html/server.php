@@ -206,7 +206,6 @@
         echo $msg;
     }
     $result = mysqli_query($db, "SELECT * FROM image");
-    while($data = mysqli_fetch_array($result))
 
 
     // // File upload path
