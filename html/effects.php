@@ -173,7 +173,7 @@
 									$title =  sprintf($articles[$i]['articleTitle']);
 									echo "<img class='carousel-image' src=$img>></div>
 										<a href=$url target='_blank'>
-										<div class='carousel-article-title'>$title</div>"
+										<div class='carousel-article-title'>$title</div>";
 								}
 							?>
 
