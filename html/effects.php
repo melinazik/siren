@@ -146,14 +146,7 @@
 
 			</div>
 
-			<?php $query = "SELECT * FROM article";
-			$results = mysqli_query($db, $query);
-			$articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
-			$size = count($articles);
-			for ($i = 0; $i < $size; $i++) {
-				$articleJSON = json_encode($articles[$i]);
-				echo "<script type='../js/javascript.js'>loadEffectsArticles();</script>"; //doesn't work yet
-			} ?>
+			
 
 			<!-- CAROUSEL -->
 			
@@ -169,14 +162,43 @@
 									<p id="favorites-add-text">add to favorites</p>
 								</div>
 							</div>
+							<?php $query = "SELECT * FROM article";
+								$results = mysqli_query($db, $query);
+								$articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
+								$size = count($articles);
+								for ($i = 0; $i < $size; $i++){
+									$url = sprintf($articles[$i]['articleURL']);
+									
+									$img = sprintf($articles[$i]['articleImg']);
+									$title =  sprintf($articles[$i]['articleTitle']);
+									echo "<img class='carousel-image' src=$img>></div>
+										<a href=$url target='_blank'>
+										<div class='carousel-article-title'>$title</div>"
+								}
+							?>
+
+							</a>
+							<img class="carousel-image" src=$img>>
+						</div>
+						<a href=$url target="_blank">
+							<div class="carousel-article-title">$title</div>
+						</a>
+					<!-- </div><div class="carousel-cell">
+						<div class="carousel-image-container" onclick="addFavorites(this)">
+							<div class="overlay">
+								<div class="add-favorites">
+									<img class="heart" src="../imgs/heart-empty.png">
+									<p id="favorites-add-text">add to favorites</p>
+								</div>
+							</div>
 							<img class="carousel-image" src="../imgs/plastic_waste_natgeo.PNG">
 						</div>
 						<a href="https://www.nationalgeographic.com/environment/article/plastic-pollution" target="_blank">
 							<div class="carousel-article-title">The world's plastic pollution crisis explained</div>
 						</a>
-					</div>
+					</div> -->
 
-					<div class="carousel-cell">
+					<!-- <div class="carousel-cell">
 						<div class="carousel-image-container" onclick="addFavorites(this)">
 							<div class="overlay">
 								<div class="add-favorites">
@@ -189,7 +211,7 @@
 						<a href="https://ocean.si.edu/ocean-life/invertebrates/ocean-acidification" target="_blank">
 							<div class="carousel-article-title">Ocean Acidification</div>
 						</a>
-					</div>
+					</div> -->
 
 					<!--
 						<div class="carousel-cell">
