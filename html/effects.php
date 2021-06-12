@@ -171,18 +171,14 @@
 									
 									$img = sprintf($articles[$i]['articleImg']);
 									$title =  sprintf($articles[$i]['articleTitle']);
-									echo "<img class='carousel-image' src=$img>></div>
-										<a href=$url target='_blank'>
-										<div class='carousel-article-title'>$title</div>";
+									echo "<img class=\"carousel-image\" src=$img>></div>
+										<a href=$url target=\"_blank\">
+										<div class=\"carousel-article-title\">$title</div>";
 								}
 							?>
 
 							</a>
-							<img class="carousel-image" src=$img>>
-						</div>
-						<a href=$url target="_blank">
-							<div class="carousel-article-title">$title</div>
-						</a>
+							
 					<!-- </div><div class="carousel-cell">
 						<div class="carousel-image-container" onclick="addFavorites(this)">
 							<div class="overlay">
