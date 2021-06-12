@@ -28,7 +28,7 @@
 	<script src="../js/javascript.js"> </script>
 </head>
 
-<body>
+<body onload="loadEffectsArticles()">
 	<!-- Loading icon -->
 	<div class="loader"></div>
 
@@ -158,7 +158,7 @@
 			<!-- CAROUSEL -->
 			
 			<div class="carousel-wrap">
-				<h1 onclick="loadEffectsArticles()">Related Articles</h1>
+				<h1>Related Articles</h1>
 				<div class="carousel" id="carousel-effects">
 
 					<div class="carousel-cell">
