@@ -185,18 +185,12 @@
 
     
     // upload image
-    if (isset($_POST['upload']) && $_POST['upload'] == 'Upload') {
-        if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK){
-    
-        $filename = $_FILES["image"]["name"];
-        $tempname = $_FILES["image"]["tmp_name"]; 
-        $fileSize = $_FILES['image']['size'];
-        $fileType = $_FILES['image']['type'];  
+    if (isset($_POST['upload'])&& $_FILES["image"]["error"] == 0) {
         
+        $filename = $_FILES["image"]["name"];
+   
             $folder = "image/".$filename;
             
-        $db = mysqli_connect("localhost", "root", "", "sirendb");
-    
             // Get all the submitted data from the form
             $sql = "INSERT INTO image (filename) VALUES ('$filename')";
     
@@ -204,15 +198,44 @@
             mysqli_query($db, $sql);
             
             // Now let's move the uploaded image into the folder: image
-            if (move_uploaded_file($tempname, $folder))  {
+            if (move_uploaded_file($filename, $folder))  {
                 $msg = "Image uploaded successfully";
             }else{
                 $msg = "Failed to upload image";
         }
-        }
+        echo $msg;
     }
     $result = mysqli_query($db, "SELECT * FROM image");
     while($data = mysqli_fetch_array($result))
 
-      
+
+    // // File upload path
+    // $targetDir = "image/";
+    // $fileName = basename($_FILES["image"]["name"]);
+    // $targetFilePath = $targetDir . $fileName;
+    // $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
+
+    // if(isset($_POST["upload"]) && !empty($_FILES["image"]["name"])){
+    //     // Allow certain file formats
+    //     $allowTypes = array('jpg','png','jpeg','gif','pdf');
+    //     if(in_array($fileType, $allowTypes)){
+    //         // Upload file to server
+    //         if(move_uploaded_file($_FILES["image"]["tmp_name"], $targetFilePath)){
+    //             // Insert image file name into database
+    //             $insert = $db->query("INSERT into image (file_name, uploaded_on) VALUES ('".$fileName."', NOW())");
+    //             if($insert){
+    //                 $statusMsg = "The file ".$fileName. " has been uploaded successfully.";
+    //             }else{
+    //                 $statusMsg = "File upload failed, please try again.";
+    //             } 
+    //         }else{
+    //             $statusMsg = "Sorry, there was an error uploading your file.";
+    //         }
+    //     }else{
+    //         $statusMsg = 'Sorry, only JPG, JPEG, PNG, GIF, & PDF files are allowed to upload.';
+    //     }
+    // }else{
+    //     $statusMsg = 'Please select a file to upload.';
+    // }
+    
 ?>
