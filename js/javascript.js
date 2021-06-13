@@ -81,12 +81,19 @@ function callSeeMessages() {
 }
 
 
-function loadEffectsArticles() {
-    var elem = document.querySelector('#carousel-effects');
-    var flkty = new Flickity(elem, {
+var elem;
+var flkty;
+
+function init() {
+    elem = document.querySelector('#carousel-effects');
+    flkty = new Flickity(elem, {
         wrapAround: true,
         autoPlay: true
     });
+}
+
+
+function loadEffectsArticles(articleTitle, articleURL, articleImg, numberOfLikes, favorite) {
 
     var carousel_container = document.getElementById('carousel-effects');
 
@@ -119,25 +126,25 @@ function loadEffectsArticles() {
 
     var carousel_image = document.createElement("img");
     carousel_image.classList.add("carousel-image");
-    //carousel_image.src(...);
+    carousel_image.src = articleImg;
 
     carousel_image_container.appendChild(overlay);
     carousel_image_container.appendChild(carousel_image);
 
     var a = document.createElement("a");
-    //a.href(...);
+    a.href = articleURL;
     a.target = "_blank";
 
     var carousel_article_title = document.createElement("div");
     carousel_article_title.classList.add("carousel-article-title");
-    carousel_article_title.textContent = "titleeee";
+    carousel_article_title.textContent = articleTitle;
 
     a.appendChild(carousel_article_title);
 
     carousel_cell.appendChild(carousel_image_container);
     carousel_cell.appendChild(a);
 
-
+    console.log(flkty);
     flkty.append(carousel_cell);
 }
 

@@ -28,7 +28,7 @@ $url_arr = explode("&", $url);
 	<script src="../js/javascript.js"> </script>
 </head>
 
-<body onload="loadEffectsArticles()">
+<body>
 	<!-- Loading icon -->
 	<div class="loader"></div>
 
@@ -146,132 +146,32 @@ $url_arr = explode("&", $url);
 
 			</div>
 
-
-
 			<!-- CAROUSEL -->
 
 			<div class="carousel-wrap">
 				<h1>Related Articles</h1>
 				<div class="carousel" id="carousel-effects">
-
-					<div class="carousel-cell">
-						<div class="carousel-image-container" onclick="addFavorites(this)">
-							<div class="overlay">
-								<div class="add-favorites">
-									<img class="heart" src="../imgs/heart-empty.png">
-									<p id="favorites-add-text">add to favorites</p>
-								</div>
-							</div>
-							<?php $query = "SELECT * FROM article";
-							$results = mysqli_query($db, $query);
-							$articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
-							$size = count($articles);
-							for ($i = 0; $i < $size; $i++) {
-								$url = sprintf($articles[$i]['articleURL']);
-								$img = sprintf($articles[$i]['articleImg']);
-								$title =  sprintf($articles[$i]['articleTitle']);
-								echo "<img class=\"carousel-image\" src=$img>></div>
-										<a href=$url target=\"_blank\">
-										<div class=\"carousel-article-title\">$title</div>";
-							}
-							?>
-
-							</a>
-
-							<!-- </div><div class="carousel-cell">
-						<div class="carousel-image-container" onclick="addFavorites(this)">
-							<div class="overlay">
-								<div class="add-favorites">
-									<img class="heart" src="../imgs/heart-empty.png">
-									<p id="favorites-add-text">add to favorites</p>
-								</div>
-							</div>
-							<img class="carousel-image" src="../imgs/plastic_waste_natgeo.PNG">
-						</div>
-						<a href="https://www.nationalgeographic.com/environment/article/plastic-pollution" target="_blank">
-							<div class="carousel-article-title">The world's plastic pollution crisis explained</div>
-						</a>
-					</div> -->
-
-							<!-- <div class="carousel-cell">
-						<div class="carousel-image-container" onclick="addFavorites(this)">
-							<div class="overlay">
-								<div class="add-favorites">
-									<img class="heart" src="../imgs/heart-empty.png">
-									<p id="favorites-add-text">add to favorites</p>
-								</div>
-							</div>
-							<img class="carousel-image" src="../imgs/coral-reef.jpg">
-						</div>
-						<a href="https://ocean.si.edu/ocean-life/invertebrates/ocean-acidification" target="_blank">
-							<div class="carousel-article-title">Ocean Acidification</div>
-						</a>
-					</div> -->
-
-							<!--
-						<div class="carousel-cell">
-							<div class="carousel-image-container" onclick="addFavorites(this)">
-								<div class="overlay">
-									<div class="add-favorites">
-										<img class="heart" src="../imgs/heart-empty.png">
-										<p id="favorites-add-text">add to favorites</p>
-									</div>
-                            	</div>
-								<img class="carousel-image" src="../imgs/marine_polution.PNG">
-							</div>   
-							<a href="https://www.nationalgeographic.com/environment/article/critical-issues-marine-pollution" target="_blank">
-                                <div class="carousel-article-title">Marine pollution, explained</div>
-                            </a>
-						</div>
-						<div class="carousel-cell">
-							<div class="carousel-image-container" onclick="addFavorites(this)">
-								<div class="overlay">
-									<div class="add-favorites">
-										<img class="heart" src="../imgs/heart-empty.png">
-										<p id="favorites-add-text">add to favorites</p>
-									</div>
-                            	</div>
-								<img class="carousel-image" src="../imgs/coral_reef.PNG">
-							</div>   
-							<a href="https://www.nationalgeographic.com/environment/article/great-barrier-reef-restoration-transplanting-corals" target="_blank">
-                                <div class="carousel-article-title">Can new science save dying coral reefs?</div>
-                            </a>
-						</div>
-						<div class="carousel-cell">
-							<div class="carousel-image-container" onclick="addFavorites(this)">
-								<div class="overlay">
-									<div class="add-favorites">
-										<img class="heart" src="../imgs/heart-empty.png">
-										<p id="favorites-add-text">add to favorites</p>
-									</div>
-                            	</div>
-								<img class="carousel-image" src="../imgs/overfishing_natgeo.PNG">
-							</div>   
-							<a href="https://www.nationalgeographic.com/environment/article/critical-issues-overfishing" target="_blank">
-                                <div class="carousel-article-title">Plenty of Fish in the Sea? Not Always.</div>
-                            </a>
-						</div>
-						<div class="carousel-cell">
-							<div class="carousel-image-container" onclick="addFavorites(this)">
-								<div class="overlay">
-									<div class="add-favorites">
-										<img class="heart" src="../imgs/heart-empty.png">
-										<p id="favorites-add-text">add to favorites</p>
-									</div>
-                            	</div>
-								<img class="carousel-image" src="../imgs/oil_spills.PNG">
-							</div>   
-							<a href="https://www.noaa.gov/education/resource-collections/ocean-coasts/oil-spills" target="_blank">
-                                <div class="carousel-article-title">Oil spills</div>
-                            </a>
-						</div>-->
-
-
-						</div>
-					</div>
-					<!-- END CAROUSEL -->
-
 				</div>
+			</div>
+			<!-- END CAROUSEL -->
+
+			<?php $query = "SELECT * FROM article";
+			$results = mysqli_query($db, $query);
+			$articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
+			$size = count($articles);
+			$articlesJSON = array();
+
+			echo "<script> init(); </script>";
+			
+			for ($i = 0; $i < $size; $i++) {
+				array_push($articlesJSON, json_encode($articles[$i]));
+				echo "<script> loadEffectsArticles(
+					$articlesJSON[$i].articleTitle, $articlesJSON[$i].articleURL,
+					$articlesJSON[$i].articleImg, $articlesJSON[$i].numberOfLikes,
+					$articlesJSON[$i].favorite); </script>";
+			}
+			?>
+		</div>
 
 	</section class="info">
 	<!-- ./info section-->
