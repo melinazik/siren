@@ -127,6 +127,16 @@
         header('location: contact.php');
     }
 
+    //add article -- ADMIN 
+    if(isset($_POST['add'])){
+        $articleURL = mysqli_real_escape_string($db, $_POST['articleURL']);
+        $articleImg = mysqli_real_escape_string($db, $_POST['articleImg']);
+        $articleTitle = mysqli_real_escape_string($db, $_POST['articleTitle']);
+        $query = "INSERT INTO article (articleURL, articleImg, articleTitle) VALUES ('$articleURL','$articleImg', '$articleTitle')";
+        mysqli_query($db, $query);
+        header('location: admin.php');
+    }
+
     //reset password
     if(isset($_POST['reset'])){
         $pwd = mysqli_real_escape_string($db, $_POST['pwdOld']);

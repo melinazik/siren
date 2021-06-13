@@ -85,7 +85,17 @@
 
       <div class="admin-action-panel"> <!-- onclick="callAddArticle()"-->
         <p>Add a new Article</p>
-        <div class="admin-action-image" id="action-image1" onclick="callAddArticle()"></div>
+        <div class="admin-action-image" id="action-image1" onclick="document.getElementById('add-article').style.display='block'"></div>
+
+          <!-- <div id="add-article" class="popup">
+            <span onclick="document.getElementById('add-article').style.display='none'" class="close" title="Close popup">&times;</span>
+            <form class="popup-content" action="server.php" method="post">
+                <h1>Add Article</h1>
+                <input class="login-form-text" type="text" placeholder="Article URL" required name="articleURL" id="articleURL" >
+                <input class="login-form-text" type="text" placeholder="Article Image" required name="articleImg" id="articleImg">
+                <input class="login-form-text" type="text" placeholder="Article Title" required name="articleTitle" id="articleTitle">
+                <button type="submit" style="width:150px;" name="add" id="add">Add Article</button> -->
+
       </div>
 
      <div > <!-- onclick="callSeeMessages()"-->
@@ -121,10 +131,7 @@
                             </li>";
                           }
                         ?>
-                      
-                      
-                
-
+                    
                 <!-- <li>
                   <div class="messages">
                     <div class="list-left">

@@ -73,7 +73,7 @@ function addFavorites(element) {
 }
 
 function callAddArticle() {
-    //document.getElementById('add-article').style.display='block'" style="width:150px;
+    document.getElementById('add-article').style.display='block';
 }
 
 function callSeeMessages() {
