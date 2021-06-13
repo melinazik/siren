@@ -84,9 +84,9 @@
 
           <div class="prof-section">
               <form class="prof-form" action="server.php" method="post">
-              <input type="text" name="location" placeholder="<?php echo $url_arr[3];?>">
-              <input type="text" name="age" placeholder="<?php echo $url_arr[1];?>">
-              <input type="text" name="gender" placeholder="<?php echo $url_arr[2];?>">
+              <input type="text" name="location" placeholder="<?php if (isset($url_arr[3])) { echo $url_arr[3];} else {echo "Location";}?>">
+              <input type="text" name="age" placeholder="<?php if (isset($url_arr[1])) { echo $url_arr[1];} else {echo "Age";}?>">
+              <input type="text" name="gender" placeholder="<?php if (isset($url_arr[2])) { echo $url_arr[2];} else {echo "Gender";}?>">
               <button type="submit" name="done" id="done">Done</button>
               <button type="submit" name="logout" id="logout">Logout</button>     <!-- LOGOUT BUTTON -->
             </form>
