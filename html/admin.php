@@ -87,15 +87,17 @@
         <p>Add a new Article</p>
         <div class="admin-action-image" id="action-image1" onclick="document.getElementById('add-article').style.display='block'"></div>
 
-          <!-- <div id="add-article" class="popup">
+          <div id="add-article" class="popup">
             <span onclick="document.getElementById('add-article').style.display='none'" class="close" title="Close popup">&times;</span>
             <form class="popup-content" action="server.php" method="post">
                 <h1>Add Article</h1>
                 <input class="login-form-text" type="text" placeholder="Article URL" required name="articleURL" id="articleURL" >
                 <input class="login-form-text" type="text" placeholder="Article Image" required name="articleImg" id="articleImg">
                 <input class="login-form-text" type="text" placeholder="Article Title" required name="articleTitle" id="articleTitle">
-                <button type="submit" style="width:150px;" name="add" id="add">Add Article</button> -->
+                <button type="submit" style="width:150px;" name="add" id="add">Add Article</button>
+            </form>
 
+          </div>
       </div>
 
      <div > <!-- onclick="callSeeMessages()"-->
@@ -132,104 +134,6 @@
                           }
                         ?>
                     
-                <!-- <li>
-                  <div class="messages">
-                    <div class="list-left">
-                      <div class="name-display"> Reina Papav </div>
-                    </div>
-                    <div class="list-right">
-                      <div class="message">
-                        <div class="mail-display">reinayoyo3@gmail.com</div>
-                        <div class="msg-display">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-                          molestiae quas vel sint commodi repudiandae consequuntur.</div>
-                      </div>
-                      <div class="time-status">
-                        <div class="time">10H</div>
-                        <div class="status"></div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-
-                <li>
-                  <div class="messages">
-                    <div class="list-left">
-                      <div class="name-display"> Johnathan Smiths </div>
-                    </div>
-                    <div class="list-right">
-                      <div class="message">
-                        <div class="mail-display">yourstruly@gmail.com</div>
-                        <div class="msg-display">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-                          molestiae quas vel sint commodi repudiandae consequuntur.</div>
-                      </div>
-                      <div class="time-status">
-                        <div class="time">10H</div>
-                        <div class="status"></div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-
-
-
-                <li>
-                  <div class="messages">
-                    <div class="list-left">
-                      <div class="name-display"> Chrysa Pozrikidou </div>
-                    </div>
-                    <div class="list-right">
-                      <div class="message">
-                        <div class="mail-display">xrysa123@gmail.com</div>
-                        <div class="msg-display">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-                          molestiae quas vel sint commodi repudiandae consequuntur.</div>
-                      </div>
-                      <div class="time-status">
-                        <div class="time">10H</div>
-                        <div class="status"></div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-
-                <li>
-                  <div class="messages">
-                    <div class="list-left">
-                      <div class="name-display"> Reina Papav </div>
-                    </div>
-                    <div class="list-right">
-                      <div class="message">
-                        <div class="mail-display">reinayoyo3@gmail.com</div>
-                        <div class="msg-display">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-                          molestiae quas vel sint commodi repudiandae consequuntur.</div>
-                      </div>
-                      <div class="time-status">
-                        <div class="time">10H</div>
-                        <div class="status"></div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-
-                <li>
-                  <div class="messages">
-                    <div class="list-left">
-                      <div class="name-display"> Johnathan Smiths </div>
-                    </div>
-                    <div class="list-right">
-                      <div class="message">
-                        <div class="mail-display">yourstruly@gmail.com</div>
-                        <div class="msg-display">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-                          molestiae quas vel sint commodi repudiandae consequuntur.</div>
-                      </div>
-                      <div class="time-status">
-                        <div class="time">10H</div>
-                        <div class="status"></div>
-                      </div>
-                    </div>
-                  </div>
-                </li> -->
-
-
               </ul>
             </div>
 
