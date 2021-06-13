@@ -132,7 +132,7 @@
         $articleURL = mysqli_real_escape_string($db, $_POST['articleURL']);
         $articleImg = mysqli_real_escape_string($db, $_POST['articleImg']);
         $articleTitle = mysqli_real_escape_string($db, $_POST['articleTitle']);
-        $query = "INSERT INTO article (articleURL, articleImg, articleTitle) VALUES ('$articleURL','$articleImg', '$articleTitle')";
+        $query = "INSERT INTO article (numberOfLikes, articleURL, articleImg, articleTitle) VALUES (0, '$articleURL','$articleImg', '$articleTitle')";
         mysqli_query($db, $query);
         header('location: admin.php');
     }
