@@ -59,13 +59,13 @@ file.addEventListener('change', function() {
 function addFavorites(element) {
     // element is the carousel-image-container element that called
     // addFavorites with onclick
-    console.log(element.childNodes);
-    var src = element.childNodes[0].childNodes[0].childNodes[0].getAttribute("src");
+    console.log(element.childNodes[0].childNodes[0].childNodes[0].childNodes[1]);
+    var src = element.childNodes[0].childNodes[0].childNodes[0].childNodes[0].getAttribute("src");
     if (src == "../imgs/heart-empty.png") {
-        element.childNodes[0].childNodes[0].childNodes[0].src = '../imgs/heart-full.png';
+        element.childNodes[0].childNodes[0].childNodes[0].childNodes[0].src = '../imgs/heart-full.png';
         element.childNodes[0].childNodes[0].childNodes[1].innerHTML = "remove from favorites";
     } else {
-        element.childNodes[0].childNodes[0].childNodes[0].src = '../imgs/heart-empty.png';
+        element.childNodes[0].childNodes[0].childNodes[0].childNodes[0].src = '../imgs/heart-empty.png';
         element.childNodes[0].childNodes[0].childNodes[1].innerHTML = "add to favorites";
 
     }
@@ -111,15 +111,34 @@ function loadEffectsArticles(articleTitle, articleURL, articleImg, numberOfLikes
     var add_favorites = document.createElement("div");
     add_favorites.classList.add("add-favorites");
 
+    var heart_container = document.createElement("div");
+    heart_container.classList.add("heart-container");
+
     var heart = document.createElement('img');
     heart.classList.add("heart");
-    heart.src = '../imgs/heart-empty.png';
+    if (favorite == 0) {
+        heart.src = '../imgs/heart-empty.png';
+    } else {
+        heart.src = '../imgs/heart-full.png';
+    }
+
+    var likes = document.createElement('p');
+    likes.classList.add("likes");
+    likes.textContent = numberOfLikes;
+
+    heart_container.appendChild(heart);
+    heart_container.appendChild(likes);
 
     var favorites_add_text = document.createElement("p");
     favorites_add_text.classList.add("favorites-add-text");
-    favorites_add_text.textContent = "add to favorites";
+    if (favorite == 0) {
+        favorites_add_text.textContent = "add to favorites";
+    } else {
+        favorites_add_text.textContent = "remove from favorites";
+    }
 
-    add_favorites.appendChild(heart);
+
+    add_favorites.appendChild(heart_container);
     add_favorites.appendChild(favorites_add_text);
 
     overlay.appendChild(add_favorites);

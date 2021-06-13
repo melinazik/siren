@@ -1143,6 +1143,17 @@ textarea.contact-form-text {
     font-size: 1.2em;
 }
 
+.heart-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.likes {
+    margin-left: 0.5em;
+}
+
 .carousel-cell::before {
     display: block;
 }
