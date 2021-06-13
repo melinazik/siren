@@ -168,7 +168,6 @@
 								$size = count($articles);
 								for ($i = 0; $i < $size; $i++){
 									$url = sprintf($articles[$i]['articleURL']);
-									
 									$img = sprintf($articles[$i]['articleImg']);
 									$title =  sprintf($articles[$i]['articleTitle']);
 									echo "<img class=\"carousel-image\" src=$img>></div>
