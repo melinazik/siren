@@ -4,8 +4,8 @@
 <html lang="en">
 
 <?php
-  $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; //getting user data
-  $url_arr = explode("&",$url);
+$url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; //getting user data
+$url_arr = explode("&", $url);
 ?>
 
 <head>
@@ -146,10 +146,10 @@
 
 			</div>
 
-			
+
 
 			<!-- CAROUSEL -->
-			
+
 			<div class="carousel-wrap">
 				<h1>Related Articles</h1>
 				<div class="carousel" id="carousel-effects">
@@ -163,22 +163,22 @@
 								</div>
 							</div>
 							<?php $query = "SELECT * FROM article";
-								$results = mysqli_query($db, $query);
-								$articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
-								$size = count($articles);
-								for ($i = 0; $i < $size; $i++){
-									$url = sprintf($articles[$i]['articleURL']);
-									$img = sprintf($articles[$i]['articleImg']);
-									$title =  sprintf($articles[$i]['articleTitle']);
-									echo "<img class=\"carousel-image\" src=$img>></div>
+							$results = mysqli_query($db, $query);
+							$articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
+							$size = count($articles);
+							for ($i = 0; $i < $size; $i++) {
+								$url = sprintf($articles[$i]['articleURL']);
+								$img = sprintf($articles[$i]['articleImg']);
+								$title =  sprintf($articles[$i]['articleTitle']);
+								echo "<img class=\"carousel-image\" src=$img>></div>
 										<a href=$url target=\"_blank\">
 										<div class=\"carousel-article-title\">$title</div>";
-								}
+							}
 							?>
 
 							</a>
-							
-					<!-- </div><div class="carousel-cell">
+
+							<!-- </div><div class="carousel-cell">
 						<div class="carousel-image-container" onclick="addFavorites(this)">
 							<div class="overlay">
 								<div class="add-favorites">
@@ -193,7 +193,7 @@
 						</a>
 					</div> -->
 
-					<!-- <div class="carousel-cell">
+							<!-- <div class="carousel-cell">
 						<div class="carousel-image-container" onclick="addFavorites(this)">
 							<div class="overlay">
 								<div class="add-favorites">
@@ -208,7 +208,7 @@
 						</a>
 					</div> -->
 
-					<!--
+							<!--
 						<div class="carousel-cell">
 							<div class="carousel-image-container" onclick="addFavorites(this)">
 								<div class="overlay">
@@ -267,11 +267,11 @@
 						</div>-->
 
 
-				</div>
-			</div>
-			<!-- END CAROUSEL -->
+						</div>
+					</div>
+					<!-- END CAROUSEL -->
 
-		</div>
+				</div>
 
 	</section class="info">
 	<!-- ./info section-->
