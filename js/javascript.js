@@ -94,7 +94,6 @@ function init() {
 
 
 function loadEffectsArticles(articleTitle, articleURL, articleImg, numberOfLikes, favorite) {
-
     var carousel_container = document.getElementById('carousel-effects');
 
     // while more elements in database
