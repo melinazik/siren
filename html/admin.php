@@ -91,8 +91,80 @@
      <div > <!-- onclick="callSeeMessages()"-->
         <h3 class="see-msgs-header">User Messages</h3>
 
-        <div class = "contact-inbox">
-              <ul>
+              <div class = "contact-inbox">
+                <ul>
+                      <?php $query = "SELECT * FROM messages";
+                          $results = mysqli_query($db, $query);
+                          $messages = mysqli_fetch_all($results, MYSQLI_ASSOC);
+                          $size = count($messages);
+                          for ($i = 0; $i < $size; $i++){
+                            $name = sprintf($messages[$i]['contactName']);
+                            $email = sprintf($messages[$i]['contactEmail']);
+                            $text =  sprintf($messages[$i]['contactText']);
+                            echo "
+                            
+                            <li>
+                                <div class=\"messages\">
+                                  <div class=\"list-left\"><div class=\"name-display\"> $name </div>
+                                </div>
+                                <div class=\"list-right\">
+                                  <div class=\"message\">
+                                    <div class=\"mail-display\">$email</div>
+                                    <div class=\"msg-display\">$text</div>
+                                  </div>
+                                  <div class=\"time-status\">
+                                    <div class=\"time\">10H</div>
+                                    <div class=\"status\"></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>";
+                          }
+                        ?>
+                      
+                      
+                
+
+                <!-- <li>
+                  <div class="messages">
+                    <div class="list-left">
+                      <div class="name-display"> Reina Papav </div>
+                    </div>
+                    <div class="list-right">
+                      <div class="message">
+                        <div class="mail-display">reinayoyo3@gmail.com</div>
+                        <div class="msg-display">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+                          molestiae quas vel sint commodi repudiandae consequuntur.</div>
+                      </div>
+                      <div class="time-status">
+                        <div class="time">10H</div>
+                        <div class="status"></div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="messages">
+                    <div class="list-left">
+                      <div class="name-display"> Johnathan Smiths </div>
+                    </div>
+                    <div class="list-right">
+                      <div class="message">
+                        <div class="mail-display">yourstruly@gmail.com</div>
+                        <div class="msg-display">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+                          molestiae quas vel sint commodi repudiandae consequuntur.</div>
+                      </div>
+                      <div class="time-status">
+                        <div class="time">10H</div>
+                        <div class="status"></div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+
+
                 <li>
                   <div class="messages">
                     <div class="list-left">
@@ -148,66 +220,7 @@
                       </div>
                     </div>
                   </div>
-                </li>
-
-
-
-                <li>
-                  <div class="messages">
-                    <div class="list-left">
-                      <div class="name-display"> Chrysa Pozrikidou </div>
-                    </div>
-                    <div class="list-right">
-                      <div class="message">
-                        <div class="mail-display">xrysa123@gmail.com</div>
-                        <div class="msg-display">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-                          molestiae quas vel sint commodi repudiandae consequuntur.</div>
-                      </div>
-                      <div class="time-status">
-                        <div class="time">10H</div>
-                        <div class="status"></div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-
-                <li>
-                  <div class="messages">
-                    <div class="list-left">
-                      <div class="name-display"> Reina Papav </div>
-                    </div>
-                    <div class="list-right">
-                      <div class="message">
-                        <div class="mail-display">reinayoyo3@gmail.com</div>
-                        <div class="msg-display">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-                          molestiae quas vel sint commodi repudiandae consequuntur.</div>
-                      </div>
-                      <div class="time-status">
-                        <div class="time">10H</div>
-                        <div class="status"></div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-
-                <li>
-                  <div class="messages">
-                    <div class="list-left">
-                      <div class="name-display"> Johnathan Smiths </div>
-                    </div>
-                    <div class="list-right">
-                      <div class="message">
-                        <div class="mail-display">yourstruly@gmail.com</div>
-                        <div class="msg-display">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-                          molestiae quas vel sint commodi repudiandae consequuntur.</div>
-                      </div>
-                      <div class="time-status">
-                        <div class="time">10H</div>
-                        <div class="status"></div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
+                </li> -->
 
 
               </ul>
