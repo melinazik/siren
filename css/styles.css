@@ -266,7 +266,6 @@ body {
 }
 
 .page-wrapper {
-    background-color: pink;
     min-height: 100%;
     width: 100%;
 }
@@ -415,9 +414,8 @@ body {
 }
 
 .description-container {
-    width: 100%;
-    margin-: 40px auto;
-    background-color: palegoldenrod;
+    max-width: 800px;
+    margin: 40px auto 20px;
 }
 
 .description-container p {
