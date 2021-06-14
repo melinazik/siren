@@ -1198,8 +1198,20 @@ a {
 
 /* ----PROFILE---- */
 
-.info-column {
-    margin-left: 40px;
+.profile {
+  width: auto;
+  overflow: hidden;
+}
+
+.info-column-left {
+    margin-left: 200px;
+    float: left;
+}
+
+.info-column-right {
+    margin-right: 200px;
+    float:right;
+    margin-top: 50px;
 }
 
 .box {
@@ -1211,7 +1223,6 @@ a {
     border-radius: 5px;
     background-color: white;
     margin-top: 50px;
-    margin-bottom: 50px;
     overflow: hidden;
 }
 
@@ -1443,59 +1454,53 @@ label:hover {
 
 /* message box */
 
-.contact-inbox {
+.fav-inbox {
     width: 500px;
     overflow: auto;
     height: 630px;
     cursor: pointer;
 }
 
-.contact-inbox li {
+.fav-inbox li {
     display: flex;
     align-items: center;
     padding: 15px 20px;
     border-bottom: 1px solid #34495e;
 }
 
-.contact-inbox li:last-child {
+.fav-inbox li:last-child {
     border-bottom: 0;
 }
 
-.contact-inbox li:hover {
+.fav-inbox li:hover {
     background: #e4edf5;
 }
 
-.contact-inbox li .list_right {
+.fav-inbox li .list_right {
     display: flex;
 }
 
-.contact-inbox .list-right {
+.fav-inbox .list-right {
     margin: 0 20px;
 }
 
-.contact-inbox .list-left {
+.fav-inbox .list-left {
     font-weight: bold;
     margin-bottom: 5px;
 }
 
-.contact-inbox .list-right .msg-display {
+.fav-inbox .list-right .msg-display {
     font-size: 12px;
     line-height: 18px;
 }
 
-.contact-inbox .time {
-    color: #ccc;
-    font-size: 12px;
-    text-align: left;
-}
-
-.contact-inbox .mail-display {
+.fav-inbox .mail-display {
     background: rgba(52, 73, 94, 0.3);
     border-radius: 10px;
     text-align: center;
 }
 
-.see-msgs-header {
+.fav-msgs-header {
     text-align: center;
     font-size: 22px;
     font-weight: 400;
