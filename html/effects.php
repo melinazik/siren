@@ -72,6 +72,16 @@ $url_arr = explode("&", $url);
 		<div id="home-view-title2">Effects</div>
 	</div>
 
+ <!-- google search bar -->
+	<div  class="google-search">
+		<form class="search-bar" action="https://www.google.com/search?q= method="GET>
+			<input type="text-search" name="q" placeholder="Google Search">
+			<div class="submit-btn">
+				<button type="submitbtn"> <i class="fas fa-search"></i> </button>
+			</div>
+		</form>
+	</div>
+
 	<!--Info section -->
 	<section class="info">
 		<div class="container">
