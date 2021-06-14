@@ -65,10 +65,20 @@
         $pwd_encrypted = md5($pwd); //password encrypted
         $query = "INSERT INTO user (email, username, pwd) VALUES ('$email','$username', '$pwd_encrypted')";
         mysqli_query($db, $query);
-        $_SESSION['username'] = $username;
-        $_SESSION['success'] = "You are now registered";
-        header('location: home.php?signup=success');
-        }
+
+        $query = "SELECT * FROM user WHERE username='$username'";
+        $results = mysqli_query($db, $query);
+        
+        if(mysqli_num_rows($results)){
+            $_SESSION['username'] = $username;
+            $_SESSION['userId'] = $row['id'];
+
+            $_SESSION['success'] = "You are now registered";
+
+            header('location: home.php?signup=success');
+        } 
+    }
+
     else{
             header('location: login.php?signup=failed');
         }
