@@ -58,8 +58,6 @@ $url_arr = explode("&", $url);
 				<?php if (!isset($_SESSION['username'])) : ?>
 					<li><a href="login.php">Login/Register</a></li> <?php endif ?>
 
-
-
 			</ul>
 			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
 				<div class="menu-icon"></div>
@@ -242,6 +240,5 @@ $url_arr = explode("&", $url);
 	<!-- /.footer -->
 
 </body>
-
 
 </html>

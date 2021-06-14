@@ -225,28 +225,65 @@
 
 
     
-    // // upload image
-    // if (isset($_POST['upload'])&& $_FILES["image"]["error"] == 0) {
+    // upload image
+    if (isset($_POST['upload'])) {
+        $userId = $_SESSION['userId'];
+
+        $target_dir = "../uploads/";
+        $target_file = $target_dir . "user" . $userId . "_" . basename($_FILES["fileToUpload"]["name"]);
+        $uploadOk = 1;
+        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+        // Check if image file is a actual image or fake image
+        $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+        if($check !== false) {
+            echo "File is an image - " . $check["mime"] . ".";
+            $uploadOk = 1;
+        } else {
+            echo "File is not an image.";
+            $uploadOk = 0;
+        }
+
+        // Check if file already exists
+        // if (file_exists($target_file)) {
+        //     echo "Sorry, file already exists.";
+        //     $uploadOk = 0;
+        // }
         
-    //     $filename = $_FILES["image"]["name"];
-   
-    //         $folder = "image/".$filename;
+        // Check file size
+        if ($_FILES["fileToUpload"]["size"] > 500000) {
+            echo "Sorry, your file is too large.";
+            $uploadOk = 0;
+        }
+        
+        // Allow certain file formats
+        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+        && $imageFileType != "gif" ) {
+            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+            $uploadOk = 0;
+        }
+        
+        // Check if $uploadOk is set to 0 by an error
+        if ($uploadOk == 0) {
+            echo "Sorry, your file was not uploaded.";
+        // if everything is ok, try to upload file
+        } else {
+            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+            echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+            } else {
+            echo "Sorry, there was an error uploading your file.";
+            }
+        }
+
+        
             
-    //         // Get all the submitted data from the form
-    //         $sql = "INSERT INTO image (filename) VALUES ('$filename')";
+        // Get all the submitted data from the form
+        $query = "UPDATE user SET imagePath = '$target_file' WHERE id = $userId";
     
-    //         // Execute query
-    //         mysqli_query($db, $sql);
-            
-    //         // Now let's move the uploaded image into the folder: image
-    //         if (move_uploaded_file($filename, $folder))  {
-    //             $msg = "Image uploaded successfully";
-    //         }else{
-    //             $msg = "Failed to upload image";
-    //     }
-    //     echo $msg;
-    // }
-    // $result = mysqli_query($db, "SELECT * FROM image");
+        // Execute query
+        mysqli_query($db, $query);
+        header("location: profile.php?update=success");
+    }
 
 
     // // File upload path

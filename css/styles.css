@@ -1267,7 +1267,7 @@ a {
 }
 
 input[type="file"] {
-    display: none;
+    display: block;
 }
 
 .profile-img input[type="submit"] {
