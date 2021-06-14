@@ -270,6 +270,21 @@ body {
     width: 100%;
 }
 
+.info-intro {
+    width: 100%;
+    padding: 2em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-intro-text {
+    width: 20em;
+    padding-bottom: 3em;
+}
+
 #aboutSeaLife {
     position: relative;
     width: 100%;
