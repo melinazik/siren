@@ -151,42 +151,19 @@
         header('location: effects.php');
     }
 
-    //reset password
-    if(isset($_POST['reset'])){
-        $pwd = mysqli_real_escape_string($db, $_POST['pwdOld']);
-        $pwd = md5($pwd);
-        $newPwd = mysqli_real_escape_string($db, $_POST['pwdNew']);
-        $password_repeat = mysqli_real_escape_string($db, $_POST['pwdNewRep']);
-        $username = $_SESSION['username'];
-
-        if(isset($_SESSION['username'])){                   //checking if a user is logged in
-            $query = "SELECT pwd FROM user WHERE username='$username'";
-            $results = mysqli_query($db, $query);
-            if(mysqli_num_rows($results)){                  //checking if the query was successful
-                $row = mysqli_fetch_assoc($results);
-                if(($pwd = $row["pwd"])&&($newPwd == $password_repeat)){                 //checking if passwords match
-                    $newPwd = md5($newPwd);
-                    $query = "UPDATE user SET pwd='$newPwd' WHERE username='$username'";
-                    mysqli_query($db, $query);
-                    header('location: home.php?reset=success');
-                } else {
-                    header('location: profile.php?reset=failed');
-                }
-            } else {
-                header('location: profile.php?reset=failed'); 
-            }
-        } else {
-            header('location: profile.php?reset=failed');
-        }
-    }
-
     
     //reset request
     if(isset($_POST['reset-request'])){  //if user forgot password, a templated, automatic contact message with subject "password change" is inserted into the DB for future reference.
         $email = mysqli_real_escape_string($db, $_POST['email']);
-        $query = "INSERT INTO messages (contactName, contactEmail, contactText) VALUES ('user', '$email', 'PWD CHANGE REQUEST')";
-        mysqli_query($db, $query);
-        header('location: login.php?reset=requested');
+        $query = "SELECT * FROM user WHERE email = $email";
+        $results = mysqli_query($db, $query);
+        if(!$results){
+            header('location: login.php?reset=failed');
+        } else{
+            $query = "INSERT INTO messages (contactName, contactEmail, contactText) VALUES ('user', '$email', 'PWD CHANGE REQUEST')";
+            mysqli_query($db, $query);
+            header('location: login.php?reset=requested');
+        }
     }
 
     //user's data update

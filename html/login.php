@@ -76,17 +76,16 @@
               <?php echo "Wrong username or password"; ?>
           </div> <?php endif ?>
 
-
-        <?php if(strpos($url, "reset=failed")==true): ?>
-          <div class="alert">
-            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-              <?php echo "Wrong username, try again"; ?>
-          </div> <?php endif ?>
-
           <?php if(strpos($url, "reset=requested")==true): ?>
           <div class="alert success">
             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
               <?php echo "Password reset requested successfully!"; ?>
+          </div> <?php endif ?>
+
+          <?php if(strpos($url, "reset=failed")==true): ?>
+          <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+              <?php echo "This email does not belong to an existing account"; ?>
           </div> <?php endif ?>
 
 
