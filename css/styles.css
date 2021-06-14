@@ -1198,11 +1198,22 @@ a {
 
 /* ----PROFILE---- */
 
+.profile {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
 .info-column {
     margin-left: 40px;
 }
 
 .box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     box-sizing: border-box;
     width: 360px;
     height: 35em;
@@ -1220,7 +1231,6 @@ a {
     width: 149px;
     height: 149px;
     border-radius: 50%;
-    margin: 0;
     border: 5px solid #34495e;
     padding: 3px;
     background-color: white;
@@ -1270,6 +1280,13 @@ input[type="file"] {
     display: block;
 }
 
+.profile-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .profile-img input[type="submit"] {
     border: 0;
     background: #192d47;
@@ -1297,6 +1314,13 @@ label {
 label:hover {
     background-color: #34495e;
     color: black;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    height: 35em;
+    margin: 50px;
 }
 
 
@@ -1444,13 +1468,18 @@ label:hover {
 /* message box */
 
 .contact-inbox {
-    width: 500px;
+    width: 400px;
     overflow: auto;
-    height: 630px;
+    height: 100%;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .contact-inbox li {
+    width: 400px;
     display: flex;
     align-items: center;
     padding: 15px 20px;
@@ -1467,6 +1496,7 @@ label:hover {
 
 .contact-inbox li .list_right {
     display: flex;
+    align-items: center;
 }
 
 .contact-inbox .list-right {
