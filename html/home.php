@@ -111,10 +111,8 @@
 					<h1 class="about-title">About sea life</h1>
 					<p class="about-p">Marine life is in danger and the threats it's facing are growing
 						every second. Every year billions of harmful chemicals, trash and other pollutants enter the ocean.
-						Marine
-						pollution is a growing ongoing problem in today's world and it impacts not only the environment and
-						marine
-						life but also modern economies. Thatalong with unregulated fishing can lead to the
+						Marine pollution is a growing ongoing problem in today's world and it impacts not only the environment and
+						marine life but also modern economies. That along with unregulated fishing can lead to the
 						disturbance of marine biodiversity and put marine species in danger of extinction.
 					</p>
 				</div>

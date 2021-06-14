@@ -266,7 +266,9 @@ body {
 }
 
 .page-wrapper {
+    background-color: pink;
     min-height: 100%;
+    width: 100%;
 }
 
 #aboutSeaLife {
@@ -413,8 +415,9 @@ body {
 }
 
 .description-container {
-    max-width: 800px;
-    margin: 40px auto 20px;
+    width: 100%;
+    margin-: 40px auto;
+    background-color: palegoldenrod;
 }
 
 .description-container p {
@@ -798,6 +801,7 @@ button {
 /* The popup (background) */
 
 .popup {
+    z-index: 2;
     display: none;
     /* Hidden by default */
     position: fixed;
@@ -811,7 +815,7 @@ button {
     overflow: auto;
     /* Enable scroll if needed */
     background-color: #192d47be;
-    padding-top: 10px;
+    padding-top: 30%;
     justify-items: center;
 }
 
