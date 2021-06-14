@@ -67,17 +67,29 @@
     </div>
   </div>
 
+
+    <!-- success or error messages, they appear based on occasion-->
+		<?php
+        $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
+        <?php if(strpos($url, "entry=success")==true): ?>
+          <div class="alert success">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+              <?php echo "Article added successfully!"; ?>
+          </div> <?php endif ?>
+
+    <?php
+      $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
+      <?php if(strpos($url, "entry=failed")==true): ?>
+          <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+              <?php echo "Could not add article into database"; ?>
+          </div> <?php endif ?>
+
   <div id="page-view">
     <div class="sticky-title">! You are logged in as admin !</div>
   </div>
 
   <div id="admin-container">
-
-    <!--<div class="login-section">
-        <form class="login-form" action="server.php" method="post">
-            <button type="submit" style="width:150px;" name="logout" id="logout">Logout</button>
-        </form>
-    </div> -->
 
 
     <p id="admin-actions"></p>
@@ -137,8 +149,11 @@
               </ul>
             </div>
 
+           
+
         </div>
       </div>
+
 
       <div class="login-section">
           <form class="login-form" action="server.php" method="post">

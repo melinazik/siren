@@ -134,8 +134,12 @@
         $articleImg = mysqli_real_escape_string($db, $_POST['articleImg']);
         $articleTitle = mysqli_real_escape_string($db, $_POST['articleTitle']);
         $query = "INSERT INTO article (numberOfLikes, articleURL, articleImg, articleTitle) VALUES (0, '$articleURL','$articleImg', '$articleTitle')";
-        mysqli_query($db, $query);
-        header('location: admin.php');
+        $result = mysqli_query($db, $query);
+        if(!$result){
+            header('location: admin.php?entry=failed');
+        } else{
+            header('location: admin.php?entry=success');
+        }
     }
 
     //add favorite 
