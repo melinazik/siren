@@ -728,12 +728,12 @@ input {
     max-width: 600px;
     height: auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     margin: 20px auto;
     box-shadow: 0 0 10px 4px #34495e;
     background-color: white;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    padding: 10px 10px;
 }
 
 .login-form {
@@ -877,6 +877,7 @@ button {
 
 .login-section {
     padding: 20px;
+    margin-left: 2em;
 }
 
 
