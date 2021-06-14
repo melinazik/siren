@@ -41,7 +41,6 @@
           </li>
           <li><a href="help.php">How to help</a></li>
           <li><a href="contact.php">Contact us</a></li>
-          <!-- TODO session id -->
           <?php if(!isset($_SESSION['username'])):?>
 					<li><a href="login.php">Login/Register</a></li> <?php endif?>
 					<?php if($_SESSION['username']=='admin'): ?>
@@ -82,7 +81,7 @@
     </div>
 
     <div class="profile">
-      <div class="info-column">
+      <div class="info-column-left">
         <div class="box">
           <center>
           <div class="profile-img">
@@ -110,7 +109,20 @@
         </div>
       </div>
 
-
+      <div class="info-column-right">
+        <h3 class="fav-msgs-header"> Your favorite articles </h3>
+        <div class = "fav-inbox">
+          <ul>
+            <a href="-article url-">
+            <li>
+                <div class="messages">
+                  <div class="list-left"><div class="name-display">$name</div>
+                </div>
+            </li>
+          </a>
+          </ul>
+        </div>
+      </div>
 
     </div>
 
