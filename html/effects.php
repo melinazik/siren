@@ -178,7 +178,7 @@ $url_arr = explode("&", $url);
 				array_push($articlesJSON, json_encode($articles[$i]));
 				
 				$articleId = $articles[$i]['id'];
-				$query1 = "SELECT * FROM userlikesarticle WHERE userId = $userId and articleId = $articleId";
+				$query1 = "SELECT * FROM userlikesarticle WHERE userId = '$userId' and articleId = '$articleId'";
 				$results1 = mysqli_query($db, $query1);
 
 

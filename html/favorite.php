@@ -10,18 +10,23 @@
         $articleId = $_GET["articleId"];
         $favorite = $_GET["favorite"];
 
-        $query = "SELECT * FROM userlikesarticle WHERE userId = $userId and articleId = $articleId";
+        $query = "SELECT * FROM userlikesarticle WHERE userId = '$userId' and articleId = '$articleId'";
         $results = mysqli_query($db, $query);
         
         if($favorite == 'true'){
             if(!mysqli_num_rows($results)){
-                $query = "INSERT INTO userlikesarticle (userId, articleId) VALUES ($userId, $articleId)";
+                $query = "INSERT INTO userlikesarticle (userId, articleId) VALUES ('$userId', '$articleId')";
                 mysqli_query($db, $query);
             }
         }
         else{
-
-            $query = "DELETE FROM userlikesarticle WHERE userId = $userId and articleId = $articleId";
+            $query = "DELETE FROM userlikesarticle WHERE userId = '$userId' and articleId = '$articleId'";
             mysqli_query($db, $query);
         }
+
+        $count = "SELECT COUNT(articleId) FROM userlikesarticle WHERE articleId = '$articleId'";
+        echo $count;
+        $query = "UPDATE article SET numberOfLikes='$count' WHERE articleId = '$articleId'";
+        mysqli_query($db, $query);
+
     }
