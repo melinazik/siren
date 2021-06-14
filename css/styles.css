@@ -1205,7 +1205,7 @@ a {
 .box {
     box-sizing: border-box;
     width: 360px;
-    height: 500px;
+    height: 35em;
     border: 2px solid #3498db;
     box-shadow: -3px -3px 7px #34495e, 3px 3px 5px rgba(94, 104, 121, 0.288);
     border-radius: 5px;
