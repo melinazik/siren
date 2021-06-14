@@ -57,16 +57,16 @@
       </div>
     </div>
 
-    <!-- success or error messages, they appear based on occasion--> 
-		<?php   
+    <!-- success or error messages, they appear based on occasion-->
+		<?php
         $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
         <?php if(strpos($url, "update=success")==true): ?>
           <div class="alert success">
             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
               <?php echo "Data updated successfully!"; ?>
           </div> <?php endif ?>
-    
-    <?php   
+
+    <?php
       $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
       <?php if(strpos($url, "update=failed")==true): ?>
           <div class="alert">
@@ -74,7 +74,7 @@
               <?php echo "Couldn't update user data"; ?>
           </div> <?php endif ?>
 
-          
+
 
     <div id="page-view">
       <div id="home-view-title2">Profile</div>
@@ -133,7 +133,7 @@
           <ul>
             <li><span><i class="fas fa-map-marker-alt"></i>&nbsp; Thessaloniki, Greece</span></li>
             <li><span><i class="fas fa-phone"></i>&nbsp; 2310-097834</span></li>
-            <li><span><i class="fas fa-envelope"></i>&nbsp; info@sirenauth.com</span></li>
+            <li><span style="text-transform: lowercase;"><i class="fas fa-envelope"></i>&nbsp; info@sirenauth.com</span></li>
           </ul>
         </div>
 

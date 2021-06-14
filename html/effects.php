@@ -162,7 +162,7 @@ $url_arr = explode("&", $url);
 			$articlesJSON = array();
 
 			echo "<script> init(); </script>";
-			
+
 			for ($i = 0; $i < $size; $i++) {
 				array_push($articlesJSON, json_encode($articles[$i]));
 				echo "<script> loadEffectsArticles(
@@ -194,7 +194,7 @@ $url_arr = explode("&", $url);
 					<ul>
 						<li><span><i class="fas fa-map-marker-alt"></i>&nbsp; Thessaloniki, Greece</span></li>
 						<li><span><i class="fas fa-phone"></i>&nbsp; 2310-097834</span></li>
-						<li><span><i class="fas fa-envelope"></i>&nbsp; info@sirenauth.com</span></li>
+						<li><span style="text-transform: lowercase;"><i class="fas fa-envelope"></i>&nbsp; info@sirenauth.com</span></li>
 					</ul>
 				</div>
 

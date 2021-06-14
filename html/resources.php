@@ -51,7 +51,7 @@
 					<li><a href="profile.php"><?php echo $_SESSION['username'];?></a></li> <?php endif?>
 					<?php if(!isset($_SESSION['username'])): ?>
 					<li><a href="login.php">Login/Register</a></li> <?php endif ?>
-        			
+
 
         </ul>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -127,7 +127,7 @@
             <ul>
               <li><span><i class="fas fa-map-marker-alt"></i>&nbsp; Thessaloniki, Greece</span></li>
               <li><span><i class="fas fa-phone"></i>&nbsp; 2310-097834</span></li>
-              <li><span><i class="fas fa-envelope"></i>&nbsp; info@sirenauth.com</span></li>
+              <li><span style="text-transform: lowercase;"><i class="fas fa-envelope"></i>&nbsp; info@sirenauth.com</span></li>
             </ul>
           </div>
 
