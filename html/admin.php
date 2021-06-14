@@ -114,7 +114,7 @@
                             $email = sprintf($messages[$i]['contactEmail']);
                             $text =  sprintf($messages[$i]['contactText']);
                             echo "
-                            
+
                             <li>
                                 <div class=\"messages\">
                                   <div class=\"list-left\"><div class=\"name-display\"> $name </div>
@@ -133,7 +133,7 @@
                             </li>";
                           }
                         ?>
-                    
+
               </ul>
             </div>
 
@@ -173,7 +173,7 @@
           <ul>
             <li><span><i class="fas fa-map-marker-alt"></i>&nbsp; Thessaloniki, Greece</span></li>
             <li><span><i class="fas fa-phone"></i>&nbsp; 2310-097834</span></li>
-            <li><span><i class="fas fa-envelope"></i>&nbsp; info@sirenauth.com</span></li>
+            <li><span style="text-transform: lowercase;"><i class="fas fa-envelope"></i>&nbsp; info@sirenauth.com</span></li>
           </ul>
         </div>
 

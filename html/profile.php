@@ -2,12 +2,6 @@
 
 <!DOCTYPE html>
 <html lang ="en">
-
-<?php
-  $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; //getting user data
-  $url_arr = explode("&",$url);
-?>
-
     <head>
 		<meta charset="utf 8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -64,6 +58,25 @@
       </div>
     </div>
 
+    <!-- success or error messages, they appear based on occasion-->
+		<?php
+        $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
+        <?php if(strpos($url, "update=success")==true): ?>
+          <div class="alert success">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+              <?php echo "Data updated successfully!"; ?>
+          </div> <?php endif ?>
+
+    <?php
+      $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
+      <?php if(strpos($url, "update=failed")==true): ?>
+          <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+              <?php echo "Couldn't update user data"; ?>
+          </div> <?php endif ?>
+
+
+
     <div id="page-view">
       <div id="home-view-title2">Profile</div>
     </div>
@@ -85,9 +98,9 @@
 
           <div class="prof-section">
               <form class="prof-form" action="server.php" method="post">
-              <input type="text" name="location" placeholder="<?php if (isset($url_arr[3])) { echo $url_arr[3];} else {echo "Location";}?>">
-              <input type="text" name="age" placeholder="<?php if (isset($url_arr[1])) { echo $url_arr[1];} else {echo "Age";}?>">
-              <input type="text" name="gender" placeholder="<?php if (isset($url_arr[2])) { echo $url_arr[2];} else {echo "Gender";}?>">
+              <input type="text" name="location" placeholder="<?php echo implode('["',$_SESSION['lctn']);?>">
+              <input type="text" name="age" placeholder="<?php echo implode('["',$_SESSION['age']);?>">
+              <input type="text" name="gender" placeholder="<?php echo implode('["',$_SESSION['gender']);?>">
               <button type="submit" name="done" id="done">Done</button>
               <button type="submit" name="logout" id="logout">Logout</button>     <!-- LOGOUT BUTTON -->
             </form>
@@ -121,7 +134,7 @@
           <ul>
             <li><span><i class="fas fa-map-marker-alt"></i>&nbsp; Thessaloniki, Greece</span></li>
             <li><span><i class="fas fa-phone"></i>&nbsp; 2310-097834</span></li>
-            <li><span><i class="fas fa-envelope"></i>&nbsp; info@sirenauth.com</span></li>
+            <li><span style="text-transform: lowercase;"><i class="fas fa-envelope"></i>&nbsp; info@sirenauth.com</span></li>
           </ul>
         </div>
 

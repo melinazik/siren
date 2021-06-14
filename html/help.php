@@ -4,12 +4,8 @@
 
 <html lang ="en">
 
-<?php
-  $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; //getting user data
-  $url_arr = explode("&",$url);
-?>
 
-    
+
   <head>
     <meta charset="utf 8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -25,7 +21,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="../js/javascript.js"> </script>
-  </head> 
+  </head>
 
 <body>
 
@@ -57,7 +53,7 @@
 					<li><a href="profile.php"><?php echo $_SESSION['username'];?></a></li> <?php endif?>
 					<?php if(!isset($_SESSION['username'])): ?>
 					<li><a href="login.php">Login/Register</a></li> <?php endif ?>
-        			
+
 
 
 			</ul>
@@ -91,7 +87,7 @@
   </div>
 
   <div class="logos-container">
-  
+
     <div class = "help-title"><br>
       International Marine Life related NGOs
     </div>  <br> <br>
@@ -107,7 +103,7 @@
         <a href ="https://bahamasplasticmovement.org" target="_blank"><img class="resp-img image-resize" src="../imgs/bpm.png">  </a>
       </div>
     </div> <br><br>
-  
+
     <div class="img-row">
       <div class="img-column">
         <a href ="https://www.noaa.gov/" target="_blank"><img class="resp-img image-resize"  src="../imgs/noaa.png"> </a>
@@ -119,7 +115,7 @@
         <a href ="https://www.wetlands.org/" target="_blank"><img class="resp-img image-resize" src="../imgs/wetlands.png">  </a>
       </div>
       </div><br><br><br><br>
-  
+
     <div class = "help-title"> <br>
       Greek Marine Life related NGOs </div>  <br>
 
@@ -134,7 +130,7 @@
         <a href ="https://archelon.gr" target="_blank"><img class="resp-img image-resize" src="../imgs/archelon.jpg">  </a>
       </div>
     </div> <br><br>
-      
+
     <div class="img-row">
       <div class="img-column">
         <a href ="http://medsos.gr/medsos/" target="_blank"><img class="resp-img image-resize" src="../imgs/medsos.PNG"> </a>
@@ -146,18 +142,18 @@
         <a href ="https://www.helmepa.gr/" target="_blank"><img class="resp-img image-resize" src="../imgs/helmepa.png">  </a>
       </div>
     </div><br><br><br>
-  
+
     <div class="help-button-container">
       <button class="help-button">
         <div class="rescue-link">
           <a href = "https://nmlc.org/rehabilitation/what-you-can-do-for-a-stranded-marine-animal/#:~:text=9.,Guard%20on%20VHF%20Channel%2016." target="_blank">
-            See how you can help if you come across an endangered marine animal 
+            See how you can help if you come across an endangered marine animal
           </a>
         </div>
       </button>
   </div><br> <br>
- 
-  
+
+
     <div class = "hotline-title">
       Useful Hotlines <br>
     </div>
@@ -172,14 +168,14 @@
       <p class="hotline-par">Rhodes National Aquarium: 2241 027308</p>
     </div>
   </div>
-      
+
   <div class="img-column">
       <div class="hotline-title"><br>EU </div>
       <p class="hotline-par"></pclass>European Emergency Number: 112 <br> </p>
       <p class="hotline-par"></pclass>EUCC Coastal & Marine: +31(0)715143719<br> </p>
       <p class="hotline-par"></pclass>UK Marine Conservation Society: +44 01989 566017</p>
   </div>
-      
+
   <div class="img-row">
       <div class="hotline-title"><br>USA </div>
       <p class="hotline-par">NOAA Marine Animal Entanglement: 1-800-900-3622 </p>
@@ -189,7 +185,7 @@
     </div>
   </div>
 </div>
-  
+
     <!--footer-->
     <footer>
       <div class="footer-content">
@@ -201,16 +197,16 @@
             <br> We should not sit back and watch our planet get destroyed.<br>We must protect it.
           </p>
         </div>
-  
+
         <div class="col contact-info">
           <h4 class="contact-footer">Contact Us</h4>
           <ul>
             <li><span><i class="fas fa-map-marker-alt"></i>&nbsp; Thessaloniki, Greece</span></li>
             <li><span><i class="fas fa-phone"></i>&nbsp; 2310-097834</span></li>
-            <li><span><i class="fas fa-envelope"></i>&nbsp; info@sirenauth.com</span></li>
+            <li><span style="text-transform: lowercase;"><i class="fas fa-envelope"></i>&nbsp; info@sirenauth.com</span></li>
           </ul>
         </div>
-  
+
         <div class="col follow-us">
           <h4 class="follow-footer">Follow us</h4>
           <div class="social-links">
@@ -228,4 +224,3 @@
     <!-- /.footer -->
     </body>
   </html>
-  

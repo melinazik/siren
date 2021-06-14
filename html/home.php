@@ -3,10 +3,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php
-  $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; //getting user data
-  $url_arr = explode("&",$url);
-?>
 
 
 	<head>
@@ -56,7 +52,7 @@
 					<li><a href="profile.php"><?php echo $_SESSION['username'];?></a></li> <?php endif?>
 					<?php if(!isset($_SESSION['username'])): ?>
 					<li><a href="login.php">Login/Register</a></li> <?php endif ?>
-        			
+
 
 
 				</ul>
@@ -67,24 +63,24 @@
 			</div>
 		</div>
 
-		<!-- success or error messages, they appear based on occasion--> 
-		<?php   
+		<!-- success or error messages, they appear based on occasion-->
+		<?php
         $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
         <?php if(strpos($url, "signup=success")==true): ?>
           <div class="alert success">
             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
               <?php echo "You are now logged in!"; ?>
           </div> <?php endif ?>
-        
+
         <?php if(strpos($url, "login=success")==true): ?>
           <div class="alert success">
             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
               <?php echo "You are now logged in!"; ?>
           </div> <?php endif ?>
-        
+
 
         <?php if(strpos($url, "reset=success")==true): ?>
-          <div class="alert success"> 
+          <div class="alert success">
             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
               <?php echo "You've successfully reset your password"; ?>
           </div> <?php endif ?>
@@ -199,7 +195,7 @@
 						<ul>
 							<li><span><i class="fas fa-map-marker-alt"></i>&nbsp; Thessaloniki, Greece</span></li>
 							<li><span><i class="fas fa-phone"></i>&nbsp; 2310-097834</span></li>
-							<li><span><i class="fas fa-envelope"></i>&nbsp; info@sirenauth.com</span></li>
+							<li><span style="text-transform: lowercase;"><i class="fas fa-envelope"></i>&nbsp; info@sirenauth.com</span></li>
 						</ul>
 					</div>
 

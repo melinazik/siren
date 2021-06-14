@@ -2,10 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<?php
-  $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; //getting user data
-  $url_arr = explode("&",$url);
-?>
+
 
 	<head>
 		<meta charset="utf 8">
@@ -162,7 +159,7 @@
 				$userId = $_SESSION['userId'];
 
 				echo "<script> init(); </script>";
-				
+
 				for ($i = 0; $i < $size; $i++) {
 					array_push($articlesJSON, json_encode($articles[$i]));
 					echo "<script>var add = loadEffectsArticles(
@@ -173,7 +170,7 @@
 				}
 			?>
 		</div>
-		
+
 		</section class="info">
 		<!-- ./info section-->
 
@@ -195,7 +192,7 @@
 						<ul>
 							<li><span><i class="fas fa-map-marker-alt"></i>&nbsp; Thessaloniki, Greece</span></li>
 							<li><span><i class="fas fa-phone"></i>&nbsp; 2310-097834</span></li>
-							<li><span><i class="fas fa-envelope"></i>&nbsp; info@sirenauth.com</span></li>
+							<li><span style="text-transform: lowercase;"><i class="fas fa-envelope"></i>&nbsp; info@sirenauth.com</span></li>
 						</ul>
 					</div>
 

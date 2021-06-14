@@ -3,10 +3,6 @@
 <!DOCTYPE html>
 <html lang ="en">
 
-<?php
-  $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; //getting user data
-  $url_arr = explode("&",$url);
-?>
 
 
   <head>
@@ -32,7 +28,7 @@
   			<div class="siren-icon"></div>
   			<a href="home.php" class="active">SIREN</a>
   		</div>
-      
+
   		<div class="right-navbar" id="navbarID">
   			<ul id="nav">
   				<li><a href="home.php">Home</a></li>
@@ -52,7 +48,7 @@
 					<li><a href="profile.php"><?php echo $_SESSION['username'];?></a></li> <?php endif?>
 					<?php if(!isset($_SESSION['username'])): ?>
 					<li><a href="login.php">Login/Register</a></li> <?php endif ?>
-        			
+
   			</ul>
   			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
   				<div class="menu-icon"></div>
@@ -65,21 +61,21 @@
   	</div>
 
 
-    <!-- error messages, they appear based on occasion--> 
-      <?php   
+    <!-- error messages, they appear based on occasion-->
+      <?php
         $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
         <?php if(strpos($url, "signup=failed")==true): ?>
           <div class="alert"> <!-- error messages section -->
             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
               <?php echo "Signup failed, please try again"; ?>
           </div> <?php endif ?>
-        
+
         <?php if(strpos($url, "login=failed")==true): ?>
           <div class="alert"> <!-- error messages section -->
             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
               <?php echo "Wrong username or password"; ?>
           </div> <?php endif ?>
-        
+
 
         <?php if(strpos($url, "reset=failed")==true): ?>
           <div class="alert">
@@ -94,12 +90,12 @@
           </div> <?php endif ?>
 
 
-        
-     
-    
+
+
+
   <!-- login form  -->
   <main class="main-holder">
-    
+
     <div class="login-section">
       <!-- login form  -->
       <form class="login-form" action="server.php"  method="post">
@@ -150,7 +146,7 @@
       </div>
     </div>
 
-    
+
   </main>
 
   <!--footer-->
@@ -170,7 +166,7 @@
         <ul>
           <li><span><i class="fas fa-map-marker-alt"></i>&nbsp; Thessaloniki, Greece</span></li>
           <li><span><i class="fas fa-phone"></i>&nbsp; 2310-097834</span></li>
-          <li><span><i class="fas fa-envelope"></i>&nbsp; info@sirenauth.com</span></li>
+          <li><span style="text-transform: lowercase;"><i class="fas fa-envelope"></i>&nbsp; info@sirenauth.com</span></li>
         </ul>
       </div>
 
