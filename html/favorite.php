@@ -11,8 +11,6 @@
         $favorite = $_GET["favorite"];
 
         $query = "SELECT * FROM userlikesarticle WHERE userId = $userId and articleId = $articleId";
-        mysqli_query($db, $query);
-
         $results = mysqli_query($db, $query);
         
         if($favorite == 'true'){
