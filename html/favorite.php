@@ -25,4 +25,3 @@
             mysqli_query($db, $query);
         }
     }
-?>
