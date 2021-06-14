@@ -95,9 +95,9 @@
 
       <div class="prof-section">
         <form class="prof-form" action="server.php" method="post">
-          <input type="text" name="location" placeholder="<?php echo implode('["', $_SESSION['lctn']); ?>" required>
-          <input type="text" name="age" placeholder="<?php echo implode('["', $_SESSION['age']); ?>" required>
-          <input type="text" name="gender" placeholder="<?php echo implode('["', $_SESSION['gender']); ?>" required>
+          <input type="text" name="location" placeholder="<?php echo implode('["', $_SESSION['lctn']); ?>">
+          <input type="text" name="age" placeholder="<?php echo implode('["', $_SESSION['age']); ?>">
+          <input type="text" name="gender" placeholder="<?php echo implode('["', $_SESSION['gender']); ?>">
           <button type="submit" name="done" id="done">Done</button>
           <button type="submit" name="logout" id="logout">Logout</button> <!-- LOGOUT BUTTON -->
         </form>

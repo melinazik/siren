@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php if(isset($_SESSION['username'])&&($_SESSION['username']!='admin')){
+<?php if (isset($_SESSION['username']) && ($_SESSION['username'] != 'admin')) {
   header('location: home.php?access=denied');                              //can't access admin page if it's a regular user
 } ?>
 
-<?php if(!isset($_SESSION['username'])){
+<?php if (!isset($_SESSION['username'])) {
   header('location: home.php?access=denied');                              //can't access admin page if not logged in
 } ?>
 
@@ -51,12 +51,12 @@
         </li>
         <li><a href="help.php">How to help</a></li>
         <li><a href="contact.php">Contact us</a></li>
-        <?php if(isset($_SESSION['username'])&&($_SESSION['username']=='admin')):?>
-					<li><a href="admin.php"><?php echo $_SESSION['username'];?></a></li> <?php endif?>
-					<?php if(isset($_SESSION['username'])&&($_SESSION['username']!='admin')): ?>
-					<li><a href="profile.php"><?php echo $_SESSION['username'];?></a></li> <?php endif?>
-					<?php if(!isset($_SESSION['username'])): ?>
-					<li><a href="login.php">Login/Register</a></li> <?php endif ?>
+        <?php if (isset($_SESSION['username']) && ($_SESSION['username'] == 'admin')) : ?>
+          <li><a href="admin.php"><?php echo $_SESSION['username']; ?></a></li> <?php endif ?>
+        <?php if (isset($_SESSION['username']) && ($_SESSION['username'] != 'admin')) : ?>
+          <li><a href="profile.php"><?php echo $_SESSION['username']; ?></a></li> <?php endif ?>
+        <?php if (!isset($_SESSION['username'])) : ?>
+          <li><a href="login.php">Login/Register</a></li> <?php endif ?>
 
 
       </ul>
@@ -68,64 +68,79 @@
   </div>
 
 
-    <!-- success or error messages, they appear based on occasion-->
-		<?php
-        $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
-        <?php if(strpos($url, "entry=success")==true): ?>
-          <div class="alert success">
-            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-              <?php echo "Article added successfully!"; ?>
-          </div> <?php endif ?>
+  <!-- success or error messages, they appear based on occasion-->
+  <?php
+  $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
+  <?php if (strpos($url, "entry=success") == true) : ?>
+    <div class="alert success">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+      <?php echo "Article added successfully!"; ?>
+    </div> <?php endif ?>
 
-    <?php
-      $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
-      <?php if(strpos($url, "entry=failed")==true): ?>
-          <div class="alert">
-            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-              <?php echo "Could not add article into database"; ?>
-          </div> <?php endif ?>
+  <?php
+  $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
+  <?php if (strpos($url, "entry=failed") == true) : ?>
+    <div class="alert">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+      <?php echo "Could not add article into database"; ?>
+    </div> <?php endif ?>
 
   <div id="page-view">
     <div class="sticky-title">! You are logged in as admin !</div>
   </div>
 
   <div id="admin-container">
-
-
-    <p id="admin-actions"></p>
-    <div id="admin-actions-container">
-
-      <div class="admin-action-panel"> <!-- onclick="callAddArticle()"-->
+    <div class="admin-actions">
+      <!-- onclick="callAddArticle()"-->
+      <div class="admin-action-panel">
         <p>Add a new Article</p>
         <div class="admin-action-image" id="action-image1" onclick="document.getElementById('add-article').style.display='block'"></div>
 
-          <div id="add-article" class="popup">
-            <span onclick="document.getElementById('add-article').style.display='none'" class="close" title="Close popup">&times;</span>
-            <form class="popup-content" action="server.php" method="post">
-                <h1>Add Article</h1>
-                <input class="login-form-text" type="text" placeholder="Article URL" required name="articleURL" id="articleURL" >
-                <input class="login-form-text" type="text" placeholder="Article Image" required name="articleImg" id="articleImg">
-                <input class="login-form-text" type="text" placeholder="Article Title" required name="articleTitle" id="articleTitle">
-                <button type="submit" style="width:150px;" name="add" id="add">Add Article</button>
-            </form>
+        <div id="add-article" class="popup">
+          <span onclick="document.getElementById('add-article').style.display='none'" class="close" title="Close popup">&times;</span>
+          <form class="popup-content" action="server.php" method="post">
+            <h1>Add Article</h1>
+            <input class="login-form-text" type="text" placeholder="Article URL" required name="articleURL" id="articleURL">
+            <input class="login-form-text" type="text" placeholder="Article Image" required name="articleImg" id="articleImg">
+            <input class="login-form-text" type="text" placeholder="Article Title" required name="articleTitle" id="articleTitle">
+            <button type="submit" style="width:150px;" name="add" id="add">Add Article</button>
+          </form>
 
-          </div>
+        </div>
       </div>
+      <div class="admin-action-panel">
+        <p>Remove Article</p>
+        <div class="admin-action-image" id="action-image2" onclick="document.getElementById('remove-article').style.display='block'"></div>
 
-     <div > <!-- onclick="callSeeMessages()"-->
-        <h3 class="see-msgs-header">User Messages</h3>
+        <div id="remove-article" class="popup">
+          <span onclick="document.getElementById('add-article').style.display='none'" class="close" title="Close popup">&times;</span>
+          <form class="popup-content" action="server.php" method="post">
+            <h1>Remove Article</h1>
+            <input class="login-form-text" type="text" placeholder="Article URL" required name="articleURL" id="articleURL">
+            <input class="login-form-text" type="text" placeholder="Article Image" required name="articleImg" id="articleImg">
+            <input class="login-form-text" type="text" placeholder="Article Title" required name="articleTitle" id="articleTitle">
+            <button type="submit" style="width:150px;" name="add" id="add">Add Article</button>
+          </form>
 
-              <div class = "contact-inbox">
-                <ul>
-                      <?php $query = "SELECT * FROM messages";
-                          $results = mysqli_query($db, $query);
-                          $messages = mysqli_fetch_all($results, MYSQLI_ASSOC);
-                          $size = count($messages);
-                          for ($i = 0; $i < $size; $i++){
-                            $name = sprintf($messages[$i]['contactName']);
-                            $email = sprintf($messages[$i]['contactEmail']);
-                            $text =  sprintf($messages[$i]['contactText']);
-                            echo "
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <!-- onclick="callSeeMessages()"-->
+      <h3 class="see-msgs-header">User Messages</h3>
+
+      <div class="contact-inbox">
+        <ul>
+          <?php $query = "SELECT * FROM messages";
+          $results = mysqli_query($db, $query);
+          $messages = mysqli_fetch_all($results, MYSQLI_ASSOC);
+          $size = count($messages);
+          for ($i = 0; $i < $size; $i++) {
+            $name = sprintf($messages[$i]['contactName']);
+            $email = sprintf($messages[$i]['contactEmail']);
+            $text =  sprintf($messages[$i]['contactText']);
+            echo "
 
                             <li>
                                 <div class=\"messages\">
@@ -138,30 +153,26 @@
                                   </div>
                                </div>
                             </li>";
-                          }
-                        ?>
+          }
+          ?>
 
-              </ul>
-            </div>
-
-           
-
-        </div>
+        </ul>
       </div>
-
-
-      <div class="login-section">
-          <form class="login-form" action="server.php" method="post">
-              <button type="submit" style="width:150px;" name="logout" id="logout">Logout</button>
-          </form>
-      </div>
-      <!--<button class="admin-action-button" onclick="callAddArticle()">Add Article</button>-->
-      <!--<button class="admin-action-button" onclick="callSeeMessages()">See Messages</button>-->
-
-     </div>
     </div>
 
-    <script src="../js/javascript.js"> </script>
+
+    <div class="login-section">
+      <form class="login-form" action="server.php" method="post">
+        <button type="submit" style="width:150px;" name="logout" id="logout">Logout</button>
+      </form>
+    </div>
+    <!--<button class="admin-action-button" onclick="callAddArticle()">Add Article</button>-->
+    <!--<button class="admin-action-button" onclick="callSeeMessages()">See Messages</button>-->
+
+  </div>
+  </div>
+
+  <script src="../js/javascript.js"> </script>
 
   </div>
 

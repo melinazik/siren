@@ -1389,28 +1389,25 @@ label:hover {
     width: 100%;
 }
 
-
-/*#admin-actions {
-    font-size: 1.5em;
-}*/
-
-#admin-actions-container {
-    padding: 2em;
+.admin-actions {
     display: flex;
-    width: 90%;
-    justify-content: space-evenly;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2em;
 }
 
 .admin-action-panel {
-    display: block;
     height: 20em;
     width: 18em;
     box-shadow: 0px 0px 10px 3px rgba(120, 120, 120, 0.59);
+    margin: 2em;
 }
 
 .admin-action-panel p {
     text-align: center;
-    margin-bottom: 1em;
+    margin-top: 0.3em;
+    margin-bottom: 0.9em;
     font-size: 1.2em;
 }
 
@@ -1439,24 +1436,6 @@ label:hover {
 #action-image2 {
     background-image: url(../imgs/messages.jpg);
     background-size: cover;
-}
-
-@media (max-width: 550px) {
-    .admin-action-panel {
-        display: none;
-    }
-    .admin-action-button {
-        display: block;
-    }
-}
-
-@media (max-width: 800px) {
-    .admin-action-image {
-        width: 35vw;
-    }
-    .admin-action-panel {
-        box-shadow: none;
-    }
 }
 
 .admin-action-image:hover {
