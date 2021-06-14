@@ -180,8 +180,8 @@ $url_arr = explode("&", $url);
 					$articlesJSON[$i].articleTitle, $articlesJSON[$i].articleURL,
 					$articlesJSON[$i].articleImg, $articlesJSON[$i].numberOfLikes,
 					$articlesJSON[$i].favorite, $userId, $articlesJSON[$i].id); </script>";
-			
 			}
+			
 			?>
 		</div>
 

@@ -8,9 +8,23 @@
         
         $userId =  $_GET["userId"];
         $articleId = $_GET["articleId"];
+        $favorite = $_GET["favorite"];
 
-        $query = "INSERT INTO userlikesarticle (userId, articleId) VALUES ($userId, $articleId)";
+        $query = "SELECT * FROM userlikesarticle WHERE userId = $userId and articleId = $articleId";
         mysqli_query($db, $query);
 
+        $results = mysqli_query($db, $query);
+        
+        if($favorite == 'true'){
+            if(!mysqli_num_rows($results)){
+                $query = "INSERT INTO userlikesarticle (userId, articleId) VALUES ($userId, $articleId)";
+                mysqli_query($db, $query);
+            }
+        }
+        else{
+
+            $query = "DELETE FROM userlikesarticle WHERE userId = $userId and articleId = $articleId";
+            mysqli_query($db, $query);
+        }
     }
 ?>
