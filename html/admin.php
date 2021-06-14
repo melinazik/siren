@@ -77,13 +77,25 @@
       <?php echo "Article added successfully!"; ?>
     </div> <?php endif ?>
 
-  <?php
-  $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
   <?php if (strpos($url, "entry=failed") == true) : ?>
     <div class="alert">
       <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
       <?php echo "Could not add article into database"; ?>
     </div> <?php endif ?>
+
+    <?php if (strpos($url, "remove=failed") == true) : ?>
+    <div class="alert">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+      <?php echo "Could not remove article from database. Check if article ID is valid."; ?>
+    </div> <?php endif ?>
+
+    <?php if (strpos($url, "remove=success") == true) : ?>
+    <div class="alert success">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+      <?php echo "Article successfully removed!"; ?>
+    </div> <?php endif ?>
+
+
 
   <div id="page-view">
     <div class="sticky-title">! You are logged in as admin !</div>
@@ -116,10 +128,8 @@
           <span onclick="document.getElementById('remove-article').style.display='none'" class="close" title="Close popup">&times;</span>
           <form class="popup-content" action="server.php" method="post">
             <h1>Remove Article</h1>
-            <input class="login-form-text" type="text" placeholder="Article URL" required name="articleURL" id="articleURL">
-            <input class="login-form-text" type="text" placeholder="Article Image" required name="articleImg" id="articleImg">
-            <input class="login-form-text" type="text" placeholder="Article Title" required name="articleTitle" id="articleTitle">
-            <button type="submit" style="width:150px;" name="add" id="add">Remove Article</button>
+            <input class="login-form-text" type="text" placeholder="Article ID Number" required name="articleId" id="articleId">
+            <button type="submit" style="width:150px;" name="remove" id="add">Remove Article</button>
           </form>
 
         </div>
