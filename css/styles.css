@@ -586,17 +586,12 @@ section::after {
 footer {
     background: #192d47;
     /* Grey background */
-    padding: 40px 0;
+    padding: 40px 20px;
     color: white;
-    height: 300px;
     position: relative;
-}
-
-.footer-content {
-    max-width: 1170px;
-    margin: auto;
-    height: 250px;
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .footer-section {
@@ -685,9 +680,6 @@ ul {
 }
 
 .footer-bottom {
-    background: #192d47;
-    /* Grey background */
-    color: white;
     height: 50px;
     width: 100%;
     text-align: center;
@@ -876,6 +868,7 @@ button {
 /* -----Contact form----- */
 
 .contact-section {
+    background-color: #0082e6;
     padding: 40px 0 0 60px;
 }
 

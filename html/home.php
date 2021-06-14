@@ -180,8 +180,7 @@
 			<div class="row">
 				<div class="col about">
 					<h4>About Us</h4>
-					<p class="footer-about">We are a group of university students hoping to motivate you to take action.
-						We are providing you
+					<p class="footer-about">We are a group of university students hoping to motivate you to take action. We are providing you
 						with a bunch of useful articles, documentaries and links to research the matter yourself.
 						<br> We should not sit back and watch our planet get destroyed.<br>We must protect it.
 					</p>
@@ -196,6 +195,7 @@
 					</ul>
 				</div>
 
+
 				<div class="col follow-us">
 					<h4 class="follow-footer">Follow us</h4>
 					<div class="social-links">
@@ -208,7 +208,6 @@
 			<div class="footer-bottom">
 				&copy; Siren 2021
 			</div>
-		</div>
 		</div>
 	</footer>
 	<!-- /.footer -->

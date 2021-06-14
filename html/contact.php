@@ -110,7 +110,6 @@
 				&copy; Siren 2021
 			</div>
 		</div>
-		</div>
 	</footer>
 	<!-- /.footer -->
 </body>
