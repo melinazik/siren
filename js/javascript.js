@@ -42,33 +42,50 @@ const img = document.querySelector('#photo-prof');
 const file = document.querySelector('#file');
 const uploadBtn = document.querySelector('#upload-btn');
 
-file.addEventListener('change', function() {
-    const chosenFile = this.files[0];
+// file.addEventListener('change', function() {
+//     const chosenFile = this.files[0];
 
-    if (chosenFile) {
-        const reader = new FileReader();
+//     if (chosenFile) {
+//         const reader = new FileReader();
 
-        reader.addEventListener('load', function() {
-            img.setAttribute('src', reader.result);
-        });
+//         reader.addEventListener('load', function() {
+//             img.setAttribute('src', reader.result);
+//         });
 
-        reader.readAsDataURL(chosenFile);
-    }
-});
+//         reader.readAsDataURL(chosenFile);
+//     }
+// });
 
-function addFavorites(element) {
+
+var addFav = Boolean(false);
+
+function addFavorites(element, userId, articleId) {
     // element is the carousel-image-container element that called
     // addFavorites with onclick
-    console.log(element.childNodes[0].childNodes[0].childNodes[0].childNodes[1]);
+    // console.log(element.childNodes[0].childNodes[0].childNodes[0].childNodes[1]);
+    var xhttp = new XMLHttpRequest();
+
+    // xhttp.onreadystatechange = function() {
+    //     if (this.readyState == 4 && this.status == 200) {
+    //     document.getElementById("demo").innerHTML = this.responseText;
+    //     }
+    // };
+
     var src = element.childNodes[0].childNodes[0].childNodes[0].childNodes[0].getAttribute("src");
     if (src == "../imgs/heart-empty.png") {
         element.childNodes[0].childNodes[0].childNodes[0].childNodes[0].src = '../imgs/heart-full.png';
         element.childNodes[0].childNodes[0].childNodes[1].innerHTML = "remove from favorites";
+        
+        xhttp.open("GET", "favorite.php?favorite=true&articleId=" + articleId + "&userId=" + userId, true);
+
     } else {
         element.childNodes[0].childNodes[0].childNodes[0].childNodes[0].src = '../imgs/heart-empty.png';
         element.childNodes[0].childNodes[0].childNodes[1].innerHTML = "add to favorites";
 
+        xhttp.open("GET", "favorite.php?favorite=false&articleId=" + articleId + "&userId=" + userId, true);
     }
+    
+    xhttp.send();
 
 }
 
@@ -93,7 +110,7 @@ function init() {
 }
 
 
-function loadEffectsArticles(articleTitle, articleURL, articleImg, numberOfLikes, favorite) {
+function loadEffectsArticles(articleTitle, articleURL, articleImg, numberOfLikes, favorite, userId, articleId) {
     var carousel_container = document.getElementById('carousel-effects');
 
     // while more elements in database
@@ -102,7 +119,10 @@ function loadEffectsArticles(articleTitle, articleURL, articleImg, numberOfLikes
 
     var carousel_image_container = document.createElement('div');
     carousel_image_container.classList.add('carousel-image-container');
-    carousel_image_container.setAttribute("onclick", "addFavorites(this)");
+
+    // carousel_image_container.setAttribute("onclick", "addFavorites(this)");
+    carousel_image_container.onclick = function(){addFavorites(this, userId, articleId)};
+    
 
     var overlay = document.createElement('div');
     overlay.classList.add('overlay');
@@ -162,8 +182,11 @@ function loadEffectsArticles(articleTitle, articleURL, articleImg, numberOfLikes
     carousel_cell.appendChild(carousel_image_container);
     carousel_cell.appendChild(a);
 
-    console.log(flkty);
+    // console.log(flkty);
     flkty.append(carousel_cell);
+
+    return addFav;
+
 }
 
 function loadCausesArticles() {

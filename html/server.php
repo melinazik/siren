@@ -89,13 +89,15 @@
             array_push($errors, "Password is required");
         }
 
-        if(count($errors)==0){
+        if(count($errors) == 0){
             $pwd = md5($pwd);
             $query = "SELECT * FROM user WHERE username='$username' AND pwd='$pwd'";
             $results = mysqli_query($db, $query);
 
             if(mysqli_num_rows($results)){
+                $row = $results->fetch_assoc();
                 $_SESSION['username'] = $username;
+                $_SESSION['userId'] = $row['id'];
                 $_SESSION['success'] = "You are now logged in!";
                 if($_SESSION['username']=='admin'){
                     header('location: admin.php?login=success');
@@ -106,8 +108,8 @@
                 array_push($errors, "Wrong password or username, please try again.");
                 header('location: login.php?login=failed');
             }
-
         }
+        return;
     }
 
     //logout 
@@ -135,6 +137,15 @@
         $query = "INSERT INTO article (numberOfLikes, articleURL, articleImg, articleTitle) VALUES (0, '$articleURL','$articleImg', '$articleTitle')";
         mysqli_query($db, $query);
         header('location: admin.php');
+    }
+
+    //add favorite 
+    if(isset($_POST['fav'])){
+        $userId = mysqli_real_escape_string($db, $_POST[$_SESSION['id']]);
+        $articleTitle = mysqli_real_escape_string($db, $_POST['articleTitle']);
+        $query = "INSERT INTO userlikesarticle (userId, articleTitle) VALUES ($userId, $articleTitle)";
+        mysqli_query($db, $query);
+        header('location: effects.php');
     }
 
     //reset password
@@ -194,28 +205,28 @@
 
 
     
-    // upload image
-    if (isset($_POST['upload'])&& $_FILES["image"]["error"] == 0) {
+    // // upload image
+    // if (isset($_POST['upload'])&& $_FILES["image"]["error"] == 0) {
         
-        $filename = $_FILES["image"]["name"];
+    //     $filename = $_FILES["image"]["name"];
    
-            $folder = "image/".$filename;
+    //         $folder = "image/".$filename;
             
-            // Get all the submitted data from the form
-            $sql = "INSERT INTO image (filename) VALUES ('$filename')";
+    //         // Get all the submitted data from the form
+    //         $sql = "INSERT INTO image (filename) VALUES ('$filename')";
     
-            // Execute query
-            mysqli_query($db, $sql);
+    //         // Execute query
+    //         mysqli_query($db, $sql);
             
-            // Now let's move the uploaded image into the folder: image
-            if (move_uploaded_file($filename, $folder))  {
-                $msg = "Image uploaded successfully";
-            }else{
-                $msg = "Failed to upload image";
-        }
-        echo $msg;
-    }
-    $result = mysqli_query($db, "SELECT * FROM image");
+    //         // Now let's move the uploaded image into the folder: image
+    //         if (move_uploaded_file($filename, $folder))  {
+    //             $msg = "Image uploaded successfully";
+    //         }else{
+    //             $msg = "Failed to upload image";
+    //     }
+    //     echo $msg;
+    // }
+    // $result = mysqli_query($db, "SELECT * FROM image");
 
 
     // // File upload path

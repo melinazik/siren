@@ -154,20 +154,22 @@
 				</div>
 				<!-- END CAROUSEL -->
 
-			<?php $query = "SELECT * FROM article";
+				<?php $query = "SELECT * FROM article";
 				$results = mysqli_query($db, $query);
 				$articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
 				$size = count($articles);
 				$articlesJSON = array();
+				$userId = $_SESSION['userId'];
 
 				echo "<script> init(); </script>";
 				
 				for ($i = 0; $i < $size; $i++) {
 					array_push($articlesJSON, json_encode($articles[$i]));
-					echo "<script> loadEffectsArticles(
+					echo "<script>var add = loadEffectsArticles(
 						$articlesJSON[$i].articleTitle, $articlesJSON[$i].articleURL,
 						$articlesJSON[$i].articleImg, $articlesJSON[$i].numberOfLikes,
-						$articlesJSON[$i].favorite); </script>";
+						$articlesJSON[$i].favorite, $userId, $articlesJSON[$i].id); </script>";
+				
 				}
 			?>
 		</div>
