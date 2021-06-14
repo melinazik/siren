@@ -81,7 +81,7 @@
     </div>
 
     <div class="profile">
-      <div class="info-column-left">
+      <div id="admin-actions-container">
         <div class="box">
           <center>
           <div class="profile-img">
@@ -94,7 +94,6 @@
           </div>
 
 
-
           <div class="prof-section">
               <form class="prof-form" action="server.php" method="post">
               <input type="text" name="location" placeholder="<?php echo implode('["',$_SESSION['lctn']);?>">
@@ -105,26 +104,42 @@
             </form>
           </div>
 
+    </div>
+    <div > <!-- onclick="callSeeMessages()"-->
+        <h3 class="see-msgs-header">Your favorite Articles</h3>
+
+              <div class = "contact-inbox">
+                <ul>
+                      <?php $query = "SELECT * FROM userlikesarticle";
+                          $results = mysqli_query($db, $query);
+                          $likes = mysqli_fetch_all($results, MYSQLI_ASSOC);
+                          $size = count($likes);
+                          for ($i = 0; $i < $size; $i++){
+                            $articleId = sprintf($likes[$i]['articleId']);
+                            echo "
+
+                            <li>
+                                <div class=\"messages\">
+                                  <div class=\"list-left\"><div class=\"name-display\"> USER LIKES</div>
+                                </div>
+                                <div class=\"list-right\">
+                                  <div class=\"message\">
+                                    <div class=\"mail-display\">$articleId</div>
+                                    <div class=\"msg-display\">NOTHING HERE YET</div>
+                                  </div>
+                               </div>
+                            </li>";
+                          }
+                        ?>
+              </div>
+      </div>        
+
         </center>
         </div>
+        
       </div>
 
-      <div class="info-column-right">
-        <h3 class="fav-msgs-header"> Your favorite articles </h3>
-        <div class = "fav-inbox">
-          <ul>
-            <a href="-article url-">
-            <li>
-                <div class="messages">
-                  <div class="list-left"><div class="name-display">$name</div>
-                </div>
-            </li>
-          </a>
-          </ul>
-        </div>
-      </div>
 
-    </div>
 
     <script src="../js/javascript.js"> </script>
 
