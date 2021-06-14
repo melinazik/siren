@@ -65,20 +65,10 @@
         $pwd_encrypted = md5($pwd); //password encrypted
         $query = "INSERT INTO user (email, username, pwd) VALUES ('$email','$username', '$pwd_encrypted')";
         mysqli_query($db, $query);
-
-        $query = "SELECT * FROM user WHERE username='$username'";
-        $results = mysqli_query($db, $query);
-        
-        if(mysqli_num_rows($results)){
-            $_SESSION['username'] = $username;
-            $_SESSION['userId'] = $row['id'];
-
-            $_SESSION['success'] = "You are now registered";
-
-            header('location: home.php?signup=success');
-        } 
-    }
-
+        $_SESSION['username'] = $username;
+        $_SESSION['success'] = "You are now registered";
+        header('location: home.php?signup=success');
+        }
     else{
             header('location: login.php?signup=failed');
         }
@@ -149,6 +139,24 @@
             header('location: admin.php?entry=failed');
         } else{
             header('location: admin.php?entry=success');
+        }
+    }
+
+    //remove article -- ADMIN
+    if(isset($_POST['remove'])){
+        $articleId = mysqli_real_escape_string($db, $_POST['articleId']);
+        $query = "SELECT * FROM article WHERE article.id = '$articleId'";
+        $titleResult = mysqli_query($db, $query);
+        if(mysqli_num_rows($titleResult)==0){
+            header('location: admin.php?remove=failed');
+        } else {
+            $query = "DELETE FROM article WHERE id = '$articleId'";
+            $removal = mysqli_query($db, $query);
+            if(!$removal){
+                header('location: admin.php?remove=failed');
+            } else {
+                header('location: admin.php?remove=success');
+            }
         }
     }
 
