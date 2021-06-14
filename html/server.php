@@ -13,7 +13,6 @@
     $_SESSION['age']="Age";
     $_SESSION['gender']="Gender";
     $_SESSION['lctn']="Location";
-    //$_SESSION['profileURL'] = "profile.php?&Location&Age&Gender";
 
 
 
@@ -21,19 +20,21 @@
     $db = mysqli_connect('localhost', 'root', '','sirendb') or die("could not connect to db");
 
     //loading user's data from db
-    $username = $_SESSION['username'];
-    $query = "SELECT age FROM user WHERE username='$username'";
-    $result = mysqli_query($db, $query);
+    if(isset($_SESSION['username'])){
+        $username = $_SESSION['username'];
+        $query = "SELECT age FROM user WHERE username='$username'";
+        $result = mysqli_query($db, $query);
 
-    $_SESSION['age'] = mysqli_fetch_row($result);
+        $_SESSION['age'] = mysqli_fetch_row($result);
 
-    $query = "SELECT gender FROM user WHERE username='$username'";
-    $result = mysqli_query($db, $query);
-    $_SESSION['gender'] = mysqli_fetch_row($result);
+        $query = "SELECT gender FROM user WHERE username='$username'";
+        $result = mysqli_query($db, $query);
+        $_SESSION['gender'] = mysqli_fetch_row($result);
 
-    $query = "SELECT location FROM user WHERE username='$username'";
-    $result = mysqli_query($db, $query);
-    $_SESSION['lctn'] = mysqli_fetch_row($result);
+        $query = "SELECT location FROM user WHERE username='$username'";
+        $result = mysqli_query($db, $query);
+        $_SESSION['lctn'] = mysqli_fetch_row($result);
+    }
 
     
 
@@ -179,9 +180,24 @@
         $_SESSION['age'] = mysqli_real_escape_string($db, $_POST['age']);
         $_SESSION['gender'] = mysqli_real_escape_string($db, $_POST['gender']);
         $_SESSION['lctn'] = mysqli_real_escape_string($db, $_POST['location']);
+        
+
+        if(is_null($_SESSION['age'])||($_SESSION['age']=="")){
+            $_SESSION['age'] = "Age";
+        }
+
+        if(is_null($_SESSION['gender'])||($_SESSION['gender']=="")){
+            $_SESSION['gender'] = "Gender";
+        }
+
+        if(is_null($_SESSION['lctn'])||($_SESSION['lctn']=="")){
+            $_SESSION['lctn'] = "Location";
+        }
+
         $age = $_SESSION['age'];
         $gender = $_SESSION['gender'];
         $lctn = $_SESSION['lctn'];
+
         $query = "UPDATE user SET age='$age', gender='$gender', location = '$lctn' WHERE username='$username'";
         $results= mysqli_query($db, $query);
         if(!$results)
