@@ -113,13 +113,13 @@
         <div class="admin-action-image" id="action-image2" onclick="document.getElementById('remove-article').style.display='block'"></div>
 
         <div id="remove-article" class="popup">
-          <span onclick="document.getElementById('add-article').style.display='none'" class="close" title="Close popup">&times;</span>
+          <span onclick="document.getElementById('remove-article').style.display='none'" class="close" title="Close popup">&times;</span>
           <form class="popup-content" action="server.php" method="post">
             <h1>Remove Article</h1>
             <input class="login-form-text" type="text" placeholder="Article URL" required name="articleURL" id="articleURL">
             <input class="login-form-text" type="text" placeholder="Article Image" required name="articleImg" id="articleImg">
             <input class="login-form-text" type="text" placeholder="Article Title" required name="articleTitle" id="articleTitle">
-            <button type="submit" style="width:150px;" name="add" id="add">Add Article</button>
+            <button type="submit" style="width:150px;" name="add" id="add">Remove Article</button>
           </form>
 
         </div>
