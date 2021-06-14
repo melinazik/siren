@@ -2,10 +2,6 @@
 
 <!DOCTYPE html>
 <html lang ="en">
-<?php
-  $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; //getting user data
-  $url_arr = explode("&",$url);
-?>
 
     <head>
 		<meta charset="utf 8">

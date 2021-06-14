@@ -13,30 +13,28 @@
     $_SESSION['age']="Age";
     $_SESSION['gender']="Gender";
     $_SESSION['lctn']="Location";
+    //$_SESSION['profileURL'] = "profile.php?&Location&Age&Gender";
 
 
 
     //connecting to db
     $db = mysqli_connect('localhost', 'root', '','sirendb') or die("could not connect to db");
 
-    //getting user's data
-    /*$username = $_SESSION['username'];
+    //loading user's data from db
+    $username = $_SESSION['username'];
     $query = "SELECT age FROM user WHERE username='$username'";
-    $_SESSION['age'] = mysqli_query($db, $query);
-    if(is_null($_SESSION['age'])){
-        $_SESSION['age'] = "Age";
-    }
+    $result = mysqli_query($db, $query);
+
+    $_SESSION['age'] = mysqli_fetch_row($result);
+
     $query = "SELECT gender FROM user WHERE username='$username'";
-    $_SESSION['gender'] = mysqli_query($db, $query);
-    if(is_null($_SESSION['gender'])){
-        $_SESSION['gender'] = "Gender";
-    }
+    $result = mysqli_query($db, $query);
+    $_SESSION['gender'] = mysqli_fetch_row($result);
+
     $query = "SELECT location FROM user WHERE username='$username'";
-    $_SESSION['lctn'] = mysqli_query($db, $query);
-    if(is_null($_SESSION['lctn'])){
-        $_SESSION['lctn'] = "Location";
-    }*/
-    
+    $result = mysqli_query($db, $query);
+    $_SESSION['lctn'] = mysqli_fetch_row($result);
+
     
 
     //registering user
@@ -177,7 +175,7 @@
 
     //user's data update
     if(isset($_POST['done'])){
-        $username = $_SESSION['username'];
+
         $_SESSION['age'] = mysqli_real_escape_string($db, $_POST['age']);
         $_SESSION['gender'] = mysqli_real_escape_string($db, $_POST['gender']);
         $_SESSION['lctn'] = mysqli_real_escape_string($db, $_POST['location']);
@@ -186,10 +184,12 @@
         $lctn = $_SESSION['lctn'];
         $query = "UPDATE user SET age='$age', gender='$gender', location = '$lctn' WHERE username='$username'";
         $results= mysqli_query($db, $query);
-        $headerString = "profile.php?&";
-        $headerString = $headerString . $age . "&" . $gender . "&" . $lctn;
-        //echo $headerString;
-        header("location: $headerString");
+        if(!$results)
+        {
+            header("location: profile.php?update=failed");
+        } else {
+        header("location: profile.php?update=success");
+        }
     }
 
 
