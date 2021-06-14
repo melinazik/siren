@@ -724,13 +724,14 @@ input {
 }
 
 .main-holder {
-    width: 700px;
+    width: 60vw;
+    max-width: 600px;
     height: auto;
-    display: grid;
-    margin: 20px auto 20px auto;
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
     box-shadow: 0 0 10px 4px #34495e;
     background-color: white;
-    padding-left: 60px;
     padding-bottom: 10px;
     padding-top: 10px;
 }
@@ -868,7 +869,6 @@ button {
 /* -----Contact form----- */
 
 .contact-section {
-    background-color: #0082e6;
     padding: 40px 0 0 60px;
 }
 
@@ -889,7 +889,7 @@ button {
 .contact-form {
     display: grid;
     border: 1px;
-    width: 80%;
+    width: 90%;
 }
 
 .contact-form-text {
