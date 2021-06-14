@@ -136,12 +136,7 @@
                                     <div class=\"mail-display\">$email</div>
                                     <div class=\"msg-display\">$text</div>
                                   </div>
-                                  <div class=\"time-status\">
-                                    <div class=\"time\">10H</div>
-                                    <div class=\"status\"></div>
-                                  </div>
-                                </div>
-                              </div>
+                               </div>
                             </li>";
                           }
                         ?>
