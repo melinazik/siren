@@ -14,7 +14,8 @@
 
   <link rel="icon" type="image/png" href="../imgs/favicon.ico" />
   <link rel="stylesheet" type="text/css" href="../css/styles.css" />
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
@@ -43,11 +44,11 @@
         <li><a href="help.php">How to help</a></li>
         <li><a href="contact.php">Contact us</a></li>
         <?php if (!isset($_SESSION['username'])) : ?>
-          <li><a href="login.php">Login/Register</a></li> <?php endif ?>
+        <li><a href="login.php">Login/Register</a></li> <?php endif ?>
         <?php if ($_SESSION['username'] == 'admin') : ?>
-          <li><a href="admin.php"><?php echo $_SESSION['username']; ?></a></li>
+        <li><a href="admin.php"><?php echo $_SESSION['username']; ?></a></li>
         <?php else : ?>
-          <li><a href="<?php echo $url; ?>"><?php echo $_SESSION['username']; ?></a></li>
+        <li><a href="<?php echo $url; ?>"><?php echo $_SESSION['username']; ?></a></li>
         <?php endif ?>
 
       </ul>
@@ -62,18 +63,18 @@
   <?php
   $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
   <?php if (strpos($url, "update=success") == true) : ?>
-    <div class="alert success">
-      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-      <?php echo "Data updated successfully!"; ?>
-    </div> <?php endif ?>
+  <div class="alert success">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <?php echo "Data updated successfully!"; ?>
+  </div> <?php endif ?>
 
   <?php
   $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
   <?php if (strpos($url, "update=failed") == true) : ?>
-    <div class="alert">
-      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-      <?php echo "Couldn't update user data"; ?>
-    </div> <?php endif ?>
+  <div class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <?php echo "Couldn't update user data"; ?>
+  </div> <?php endif ?>
 
   <div id="page-view">
     <div id="home-view-title2">Profile</div>

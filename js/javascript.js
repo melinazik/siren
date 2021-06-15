@@ -68,10 +68,6 @@ function callAddArticle() {
     document.getElementById('add-article').style.display = 'block';
 }
 
-function callSeeMessages() {
-    //document.getElementById('').style.display='block'" style="width:150px;
-}
-
 var elem;
 var flkty;
 
@@ -169,10 +165,10 @@ function loadCausesArticles() {
 
 }
 
-function validateForm(){
+function validateForm() {
     var fi = document.getElementById('fileToUpload');
-        if (fi.files.length > 0) {      // FIRST CHECK IF ANY FILE IS SELECTED.
-           return true;
-        }
-        return false;
+    if (fi.files.length > 0) { // FIRST CHECK IF ANY FILE IS SELECTED.
+        return true;
+    }
+    return false;
 }
