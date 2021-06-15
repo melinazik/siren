@@ -153,43 +153,43 @@
 
 			<?php
 
-$query = "SELECT * FROM article WHERE category = 'causes'";
-$results = mysqli_query($db, $query);
-$articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
-$size = count($articles);
-$articlesJSON = array();
-if (isset($_SESSION['username'])) {
-    $userId = $_SESSION['userId'];
-} else {
-    $userId = 0;
-}
+			$query = "SELECT * FROM article WHERE category = 'causes'";
+			$results = mysqli_query($db, $query);
+			$articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
+			$size = count($articles);
+			$articlesJSON = array();
+			if (isset($_SESSION['username'])) {
+				$userId = $_SESSION['userId'];
+			} else {
+				$userId = 0;
+			}
 
-$favorite = 0;
+			$favorite = 0;
 
-echo "<script> init(); </script>";
+			echo "<script> init(); </script>";
 
-for ($i = 0; $i < $size; $i++) {
-    $articleId = $articles[$i]['id'];
+			for ($i = 0; $i < $size; $i++) {
+				$articleId = $articles[$i]['id'];
 
-    array_push($articlesJSON, json_encode($articles[$i]));
+				array_push($articlesJSON, json_encode($articles[$i]));
 
-    $favorite = 0;
+				$favorite = 0;
 
-    if ($userId != 0) {
-        $query1 = "SELECT * FROM userlikesarticle WHERE userId = '$userId' and articleId = '$articleId'";
-        $results1 = mysqli_query($db, $query1);
+			if ($userId != 0) {
+				$query1 = "SELECT * FROM userlikesarticle WHERE userId = '$userId' and articleId = '$articleId'";
+				$results1 = mysqli_query($db, $query1);
 
-        if (mysqli_num_rows($results1)) {
-            $favorite = 1;
-        }
-    }
-    echo "<script>var add = loadEffectsArticles(
-					$articlesJSON[$i].articleTitle, $articlesJSON[$i].articleURL,
-					$articlesJSON[$i].articleImg, $articlesJSON[$i].numberOfLikes,
-					$favorite, $userId, $articlesJSON[$i].id); </script>";
-}
+				if (mysqli_num_rows($results1)) {
+					$favorite = 1;
+				}
+			}
+			echo "<script>var add = loadEffectsArticles(
+							$articlesJSON[$i].articleTitle, $articlesJSON[$i].articleURL,
+							$articlesJSON[$i].articleImg, $articlesJSON[$i].numberOfLikes,
+							$favorite, $userId, $articlesJSON[$i].id); </script>";
+			}
 
-?>
+			?>
 		</div>
 
 	</section class="info">

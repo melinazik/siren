@@ -1191,6 +1191,7 @@ textarea.contact-form-text {
 .carousel-article-title {
     text-align: center;
     font-size: 1.2em;
+    justify-content: center;
 }
 
 .heart-container {
@@ -1222,7 +1223,10 @@ a {
 
 
 /* -------END CAROUSEL------------*/
-
+#user-article-img{
+    width: 10em;
+    height: 10em;
+}
 
 /* LOADING ICON */
 
@@ -1550,9 +1554,7 @@ label:hover {
 }
 
 .contact-inbox .mail-display {
-    background: rgba(52, 73, 94, 0.3);
-    border-radius: 10px;
-    text-align: center;
+    border-radius: 30px;
 }
 
 .see-msgs-header {
