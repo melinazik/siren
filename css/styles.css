@@ -803,6 +803,17 @@ button {
     margin-top: 10px;
 }
 
+.upload-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload-image button {
+    width: 80%;
+}
+
 
 /* The popup (background) */
 
