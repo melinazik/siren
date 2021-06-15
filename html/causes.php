@@ -1,4 +1,4 @@
-<?php include('server.php') ?>
+<?php include 'server.php'?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +14,8 @@
 
 	<link rel="icon" type="image/png" href="../imgs/favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="../css/styles.css" />
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+	<link rel="stylesheet" type="text/css"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -45,12 +46,12 @@
 				<li><a href="help.php">How to help</a></li>
 				<li><a href="contact.php">Contact us</a></li>
 
-				<?php if (isset($_SESSION['username']) && ($_SESSION['username'] == 'admin')) : ?>
-					<li><a href="admin.php"><?php echo $_SESSION['username']; ?></a></li> <?php endif ?>
-				<?php if (isset($_SESSION['username']) && ($_SESSION['username'] != 'admin')) : ?>
-					<li><a href="profile.php"><?php echo $_SESSION['username']; ?></a></li> <?php endif ?>
-				<?php if (!isset($_SESSION['username'])) : ?>
-					<li><a href="login.php">Login/Register</a></li> <?php endif ?>
+				<?php if (isset($_SESSION['username']) && ($_SESSION['username'] == 'admin')): ?>
+				<li><a href="admin.php"><?php echo $_SESSION['username']; ?></a></li> <?php endif?>
+				<?php if (isset($_SESSION['username']) && ($_SESSION['username'] != 'admin')): ?>
+				<li><a href="profile.php"><?php echo $_SESSION['username']; ?></a></li> <?php endif?>
+				<?php if (!isset($_SESSION['username'])): ?>
+				<li><a href="login.php">Login/Register</a></li> <?php endif?>
 
 
 
@@ -150,46 +151,45 @@
 			</div>
 			<!-- END CAROUSEL -->
 
-			<?php 
-			
-			$query = "SELECT * FROM article WHERE category = 'causes'";
-			$results = mysqli_query($db, $query);
-			$articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
-			$size = count($articles);
-			$articlesJSON = array();
-			if (isset($_SESSION['username'])){
-				$userId = $_SESSION['userId'];
-			}
-			else {
-				$userId = 0;
-			}
+			<?php
 
-			$favorite = 0;
+$query = "SELECT * FROM article WHERE category = 'causes'";
+$results = mysqli_query($db, $query);
+$articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
+$size = count($articles);
+$articlesJSON = array();
+if (isset($_SESSION['username'])) {
+    $userId = $_SESSION['userId'];
+} else {
+    $userId = 0;
+}
 
-			echo "<script> init(); </script>";
+$favorite = 0;
 
-			for ($i = 0; $i < $size; $i++) {
-				$articleId = $articles[$i]['id'];
-			
-				array_push($articlesJSON, json_encode($articles[$i]));
+echo "<script> init(); </script>";
 
-				$favorite = 0;
+for ($i = 0; $i < $size; $i++) {
+    $articleId = $articles[$i]['id'];
 
-				if($userId != 0){
-					$query1 = "SELECT * FROM userlikesarticle WHERE userId = '$userId' and articleId = '$articleId'";
-					$results1 = mysqli_query($db, $query1);
+    array_push($articlesJSON, json_encode($articles[$i]));
 
-					if(mysqli_num_rows($results1)){
-						$favorite = 1;
-					}
-				}
-				echo "<script>var add = loadEffectsArticles(
+    $favorite = 0;
+
+    if ($userId != 0) {
+        $query1 = "SELECT * FROM userlikesarticle WHERE userId = '$userId' and articleId = '$articleId'";
+        $results1 = mysqli_query($db, $query1);
+
+        if (mysqli_num_rows($results1)) {
+            $favorite = 1;
+        }
+    }
+    echo "<script>var add = loadEffectsArticles(
 					$articlesJSON[$i].articleTitle, $articlesJSON[$i].articleURL,
 					$articlesJSON[$i].articleImg, $articlesJSON[$i].numberOfLikes,
 					$favorite, $userId, $articlesJSON[$i].id); </script>";
-			}
+}
 
-			?>
+?>
 		</div>
 
 	</section class="info">
@@ -201,7 +201,8 @@
 			<div class="row">
 				<div class="col about">
 					<h4>About Us</h4>
-					<p class="footer-about">We are a group of university students hoping to motivate you to take action. We are providing you
+					<p class="footer-about">We are a group of university students hoping to motivate you to take action.
+						We are providing you
 						with a bunch of useful articles, documentaries and links to research the matter yourself.
 						<br> We should not sit back and watch our planet get destroyed.<br>We must protect it.
 					</p>
@@ -212,7 +213,8 @@
 					<ul>
 						<li><span><i class="fas fa-map-marker-alt"></i>&nbsp; Thessaloniki, Greece</span></li>
 						<li><span><i class="fas fa-phone"></i>&nbsp; 2310-097834</span></li>
-						<li><span style="text-transform: lowercase;"><i class="fas fa-envelope"></i>&nbsp; info@sirenauth.com</span></li>
+						<li><span style="text-transform: lowercase;"><i class="fas fa-envelope"></i>&nbsp;
+								info@sirenauth.com</span></li>
 					</ul>
 				</div>
 
@@ -220,9 +222,11 @@
 				<div class="col follow-us">
 					<h4 class="follow-footer">Follow us</h4>
 					<div class="social-links">
-						<a href="https://www.facebook.com/siren.auth/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+						<a href="https://www.facebook.com/siren.auth/" target="_blank"><i
+								class="fab fa-facebook-f"></i></a>
 						<a href="https://twitter.com/AuthSiren" target="_blank"><i class="fab fa-twitter"></i></a>
-						<a href="https://www.instagram.com/siren_auth/" target="_blank"><i class="fab fa-instagram"></i></a>
+						<a href="https://www.instagram.com/siren_auth/" target="_blank"><i
+								class="fab fa-instagram"></i></a>
 					</div>
 				</div>
 			</div>

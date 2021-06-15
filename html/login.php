@@ -1,4 +1,4 @@
-<?php include('server.php') ?>
+<?php include 'server.php'?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +13,8 @@
   <title>Siren</title>
   <link rel="icon" type="image/png" href="../imgs/favicon.ico" />
   <link rel="stylesheet" type="text/css" href="../css/styles.css" />
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script src="../js/javascript.js"> </script>
 </head>
@@ -41,12 +42,12 @@
         <li><a href="help.php">How to help</a></li>
         <li><a href="contact.php">Contact us</a></li>
 
-        <?php if (isset($_SESSION['username']) && ($_SESSION['username'] == 'admin')) : ?>
-          <li><a href="admin.php"><?php echo $_SESSION['username']; ?></a></li> <?php endif ?>
-        <?php if (isset($_SESSION['username']) && ($_SESSION['username'] != 'admin')) : ?>
-          <li><a href="profile.php"><?php echo $_SESSION['username']; ?></a></li> <?php endif ?>
-        <?php if (!isset($_SESSION['username'])) : ?>
-          <li><a href="login.php">Login/Register</a></li> <?php endif ?>
+        <?php if (isset($_SESSION['username']) && ($_SESSION['username'] == 'admin')): ?>
+        <li><a href="admin.php"><?php echo $_SESSION['username']; ?></a></li> <?php endif?>
+        <?php if (isset($_SESSION['username']) && ($_SESSION['username'] != 'admin')): ?>
+        <li><a href="profile.php"><?php echo $_SESSION['username']; ?></a></li> <?php endif?>
+        <?php if (!isset($_SESSION['username'])): ?>
+        <li><a href="login.php">Login/Register</a></li> <?php endif?>
 
       </ul>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -62,32 +63,32 @@
 
   <!-- error messages, they appear based on occasion-->
   <?php
-  $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
-  <?php if (strpos($url, "signup=failed") == true) : ?>
-    <div class="alert">
-      <!-- error messages section -->
-      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-      <?php echo "Signup failed, please try again"; ?>
-    </div> <?php endif ?>
+$url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";?>
+  <?php if (strpos($url, "signup=failed") == true): ?>
+  <div class="alert">
+    <!-- error messages section -->
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <?php echo "Signup failed, please try again"; ?>
+  </div> <?php endif?>
 
-  <?php if (strpos($url, "login=failed") == true) : ?>
-    <div class="alert">
-      <!-- error messages section -->
-      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-      <?php echo "Wrong username or password"; ?>
-    </div> <?php endif ?>
+  <?php if (strpos($url, "login=failed") == true): ?>
+  <div class="alert">
+    <!-- error messages section -->
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <?php echo "Wrong username or password"; ?>
+  </div> <?php endif?>
 
-  <?php if (strpos($url, "reset=requested") == true) : ?>
-    <div class="alert success">
-      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-      <?php echo "Password reset requested successfully!"; ?>
-    </div> <?php endif ?>
+  <?php if (strpos($url, "reset=requested") == true): ?>
+  <div class="alert success">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <?php echo "Password reset requested successfully!"; ?>
+  </div> <?php endif?>
 
-  <?php if (strpos($url, "reset=failed") == true) : ?>
-    <div class="alert">
-      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-      <?php echo "This email does not belong to an existing account"; ?>
-    </div> <?php endif ?>
+  <?php if (strpos($url, "reset=failed") == true): ?>
+  <div class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <?php echo "This email does not belong to an existing account"; ?>
+  </div> <?php endif?>
 
   <!-- login form  -->
   <main class="main-holder">
@@ -95,7 +96,8 @@
     <div class="login-section">
       <!-- login form  -->
       <form class="login-form" action="server.php" method="post">
-        <input type="text" class="login-form-text" placeholder="Username" required name="username" id="username"> <!-- login is done with username only, not email-->
+        <input type="text" class="login-form-text" placeholder="Username" required name="username" id="username">
+        <!-- login is done with username only, not email-->
         <input type="password" class="login-form-text" placeholder="Password" required name="pwd" id="pwd">
 
         <button type="submit" style="width:150px;" name="login" id="login">Login </button>
@@ -110,13 +112,15 @@
       <button onclick="document.getElementById('id01').style.display='block'" style="width:150px;">Sign Up</button>
 
       <div id="id01" class="popup">
-        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close popup">&times;</span>
+        <span onclick="document.getElementById('id01').style.display='none'" class="close"
+          title="Close popup">&times;</span>
         <form class="popup-content" action="server.php" method="post">
           <h1>Sign Up</h1>
           <input class="login-form-text" type="text" placeholder="Email" name="email" required id="email">
           <input class="login-form-text" type="text" placeholder="Username" name="username" required id="username">
           <input class="login-form-text" type="password" placeholder="Password" name="pwd" required id="pwd">
-          <input class="login-form-text" type="password" placeholder="Repeat Password" name="password_repeat" required id="password_repeat">
+          <input class="login-form-text" type="password" placeholder="Repeat Password" name="password_repeat" required
+            id="password_repeat">
 
           <!-- TODO privacy policy -->
           <p>
@@ -130,10 +134,12 @@
     <div class="login-section">
       <p>Click the button below if you forgot your password.</p>
       <!-- signup form - appears when you click signup button -->
-      <button onclick="document.getElementById('id02').style.display='block'" style="width:200px;">Reset Password</button>
+      <button onclick="document.getElementById('id02').style.display='block'" style="width:200px;">Reset
+        Password</button>
 
       <div id="id02" class="popup">
-        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close popup">&times;</span>
+        <span onclick="document.getElementById('id02').style.display='none'" class="close"
+          title="Close popup">&times;</span>
         <form class="popup-content" action="server.php" method="post">
           <h1>Reset password</h1>
           <input class="login-form-text" type="text" placeholder="Insert your email" name="email" required id="email">
@@ -150,7 +156,8 @@
       <div class="row">
         <div class="col about">
           <h4>About Us</h4>
-          <p class="footer-about">We are a group of university students hoping to motivate you to take action. We are providing you
+          <p class="footer-about">We are a group of university students hoping to motivate you to take action. We are
+            providing you
             with a bunch of useful articles, documentaries and links to research the matter yourself.
             <br> We should not sit back and watch our planet get destroyed.<br>We must protect it.
           </p>
@@ -161,7 +168,8 @@
           <ul>
             <li><span><i class="fas fa-map-marker-alt"></i>&nbsp; Thessaloniki, Greece</span></li>
             <li><span><i class="fas fa-phone"></i>&nbsp; 2310-097834</span></li>
-            <li><span style="text-transform: lowercase;"><i class="fas fa-envelope"></i>&nbsp; info@sirenauth.com</span></li>
+            <li><span style="text-transform: lowercase;"><i class="fas fa-envelope"></i>&nbsp; info@sirenauth.com</span>
+            </li>
           </ul>
         </div>
 

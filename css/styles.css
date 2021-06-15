@@ -150,6 +150,7 @@ body {
     .right-navbar a {
         display: none;
     }
+
     .right-navbar a.icon {
         float: right;
         display: block;
@@ -160,15 +161,18 @@ body {
     .right-navbar.responsive {
         position: relative;
     }
+
     .right-navbar.responsive .icon {
         position: absolute;
         right: 0;
         top: 0;
         margin-bottom: 2em;
     }
+
     #nav {
         flex-direction: column;
     }
+
     .right-navbar.responsive a {
         display: block;
     }
@@ -244,9 +248,11 @@ body {
     #home-view-title {
         font-size: 6em;
     }
+
     #home-view-title2 {
         font-size: 1.8em;
     }
+
     #home-view-button {
         width: 10em;
         font-size: 1.5em;
@@ -1234,6 +1240,7 @@ a {
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(359deg);
     }

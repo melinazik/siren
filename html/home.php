@@ -1,4 +1,4 @@
-<?php include('server.php') ?>
+<?php include 'server.php'?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +16,8 @@
 
 	<link rel="icon" type="image/png" href="../imgs/favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="../css/styles.css" />
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+	<link rel="stylesheet" type="text/css"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script src="../js/javascript.js"> </script>
@@ -46,12 +47,12 @@
 				<li><a href="help.php">How to help</a></li>
 				<li><a href="contact.php">Contact us</a></li>
 
-				<?php if (isset($_SESSION['username']) && ($_SESSION['username'] == 'admin')) : ?>
-					<li><a href="admin.php"><?php echo $_SESSION['username']; ?></a></li> <?php endif ?>
-				<?php if (isset($_SESSION['username']) && ($_SESSION['username'] != 'admin')) : ?>
-					<li><a href="profile.php"><?php echo $_SESSION['username']; ?></a></li> <?php endif ?>
-				<?php if (!isset($_SESSION['username'])) : ?>
-					<li><a href="login.php">Login/Register</a></li> <?php endif ?>
+				<?php if (isset($_SESSION['username']) && ($_SESSION['username'] == 'admin')): ?>
+				<li><a href="admin.php"><?php echo $_SESSION['username']; ?></a></li> <?php endif?>
+				<?php if (isset($_SESSION['username']) && ($_SESSION['username'] != 'admin')): ?>
+				<li><a href="profile.php"><?php echo $_SESSION['username']; ?></a></li> <?php endif?>
+				<?php if (!isset($_SESSION['username'])): ?>
+				<li><a href="login.php">Login/Register</a></li> <?php endif?>
 
 			</ul>
 			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -63,36 +64,37 @@
 
 	<!-- success or error messages, they appear based on occasion-->
 	<?php
-	$url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
-	<?php if (strpos($url, "signup=success") == true) : ?>
-		<div class="alert success">
-			<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-			<?php echo "You are now logged in!"; ?>
-		</div> <?php endif ?>
+$url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";?>
+	<?php if (strpos($url, "signup=success") == true): ?>
+	<div class="alert success">
+		<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+		<?php echo "You are now logged in!"; ?>
+	</div> <?php endif?>
 
-	<?php if (strpos($url, "login=success") == true) : ?>
-		<div class="alert success">
-			<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-			<?php echo "You are now logged in!"; ?>
-		</div> <?php endif ?>
+	<?php if (strpos($url, "login=success") == true): ?>
+	<div class="alert success">
+		<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+		<?php echo "You are now logged in!"; ?>
+	</div> <?php endif?>
 
-	<?php if (strpos($url, "reset=success") == true) : ?>
-		<div class="alert success">
-			<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-			<?php echo "You've successfully reset your password"; ?>
-		</div> <?php endif ?>
+	<?php if (strpos($url, "reset=success") == true): ?>
+	<div class="alert success">
+		<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+		<?php echo "You've successfully reset your password"; ?>
+	</div> <?php endif?>
 
-	<?php if (strpos($url, "access=denied") == true) : ?>
-		<div class="alert">
-			<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-			<?php echo "You don't have admin rights access"; ?>
-		</div> <?php endif ?>
+	<?php if (strpos($url, "access=denied") == true): ?>
+	<div class="alert">
+		<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+		<?php echo "You don't have admin rights access"; ?>
+	</div> <?php endif?>
 
 	<!--ART-->
 	<div id="home-view">
 		<div id="home-view-title">SIREN</div>
 		<div id="home-view-title2">Endangered sea life</div>
-		<button type="button" id="home-view-button" onclick="smoothScroll(document.getElementById('aboutSeaLife'))" style="margin-top:100px">Dive
+		<button type="button" id="home-view-button" onclick="smoothScroll(document.getElementById('aboutSeaLife'))"
+			style="margin-top:100px">Dive
 			to learn more</button>
 	</div>
 
@@ -104,7 +106,8 @@
 				<h1 class="about-title">About sea life</h1>
 				<p class="about-p">Marine life is in danger and the threats it's facing are growing
 					every second. Every year billions of harmful chemicals, trash and other pollutants enter the ocean.
-					Marine pollution is a growing ongoing problem in today's world and it impacts not only the environment and
+					Marine pollution is a growing ongoing problem in today's world and it impacts not only the
+					environment and
 					marine life but also modern economies. That along with unregulated fishing can lead to the
 					disturbance of marine biodiversity and put marine species in danger of extinction.
 				</p>
@@ -174,7 +177,8 @@
 			<div class="row">
 				<div class="col about">
 					<h4>About Us</h4>
-					<p class="footer-about">We are a group of university students hoping to motivate you to take action. We are providing you
+					<p class="footer-about">We are a group of university students hoping to motivate you to take action.
+						We are providing you
 						with a bunch of useful articles, documentaries and links to research the matter yourself.
 						<br> We should not sit back and watch our planet get destroyed.<br>We must protect it.
 					</p>
@@ -185,7 +189,8 @@
 					<ul>
 						<li><span><i class="fas fa-map-marker-alt"></i>&nbsp; Thessaloniki, Greece</span></li>
 						<li><span><i class="fas fa-phone"></i>&nbsp; 2310-097834</span></li>
-						<li><span style="text-transform: lowercase;"><i class="fas fa-envelope"></i>&nbsp; info@sirenauth.com</span></li>
+						<li><span style="text-transform: lowercase;"><i class="fas fa-envelope"></i>&nbsp;
+								info@sirenauth.com</span></li>
 					</ul>
 				</div>
 
@@ -193,9 +198,11 @@
 				<div class="col follow-us">
 					<h4 class="follow-footer">Follow us</h4>
 					<div class="social-links">
-						<a href="https://www.facebook.com/siren.auth/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+						<a href="https://www.facebook.com/siren.auth/" target="_blank"><i
+								class="fab fa-facebook-f"></i></a>
 						<a href="https://twitter.com/AuthSiren" target="_blank"><i class="fab fa-twitter"></i></a>
-						<a href="https://www.instagram.com/siren_auth/" target="_blank"><i class="fab fa-instagram"></i></a>
+						<a href="https://www.instagram.com/siren_auth/" target="_blank"><i
+								class="fab fa-instagram"></i></a>
 					</div>
 				</div>
 			</div>
