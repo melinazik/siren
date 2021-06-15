@@ -129,8 +129,12 @@ if (isset($_POST['send'])) {
     $contactEmail = mysqli_real_escape_string($db, $_POST['contactEmail']);
     $contactText = mysqli_real_escape_string($db, $_POST['contactText']);
     $query = "INSERT INTO messages (contactName, contactEmail, contactText) VALUES ('$contactName','$contactEmail', '$contactText')";
-    mysqli_query($db, $query);
-    header('location: contact.php');
+    $results = mysqli_query($db, $query);
+    if (!$results) {
+        header('location: contact.php?contact=failed');
+    } else {
+        header('location: contact.php?contact=success');
+    }
 }
 
 //add article -- ADMIN
@@ -180,7 +184,7 @@ if (isset($_POST['fav'])) {
 //reset request
 if (isset($_POST['reset-request'])) { //if user forgot password, a templated, automatic contact message with subject "password change" is inserted into the DB for future reference.
     $email = mysqli_real_escape_string($db, $_POST['email']);
-    $query = "SELECT * FROM user WHERE email = $email";
+    $query = "SELECT * FROM user WHERE email = '$email'";
     $results = mysqli_query($db, $query);
     if (!$results) {
         header('location: login.php?reset=failed');

@@ -48,18 +48,18 @@
 				<li><a href="admin.php"><?php echo $_SESSION['username']; ?></a></li> <?php endif?>
 				<?php if (isset($_SESSION['username']) && ($_SESSION['username'] != 'admin')): ?>
 				<li><a href="profile.php">
-						<?php 
-						$userId = $_SESSION['userId'];
+						<?php
+$userId = $_SESSION['userId'];
 
-						$query = "SELECT * FROM user WHERE id = $userId";
-						$result = mysqli_query($db, $query);
-						$image = mysqli_fetch_assoc($result);
-						$path = $image['imagePath'];
-						$username =  $_SESSION['username'];
+$query = "SELECT * FROM user WHERE id = $userId";
+$result = mysqli_query($db, $query);
+$image = mysqli_fetch_assoc($result);
+$path = $image['imagePath'];
+$username = $_SESSION['username'];
 
-						echo "<div class=\"nav-name\"> $username <img id=\"photo-prof-nav\" src=\"$path\"> </div>";
+echo "<div class=\"nav-name\"> $username <img id=\"photo-prof-nav\" src=\"$path\"> </div>";
 
-						?></a></li><?php endif?>
+?></a></li><?php endif?>
 				<?php if (!isset($_SESSION['username'])): ?>
 				<li><a href="login.php">Login/Register</a></li> <?php endif?>
 
@@ -70,6 +70,23 @@
 
 		</div>
 	</div>
+
+	<!-- success or error messages, they appear based on occasion-->
+	<?php
+$url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";?>
+	<?php if (strpos($url, "contact=success") == true): ?>
+	<div class="alert success">
+		<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+		<?php echo "Your message was sent successfully!"; ?>
+	</div> <?php endif?>
+
+	<?php
+$url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";?>
+	<?php if (strpos($url, "update=failed") == true): ?>
+	<div class="alert">
+		<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+		<?php echo "Failed to send message."; ?>
+	</div> <?php endif?>
 
 
 	<div id="page-view">
