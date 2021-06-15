@@ -150,31 +150,39 @@
 			</div>
 			<!-- END CAROUSEL -->
 
-			<?php $query = "SELECT * FROM article";
+			<?php 
+			
+			$query = "SELECT * FROM article";
 			$results = mysqli_query($db, $query);
 			$articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
 			$size = count($articles);
 			$articlesJSON = array();
-			$userId = $_SESSION['userId'];
+			if (isset($_SESSION['username'])){
+				$userId = $_SESSION['userId'];
+			}
+			else {
+				$userId = 0;
+			}
 
 			$favorite = 0;
 
 			echo "<script> init(); </script>";
 
 			for ($i = 0; $i < $size; $i++) {
+				$articleId = $articles[$i]['id'];
+			
 				array_push($articlesJSON, json_encode($articles[$i]));
 
-				$articleId = $articles[$i]['id'];
-				$query1 = "SELECT * FROM userlikesarticle WHERE userId = $userId and articleId = $articleId";
-				$results1 = mysqli_query($db, $query1);
+				$favorite = 0;
 
+				if($userId != 0){
+					$query1 = "SELECT * FROM userlikesarticle WHERE userId = '$userId' and articleId = '$articleId'";
+					$results1 = mysqli_query($db, $query1);
 
-				if (mysqli_num_rows($results1)) {
-					$favorite = 1;
-				} else {
-					$favorite = 0;
+					if(mysqli_num_rows($results1)){
+						$favorite = 1;
+					}
 				}
-
 				echo "<script>var add = loadEffectsArticles(
 					$articlesJSON[$i].articleTitle, $articlesJSON[$i].articleURL,
 					$articlesJSON[$i].articleImg, $articlesJSON[$i].numberOfLikes,

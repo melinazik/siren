@@ -163,7 +163,9 @@ $url_arr = explode("&", $url);
 			</div>
 			<!-- END CAROUSEL -->
 
-			<?php $query = "SELECT * FROM article";
+			<?php 
+			
+			$query = "SELECT * FROM article";
 			$results = mysqli_query($db, $query);
 			$articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
 			$size = count($articles);
