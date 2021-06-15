@@ -152,7 +152,7 @@
 
 			<?php 
 			
-			$query = "SELECT * FROM article";
+			$query = "SELECT * FROM article WHERE category = 'causes'";
 			$results = mysqli_query($db, $query);
 			$articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
 			$size = count($articles);

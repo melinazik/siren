@@ -112,6 +112,7 @@
             <input class="login-form-text" type="text" placeholder="Article URL" required name="articleURL" id="articleURL">
             <input class="login-form-text" type="text" placeholder="Article Image" required name="articleImg" id="articleImg">
             <input class="login-form-text" type="text" placeholder="Article Title" required name="articleTitle" id="articleTitle">
+            <input class="login-form-text" type="text" placeholder="Article Category (Causes/Effects)" required name="articleCategory" id="articleCategory">
             <button type="submit" style="width:150px;" name="add" id="add">Add Article</button>
           </form>
 

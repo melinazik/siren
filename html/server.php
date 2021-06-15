@@ -140,7 +140,8 @@
         $articleURL = mysqli_real_escape_string($db, $_POST['articleURL']);
         $articleImg = mysqli_real_escape_string($db, $_POST['articleImg']);
         $articleTitle = mysqli_real_escape_string($db, $_POST['articleTitle']);
-        $query = "INSERT INTO article (numberOfLikes, articleURL, articleImg, articleTitle) VALUES (0, '$articleURL','$articleImg', '$articleTitle')";
+        $articleCategory = mysqli_real_escape_string($db, $_POST['articleCategory']);
+        $query = "INSERT INTO article (numberOfLikes, articleURL, articleImg, articleTitle, articleCategory) VALUES (0, '$articleURL','$articleImg', '$articleTitle', '$articleCategory')";
         $result = mysqli_query($db, $query);
         if(!$result){
             header('location: admin.php?entry=failed');
@@ -158,10 +159,12 @@
             header('location: admin.php?remove=failed');
         } else {
             $query = "DELETE FROM article WHERE id = '$articleId'";
-            $removal = mysqli_query($db, $query);
-            if(!$removal){
+            $removalArticle = mysqli_query($db, $query);
+            if(!$removalArticle){
                 header('location: admin.php?remove=failed');
             } else {
+                $query = "DELETE FROM userlikesarticle WHERE articleId = '$articleId";  //also removing it from the likes table
+                $removalUserLikesArticle = mysqli_query($db, $query);
                 header('location: admin.php?remove=success');
             }
         }
