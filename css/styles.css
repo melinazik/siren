@@ -1542,6 +1542,10 @@ label:hover {
     background-color: #e4edf5;
 }
 
+.no-fav-yet{
+  padding: 15px 20px;
+  text-align: center;
+}
 
 /** SEARCH BAR **/
 
