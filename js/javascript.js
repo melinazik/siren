@@ -1,5 +1,5 @@
 // function to "dive" from home page to articles
-window.smoothScroll = function (target) {
+window.smoothScroll = function(target) {
     var scrollContainer = target;
     do { //find scroll container
         scrollContainer = scrollContainer.parentNode;
@@ -13,19 +13,19 @@ window.smoothScroll = function (target) {
         targetY += target.offsetTop;
     } while (target = target.offsetParent);
 
-    scroll = function (c, a, b, i) {
-        i++;
-        if (i > 30) return;
-        c.scrollTop = a + (b - a) / 30 * i;
-        setTimeout(function () {
-            scroll(c, a, b, i);
-        }, 20);
-    }
-    // start scrolling
+    scroll = function(c, a, b, i) {
+            i++;
+            if (i > 30) return;
+            c.scrollTop = a + (b - a) / 30 * i;
+            setTimeout(function() {
+                scroll(c, a, b, i);
+            }, 20);
+        }
+        // start scrolling
     scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
 }
 
-function myFunction() {
+function hamburger() {
     var x = document.getElementById("navbarID");
     if (x.className === "right-navbar") {
         x.className += " responsive";
@@ -35,7 +35,7 @@ function myFunction() {
 }
 
 // loading icon
-$(window).on("load", function () {
+$(window).on("load", function() {
     $(".loader").fadeOut("slow");
 });
 
@@ -94,7 +94,7 @@ function loadEffectsArticles(articleTitle, articleURL, articleImg, numberOfLikes
 
     if (userId != 0) {
         // carousel_image_container.setAttribute("onclick", "addFavorites(this)");
-        carousel_image_container.onclick = function () {
+        carousel_image_container.onclick = function() {
             addFavorites(this, userId, articleId)
         };
 

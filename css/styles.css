@@ -1,8 +1,5 @@
 /* font  */
 
-
-
-
 html,
 body {
     height: 100%;
@@ -27,14 +24,12 @@ body {
     display: flex;
     flex-wrap: wrap;
     overflow: hidden;
-    /* Hide overflow */
     background-color: #192d47;
 }
 
 .right-navbar {
     align-self: flex-end;
     overflow: hidden;
-    /* Hide overflow */
     margin-left: auto;
     margin-right: 4vw;
 }
@@ -43,20 +38,24 @@ body {
 /* Style the navigation bar links */
 
 .right-navbar a {
+    height: 2.5em;
     float: left;
-    /* Make sure that the links stay side-by-side */
-    display: block;
-    /* Change the display to block, for responsive reasons (see below) */
     color: white;
-    /* White text color */
     text-align: center;
-    /* Center the text */
     padding: 14px 20px;
-    /* Add some padding */
     text-decoration: none;
-    /* Remove underline */
     font-size: 1.2em;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.2em;
+}
+
+.nav-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #nav {
@@ -107,7 +106,6 @@ body {
 .nav-bar-siren {
     margin-left: 5vw;
     padding: 14px 20px;
-    /* Add some padding */
     top: 50%;
     left: 50%;
     display: flex;
@@ -118,9 +116,7 @@ body {
     font-weight: 400;
     font-size: 1.4em;
     color: white;
-    /* White text color */
     text-decoration: none;
-    /* Remove underline */
 }
 
 
@@ -128,9 +124,7 @@ body {
 
 .right-navbar a:hover {
     background-color: #ddd;
-    /* Grey background color */
     color: black;
-    /* Black text color */
 }
 
 
@@ -144,7 +138,6 @@ body {
     .right-navbar a {
         display: none;
     }
-
     .right-navbar a.icon {
         float: right;
         display: block;
@@ -155,18 +148,15 @@ body {
     .right-navbar.responsive {
         position: relative;
     }
-
     .right-navbar.responsive .icon {
         position: absolute;
         right: 0;
         top: 0;
         margin-bottom: 2em;
     }
-
     #nav {
         flex-direction: column;
     }
-
     .right-navbar.responsive a {
         display: block;
     }
@@ -241,11 +231,9 @@ body {
     #home-view-title {
         font-size: 6em;
     }
-
     #home-view-title2 {
         font-size: 1.8em;
     }
-
     #home-view-button {
         width: 10em;
         font-size: 1.5em;
@@ -566,7 +554,6 @@ body {
     align-items: center;
     justify-content: center;
 }
-
 
 section::after {
     content: "";
@@ -1216,7 +1203,6 @@ a {
     from {
         transform: rotate(0deg);
     }
-
     to {
         transform: rotate(359deg);
     }
@@ -1267,11 +1253,11 @@ a {
 
 #photo-prof-nav {
     box-sizing: border-box;
-    width: 28px;
-    height: 28px;
+    width: 1.5em;
+    height: 1.5em;
     border-radius: 50%;
     border: 2px solid #34495e;
-    padding: 3px;
+    margin-left: 0.5em;
     background-color: white;
 }
 
@@ -1452,7 +1438,6 @@ label:hover {
 .admin-action-button {
     margin: 1em;
 }
-
 
 .admin-action-image {
     position: relative;

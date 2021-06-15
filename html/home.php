@@ -60,14 +60,14 @@
 						$path = $image['imagePath'];
 						$username =  $_SESSION['username'];
 
-						echo "<div> $username <img id=\"photo-prof-nav\" src=\"$path\"> </div>";
+						echo "<div class=\"nav-name\"> $username <img id=\"photo-prof-nav\" src=\"$path\"> </div>";
 
 						?></a></li><?php endif?>
 				<?php if (!isset($_SESSION['username'])): ?>
 				<li><a href="login.php">Login/Register</a></li> <?php endif?>
 
 			</ul>
-			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+			<a href="javascript:void(0);" class="icon" onclick="hamburger()">
 				<div class="menu-icon"></div>
 			</a>
 
