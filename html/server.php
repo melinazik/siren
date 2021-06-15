@@ -14,8 +14,6 @@
     $_SESSION['gender']="Gender";
     $_SESSION['lctn']="Location";
 
-
-
     //connecting to db
     $db = mysqli_connect('localhost', 'root', '','sirendb') or die("could not connect to db");
 
@@ -35,8 +33,6 @@
         $result = mysqli_query($db, $query);
         $_SESSION['lctn'] = mysqli_fetch_row($result);
     }
-
-    
 
     //registering user
     if(isset($_POST['register'])){

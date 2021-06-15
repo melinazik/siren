@@ -122,14 +122,25 @@
 
       <div class="contact-inbox">
         <ul>
-          <?php $query = "SELECT * FROM userlikesarticle";
+          <?php 
+          $userId = $_SESSION['userId'];
+          $query = "SELECT article.articleTitle, article.articleURL 
+                    FROM userlikesarticle INNER JOIN article 
+                    ON article.id = userlikesarticle.articleId 
+                    WHERE userlikesarticle.userId = $userId";
+          
           $results = mysqli_query($db, $query);
+          
           $likes = mysqli_fetch_all($results, MYSQLI_ASSOC);
           $size = count($likes);
 
+
          
           for ($i = 0; $i < $size; $i++) {
-            $articleId = sprintf($likes[$i]['articleId']);
+            $articleTitle = sprintf($likes[$i]['articleTitle']);
+            $articleURL = sprintf($likes[$i]['articleURL']);
+
+
             // $articleId = $likes[$i]['articleId'];
             // $query = "SELECT * FROM articles WHERE id= '$articleId'";
             // $results = mysqli_query($db, $query);
@@ -139,11 +150,11 @@
             echo "
             <li>
                 <div class=\"messages\">
-                  <div class=\"list-left\"><div class=\"name-display\"> USER LIKES</div>
+                  <div class=\"list-left\"><div class=\"name-display\" ></div>
                 </div>
                 <div class=\"list-right\">
-                  <div class=\"message\">
-                    <div class=\"mail-display\">$articleId</div>
+                  <div class=\"message\"> <a href=\"$articleURL\" target=\"_blank\">
+                    <div class=\"mail-display\" >$articleTitle </div> </a>
                     <div class=\"msg-display\">NOTHING HERE YET</div>
                   </div>
                 </div>
