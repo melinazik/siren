@@ -14,7 +14,8 @@
     $_SESSION['gender']="Gender";
     $_SESSION['lctn']="Location";
 
-    
+
+
     //connecting to db
     $db = mysqli_connect('localhost', 'root', '','sirendb') or die("could not connect to db");
 
@@ -62,24 +63,26 @@
     if(count($errors) == 0){
 
         $pwd_encrypted = md5($pwd); //password encrypted
-        $query = "INSERT INTO user (email, username, pwd) VALUES ('$email','$username', '$pwd_encrypted')";
+        $imagePath = "../imgs/siren.png";
+        $query = "INSERT INTO user (email, username, pwd, imagePath) VALUES ('$email','$username', '$pwd_encrypted', '$imagePath')";
         mysqli_query($db, $query);
-
 
         $query = "SELECT * FROM user WHERE username='$username'";
         $results = mysqli_query($db, $query);
+        
+        if(mysqli_num_rows($results)){
+            $_SESSION['username'] = $username;
+            $_SESSION['userId'] = $row['id'];
 
-        // if(mysqli_num_rows($results)){
-        //     $_SESSION['username'] = $username;
-        //     $_SESSION['userId'] = $row['id'];
-        //     $_SESSION['success'] = "You are now registered";
-        //     header('location: home.php?signup=success');
-        // } 
-        echo mysqli_num_rows($results);
+            $_SESSION['success'] = "You are now registered";
+
+            header('location: home.php?signup=success');
+        } 
     }
-    // else{
-    //         header('location: login.php?signup=failed');
-    //     }
+
+    else{
+            header('location: login.php?signup=failed');
+        }
     }
 
 
@@ -150,24 +153,6 @@
         }
     }
 
-    //remove article -- ADMIN
-    if(isset($_POST['remove'])){
-        $articleId = mysqli_real_escape_string($db, $_POST['articleId']);
-        $query = "SELECT * FROM article WHERE article.id = '$articleId'";
-        $titleResult = mysqli_query($db, $query);
-        if(mysqli_num_rows($titleResult)==0){
-            header('location: admin.php?remove=failed');
-        } else {
-            $query = "DELETE FROM article WHERE id = '$articleId'";
-            $removal = mysqli_query($db, $query);
-            if(!$removal){
-                header('location: admin.php?remove=failed');
-            } else {
-                header('location: admin.php?remove=success');
-            }
-        }
-    }
-
     //add favorite 
     if(isset($_POST['fav'])){
         $userId = mysqli_real_escape_string($db, $_POST[$_SESSION['id']]);
@@ -216,7 +201,7 @@
         $gender = $_SESSION['gender'];
         $lctn = $_SESSION['lctn'];
 
-        $query = "UPDATE user SET age='$age', gender='$gender', location ='$lctn' WHERE username='$username'";
+        $query = "UPDATE user SET age='$age', gender='$gender', location = '$lctn' WHERE username='$username'";
         $results= mysqli_query($db, $query);
         if(!$results)
         {
@@ -287,37 +272,4 @@
         mysqli_query($db, $query);
         header("location: profile.php?update=success");
     }
-
-    
-
-
-    // // File upload path
-    // $targetDir = "image/";
-    // $fileName = basename($_FILES["image"]["name"]);
-    // $targetFilePath = $targetDir . $fileName;
-    // $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
-
-    // if(isset($_POST["upload"]) && !empty($_FILES["image"]["name"])){
-    //     // Allow certain file formats
-    //     $allowTypes = array('jpg','png','jpeg','gif','pdf');
-    //     if(in_array($fileType, $allowTypes)){
-    //         // Upload file to server
-    //         if(move_uploaded_file($_FILES["image"]["tmp_name"], $targetFilePath)){
-    //             // Insert image file name into database
-    //             $insert = $db->query("INSERT into image (file_name, uploaded_on) VALUES ('".$fileName."', NOW())");
-    //             if($insert){
-    //                 $statusMsg = "The file ".$fileName. " has been uploaded successfully.";
-    //             }else{
-    //                 $statusMsg = "File upload failed, please try again.";
-    //             } 
-    //         }else{
-    //             $statusMsg = "Sorry, there was an error uploading your file.";
-    //         }
-    //     }else{
-    //         $statusMsg = 'Sorry, only JPG, JPEG, PNG, GIF, & PDF files are allowed to upload.';
-    //     }
-    // }else{
-    //     $statusMsg = 'Please select a file to upload.';
-    // }
-    
 ?>
