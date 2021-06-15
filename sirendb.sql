@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 15, 2021 at 06:26 PM
+-- Generation Time: Jun 15, 2021 at 07:36 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -102,7 +102,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `email`, `username`, `pwd`, `imagePath`, `age`, `gender`, `location`) VALUES
 (32, 'admin@admin.com', 'admin', '21232f297a57a5a743894a0e4a801fc3', '../imgs/siren.png', 'Age', 'Gender', 'Location'),
-(34, 'kostas@example.com', 'kostas', '5759a7cec9124be77fd0017f2b44c780', '../uploads/user34_kostas.PNG', '21', 'Male', 'Thessaloniki'),
+(34, 'kostas@example.com', 'kostas', '5759a7cec9124be77fd0017f2b44c780', '../uploads/user34_qt2.PNG', '21', 'Male', 'Thessaloniki'),
 (35, 'empty@example.com', 'empty', 'a2e4822a98337283e39f7b60acf85ec9', '../imgs/siren.png', 'Age', 'Gender', 'Location');
 
 -- --------------------------------------------------------
