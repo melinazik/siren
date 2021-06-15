@@ -1,4 +1,4 @@
-<?php include 'server.php'?>
+<?php include 'server.php' ?>
 
 <!DOCTYPE html>
 
@@ -15,8 +15,7 @@
 
   <link rel="icon" type="image/png" href="../imgs/favicon.ico" />
   <link rel="stylesheet" type="text/css" href="../css/styles.css" />
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script src="../js/javascript.js"> </script>
@@ -46,32 +45,33 @@
         <li><a href="help.php">How to help</a></li>
         <li><a href="contact.php">Contact us</a></li>
 
-        <?php if (isset($_SESSION['username']) && ($_SESSION['username'] == 'admin')): ?>
-        <li><a href="admin.php"><?php echo $_SESSION['username']; ?></a></li> <?php endif?>
-        <?php if (isset($_SESSION['username']) && ($_SESSION['username'] != 'admin')): ?>
-        <li><a href="profile.php"><?php echo $_SESSION['username']; ?></a></li>
-        <li><a href="profile.php">
-            <?php 
-						$userId = $_SESSION['userId'];
+        <?php if (isset($_SESSION['username']) && ($_SESSION['username'] == 'admin')) : ?>
+          <li><a href="admin.php"><?php echo $_SESSION['username']; ?></a></li> <?php endif ?>
+        <?php if (isset($_SESSION['username']) && ($_SESSION['username'] != 'admin')) : ?>
+          <li><a href="profile.php">
+              <?php
+              $userId = $_SESSION['userId'];
 
-						$query = "SELECT * FROM user WHERE id = $userId";
-						$result = mysqli_query($db, $query);
-						$image = mysqli_fetch_assoc($result);
-						$path = $image['imagePath'];
+              $query = "SELECT * FROM user WHERE id = $userId";
+              $result = mysqli_query($db, $query);
+              $image = mysqli_fetch_assoc($result);
+              $path = $image['imagePath'];
+              $username =  $_SESSION['username'];
 
-						echo "<img id=\"photo-prof-nav\" src=\"$path\">";
+              echo "<div class=\"nav-name\"> $username <img id=\"photo-prof-nav\" src=\"$path\"> </div>";
 
-						?></a></li><?php endif?>
-        <?php if (!isset($_SESSION['username'])): ?>
-        <li><a href="login.php">Login/Register</a></li> <?php endif?>
+              ?></a></li><?php endif ?>
+        <?php if (!isset($_SESSION['username'])) : ?>
+          <li><a href="login.php">Login/Register</a></li> <?php endif ?>
 
       </ul>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <a href="javascript:void(0);" class="icon" onclick="hamburger()">
         <div class="menu-icon"></div>
       </a>
 
     </div>
   </div>
+
 
   <div id="page-view">
     <div id="home-view-title2">How to help</div>
@@ -109,12 +109,10 @@
         <a href="https://oceana.org" target="_blank"><img class="resp-img image-resize" src="../imgs/oceana.png"> </a>
       </div>
       <div class="img-column">
-        <a href="https://greenpeace.org" target="_blank"><img class="resp-img image-resize"
-            src="../imgs/greenpeace.png"> </a>
+        <a href="https://greenpeace.org" target="_blank"><img class="resp-img image-resize" src="../imgs/greenpeace.png"> </a>
       </div>
       <div class="img-column">
-        <a href="https://bahamasplasticmovement.org" target="_blank"><img class="resp-img image-resize"
-            src="../imgs/bpm.png"> </a>
+        <a href="https://bahamasplasticmovement.org" target="_blank"><img class="resp-img image-resize" src="../imgs/bpm.png"> </a>
       </div>
     </div> <br><br>
 
@@ -123,12 +121,10 @@
         <a href="https://www.noaa.gov/" target="_blank"><img class="resp-img image-resize" src="../imgs/noaa.png"> </a>
       </div>
       <div class="img-column">
-        <a href="https://www.barrierreef.org/" target="_blank"><img class="resp-img image-resize"
-            src="../imgs/barrierreef.png"> </a>
+        <a href="https://www.barrierreef.org/" target="_blank"><img class="resp-img image-resize" src="../imgs/barrierreef.png"> </a>
       </div>
       <div class="img-column">
-        <a href="https://www.wetlands.org/" target="_blank"><img class="resp-img image-resize"
-            src="../imgs/wetlands.png"> </a>
+        <a href="https://www.wetlands.org/" target="_blank"><img class="resp-img image-resize" src="../imgs/wetlands.png"> </a>
       </div>
     </div><br><br><br><br>
 
@@ -137,8 +133,7 @@
 
     <div class="img-row">
       <div class="img-column">
-        <a href="https://archipelago.gr" target="_blank"><img class="resp-img image-resize"
-            src="../imgs/archipelago.png"> </a>
+        <a href="https://archipelago.gr" target="_blank"><img class="resp-img image-resize" src="../imgs/archipelago.png"> </a>
       </div>
       <div class="img-column">
         <a href="https://medasset.org/" target="_blank"><img class="resp-img image-resize" src="../imgs/medasset.jpg">
@@ -167,8 +162,7 @@
     <div class="help-button-container">
       <button class="help-button">
         <div class="rescue-link">
-          <a href="https://nmlc.org/rehabilitation/what-you-can-do-for-a-stranded-marine-animal/#:~:text=9.,Guard%20on%20VHF%20Channel%2016."
-            target="_blank">
+          <a href="https://nmlc.org/rehabilitation/what-you-can-do-for-a-stranded-marine-animal/#:~:text=9.,Guard%20on%20VHF%20Channel%2016." target="_blank">
             See how you can help if you come across an endangered marine animal
           </a>
         </div>

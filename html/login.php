@@ -1,4 +1,4 @@
-<?php include 'server.php'?>
+<?php include 'server.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,8 +13,7 @@
   <title>Siren</title>
   <link rel="icon" type="image/png" href="../imgs/favicon.ico" />
   <link rel="stylesheet" type="text/css" href="../css/styles.css" />
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script src="../js/javascript.js"> </script>
 </head>
@@ -42,20 +41,33 @@
         <li><a href="help.php">How to help</a></li>
         <li><a href="contact.php">Contact us</a></li>
 
-        <?php if (isset($_SESSION['username']) && ($_SESSION['username'] == 'admin')): ?>
-        <li><a href="admin.php"><?php echo $_SESSION['username']; ?></a></li> <?php endif?>
-        <?php if (isset($_SESSION['username']) && ($_SESSION['username'] != 'admin')): ?>
-        <li><a href="profile.php"><?php echo $_SESSION['username']; ?></a></li> <?php endif?>
-        <?php if (!isset($_SESSION['username'])): ?>
-        <li><a href="login.php">Login/Register</a></li> <?php endif?>
+        <?php if (isset($_SESSION['username']) && ($_SESSION['username'] == 'admin')) : ?>
+          <li><a href="admin.php"><?php echo $_SESSION['username']; ?></a></li> <?php endif ?>
+        <?php if (isset($_SESSION['username']) && ($_SESSION['username'] != 'admin')) : ?>
+          <li><a href="profile.php">
+              <?php
+              $userId = $_SESSION['userId'];
+
+              $query = "SELECT * FROM user WHERE id = $userId";
+              $result = mysqli_query($db, $query);
+              $image = mysqli_fetch_assoc($result);
+              $path = $image['imagePath'];
+              $username =  $_SESSION['username'];
+
+              echo "<div class=\"nav-name\"> $username <img id=\"photo-prof-nav\" src=\"$path\"> </div>";
+
+              ?></a></li><?php endif ?>
+        <?php if (!isset($_SESSION['username'])) : ?>
+          <li><a href="login.php">Login/Register</a></li> <?php endif ?>
 
       </ul>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <a href="javascript:void(0);" class="icon" onclick="hamburger()">
         <div class="menu-icon"></div>
       </a>
 
     </div>
   </div>
+
   <div id="page-view">
     <div id="home-view-title2">Login / Signup</div>
   </div>
@@ -63,32 +75,32 @@
 
   <!-- error messages, they appear based on occasion-->
   <?php
-$url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";?>
-  <?php if (strpos($url, "signup=failed") == true): ?>
-  <div class="alert">
-    <!-- error messages section -->
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-    <?php echo "Signup failed, please try again"; ?>
-  </div> <?php endif?>
+  $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
+  <?php if (strpos($url, "signup=failed") == true) : ?>
+    <div class="alert">
+      <!-- error messages section -->
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+      <?php echo "Signup failed, please try again"; ?>
+    </div> <?php endif ?>
 
-  <?php if (strpos($url, "login=failed") == true): ?>
-  <div class="alert">
-    <!-- error messages section -->
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-    <?php echo "Wrong username or password"; ?>
-  </div> <?php endif?>
+  <?php if (strpos($url, "login=failed") == true) : ?>
+    <div class="alert">
+      <!-- error messages section -->
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+      <?php echo "Wrong username or password"; ?>
+    </div> <?php endif ?>
 
-  <?php if (strpos($url, "reset=requested") == true): ?>
-  <div class="alert success">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-    <?php echo "Password reset requested successfully!"; ?>
-  </div> <?php endif?>
+  <?php if (strpos($url, "reset=requested") == true) : ?>
+    <div class="alert success">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+      <?php echo "Password reset requested successfully!"; ?>
+    </div> <?php endif ?>
 
-  <?php if (strpos($url, "reset=failed") == true): ?>
-  <div class="alert">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-    <?php echo "This email does not belong to an existing account"; ?>
-  </div> <?php endif?>
+  <?php if (strpos($url, "reset=failed") == true) : ?>
+    <div class="alert">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+      <?php echo "This email does not belong to an existing account"; ?>
+    </div> <?php endif ?>
 
   <!-- login form  -->
   <main class="main-holder">
@@ -112,15 +124,13 @@ $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";?>
       <button onclick="document.getElementById('id01').style.display='block'" style="width:150px;">Sign Up</button>
 
       <div id="id01" class="popup">
-        <span onclick="document.getElementById('id01').style.display='none'" class="close"
-          title="Close popup">&times;</span>
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close popup">&times;</span>
         <form class="popup-content" action="server.php" method="post">
           <h1>Sign Up</h1>
           <input class="login-form-text" type="text" placeholder="Email" name="email" required id="email">
           <input class="login-form-text" type="text" placeholder="Username" name="username" required id="username">
           <input class="login-form-text" type="password" placeholder="Password" name="pwd" required id="pwd">
-          <input class="login-form-text" type="password" placeholder="Repeat Password" name="password_repeat" required
-            id="password_repeat">
+          <input class="login-form-text" type="password" placeholder="Repeat Password" name="password_repeat" required id="password_repeat">
 
           <!-- TODO privacy policy -->
           <p>
@@ -138,8 +148,7 @@ $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";?>
         Password</button>
 
       <div id="id02" class="popup">
-        <span onclick="document.getElementById('id02').style.display='none'" class="close"
-          title="Close popup">&times;</span>
+        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close popup">&times;</span>
         <form class="popup-content" action="server.php" method="post">
           <h1>Reset password</h1>
           <input class="login-form-text" type="text" placeholder="Insert your email" name="email" required id="email">

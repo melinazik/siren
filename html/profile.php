@@ -26,38 +26,51 @@
   <div class="loader"></div>
 
   <div class="navbar">
-    <div class="nav-bar-siren">
-      <div class="siren-icon"></div>
-      <a href="home.php" class="active">SIREN</a>
-    </div>
+		<div class="nav-bar-siren">
+			<div class="siren-icon"></div>
+			<a href="home.php" class="active">SIREN</a>
+		</div>
 
-    <div class="right-navbar" id="navbarID">
-      <ul id="nav">
-        <li><a href="home.php">Home</a></li>
-        <li><a id="sub-menu-hover">Learn More</a>
-          <ul id="sub-menu">
-            <li><a href="causes.php">Causes</a> </li>
-            <li><a href="effects.php">Effects</a></li>
-            <li><a href="resources.php">Resources</a></li>
-          </ul>
-        </li>
-        <li><a href="help.php">How to help</a></li>
-        <li><a href="contact.php">Contact us</a></li>
-        <?php if (!isset($_SESSION['username'])) : ?>
-        <li><a href="login.php">Login/Register</a></li> <?php endif ?>
-        <?php if ($_SESSION['username'] == 'admin') : ?>
-        <li><a href="admin.php"><?php echo $_SESSION['username']; ?></a></li>
-        <?php else : ?>
-        <li><a href="<?php echo $url; ?>"><?php echo $_SESSION['username']; ?></a></li>
-        <?php endif ?>
+		<div class="right-navbar" id="navbarID">
+			<ul id="nav">
+				<li><a href="home.php">Home</a></li>
+				<li><a id="sub-menu-hover">Learn More</a>
+					<ul id="sub-menu">
+						<li><a href="causes.php">Causes</a> </li>
+						<li><a href="effects.php">Effects</a></li>
+						<li><a href="resources.php">Resources</a></li>
+					</ul>
+				</li>
+				<li><a href="help.php">How to help</a></li>
+				<li><a href="contact.php">Contact us</a></li>
 
-      </ul>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <div class="menu-icon"></div>
-      </a>
+				<?php if (isset($_SESSION['username']) && ($_SESSION['username'] == 'admin')): ?>
+				<li><a href="admin.php"><?php echo $_SESSION['username']; ?></a></li> <?php endif?>
+				<?php if (isset($_SESSION['username']) && ($_SESSION['username'] != 'admin')): ?>
+				<li><a href="profile.php">
+						<?php 
+						$userId = $_SESSION['userId'];
 
-    </div>
-  </div>
+						$query = "SELECT * FROM user WHERE id = $userId";
+						$result = mysqli_query($db, $query);
+						$image = mysqli_fetch_assoc($result);
+						$path = $image['imagePath'];
+						$username =  $_SESSION['username'];
+
+						echo "<div class=\"nav-name\"> $username <img id=\"photo-prof-nav\" src=\"$path\"> </div>";
+
+						?></a></li><?php endif?>
+				<?php if (!isset($_SESSION['username'])): ?>
+				<li><a href="login.php">Login/Register</a></li> <?php endif?>
+
+			</ul>
+			<a href="javascript:void(0);" class="icon" onclick="hamburger()">
+				<div class="menu-icon"></div>
+			</a>
+
+		</div>
+	</div>
+
 
   <!-- success or error messages, they appear based on occasion-->
   <?php
