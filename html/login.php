@@ -3,8 +3,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-
 <head>
   <meta charset="utf 8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -91,10 +89,6 @@
       <?php echo "This email does not belong to an existing account"; ?>
     </div> <?php endif ?>
 
-
-
-
-
   <!-- login form  -->
   <main class="main-holder">
 
@@ -147,7 +141,6 @@
         </form>
       </div>
     </div>
-
 
   </main>
 

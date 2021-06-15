@@ -36,24 +36,25 @@
 
     //registering user
     if(isset($_POST['register'])){
-    $username = mysqli_real_escape_string($db, $_POST['username']);
-    $email = mysqli_real_escape_string($db, $_POST['email']);
-    $pwd = mysqli_real_escape_string($db, $_POST['pwd']);
-    $password_repeat = mysqli_real_escape_string($db, $_POST['password_repeat']);
+        $username = mysqli_real_escape_string($db, $_POST['username']);
+        $email = mysqli_real_escape_string($db, $_POST['email']);
+        $pwd = mysqli_real_escape_string($db, $_POST['pwd']);
+        $password_repeat = mysqli_real_escape_string($db, $_POST['password_repeat']);
 
-    if(empty($username)){array_push($errors, "Username required");}
-    if(empty($email)){array_push($errors, "email required");}
-    if(empty($pwd)){array_push($errors, "password required");}
-    if($pwd != $password_repeat){array_push($errors,"Passwords don't match");}
+        if(empty($username)){array_push($errors, "Username required");}
+        if(empty($email)){array_push($errors, "email required");}
+        if(empty($pwd)){array_push($errors, "password required");}
+        if($pwd != $password_repeat){array_push($errors,"Passwords don't match");}
 
-    //form validation and insertion
-    $user_check_query = "SELECT * FROM user WHERE username = '$username' or email='$email' LIMIT 1";
-    $results = mysqli_query($db, $user_check_query);
-    $user = mysqli_fetch_assoc($results);
-    if($user){
-        if($user['username']===$username){array_push($errors, "Username already exists");}
-        if($user['email']===$email){array_push($errors, "email already exists");}
-        }
+        //form validation and insertion
+        $user_check_query = "SELECT * FROM user WHERE username = '$username' or email='$email' LIMIT 1";
+        $results = mysqli_query($db, $user_check_query);
+        $user = mysqli_fetch_assoc($results);
+        
+        if($user){
+            if($user['username']===$username){array_push($errors, "Username already exists");}
+            if($user['email']===$email){array_push($errors, "email already exists");}
+    }
 
     //register user if no errors appeared
     if(count($errors) == 0){
@@ -80,7 +81,6 @@
             header('location: login.php?signup=failed');
         }
     }
-
 
     // Login
     if(isset($_POST['login'])){
@@ -206,8 +206,6 @@
         header("location: profile.php?update=success");
         }
     }
-
-
     
     // upload image
     if (isset($_POST['upload'])) {
@@ -258,8 +256,6 @@
             echo "Sorry, there was an error uploading your file.";
             }
         }
-
-        
             
         // Get all the submitted data from the form
         $query = "UPDATE user SET imagePath = '$target_file' WHERE id = $userId";

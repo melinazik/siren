@@ -75,8 +75,6 @@
       <?php echo "Couldn't update user data"; ?>
     </div> <?php endif ?>
 
-
-
   <div id="page-view">
     <div id="home-view-title2">Profile</div>
   </div>
@@ -91,19 +89,16 @@
           $result = mysqli_query($db, $query);
           $image = mysqli_fetch_assoc($result);
           $path = $image['imagePath'];
-          
+
           echo "<img id=\"photo-prof\" src=\"$path\">";
-
-
         ?>
-        <!-- <img id="photo-prof" src="../imgs/siren.png"></image> -->
+
         <form action="server.php" method="post" enctype="multipart/form-data">
           <input type="file" name="fileToUpload" id="fileToUpload" accept="image/*" />
           <button type="submit" value="" name="upload" value="Upload">Upload Image</button>
 
         </form>
       </div>
-
 
       <div class="prof-section">
         <form class="prof-form" action="server.php" method="post">
@@ -132,8 +127,6 @@
           
           $likes = mysqli_fetch_all($results, MYSQLI_ASSOC);
           $size = count($likes);
-
-
          
           for ($i = 0; $i < $size; $i++) {
             $articleTitle = sprintf($likes[$i]['articleTitle']);
@@ -160,10 +153,7 @@
 
   </div>
 
-
-
   <script src="../js/javascript.js"> </script>
-
 
   <!--footer-->
   <footer>
@@ -185,7 +175,6 @@
 						<li><span style="text-transform: lowercase;"><i class="fas fa-envelope"></i>&nbsp; info@sirenauth.com</span></li>
 					</ul>
 				</div>
-
 
 				<div class="col follow-us">
 					<h4 class="follow-footer">Follow us</h4>

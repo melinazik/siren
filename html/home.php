@@ -53,8 +53,6 @@
 				<?php if (!isset($_SESSION['username'])) : ?>
 					<li><a href="login.php">Login/Register</a></li> <?php endif ?>
 
-
-
 			</ul>
 			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
 				<div class="menu-icon"></div>
@@ -78,7 +76,6 @@
 			<?php echo "You are now logged in!"; ?>
 		</div> <?php endif ?>
 
-
 	<?php if (strpos($url, "reset=success") == true) : ?>
 		<div class="alert success">
 			<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
@@ -90,9 +87,6 @@
 			<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
 			<?php echo "You don't have admin rights access"; ?>
 		</div> <?php endif ?>
-
-
-
 
 	<!--ART-->
 	<div id="home-view">

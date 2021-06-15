@@ -67,7 +67,6 @@
     </div>
   </div>
 
-
   <!-- success or error messages, they appear based on occasion-->
   <?php
   $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
@@ -94,8 +93,6 @@
       <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
       <?php echo "Article successfully removed!"; ?>
     </div> <?php endif ?>
-
-
 
   <div id="page-view">
     <div class="sticky-title">! You are logged in as admin !</div>
@@ -207,7 +204,6 @@
 					</ul>
 				</div>
 
-
 				<div class="col follow-us">
 					<h4 class="follow-footer">Follow us</h4>
 					<div class="social-links">
@@ -240,7 +236,6 @@
 						<li><span style="text-transform: lowercase;"><i class="fas fa-envelope"></i>&nbsp; info@sirenauth.com</span></li>
 					</ul>
 				</div>
-
 
 				<div class="col follow-us">
 					<h4 class="follow-footer">Follow us</h4>

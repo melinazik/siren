@@ -42,33 +42,8 @@ const img = document.querySelector('#photo-prof');
 const file = document.querySelector('#file');
 const uploadBtn = document.querySelector('#upload-btn');
 
-// file.addEventListener('change', function() {
-//     const chosenFile = this.files[0];
-
-//     if (chosenFile) {
-//         const reader = new FileReader();
-
-//         reader.addEventListener('load', function() {
-//             img.setAttribute('src', reader.result);
-//         });
-
-//         reader.readAsDataURL(chosenFile);
-//     }
-// });
-
-
-
 function addFavorites(element, userId, articleId) {
-    // element is the carousel-image-container element that called
-    // addFavorites with onclick
-    // console.log(element.childNodes[0].childNodes[0].childNodes[0].childNodes[1]);
     var xhttp = new XMLHttpRequest();
-
-    // xhttp.onreadystatechange = function() {
-    //     if (this.readyState == 4 && this.status == 200) {
-    //     document.getElementById("demo").innerHTML = this.responseText;
-    //     }
-    // };
 
     var src = element.childNodes[0].childNodes[0].childNodes[0].childNodes[0].getAttribute("src");
     if (src == "../imgs/heart-empty.png") {
@@ -95,7 +70,6 @@ function callSeeMessages() {
     //document.getElementById('').style.display='block'" style="width:150px;
 }
 
-
 var elem;
 var flkty;
 
@@ -107,14 +81,11 @@ function init() {
     });
 }
 
-
 function loadEffectsArticles(articleTitle, articleURL, articleImg, numberOfLikes, favorite, userId, articleId) {
     var carousel_container = document.getElementById('carousel-effects');
 
     var heart_container = document.createElement("div");
     heart_container.classList.add("heart-container");
-
-    
 
     // while more elements in database
     var carousel_cell = document.createElement('div');
@@ -132,8 +103,6 @@ function loadEffectsArticles(articleTitle, articleURL, articleImg, numberOfLikes
 
         var add_favorites = document.createElement("div");
         add_favorites.classList.add("add-favorites");
-
-        
 
         var heart = document.createElement('img');
         heart.classList.add("heart");

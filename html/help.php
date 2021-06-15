@@ -4,8 +4,6 @@
 
 <html lang="en">
 
-
-
 <head>
   <meta charset="utf 8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -53,8 +51,6 @@
           <li><a href="profile.php"><?php echo $_SESSION['username']; ?></a></li> <?php endif ?>
         <?php if (!isset($_SESSION['username'])) : ?>
           <li><a href="login.php">Login/Register</a></li> <?php endif ?>
-
-
 
       </ul>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -152,7 +148,6 @@
         </div>
       </button>
     </div><br> <br>
-
 
     <div class="hotline-title">
       Useful Hotlines <br>
