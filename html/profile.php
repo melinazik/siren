@@ -84,15 +84,15 @@ $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";?>
     <div class="box">
       <div class="profile-img">
         <?php
-          $userId = $_SESSION['userId'];
+$userId = $_SESSION['userId'];
 
-          $query = "SELECT * FROM user WHERE id = $userId";
-          $result = mysqli_query($db, $query);
-          $image = mysqli_fetch_assoc($result);
-          $path = $image['imagePath'];
+$query = "SELECT * FROM user WHERE id = $userId";
+$result = mysqli_query($db, $query);
+$image = mysqli_fetch_assoc($result);
+$path = $image['imagePath'];
 
-          echo "<img id=\"photo-prof\" src=\"$path\">";
-        ?>
+echo "<img id=\"photo-prof\" src=\"$path\">";
+?>
 
         <form action="server.php" method="post" enctype="multipart/form-data" class="upload-image">
           <input type="file" name="fileToUpload" id="fileToUpload" accept="image/*" />
@@ -118,42 +118,39 @@ $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";?>
       <div class="contact-inbox">
         <ul>
           <?php
-            $userId = $_SESSION['userId'];
-            $query = "SELECT article.articleTitle, article.articleURL, article.articleImg
-                                FROM userlikesarticle INNER JOIN article
-                                ON article.id = userlikesarticle.articleId
-                                WHERE userlikesarticle.userId = $userId";
+$userId = $_SESSION['userId'];
+$query = "SELECT article.articleTitle, article.articleURL,article.articleImg
+                    FROM userlikesarticle INNER JOIN article
+                    ON article.id = userlikesarticle.articleId
+                    WHERE userlikesarticle.userId = $userId";
 
-            $results = mysqli_query($db, $query);
+$results = mysqli_query($db, $query);
 
-            $likes = mysqli_fetch_all($results, MYSQLI_ASSOC);
-            $size = count($likes);
+$likes = mysqli_fetch_all($results, MYSQLI_ASSOC);
+$size = count($likes);
 
-            for ($i = 0; $i < $size; $i++) {
-                $articleTitle = sprintf($likes[$i]['articleTitle']);
-                $articleURL = sprintf($likes[$i]['articleURL']);
-                $articleImg = sprintf($likes[$i]['articleImg']);
+for ($i = 0; $i < $size; $i++) {
+    $articleTitle = sprintf($likes[$i]['articleTitle']);
+    $articleURL = sprintf($likes[$i]['articleURL']);
+    $articleImg = sprintf($likes[$i]['articleImg']);
 
-                echo "
-                        <li>
-                            <div class=\"messages\">
-                              <div class=\"list-left\"><div class=\"name-display\" ></div>
-                            </div>
-                            <div class=\"list-right\">
-                              <div class=\"message\"> <a href=\"$articleURL\" target=\"_blank\">
-                                <div class=\"mail-display\" >$articleTitle </div> </a>
-                                <img id=\"user-article-img\" src=\"$articleImg\">
-                                <div class=\"msg-display\"></div>
-                              </div>
-                            </div>
-                        </li>";
-            }
+    echo "
+            <li><a href=\"$articleURL\" target=\"_blank\">
+                <div class=\"messages\">
+                  <div class=\"list-left\"><div class=\"name-display\" ><img id=\"user-article-img\" src=\"$articleImg\"></div>
+                </div>
+                <div class=\"list-right\">
+                  <div class=\"message\">  </div>
+                    <div class=\"msg-display\">$articleTitle</div>
+                  </div>
+                </div>
+            </li>";
+}
 
-            ?>
-      </div>
+?>
+       </ul>
     </div>
-  </div>
-
+   </div>
   </div>
 
   <script src="../js/javascript.js"> </script>
