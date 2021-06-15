@@ -322,13 +322,6 @@ body {
 
 /* Responsive layout - makes a one column layout instead of a two-column layout */
 
-@media (max-width: 800px) {
-    .flex-images {
-        flex-direction: column;
-        justify-content: space-around;
-    }
-}
-
 .home-images {
     margin: 2em;
     position: relative;
@@ -392,6 +385,23 @@ body {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
+}
+
+@media (max-width: 800px) {
+    .flex-images {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .home-images {
+        width: 250px;
+        height: 250px;
+    }
+    .text-animal {
+        font-size: 1em;
+    }
+    .animal-label {
+        font-size: 1.5em;
+    }
 }
 
 .carousel-cell:hover .overlay {
@@ -826,7 +836,6 @@ button {
 .popup-content {
     background-color: #fefefe;
     margin: 5% auto 15% auto;
-    
     /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
     width: 750px;
@@ -1542,10 +1551,11 @@ label:hover {
     background-color: #e4edf5;
 }
 
-.no-fav-yet{
-  padding: 15px 20px;
-  text-align: center;
+.no-fav-yet {
+    padding: 15px 20px;
+    text-align: center;
 }
+
 
 /** SEARCH BAR **/
 
