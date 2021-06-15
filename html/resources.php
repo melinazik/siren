@@ -64,25 +64,25 @@
 
   <section class="resources-section">
     <br>
-    <h2 class="video-descr"><img src="../imgs/logo2.png" class="video-logo"> Videos on plastic waste...</h2>
+    <h2 class="video-descr"><img src="../imgs/logo2.png" class="video-logo"> Videos on plastic waste </h2>
     <div class="iframe-container">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/yaDx-WJAsaE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/n8gfbKVQXz0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
-    <h2 class="video-descr"><img src="../imgs/logo2.png" class="video-logo"> Videos on overfishing...</h2>
+    <h2 class="video-descr"><img src="../imgs/logo2.png" class="video-logo"> Videos on overfishing </h2>
     <div class="iframe-container">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/eVJ7Prt5OdA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/F6nwZUkBeas" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
-    <h2 class="video-descr"><img src="../imgs/logo2.png" class="video-logo"> Videos on ocean acidification...</h2>
+    <h2 class="video-descr"><img src="../imgs/logo2.png" class="video-logo"> Videos on ocean acidification </h2>
     <div class="iframe-container">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/6SMWGV-DBnk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/5cqCvcX7buo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
-    <h2 class="video-descr"><img src="../imgs/logo2.png" class="video-logo"> Videos on oil spills...</h2>
+    <h2 class="video-descr"><img src="../imgs/logo2.png" class="video-logo"> Videos on oil spills </h2>
     <div class="iframe-container">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/nshSoLw0tdI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/3DbSlAg3F3A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
