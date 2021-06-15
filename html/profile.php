@@ -85,19 +85,18 @@
     <div class="box">
       <div class="profile-img">
        <?php 
-          // $userId = $_SESSION['userId'];
+          $userId = $_SESSION['userId'];
 
-          // $query = "SELECT * FROM user WHERE id = '$userId";
-          // $result = mysqli_query($db, $query);
-          // $image = mysqli_fetch_all($result, MYSQLI_ASSOC);
-          // $path = $image['imagePath'];
-          // echo $path;
+          $query = "SELECT * FROM user WHERE id = $userId";
+          $result = mysqli_query($db, $query);
+          $image = mysqli_fetch_assoc($result);
+          $path = $image['imagePath'];
           
-          // echo "<img id=\"photo-prof\" src=\"$path\"></image>";
+          echo "<img id=\"photo-prof\" src=\"$path\">";
 
 
         ?>
-        <img id="photo-prof" src="../imgs/siren.png"></image>
+        <!-- <img id="photo-prof" src="../imgs/siren.png"></image> -->
         <form action="server.php" method="post" enctype="multipart/form-data">
           <input type="file" name="fileToUpload" id="fileToUpload" accept="image/*" />
           <button type="submit" value="" name="upload" value="Upload">Upload Image</button>
@@ -140,13 +139,6 @@
             $articleTitle = sprintf($likes[$i]['articleTitle']);
             $articleURL = sprintf($likes[$i]['articleURL']);
 
-
-            // $articleId = $likes[$i]['articleId'];
-            // $query = "SELECT * FROM articles WHERE id= '$articleId'";
-            // $results = mysqli_query($db, $query);
-            // $articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
-            // $articleId = sprintf($articles['id']);
-                    
             echo "
             <li>
                 <div class=\"messages\">
