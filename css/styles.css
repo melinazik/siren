@@ -150,7 +150,6 @@ body {
     .right-navbar a {
         display: none;
     }
-
     .right-navbar a.icon {
         float: right;
         display: block;
@@ -161,18 +160,15 @@ body {
     .right-navbar.responsive {
         position: relative;
     }
-
     .right-navbar.responsive .icon {
         position: absolute;
         right: 0;
         top: 0;
         margin-bottom: 2em;
     }
-
     #nav {
         flex-direction: column;
     }
-
     .right-navbar.responsive a {
         display: block;
     }
@@ -248,11 +244,9 @@ body {
     #home-view-title {
         font-size: 6em;
     }
-
     #home-view-title2 {
         font-size: 1.8em;
     }
-
     #home-view-button {
         width: 10em;
         font-size: 1.5em;
@@ -1223,13 +1217,14 @@ a {
 
 /* -------END CAROUSEL------------*/
 
-#user-article-img{
+#user-article-img {
     width: 3em;
     height: 3em;
     border-radius: 30%;
     margin-top: 0.8em;
     margin-left: 4.8em;
 }
+
 
 /* LOADING ICON */
 
@@ -1247,7 +1242,6 @@ a {
     from {
         transform: rotate(0deg);
     }
-
     to {
         transform: rotate(359deg);
     }
@@ -1456,34 +1450,26 @@ label:hover {
 }
 
 .admin-action-panel {
-    height: 20em;
-    width: 18em;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    height: 3em;
+    width: 15em;
     box-shadow: 0px 0px 10px 3px rgba(120, 120, 120, 0.59);
     margin: 2em;
 }
 
 .admin-action-panel p {
     text-align: center;
-    margin-top: 0.3em;
-    margin-bottom: 0.9em;
     font-size: 1.2em;
+    margin-left: 1em;
 }
-
-.admin-action-button {
-    margin: 1em;
-    /*display: none;*/
-}
-
-
-/*
-#add-article {
-    display: none;
-}*/
 
 .admin-action-image {
     position: relative;
-    height: 86%;
-    width: 100%;
+    height: 1.5em;
+    width: 1.5em;
 }
 
 #action-image1 {
@@ -1494,8 +1480,6 @@ label:hover {
 #action-image2 {
     background-image: url(../imgs/remove.PNG);
     background-size: cover;
-    margin-right: 0.3em;
-    height: 86%;
 }
 
 .admin-action-image:hover {
@@ -1510,8 +1494,6 @@ label:hover {
     width: 400px;
     overflow: auto;
     height: 100%;
-
-
     cursor: pointer;
     display: flex;
     flex-direction: column;
