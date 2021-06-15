@@ -240,6 +240,19 @@ body {
     border-radius: 30px;
 }
 
+@media (max-width: 800px) {
+    #home-view-title {
+        font-size: 6em;
+    }
+    #home-view-title2 {
+        font-size: 1.8em;
+    }
+    #home-view-button {
+        width: 10em;
+        font-size: 1.5em;
+    }
+}
+
 #home-view-button:after {
     content: '';
     position: absolute;
