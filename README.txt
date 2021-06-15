@@ -5,3 +5,8 @@ How to run Siren on localhost using XAMPP:
 3. In your browser type localhost/siren and navigate from the menu until you reach the html folder. Once you click the html folder, the site starts running automatically.
 
 If you have any more questions on how to run Siren or if there's an error, please contact us here: christpc@csd.auth.gr , gartemis@csd.auth.gr , melinazikou@csd.auth.gr , cpozriki@csd.auth.gr
+
+Use these accounts to log in:
+Username: admin Password: admin
+Username: kostas Password: kostas
+Username: empty Password: empty
