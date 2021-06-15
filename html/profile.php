@@ -126,22 +126,30 @@
           $results = mysqli_query($db, $query);
           $likes = mysqli_fetch_all($results, MYSQLI_ASSOC);
           $size = count($likes);
+
+         
           for ($i = 0; $i < $size; $i++) {
             $articleId = sprintf($likes[$i]['articleId']);
+            // $articleId = $likes[$i]['articleId'];
+            // $query = "SELECT * FROM articles WHERE id= '$articleId'";
+            // $results = mysqli_query($db, $query);
+            // $articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
+            // $articleId = sprintf($articles['id']);
+                    
             echo "
-
-                            <li>
-                                <div class=\"messages\">
-                                  <div class=\"list-left\"><div class=\"name-display\"> USER LIKES</div>
-                                </div>
-                                <div class=\"list-right\">
-                                  <div class=\"message\">
-                                    <div class=\"mail-display\">$articleId</div>
-                                    <div class=\"msg-display\">NOTHING HERE YET</div>
-                                  </div>
-                               </div>
-                            </li>";
+            <li>
+                <div class=\"messages\">
+                  <div class=\"list-left\"><div class=\"name-display\"> USER LIKES</div>
+                </div>
+                <div class=\"list-right\">
+                  <div class=\"message\">
+                    <div class=\"mail-display\">$articleId</div>
+                    <div class=\"msg-display\">NOTHING HERE YET</div>
+                  </div>
+                </div>
+            </li>";
           }
+            
           ?>
       </div>
     </div>
