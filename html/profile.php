@@ -117,7 +117,7 @@ echo "<img id=\"photo-prof\" src=\"$path\">";
 
       <div class="contact-inbox">
         <ul>
-          <?php
+          <?php 
 $userId = $_SESSION['userId'];
 $query = "SELECT article.articleTitle, article.articleURL,article.articleImg
                     FROM userlikesarticle INNER JOIN article
@@ -143,26 +143,27 @@ for ($i = 0; $i < $size; $i++) {
                 <div class=\"list-right\">
                     <div class=\"msg-display\">$articleTitle</div>
                   </div>
-                </div>
+                  </a>
             </li>";
 }
 
 ?>
-       </ul>
+        </ul>
+      </div>
     </div>
-   </div>
   </div>
+  
 
   <script src="../js/javascript.js"> </script>
 
-  <!--footer-->
+  <!-- FOOTER -->
   <footer>
     <div class="footer-content">
       <div class="row">
         <div class="col about">
           <h4>About Us</h4>
-          <p class="footer-about">We are a group of university students hoping to motivate you to take action. We are
-            providing you
+          <p class="footer-about">We are a group of university students hoping to motivate you to take action.
+            We are providing you
             with a bunch of useful articles, documentaries and links to research the matter yourself.
             <br> We should not sit back and watch our planet get destroyed.<br>We must protect it.
           </p>
@@ -173,10 +174,11 @@ for ($i = 0; $i < $size; $i++) {
           <ul>
             <li><span><i class="fas fa-map-marker-alt"></i>&nbsp; Thessaloniki, Greece</span></li>
             <li><span><i class="fas fa-phone"></i>&nbsp; 2310-097834</span></li>
-            <li><span style="text-transform: lowercase;"><i class="fas fa-envelope"></i>&nbsp; info@sirenauth.com</span>
-            </li>
+            <li><span style="text-transform: lowercase;"><i class="fas fa-envelope"></i>&nbsp;
+                info@sirenauth.com</span></li>
           </ul>
         </div>
+
 
         <div class="col follow-us">
           <h4 class="follow-footer">Follow us</h4>
@@ -192,7 +194,7 @@ for ($i = 0; $i < $size; $i++) {
       </div>
     </div>
   </footer>
-  <!-- /.footer -->
+  <!-- ./FOOTER -->
 </body>
 
 </html>
