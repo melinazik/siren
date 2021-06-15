@@ -168,3 +168,11 @@ function loadEffectsArticles(articleTitle, articleURL, articleImg, numberOfLikes
 function loadCausesArticles() {
 
 }
+
+function validateForm(){
+    var fi = document.getElementById('fileToUpload');
+        if (fi.files.length > 0) {      // FIRST CHECK IF ANY FILE IS SELECTED.
+           return true;
+        }
+        return false;
+}
