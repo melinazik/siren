@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 15, 2021 at 01:32 AM
+-- Generation Time: Jun 15, 2021 at 12:25 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -33,18 +33,27 @@ CREATE TABLE `article` (
   `articleImg` varchar(8000) DEFAULT NULL COMMENT 'image path',
   `numberOfLikes` int(11) DEFAULT NULL,
   `articleTitle` varchar(100) DEFAULT NULL,
-  `favorite` tinyint(1) NOT NULL DEFAULT 0
+  `favorite` tinyint(1) NOT NULL DEFAULT 0,
+  `category` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `article`
 --
 
-INSERT INTO `article` (`id`, `articleURL`, `articleImg`, `numberOfLikes`, `articleTitle`, `favorite`) VALUES
-(1, 'https://www.worldwildlife.org/stories/how-climate-change-relates-to-oceans', '../imgs/ocean_sunset.PNG', 0, 'How climate change relates to oceans', 0),
-(2, 'https://www.wayfairertravel.com/inspiration/worlds-most-endangered-marine-species/', '../imgs/sea_otter.PNG', 0, '10 of the World\'s Most Endangered Marine Species.', 0),
-(3, 'https://www.wwf.org.au/news/blogs/what-do-sea-turtles-eat-unfortunately-plastic-bags#gs.z3r46c', '../imgs/turtle_plastic.PNG', 0, 'What do sea turtles eat? Unfortunately, plastic bags.', 0),
-(4, 'https://ocean.si.edu/ocean-life/invertebrates/ocean-acidification', '../imgs/coral-reef.jpg', 0, 'Ocean Acidification', 0);
+INSERT INTO `article` (`id`, `articleURL`, `articleImg`, `numberOfLikes`, `articleTitle`, `favorite`, `category`) VALUES
+(11, 'https://www.nationalgeographic.com/environment/article/plastic-pollution', '../imgs/plastic_waste_natgeo.PNG', 0, 'The World\'s plastic pollution explained', 0, 'effects'),
+(12, 'https://ocean.si.edu/ocean-life/invertebrates/ocean-acidification', '../imgs/coral-reef.jpg', 0, 'Ocean Acidification', 0, 'effects'),
+(13, 'https://www.nationalgeographic.com/environment/article/critical-issues-marine-pollution', '../imgs/marine_polution.PNG', 0, 'Marine Pollution Explained', 0, 'effects'),
+(14, 'https://www.nationalgeographic.com/environment/article/great-barrier-reef-restoration-transplanting-corals', '../imgs/coral_reef.PNG', 0, 'Can new science save dying coral reefs?', 0, 'effects'),
+(15, 'https://www.nationalgeographic.com/environment/article/critical-issues-overfishing', '../imgs/overfishing_natgeo.PNG', 0, 'Plenty of fish in the sea? Not always.', 0, 'effects'),
+(16, 'https://www.noaa.gov/education/resource-collections/ocean-coasts/oil-spills', '../imgs/oil_spills.PNG', 0, 'Oil Spills', 0, 'effects'),
+(17, 'https://www.wayfairertravel.com/inspiration/worlds-most-endangered-marine-species/', '../imgs/sea_otter.PNG', 0, '10 of the world\'s most endangered marine species', 0, 'causes'),
+(18, 'https://www.worldwildlife.org/stories/how-climate-change-relates-to-oceans', '../imgs/ocean_sunset.PNG', 0, 'How climate change relates to the oceans', 0, 'causes'),
+(19, 'https://www.nrdc.org/stories/global-climate-change-what-you-need-know', '../imgs/bear_iceberg.PNG', 0, 'Global climate change; What you need to know', 0, 'causes'),
+(20, 'https://www.conserve-energy-future.com/causes-effects-solutions-depleting-marine-life.php', '../imgs/fish_ocean.PNG', 0, 'What is marine life?', 0, 'causes'),
+(21, 'https://www.nationalgeographic.com/magazine/article/plastic-planet-health-pollution-waste-microplastics', '../imgs/plastic_bottle.PNG', 0, 'We know plastic is hurting marine life. What about us?', 0, 'causes'),
+(22, 'https://www.wwf.org.au/news/blogs/what-do-sea-turtles-eat-unfortunately-plastic-bags#gs.z3r46c', '../imgs/turtle_plastic.PNG', 0, 'What do sea turtles eat? Unfortunately, plastic bags.', 0, 'causes');
 
 -- --------------------------------------------------------
 
@@ -118,12 +127,8 @@ CREATE TABLE `userlikesarticle` (
 --
 
 INSERT INTO `userlikesarticle` (`id`, `userId`, `articleId`) VALUES
-(1, 27, '4'),
-(2, 27, '1'),
 (3, 27, '2'),
-(4, 27, '3'),
-(5, 27, '4'),
-(6, 27, '4');
+(11, 27, '4');
 
 --
 -- Indexes for dumped tables
@@ -161,7 +166,7 @@ ALTER TABLE `userlikesarticle`
 -- AUTO_INCREMENT for table `article`
 --
 ALTER TABLE `article`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `messages`
@@ -179,7 +184,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `userlikesarticle`
 --
 ALTER TABLE `userlikesarticle`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
