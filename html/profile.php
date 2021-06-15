@@ -48,7 +48,7 @@
 				<li><a href="admin.php"><?php echo $_SESSION['username']; ?></a></li> <?php endif?>
 				<?php if (isset($_SESSION['username']) && ($_SESSION['username'] != 'admin')): ?>
 				<li><a href="profile.php">
-						<?php 
+						<?php
 						$userId = $_SESSION['userId'];
 
 						$query = "SELECT * FROM user WHERE id = $userId";
@@ -142,6 +142,7 @@
           $likes = mysqli_fetch_all($results, MYSQLI_ASSOC);
           $size = count($likes);
 
+          if($size > 0){
           for ($i = 0; $i < $size; $i++) {
             $articleTitle = sprintf($likes[$i]['articleTitle']);
             $articleURL = sprintf($likes[$i]['articleURL']);
@@ -151,11 +152,14 @@
             <li>
                 <a href=\"$articleURL\" target=\"_blank\">
                   <div class=\"favorite-articles\">
-                    <img id=\"user-article-img\" src=\"$articleImg\"> 
+                    <img id=\"user-article-img\" src=\"$articleImg\">
                     <div class=\"msg-display\">$articleTitle</div>
                   </div>
                 </a>
             </li>";
+          }}
+          else{
+            echo  "<div class=\"no-fav-yet\"> There is nothing here yet <div>";
           }
 
           ?>
