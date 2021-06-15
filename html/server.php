@@ -149,6 +149,24 @@
         }
     }
 
+    //remove article -- ADMIN
+    if(isset($_POST['remove'])){
+        $articleId = mysqli_real_escape_string($db, $_POST['articleId']);
+        $query = "SELECT * FROM article WHERE article.id = '$articleId'";
+        $titleResult = mysqli_query($db, $query);
+        if(mysqli_num_rows($titleResult)==0){
+            header('location: admin.php?remove=failed');
+        } else {
+            $query = "DELETE FROM article WHERE id = '$articleId'";
+            $removal = mysqli_query($db, $query);
+            if(!$removal){
+                header('location: admin.php?remove=failed');
+            } else {
+                header('location: admin.php?remove=success');
+            }
+        }
+    }
+
     //add favorite 
     if(isset($_POST['fav'])){
         $userId = mysqli_real_escape_string($db, $_POST[$_SESSION['id']]);
