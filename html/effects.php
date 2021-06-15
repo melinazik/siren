@@ -169,18 +169,30 @@ $url_arr = explode("&", $url);
 			$size = count($articles);
 			$articlesJSON = array();
 			$userId = $_SESSION['userId'];
+			
 
 			$favorite = 0;
 
 			echo "<script> init(); </script>";
 
 			for ($i = 0; $i < $size; $i++) {
-				array_push($articlesJSON, json_encode($articles[$i]));
-				
 				$articleId = $articles[$i]['id'];
+				
 				$query1 = "SELECT * FROM userlikesarticle WHERE userId = '$userId' and articleId = '$articleId'";
 				$results1 = mysqli_query($db, $query1);
 
+				$query = "SELECT COUNT(articleId) FROM userlikesarticle WHERE articleId = '$articleId'";
+				$result = mysqli_query($db, $query);
+
+				$row = mysqli_fetch_row($result);
+				$count = $row[0];
+				echo $count;
+
+				$query = "UPDATE article SET numberOfLikes = '$count' WHERE articleId = '$articleId'";
+				mysqli_query($db, $query);
+
+				array_push($articlesJSON, json_encode($articles[$i]));
+				
 
 				if(mysqli_num_rows($results1)){
 					$favorite = 1;

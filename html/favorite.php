@@ -23,10 +23,4 @@
             $query = "DELETE FROM userlikesarticle WHERE userId = '$userId' and articleId = '$articleId'";
             mysqli_query($db, $query);
         }
-
-        $count = "SELECT COUNT(articleId) FROM userlikesarticle WHERE articleId = '$articleId'";
-        echo $count;
-        $query = "UPDATE article SET numberOfLikes='$count' WHERE articleId = '$articleId'";
-        mysqli_query($db, $query);
-
     }

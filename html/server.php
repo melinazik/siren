@@ -14,8 +14,7 @@
     $_SESSION['gender']="Gender";
     $_SESSION['lctn']="Location";
 
-
-
+    
     //connecting to db
     $db = mysqli_connect('localhost', 'root', '','sirendb') or die("could not connect to db");
 
@@ -65,13 +64,22 @@
         $pwd_encrypted = md5($pwd); //password encrypted
         $query = "INSERT INTO user (email, username, pwd) VALUES ('$email','$username', '$pwd_encrypted')";
         mysqli_query($db, $query);
-        $_SESSION['username'] = $username;
-        $_SESSION['success'] = "You are now registered";
-        header('location: home.php?signup=success');
-        }
-    else{
-            header('location: login.php?signup=failed');
-        }
+
+
+        $query = "SELECT * FROM user WHERE username='$username'";
+        $results = mysqli_query($db, $query);
+
+        // if(mysqli_num_rows($results)){
+        //     $_SESSION['username'] = $username;
+        //     $_SESSION['userId'] = $row['id'];
+        //     $_SESSION['success'] = "You are now registered";
+        //     header('location: home.php?signup=success');
+        // } 
+        echo mysqli_num_rows($results);
+    }
+    // else{
+    //         header('location: login.php?signup=failed');
+    //     }
     }
 
 
@@ -208,7 +216,7 @@
         $gender = $_SESSION['gender'];
         $lctn = $_SESSION['lctn'];
 
-        $query = "UPDATE user SET age='$age', gender='$gender', location = '$lctn' WHERE username='$username'";
+        $query = "UPDATE user SET age='$age', gender='$gender', location ='$lctn' WHERE username='$username'";
         $results= mysqli_query($db, $query);
         if(!$results)
         {
@@ -279,6 +287,8 @@
         mysqli_query($db, $query);
         header("location: profile.php?update=success");
     }
+
+    
 
 
     // // File upload path

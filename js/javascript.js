@@ -86,7 +86,6 @@ function addFavorites(element, userId, articleId) {
     }
     
     xhttp.send();
-
 }
 
 function callAddArticle() {
@@ -122,7 +121,6 @@ function loadEffectsArticles(articleTitle, articleURL, articleImg, numberOfLikes
 
     // carousel_image_container.setAttribute("onclick", "addFavorites(this)");
     carousel_image_container.onclick = function(){addFavorites(this, userId, articleId)};
-    
 
     var overlay = document.createElement('div');
     overlay.classList.add('overlay');
