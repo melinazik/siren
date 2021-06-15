@@ -107,7 +107,7 @@
         echo "<img id=\"photo-prof\" src=\"$path\">";
         ?>
 
-        <form action="server.php" method="post" enctype="multipart/form-data" class="upload-image">
+        <form action="server.php" method="post" enctype="multipart/form-data" class="upload-image" onsubmit="return validateForm()">
           <input type="file" name="fileToUpload" id="fileToUpload" accept="image/*" />
           <button type="submit" value="" name="upload" value="Upload">Upload Image</button>
 
