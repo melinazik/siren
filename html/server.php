@@ -71,9 +71,9 @@
         $results = mysqli_query($db, $query);
         
         if(mysqli_num_rows($results)){
+            $row = $results->fetch_assoc();
             $_SESSION['username'] = $username;
             $_SESSION['userId'] = $row['id'];
-
             $_SESSION['success'] = "You are now registered";
 
             header('location: home.php?signup=success');
