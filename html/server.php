@@ -120,7 +120,7 @@ if (isset($_POST['login'])) {
 if (isset($_POST['logout'])) {
     session_destroy();
     unset($_SESSION['username']);
-    header('location: home.php');
+    header('location: home.php'); 
 }
 
 //contact part
