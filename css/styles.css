@@ -851,7 +851,7 @@ button {
     overflow: auto;
     /* Enable scroll if needed */
     background-color: #192d47be;
-    padding-top: 30%;
+    padding-top: 10px;
     justify-items: center;
 }
 
