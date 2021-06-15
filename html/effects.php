@@ -55,7 +55,19 @@ $url_arr = explode("&", $url);
 				<?php if (isset($_SESSION['username']) && ($_SESSION['username'] == 'admin')): ?>
 				<li><a href="admin.php"><?php echo $_SESSION['username']; ?></a></li> <?php endif?>
 				<?php if (isset($_SESSION['username']) && ($_SESSION['username'] != 'admin')): ?>
-				<li><a href="profile.php"><?php echo $_SESSION['username']; ?></a></li> <?php endif?>
+				<li><a href="profile.php"><?php echo $_SESSION['username']; ?></a></li> 
+				<li><a href="profile.php">
+					<?php 
+						$userId = $_SESSION['userId'];
+
+						$query = "SELECT * FROM user WHERE id = $userId";
+						$result = mysqli_query($db, $query);
+						$image = mysqli_fetch_assoc($result);
+						$path = $image['imagePath'];
+
+						echo "<img id=\"photo-prof-nav\" src=\"$path\">";
+
+						?></a></li><?php endif?>
 				<?php if (!isset($_SESSION['username'])): ?>
 				<li><a href="login.php">Login/Register</a></li> <?php endif?>
 
