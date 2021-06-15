@@ -168,8 +168,12 @@ $url_arr = explode("&", $url);
 			$articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
 			$size = count($articles);
 			$articlesJSON = array();
-			$userId = $_SESSION['userId'];
-			
+			if (isset($_SESSION['username'])){
+				$userId = $_SESSION['userId'];
+			}
+			else {
+				$userId = 0;
+			}
 
 			$favorite = 0;
 
@@ -178,29 +182,29 @@ $url_arr = explode("&", $url);
 			for ($i = 0; $i < $size; $i++) {
 				$articleId = $articles[$i]['id'];
 				
-				$query1 = "SELECT * FROM userlikesarticle WHERE userId = '$userId' and articleId = '$articleId'";
-				$results1 = mysqli_query($db, $query1);
+				
+				
+				// $query = "SELECT COUNT(articleId) FROM userlikesarticle WHERE articleId = '$articleId'";
+				// $result = mysqli_query($db, $query);
 
-				$query = "SELECT COUNT(articleId) FROM userlikesarticle WHERE articleId = '$articleId'";
-				$result = mysqli_query($db, $query);
+				// $row = mysqli_fetch_row($result);
+				// $count = $row[0];
 
-				$row = mysqli_fetch_row($result);
-				$count = $row[0];
-				echo $count;
-
-				$query = "UPDATE article SET numberOfLikes = '$count' WHERE articleId = '$articleId'";
-				mysqli_query($db, $query);
+				// $query = "UPDATE article SET numberOfLikes = '$count' WHERE articleId = '$articleId'";
+				// mysqli_query($db, $query);
 
 				array_push($articlesJSON, json_encode($articles[$i]));
-				
 
-				if(mysqli_num_rows($results1)){
-					$favorite = 1;
-				}
-				else{
-					$favorite = 0;
-				}
+				$favorite = 0;
 
+				if($userId != 0){
+					$query1 = "SELECT * FROM userlikesarticle WHERE userId = '$userId' and articleId = '$articleId'";
+					$results1 = mysqli_query($db, $query1);
+
+					if(mysqli_num_rows($results1)){
+						$favorite = 1;
+					}
+				}
 				echo "<script>var add = loadEffectsArticles(
 					$articlesJSON[$i].articleTitle, $articlesJSON[$i].articleURL,
 					$articlesJSON[$i].articleImg, $articlesJSON[$i].numberOfLikes,

@@ -57,7 +57,6 @@ const uploadBtn = document.querySelector('#upload-btn');
 // });
 
 
-var addFav = Boolean(false);
 
 function addFavorites(element, userId, articleId) {
     // element is the carousel-image-container element that called
@@ -112,6 +111,11 @@ function init() {
 function loadEffectsArticles(articleTitle, articleURL, articleImg, numberOfLikes, favorite, userId, articleId) {
     var carousel_container = document.getElementById('carousel-effects');
 
+    var heart_container = document.createElement("div");
+    heart_container.classList.add("heart-container");
+
+    
+
     // while more elements in database
     var carousel_cell = document.createElement('div');
     carousel_cell.classList.add('carousel-cell');
@@ -119,52 +123,55 @@ function loadEffectsArticles(articleTitle, articleURL, articleImg, numberOfLikes
     var carousel_image_container = document.createElement('div');
     carousel_image_container.classList.add('carousel-image-container');
 
-    // carousel_image_container.setAttribute("onclick", "addFavorites(this)");
-    carousel_image_container.onclick = function(){addFavorites(this, userId, articleId)};
+    if (userId != 0){
+        // carousel_image_container.setAttribute("onclick", "addFavorites(this)");
+        carousel_image_container.onclick = function(){addFavorites(this, userId, articleId)};
 
-    var overlay = document.createElement('div');
-    overlay.classList.add('overlay');
+        var overlay = document.createElement('div');
+        overlay.classList.add('overlay');
 
-    var add_favorites = document.createElement("div");
-    add_favorites.classList.add("add-favorites");
+        var add_favorites = document.createElement("div");
+        add_favorites.classList.add("add-favorites");
 
-    var heart_container = document.createElement("div");
-    heart_container.classList.add("heart-container");
+        
 
-    var heart = document.createElement('img');
-    heart.classList.add("heart");
-    if (favorite == 0) {
-        heart.src = '../imgs/heart-empty.png';
-    } else {
-        heart.src = '../imgs/heart-full.png';
+        var heart = document.createElement('img');
+        heart.classList.add("heart");
+        if (favorite == 0) {
+            heart.src = '../imgs/heart-empty.png';
+        } else {
+            heart.src = '../imgs/heart-full.png';
+        }
+
+        heart_container.appendChild(heart);
     }
-
+    
     var likes = document.createElement('p');
     likes.classList.add("likes");
     likes.textContent = numberOfLikes;
-
-    heart_container.appendChild(heart);
     heart_container.appendChild(likes);
 
-    var favorites_add_text = document.createElement("p");
-    favorites_add_text.classList.add("favorites-add-text");
-    if (favorite == 0) {
-        favorites_add_text.textContent = "add to favorites";
-    } else {
-        favorites_add_text.textContent = "remove from favorites";
+    if(userId != 0){
+        var favorites_add_text = document.createElement("p");
+        
+        favorites_add_text.classList.add("favorites-add-text");
+        if (favorite == 0) {
+            favorites_add_text.textContent = "add to favorites";
+        } else {
+            favorites_add_text.textContent = "remove from favorites";
+        }
+
+        add_favorites.appendChild(heart_container);
+        add_favorites.appendChild(favorites_add_text);
+
+        overlay.appendChild(add_favorites);
+        carousel_image_container.appendChild(overlay);
     }
-
-
-    add_favorites.appendChild(heart_container);
-    add_favorites.appendChild(favorites_add_text);
-
-    overlay.appendChild(add_favorites);
-
+    
     var carousel_image = document.createElement("img");
     carousel_image.classList.add("carousel-image");
     carousel_image.src = articleImg;
 
-    carousel_image_container.appendChild(overlay);
     carousel_image_container.appendChild(carousel_image);
 
     var a = document.createElement("a");
@@ -182,8 +189,6 @@ function loadEffectsArticles(articleTitle, articleURL, articleImg, numberOfLikes
 
     // console.log(flkty);
     flkty.append(carousel_cell);
-
-    return addFav;
 
 }
 
