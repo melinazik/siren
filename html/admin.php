@@ -1,15 +1,15 @@
-<?php include 'server.php'?>
+<?php include 'server.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <?php if (isset($_SESSION['username']) && ($_SESSION['username'] != 'admin')) {
-    header('location: home.php?access=denied'); //can't access admin page if it's a regular user
-}?>
+  header('location: home.php?access=denied'); //can't access admin page if it's a regular user
+} ?>
 
 <?php if (!isset($_SESSION['username'])) {
-    header('location: home.php?access=denied'); //can't access admin page if not logged in
-}?>
+  header('location: home.php?access=denied'); //can't access admin page if not logged in
+} ?>
 
 
 <head>
@@ -23,8 +23,7 @@
 
   <link rel="icon" type="image/png" href="../imgs/favicon.ico" />
   <link rel="stylesheet" type="text/css" href="../css/styles.css" />
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
@@ -35,78 +34,78 @@
   <div class="loader"></div>
 
   <div class="navbar">
-		<div class="nav-bar-siren">
-			<div class="siren-icon"></div>
-			<a href="home.php" class="active">SIREN</a>
-		</div>
+    <div class="nav-bar-siren">
+      <div class="siren-icon"></div>
+      <a href="home.php" class="active">SIREN</a>
+    </div>
 
-		<div class="right-navbar" id="navbarID">
-			<ul id="nav">
-				<li><a href="home.php">Home</a></li>
-				<li><a id="sub-menu-hover">Learn More</a>
-					<ul id="sub-menu">
-						<li><a href="causes.php">Causes</a> </li>
-						<li><a href="effects.php">Effects</a></li>
-						<li><a href="resources.php">Resources</a></li>
-					</ul>
-				</li>
-				<li><a href="help.php">How to help</a></li>
-				<li><a href="contact.php">Contact us</a></li>
+    <div class="right-navbar" id="navbarID">
+      <ul id="nav">
+        <li><a href="home.php">Home</a></li>
+        <li><a id="sub-menu-hover">Learn More</a>
+          <ul id="sub-menu">
+            <li><a href="causes.php">Causes</a> </li>
+            <li><a href="effects.php">Effects</a></li>
+            <li><a href="resources.php">Resources</a></li>
+          </ul>
+        </li>
+        <li><a href="help.php">How to help</a></li>
+        <li><a href="contact.php">Contact us</a></li>
 
-				<?php if (isset($_SESSION['username']) && ($_SESSION['username'] == 'admin')): ?>
-				<li><a href="admin.php"><?php echo $_SESSION['username']; ?></a></li> <?php endif?>
-				<?php if (isset($_SESSION['username']) && ($_SESSION['username'] != 'admin')): ?>
-				<li><a href="profile.php">
-						<?php 
-						$userId = $_SESSION['userId'];
+        <?php if (isset($_SESSION['username']) && ($_SESSION['username'] == 'admin')) : ?>
+          <li><a href="admin.php"><?php echo $_SESSION['username']; ?></a></li> <?php endif ?>
+        <?php if (isset($_SESSION['username']) && ($_SESSION['username'] != 'admin')) : ?>
+          <li><a href="profile.php">
+              <?php
+              $userId = $_SESSION['userId'];
 
-						$query = "SELECT * FROM user WHERE id = $userId";
-						$result = mysqli_query($db, $query);
-						$image = mysqli_fetch_assoc($result);
-						$path = $image['imagePath'];
-						$username =  $_SESSION['username'];
+              $query = "SELECT * FROM user WHERE id = $userId";
+              $result = mysqli_query($db, $query);
+              $image = mysqli_fetch_assoc($result);
+              $path = $image['imagePath'];
+              $username =  $_SESSION['username'];
 
-						echo "<div class=\"nav-name\"> $username <img id=\"photo-prof-nav\" src=\"$path\"> </div>";
+              echo "<div class=\"nav-name\"> $username <img id=\"photo-prof-nav\" src=\"$path\"> </div>";
 
-						?></a></li><?php endif?>
-				<?php if (!isset($_SESSION['username'])): ?>
-				<li><a href="login.php">Login/Register</a></li> <?php endif?>
+              ?></a></li><?php endif ?>
+        <?php if (!isset($_SESSION['username'])) : ?>
+          <li><a href="login.php">Login/Register</a></li> <?php endif ?>
 
-			</ul>
-			<a href="javascript:void(0);" class="icon" onclick="hamburger()">
-				<div class="menu-icon"></div>
-			</a>
+      </ul>
+      <a href="javascript:void(0);" class="icon" onclick="hamburger()">
+        <div class="menu-icon"></div>
+      </a>
 
-		</div>
-	</div>
+    </div>
+  </div>
 
 
   <!-- success or error messages, they appear based on occasion-->
   <?php
-$url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";?>
-  <?php if (strpos($url, "entry=success") == true): ?>
-  <div class="alert success">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-    <?php echo "Article added successfully!"; ?>
-  </div> <?php endif?>
+  $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
+  <?php if (strpos($url, "entry=success") == true) : ?>
+    <div class="alert success">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+      <?php echo "Article added successfully!"; ?>
+    </div> <?php endif ?>
 
-  <?php if (strpos($url, "entry=failed") == true): ?>
-  <div class="alert">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-    <?php echo "Could not add article into database"; ?>
-  </div> <?php endif?>
+  <?php if (strpos($url, "entry=failed") == true) : ?>
+    <div class="alert">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+      <?php echo "Could not add article into database"; ?>
+    </div> <?php endif ?>
 
-  <?php if (strpos($url, "remove=failed") == true): ?>
-  <div class="alert">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-    <?php echo "Could not remove article from database. Check if article ID is valid."; ?>
-  </div> <?php endif?>
+  <?php if (strpos($url, "remove=failed") == true) : ?>
+    <div class="alert">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+      <?php echo "Could not remove article from database. Check if article ID is valid."; ?>
+    </div> <?php endif ?>
 
-  <?php if (strpos($url, "remove=success") == true): ?>
-  <div class="alert success">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-    <?php echo "Article successfully removed!"; ?>
-  </div> <?php endif?>
+  <?php if (strpos($url, "remove=success") == true) : ?>
+    <div class="alert success">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+      <?php echo "Article successfully removed!"; ?>
+    </div> <?php endif ?>
 
   <div id="page-view">
     <div class="sticky-title">! You are logged in as admin !</div>
@@ -120,18 +119,13 @@ $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";?>
         <div class="admin-action-image" id="action-image1"></div>
       </div>
       <div id="add-article" class="popup">
-        <span onclick="document.getElementById('add-article').style.display='none'" class="close"
-          title="Close popup">&times;</span>
+        <span onclick="document.getElementById('add-article').style.display='none'" class="close" title="Close popup">&times;</span>
         <form class="popup-content" action="server.php" method="post">
           <h1>Add Article</h1>
-          <input class="login-form-text" type="text" placeholder="Article URL" required name="articleURL"
-            id="articleURL">
-          <input class="login-form-text" type="text" placeholder="Article Image" required name="articleImg"
-            id="articleImg">
-          <input class="login-form-text" type="text" placeholder="Article Title" required name="articleTitle"
-            id="articleTitle">
-          <input class="login-form-text" type="text" placeholder="Article Category (Causes/Effects)" required
-            name="articleCategory" id="articleCategory">
+          <input class="login-form-text" type="text" placeholder="Article URL" required name="articleURL" id="articleURL">
+          <input class="login-form-text" type="text" placeholder="Article Image" required name="articleImg" id="articleImg">
+          <input class="login-form-text" type="text" placeholder="Article Title" required name="articleTitle" id="articleTitle">
+          <input class="login-form-text" type="text" placeholder="Article Category (Causes/Effects)" required name="articleCategory" id="articleCategory">
           <button type="submit" style="width:150px;" name="add" id="add">Add Article</button>
         </form>
 
@@ -141,12 +135,10 @@ $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";?>
         <div class="admin-action-image" id="action-image2"></div>
       </div>
       <div id="remove-article" class="popup">
-        <span onclick="document.getElementById('remove-article').style.display='none'" class="close"
-          title="Close popup">&times;</span>
+        <span onclick="document.getElementById('remove-article').style.display='none'" class="close" title="Close popup">&times;</span>
         <form class="popup-content" action="server.php" method="post">
           <h1>Remove Article</h1>
-          <input class="login-form-text" type="text" placeholder="Article ID Number" required name="articleId"
-            id="articleId">
+          <input class="login-form-text" type="text" placeholder="Article ID Number" required name="articleId" id="articleId">
           <button type="submit" style="width:150px;" name="remove" id="add">Remove Article</button>
         </form>
 
@@ -160,28 +152,31 @@ $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";?>
       <div class="contact-inbox">
         <ul>
           <?php $query = "SELECT * FROM messages";
-$results = mysqli_query($db, $query);
-$messages = mysqli_fetch_all($results, MYSQLI_ASSOC);
-$size = count($messages);
-for ($i = 0; $i < $size; $i++) {
-    $name = sprintf($messages[$i]['contactName']);
-    $email = sprintf($messages[$i]['contactEmail']);
-    $text = sprintf($messages[$i]['contactText']);
-    echo "
-
-                            <li>
-                                <div class=\"messages\">
-                                  <div class=\"list-left\"><div class=\"name-display\"> $name </div>
-                                </div>
-                                <div class=\"list-right\">
-                                  <div class=\"message\">
-                                    <div class=\"mail-display\">$email</div>
-                                    <div class=\"msg-display\">$text</div>
-                                  </div>
-                               </div>
-                            </li>";
-}
-?>
+          $results = mysqli_query($db, $query);
+          $messages = mysqli_fetch_all($results, MYSQLI_ASSOC);
+          $size = count($messages);
+          for ($i = 0; $i < $size; $i++) {
+            $name = sprintf($messages[$i]['contactName']);
+            $email = sprintf($messages[$i]['contactEmail']);
+            $text = sprintf($messages[$i]['contactText']);
+            echo "
+                  <li>
+                    <div class=\"messages\">
+                      <div class=\"name-display\">
+                        <div>
+                          $name
+                        </div>
+                        <div>
+                          $email
+                        </div>
+                      </div>
+                      <div class=\"msg-display\">
+                        $text
+                      </div>
+                    </div>
+                  </li>";
+          }
+          ?>
 
         </ul>
       </div>
