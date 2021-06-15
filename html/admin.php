@@ -184,8 +184,6 @@ for ($i = 0; $i < $size; $i++) {
         <button type="submit" style="width:150px;" name="logout" id="logout">Logout</button>
       </form>
     </div>
-    <!--<button class="admin-action-button" onclick="callAddArticle()">Add Article</button>-->
-    <!--<button class="admin-action-button" onclick="callSeeMessages()">See Messages</button>-->
 
   </div>
   </div>
