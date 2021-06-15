@@ -14,7 +14,7 @@ body {
     padding: 0px;
     margin: 0px;
     font-family: Georgia, serif;
-    overflow-y: scroll;
+    overflow-y: visible;
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
