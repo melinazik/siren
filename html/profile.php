@@ -84,6 +84,19 @@
   <div class="profile" id="admin-actions-container">
     <div class="box">
       <div class="profile-img">
+       <?php 
+          // $userId = $_SESSION['userId'];
+
+          // $query = "SELECT * FROM user WHERE id = '$userId";
+          // $result = mysqli_query($db, $query);
+          // $image = mysqli_fetch_all($result, MYSQLI_ASSOC);
+          // $path = $image['imagePath'];
+          // echo $path;
+          
+          // echo "<img id=\"photo-prof\" src=\"$path\"></image>";
+
+
+        ?>
         <img id="photo-prof" src="../imgs/siren.png"></image>
         <form action="server.php" method="post" enctype="multipart/form-data">
           <input type="file" name="fileToUpload" id="fileToUpload" accept="image/*" />
