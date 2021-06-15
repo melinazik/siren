@@ -26,29 +26,29 @@
   <div class="loader"></div>
 
   <div class="navbar">
-		<div class="nav-bar-siren">
-			<div class="siren-icon"></div>
-			<a href="home.php" class="active">SIREN</a>
-		</div>
+    <div class="nav-bar-siren">
+      <div class="siren-icon"></div>
+      <a href="home.php" class="active">SIREN</a>
+    </div>
 
-		<div class="right-navbar" id="navbarID">
-			<ul id="nav">
-				<li><a href="home.php">Home</a></li>
-				<li><a id="sub-menu-hover">Learn More</a>
-					<ul id="sub-menu">
-						<li><a href="causes.php">Causes</a> </li>
-						<li><a href="effects.php">Effects</a></li>
-						<li><a href="resources.php">Resources</a></li>
-					</ul>
-				</li>
-				<li><a href="help.php">How to help</a></li>
-				<li><a href="contact.php">Contact us</a></li>
+    <div class="right-navbar" id="navbarID">
+      <ul id="nav">
+        <li><a href="home.php">Home</a></li>
+        <li><a id="sub-menu-hover">Learn More</a>
+          <ul id="sub-menu">
+            <li><a href="causes.php">Causes</a> </li>
+            <li><a href="effects.php">Effects</a></li>
+            <li><a href="resources.php">Resources</a></li>
+          </ul>
+        </li>
+        <li><a href="help.php">How to help</a></li>
+        <li><a href="contact.php">Contact us</a></li>
 
-				<?php if (isset($_SESSION['username']) && ($_SESSION['username'] == 'admin')): ?>
-				<li><a href="admin.php"><?php echo $_SESSION['username']; ?></a></li> <?php endif?>
-				<?php if (isset($_SESSION['username']) && ($_SESSION['username'] != 'admin')): ?>
-				<li><a href="profile.php">
-						<?php
+        <?php if (isset($_SESSION['username']) && ($_SESSION['username'] == 'admin')): ?>
+        <li><a href="admin.php"><?php echo $_SESSION['username']; ?></a></li> <?php endif?>
+        <?php if (isset($_SESSION['username']) && ($_SESSION['username'] != 'admin')): ?>
+        <li><a href="profile.php">
+            <?php
 $userId = $_SESSION['userId'];
 
 $query = "SELECT * FROM user WHERE id = $userId";
@@ -60,16 +60,16 @@ $username = $_SESSION['username'];
 echo "<div class=\"nav-name\"> $username <img id=\"photo-prof-nav\" src=\"$path\"> </div>";
 
 ?></a></li><?php endif?>
-				<?php if (!isset($_SESSION['username'])): ?>
-				<li><a href="login.php">Login/Register</a></li> <?php endif?>
+        <?php if (!isset($_SESSION['username'])): ?>
+        <li><a href="login.php">Login/Register</a></li> <?php endif?>
 
-			</ul>
-			<a href="javascript:void(0);" class="icon" onclick="hamburger()">
-				<div class="menu-icon"></div>
-			</a>
+      </ul>
+      <a href="javascript:void(0);" class="icon" onclick="hamburger()">
+        <div class="menu-icon"></div>
+      </a>
 
-		</div>
-	</div>
+    </div>
+  </div>
 
 
   <!-- success or error messages, they appear based on occasion-->
@@ -87,14 +87,6 @@ $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";?>
   <div class="alert">
     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
     <?php echo "Couldn't update user data"; ?>
-  </div> <?php endif?>
-
-  <?php
-$url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";?>
-  <?php if (strpos($url, "update=empty") == true): ?>
-  <div class="alert warning">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-    <?php echo "You didn't input or change any data."; ?>
   </div> <?php endif?>
 
   <div id="page-view">
@@ -115,7 +107,8 @@ $path = $image['imagePath'];
 echo "<img id=\"photo-prof\" src=\"$path\">";
 ?>
 
-        <form action="server.php" method="post" enctype="multipart/form-data" class="upload-image" onsubmit="return validateForm()">
+        <form action="server.php" method="post" enctype="multipart/form-data" class="upload-image"
+          onsubmit="return validateForm()">
           <input type="file" name="fileToUpload" id="fileToUpload" accept="image/*" />
           <button type="submit" value="" name="upload" value="Upload">Upload Image</button>
 

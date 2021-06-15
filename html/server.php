@@ -198,29 +198,28 @@ if (isset($_POST['reset-request'])) { //if user forgot password, a templated, au
 //user's data update
 if (isset($_POST['done'])) {
 
-    $_SESSION['age'] = mysqli_real_escape_string($db, $_POST['age']);
-    $_SESSION['gender'] = mysqli_real_escape_string($db, $_POST['gender']);
-    $_SESSION['lctn'] = mysqli_real_escape_string($db, $_POST['location']);
+    $tempAge = mysqli_real_escape_string($db, $_POST['age']);
+    $tempGender = mysqli_real_escape_string($db, $_POST['gender']);
+    $tempLctn = mysqli_real_escape_string($db, $_POST['location']);
 
-    if (!isset($_SESSION['age']) || ($_SESSION['age'] == "")) {
-        header("location: profile.php?update=empty");
-    } else if (!isset($_SESSION['gender']) || ($_SESSION['gender'] == "")) {
-        header("location: profile.php?update=empty");
-    } else if (!isset($_SESSION['lctn']) || ($_SESSION['lctn'] == "")) {
-        header("location: profile.php?update=empty");
+    if (!isset($tempAge) || ($tempAge == "")) {
+        $tempAge = implode('["', $_SESSION['age']); //if user input is empty, take what's already in the db
+    }
+
+    if (!isset($tempGender) || ($tempGender == "")) {
+        $tempGender = implode('["', $_SESSION['gender']); //if user input is empty, take what's already in the db
+    }
+
+    if (!isset($tempLctn) || ($tempLctn == "")) {
+        $tempLctn = implode('["', $_SESSION['lctn']); //if user input is empty, take what's already in the db
+    }
+
+    $query = "UPDATE user SET age='$tempAge', gender='$tempGender', location = '$tempLctn' WHERE username='$username'";
+    $results = mysqli_query($db, $query);
+    if (!$results) {
+        header("location: profile.php?update=failed");
     } else {
-
-        $age = $_SESSION['age'];
-        $gender = $_SESSION['gender'];
-        $lctn = $_SESSION['lctn'];
-
-        $query = "UPDATE user SET age='$age', gender='$gender', location = '$lctn' WHERE username='$username'";
-        $results = mysqli_query($db, $query);
-        if (!$results) {
-            header("location: profile.php?update=failed");
-        } else {
-            header("location: profile.php?update=success");
-        }
+        header("location: profile.php?update=success");
     }
 }
 
