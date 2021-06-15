@@ -150,7 +150,6 @@ body {
     .right-navbar a {
         display: none;
     }
-
     .right-navbar a.icon {
         float: right;
         display: block;
@@ -161,18 +160,15 @@ body {
     .right-navbar.responsive {
         position: relative;
     }
-
     .right-navbar.responsive .icon {
         position: absolute;
         right: 0;
         top: 0;
         margin-bottom: 2em;
     }
-
     #nav {
         flex-direction: column;
     }
-
     .right-navbar.responsive a {
         display: block;
     }
@@ -248,11 +244,9 @@ body {
     #home-view-title {
         font-size: 6em;
     }
-
     #home-view-title2 {
         font-size: 1.8em;
     }
-
     #home-view-button {
         width: 10em;
         font-size: 1.5em;
@@ -1224,7 +1218,6 @@ a {
 /* -------END CAROUSEL------------*/
 
 
-
 /* LOADING ICON */
 
 .loader {
@@ -1241,7 +1234,6 @@ a {
     from {
         transform: rotate(0deg);
     }
-
     to {
         transform: rotate(359deg);
     }
@@ -1378,6 +1370,10 @@ label:hover {
     color: black;
 }
 
+.favorite-articles {
+    display: flex;
+    align-items: center;
+}
 
 
 /* Alerts */
@@ -1454,20 +1450,20 @@ label:hover {
 }
 
 .admin-action-panel {
-      display: flex;
-      flex-direction: row-reverse;
-      justify-content: center;
-      align-items: center;
-      height: 3em;
-      width: 15em;
-      box-shadow: 0px 0px 10px 3px rgba(120, 120, 120, 0.59);
-      margin: 2em;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    height: 3em;
+    width: 15em;
+    box-shadow: 0px 0px 10px 3px rgba(120, 120, 120, 0.59);
+    margin: 2em;
 }
 
 .admin-action-panel p {
-  text-align: center;
-  font-size: 1.2em;
-  margin-left: 1em;
+    text-align: center;
+    font-size: 1.2em;
+    margin-left: 1em;
 }
 
 .admin-action-button {
@@ -1512,8 +1508,7 @@ label:hover {
     margin: 50px;
 }
 
-
-#user-article-img{
+#user-article-img {
     width: 5em;
     height: 5em;
     border-radius: 30%;
@@ -1561,8 +1556,8 @@ label:hover {
     margin-bottom: 5px 5px;
 }
 
-.contact-inbox li .list-left .floating-img{
-  float:left;
+.contact-inbox li .list-left .floating-img {
+    float: left;
 }
 
 .contact-inbox li .list-right .msg-display {

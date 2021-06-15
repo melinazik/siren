@@ -1,4 +1,4 @@
-<?php include 'server.php'?>
+<?php include 'server.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,8 +14,7 @@
 
   <link rel="icon" type="image/png" href="../imgs/favicon.ico" />
   <link rel="stylesheet" type="text/css" href="../css/styles.css" />
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
@@ -43,13 +42,13 @@
         </li>
         <li><a href="help.php">How to help</a></li>
         <li><a href="contact.php">Contact us</a></li>
-        <?php if (!isset($_SESSION['username'])): ?>
-        <li><a href="login.php">Login/Register</a></li> <?php endif?>
-        <?php if ($_SESSION['username'] == 'admin'): ?>
-        <li><a href="admin.php"><?php echo $_SESSION['username']; ?></a></li>
-        <?php else: ?>
-        <li><a href="<?php echo $url; ?>"><?php echo $_SESSION['username']; ?></a></li>
-        <?php endif?>
+        <?php if (!isset($_SESSION['username'])) : ?>
+          <li><a href="login.php">Login/Register</a></li> <?php endif ?>
+        <?php if ($_SESSION['username'] == 'admin') : ?>
+          <li><a href="admin.php"><?php echo $_SESSION['username']; ?></a></li>
+        <?php else : ?>
+          <li><a href="<?php echo $url; ?>"><?php echo $_SESSION['username']; ?></a></li>
+        <?php endif ?>
 
       </ul>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -61,20 +60,20 @@
 
   <!-- success or error messages, they appear based on occasion-->
   <?php
-$url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";?>
-  <?php if (strpos($url, "update=success") == true): ?>
-  <div class="alert success">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-    <?php echo "Data updated successfully!"; ?>
-  </div> <?php endif?>
+  $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
+  <?php if (strpos($url, "update=success") == true) : ?>
+    <div class="alert success">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+      <?php echo "Data updated successfully!"; ?>
+    </div> <?php endif ?>
 
   <?php
-$url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";?>
-  <?php if (strpos($url, "update=failed") == true): ?>
-  <div class="alert">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-    <?php echo "Couldn't update user data"; ?>
-  </div> <?php endif?>
+  $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
+  <?php if (strpos($url, "update=failed") == true) : ?>
+    <div class="alert">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+      <?php echo "Couldn't update user data"; ?>
+    </div> <?php endif ?>
 
   <div id="page-view">
     <div id="home-view-title2">Profile</div>
@@ -84,15 +83,15 @@ $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";?>
     <div class="box">
       <div class="profile-img">
         <?php
-$userId = $_SESSION['userId'];
+        $userId = $_SESSION['userId'];
 
-$query = "SELECT * FROM user WHERE id = $userId";
-$result = mysqli_query($db, $query);
-$image = mysqli_fetch_assoc($result);
-$path = $image['imagePath'];
+        $query = "SELECT * FROM user WHERE id = $userId";
+        $result = mysqli_query($db, $query);
+        $image = mysqli_fetch_assoc($result);
+        $path = $image['imagePath'];
 
-echo "<img id=\"photo-prof\" src=\"$path\">";
-?>
+        echo "<img id=\"photo-prof\" src=\"$path\">";
+        ?>
 
         <form action="server.php" method="post" enctype="multipart/form-data" class="upload-image">
           <input type="file" name="fileToUpload" id="fileToUpload" accept="image/*" />
@@ -117,42 +116,40 @@ echo "<img id=\"photo-prof\" src=\"$path\">";
 
       <div class="contact-inbox">
         <ul>
-          <?php 
-$userId = $_SESSION['userId'];
-$query = "SELECT article.articleTitle, article.articleURL,article.articleImg
+          <?php
+          $userId = $_SESSION['userId'];
+          $query = "SELECT article.articleTitle, article.articleURL,article.articleImg
                     FROM userlikesarticle INNER JOIN article
                     ON article.id = userlikesarticle.articleId
                     WHERE userlikesarticle.userId = $userId";
 
-$results = mysqli_query($db, $query);
+          $results = mysqli_query($db, $query);
 
-$likes = mysqli_fetch_all($results, MYSQLI_ASSOC);
-$size = count($likes);
+          $likes = mysqli_fetch_all($results, MYSQLI_ASSOC);
+          $size = count($likes);
 
-for ($i = 0; $i < $size; $i++) {
-    $articleTitle = sprintf($likes[$i]['articleTitle']);
-    $articleURL = sprintf($likes[$i]['articleURL']);
-    $articleImg = sprintf($likes[$i]['articleImg']);
+          for ($i = 0; $i < $size; $i++) {
+            $articleTitle = sprintf($likes[$i]['articleTitle']);
+            $articleURL = sprintf($likes[$i]['articleURL']);
+            $articleImg = sprintf($likes[$i]['articleImg']);
 
-    echo "
+            echo "
             <li>
                 <a href=\"$articleURL\" target=\"_blank\">
-                <div class=\"messages\">
-                  <div class=\"list-left\"><div class=\"floating-img\"> <img id=\"user-article-img\" src=\"$articleImg\"> </div>
-                </div>
-                <div class=\"list-right\">
+                  <div class=\"favorite-articles\">
+                    <img id=\"user-article-img\" src=\"$articleImg\"> 
                     <div class=\"msg-display\">$articleTitle</div>
                   </div>
-                  </a>
+                </a>
             </li>";
-}
+          }
 
-?>
+          ?>
         </ul>
       </div>
     </div>
   </div>
-  
+
 
   <script src="../js/javascript.js"> </script>
 
