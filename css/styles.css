@@ -1487,13 +1487,15 @@ label:hover {
 }
 
 #action-image1 {
-    background-image: url(../imgs/article.jpg);
+    background-image: url(../imgs/add.PNG);
     background-size: cover;
 }
 
 #action-image2 {
-    background-image: url(../imgs/messages.jpg);
+    background-image: url(../imgs/remove.PNG);
     background-size: cover;
+    margin-right: 0.3em;
+    height: 86%;
 }
 
 .admin-action-image:hover {
@@ -1506,7 +1508,7 @@ label:hover {
 
 .contact-inbox {
     width: 400px;
-    overflow: auto;\
+    overflow: auto;
     height: 100%;
 
 
