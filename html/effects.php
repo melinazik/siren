@@ -181,18 +181,7 @@ $url_arr = explode("&", $url);
 
 			for ($i = 0; $i < $size; $i++) {
 				$articleId = $articles[$i]['id'];
-				
-				
-				
-				// $query = "SELECT COUNT(articleId) FROM userlikesarticle WHERE articleId = '$articleId'";
-				// $result = mysqli_query($db, $query);
-
-				// $row = mysqli_fetch_row($result);
-				// $count = $row[0];
-
-				// $query = "UPDATE article SET numberOfLikes = '$count' WHERE articleId = '$articleId'";
-				// mysqli_query($db, $query);
-
+			
 				array_push($articlesJSON, json_encode($articles[$i]));
 
 				$favorite = 0;
