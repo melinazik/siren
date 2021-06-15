@@ -150,6 +150,7 @@ body {
     .right-navbar a {
         display: none;
     }
+
     .right-navbar a.icon {
         float: right;
         display: block;
@@ -160,15 +161,18 @@ body {
     .right-navbar.responsive {
         position: relative;
     }
+
     .right-navbar.responsive .icon {
         position: absolute;
         right: 0;
         top: 0;
         margin-bottom: 2em;
     }
+
     #nav {
         flex-direction: column;
     }
+
     .right-navbar.responsive a {
         display: block;
     }
@@ -244,9 +248,11 @@ body {
     #home-view-title {
         font-size: 6em;
     }
+
     #home-view-title2 {
         font-size: 1.8em;
     }
+
     #home-view-button {
         width: 10em;
         font-size: 1.5em;
@@ -1217,13 +1223,6 @@ a {
 
 /* -------END CAROUSEL------------*/
 
-#user-article-img {
-    width: 3em;
-    height: 3em;
-    border-radius: 30%;
-    margin-top: 0.8em;
-    margin-left: 4.8em;
-}
 
 
 /* LOADING ICON */
@@ -1242,6 +1241,7 @@ a {
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(359deg);
     }
@@ -1380,12 +1380,6 @@ label:hover {
     color: black;
 }
 
-.contact-container {
-    display: flex;
-    flex-direction: column;
-    height: 35em;
-    margin: 50px;
-}
 
 
 /* Alerts */
@@ -1462,21 +1456,32 @@ label:hover {
 }
 
 .admin-action-panel {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    align-items: center;
-    height: 3em;
-    width: 15em;
-    box-shadow: 0px 0px 10px 3px rgba(120, 120, 120, 0.59);
-    margin: 2em;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: center;
+      align-items: center;
+      height: 3em;
+      width: 15em;
+      box-shadow: 0px 0px 10px 3px rgba(120, 120, 120, 0.59);
+      margin: 2em;
 }
 
 .admin-action-panel p {
-    text-align: center;
-    font-size: 1.2em;
-    margin-left: 1em;
+  text-align: center;
+  font-size: 1.2em;
+  margin-left: 1em;
 }
+
+.admin-action-button {
+    margin: 1em;
+    /*display: none;*/
+}
+
+
+/*
+#add-article {
+    display: none;
+}*/
 
 .admin-action-image {
     position: relative;
@@ -1485,12 +1490,12 @@ label:hover {
 }
 
 #action-image1 {
-    background-image: url(../imgs/add.PNG);
+    background-image: url(../imgs/article.jpg);
     background-size: cover;
 }
 
 #action-image2 {
-    background-image: url(../imgs/remove.PNG);
+    background-image: url(../imgs/messages.jpg);
     background-size: cover;
 }
 
@@ -1502,12 +1507,27 @@ label:hover {
 
 /* message box */
 
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    height: 35em;
+    margin: 50px;
+}
+
+
+#user-article-img{
+    width: 5em;
+    height: 5em;
+    border-radius: 30%;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
 .contact-inbox {
     width: 400px;
-    overflow: auto;
+    overflow: auto;\
     height: 100%;
     cursor: pointer;
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -1535,23 +1555,23 @@ label:hover {
 }
 
 .contact-inbox .list-right {
-    margin: 0 20px;
+    margin-left: 20px;
 }
 
-.contact-inbox .list-left {
+.contact-inbox li .list-left {
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: 5px 5px;
 }
 
-.contact-inbox .list-right .msg-display {
+.contact-inbox li .list-left .floating-img{
+  float:left;
+}
+
+.contact-inbox li .list-right .msg-display {
     font-size: 12px;
+    height: 20px;
     line-height: 18px;
-}
-
-.contact-inbox .time {
-    color: #ccc;
-    font-size: 12px;
-    text-align: left;
+    min-width: 50px;
 }
 
 .contact-inbox .mail-display {
