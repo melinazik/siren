@@ -1484,12 +1484,12 @@ label:hover {
 }
 
 #action-image1 {
-    background-image: url(../imgs/article.jpg);
+    background-image: url(../imgs/add.PNG);
     background-size: cover;
 }
 
 #action-image2 {
-    background-image: url(../imgs/messages.jpg);
+    background-image: url(../imgs/remove.PNG);
     background-size: cover;
 }
 
