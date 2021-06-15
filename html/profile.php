@@ -1,4 +1,4 @@
-<?php include 'server.php' ?>
+<?php include 'server.php'?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -49,17 +49,17 @@
 				<?php if (isset($_SESSION['username']) && ($_SESSION['username'] != 'admin')): ?>
 				<li><a href="profile.php">
 						<?php
-						$userId = $_SESSION['userId'];
+$userId = $_SESSION['userId'];
 
-						$query = "SELECT * FROM user WHERE id = $userId";
-						$result = mysqli_query($db, $query);
-						$image = mysqli_fetch_assoc($result);
-						$path = $image['imagePath'];
-						$username =  $_SESSION['username'];
+$query = "SELECT * FROM user WHERE id = $userId";
+$result = mysqli_query($db, $query);
+$image = mysqli_fetch_assoc($result);
+$path = $image['imagePath'];
+$username = $_SESSION['username'];
 
-						echo "<div class=\"nav-name\"> $username <img id=\"photo-prof-nav\" src=\"$path\"> </div>";
+echo "<div class=\"nav-name\"> $username <img id=\"photo-prof-nav\" src=\"$path\"> </div>";
 
-						?></a></li><?php endif?>
+?></a></li><?php endif?>
 				<?php if (!isset($_SESSION['username'])): ?>
 				<li><a href="login.php">Login/Register</a></li> <?php endif?>
 
@@ -74,20 +74,28 @@
 
   <!-- success or error messages, they appear based on occasion-->
   <?php
-  $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
-  <?php if (strpos($url, "update=success") == true) : ?>
+$url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";?>
+  <?php if (strpos($url, "update=success") == true): ?>
   <div class="alert success">
     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
     <?php echo "Data updated successfully!"; ?>
-  </div> <?php endif ?>
+  </div> <?php endif?>
 
   <?php
-  $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
-  <?php if (strpos($url, "update=failed") == true) : ?>
+$url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";?>
+  <?php if (strpos($url, "update=failed") == true): ?>
   <div class="alert">
     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
     <?php echo "Couldn't update user data"; ?>
-  </div> <?php endif ?>
+  </div> <?php endif?>
+
+  <?php
+$url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";?>
+  <?php if (strpos($url, "update=empty") == true): ?>
+  <div class="alert warning">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <?php echo "You didn't input or change any data."; ?>
+  </div> <?php endif?>
 
   <div id="page-view">
     <div id="home-view-title2">Profile</div>
@@ -97,15 +105,15 @@
     <div class="box">
       <div class="profile-img">
         <?php
-        $userId = $_SESSION['userId'];
+$userId = $_SESSION['userId'];
 
-        $query = "SELECT * FROM user WHERE id = $userId";
-        $result = mysqli_query($db, $query);
-        $image = mysqli_fetch_assoc($result);
-        $path = $image['imagePath'];
+$query = "SELECT * FROM user WHERE id = $userId";
+$result = mysqli_query($db, $query);
+$image = mysqli_fetch_assoc($result);
+$path = $image['imagePath'];
 
-        echo "<img id=\"photo-prof\" src=\"$path\">";
-        ?>
+echo "<img id=\"photo-prof\" src=\"$path\">";
+?>
 
         <form action="server.php" method="post" enctype="multipart/form-data" class="upload-image" onsubmit="return validateForm()">
           <input type="file" name="fileToUpload" id="fileToUpload" accept="image/*" />
@@ -131,24 +139,24 @@
       <div class="contact-inbox">
         <ul>
           <?php
-          $userId = $_SESSION['userId'];
-          $query = "SELECT article.articleTitle, article.articleURL,article.articleImg
+$userId = $_SESSION['userId'];
+$query = "SELECT article.articleTitle, article.articleURL,article.articleImg
                     FROM userlikesarticle INNER JOIN article
                     ON article.id = userlikesarticle.articleId
                     WHERE userlikesarticle.userId = $userId";
 
-          $results = mysqli_query($db, $query);
+$results = mysqli_query($db, $query);
 
-          $likes = mysqli_fetch_all($results, MYSQLI_ASSOC);
-          $size = count($likes);
+$likes = mysqli_fetch_all($results, MYSQLI_ASSOC);
+$size = count($likes);
 
-          if($size > 0){
-          for ($i = 0; $i < $size; $i++) {
-            $articleTitle = sprintf($likes[$i]['articleTitle']);
-            $articleURL = sprintf($likes[$i]['articleURL']);
-            $articleImg = sprintf($likes[$i]['articleImg']);
+if ($size > 0) {
+    for ($i = 0; $i < $size; $i++) {
+        $articleTitle = sprintf($likes[$i]['articleTitle']);
+        $articleURL = sprintf($likes[$i]['articleURL']);
+        $articleImg = sprintf($likes[$i]['articleImg']);
 
-            echo "
+        echo "
             <li>
                 <a href=\"$articleURL\" target=\"_blank\">
                   <div class=\"favorite-articles\">
@@ -157,12 +165,11 @@
                   </div>
                 </a>
             </li>";
-          }}
-          else{
-            echo  "<div class=\"no-fav-yet\"> There is nothing here yet <div>";
-          }
+    }} else {
+    echo "<div class=\"no-fav-yet\"> There is nothing here yet <div>";
+}
 
-          ?>
+?>
         </ul>
       </div>
     </div>

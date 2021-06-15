@@ -120,7 +120,7 @@ if (isset($_POST['login'])) {
 if (isset($_POST['logout'])) {
     session_destroy();
     unset($_SESSION['username']);
-    header('location: home.php'); 
+    header('location: home.php');
 }
 
 //contact part
@@ -202,28 +202,25 @@ if (isset($_POST['done'])) {
     $_SESSION['gender'] = mysqli_real_escape_string($db, $_POST['gender']);
     $_SESSION['lctn'] = mysqli_real_escape_string($db, $_POST['location']);
 
-    if (is_null($_SESSION['age']) || ($_SESSION['age'] == "")) {
-        $_SESSION['age'] = "Age";
-    }
-
-    if (is_null($_SESSION['gender']) || ($_SESSION['gender'] == "")) {
-        $_SESSION['gender'] = "Gender";
-    }
-
-    if (is_null($_SESSION['lctn']) || ($_SESSION['lctn'] == "")) {
-        $_SESSION['lctn'] = "Location";
-    }
-
-    $age = $_SESSION['age'];
-    $gender = $_SESSION['gender'];
-    $lctn = $_SESSION['lctn'];
-
-    $query = "UPDATE user SET age='$age', gender='$gender', location = '$lctn' WHERE username='$username'";
-    $results = mysqli_query($db, $query);
-    if (!$results) {
-        header("location: profile.php?update=failed");
+    if (!isset($_SESSION['age']) || ($_SESSION['age'] == "")) {
+        header("location: profile.php?update=empty");
+    } else if (!isset($_SESSION['gender']) || ($_SESSION['gender'] == "")) {
+        header("location: profile.php?update=empty");
+    } else if (!isset($_SESSION['lctn']) || ($_SESSION['lctn'] == "")) {
+        header("location: profile.php?update=empty");
     } else {
-        header("location: profile.php?update=success");
+
+        $age = $_SESSION['age'];
+        $gender = $_SESSION['gender'];
+        $lctn = $_SESSION['lctn'];
+
+        $query = "UPDATE user SET age='$age', gender='$gender', location = '$lctn' WHERE username='$username'";
+        $results = mysqli_query($db, $query);
+        if (!$results) {
+            header("location: profile.php?update=failed");
+        } else {
+            header("location: profile.php?update=success");
+        }
     }
 }
 
